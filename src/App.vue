@@ -1,13 +1,27 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import Top from './components/common/Top.vue';
+import Footer from './components/common/Footer.vue';
+export default {
+  components: {
+    Top,
+    Footer,
+  },
+  methods: {
+  },
+}
 </script>
 
 <template>
-  <div>
+  <Top/>
+  <div id="container">
     <router-view />
   </div>
+  <Footer/>
 </template>
+
+
 
 <style scoped>
 
 </style>
+
