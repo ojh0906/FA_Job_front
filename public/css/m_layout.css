@@ -65,12 +65,28 @@
     background: url("../image/register/User\ Male.png") no-repeat;
 }
 
-.join_member > li > a > p {
+.join_member .join02 a .i_icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 40px 0 20px 0;
+    background: url("../image/register/User\ Male02.png") no-repeat;
+}
+
+.join_member .join03 a .i_icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 40px 0 20px 0;
+    background: url("../image/register/Business\ Building.png") no-repeat;
+}
+
+.join_member > li a > p {
     color: #333;
     font-size: 20px;
 }
 
-.join_member > li > a > p > em {
+.join_member > li a > p > em {
     font-weight: 800;
 }
 
@@ -80,7 +96,7 @@
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.join_member >li > a .btn {
+.join_member >li a .btn {
     text-align: center;
     padding: 8px 20px;
     width: 96px;
