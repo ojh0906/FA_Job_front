@@ -11,6 +11,7 @@
 .join_header{
     float: left;
     height: 45px;
+    background-color: aquamarine;
 }
 
 .join_header .join_bg{
@@ -22,6 +23,7 @@
 .join_header .join_step{
     float: left;
     margin: 14px 20px;
+    background-color: brown;
 }
 
 .join_header .join_step > li{
