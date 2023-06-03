@@ -16,8 +16,7 @@
                     <a href="#">
                         <i class="i_icon"></i>
                         <p>
-                            <em class="bold">일반</em>
-                            "회원가입"
+                            <em class="bold">일반</em>회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>
@@ -27,8 +26,7 @@
                     <a href="#">
                         <i class="i_icon"></i>
                         <p>
-                            <em class="bold">외국인</em>
-                            "회원가입"
+                            <em class="bold">외국인</em>회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>
@@ -38,8 +36,7 @@
                     <a href="#">
                         <i class="i_icon"></i>
                         <p>
-                            <em class="bold">외국인</em>
-                            "회원가입"
+                            <em class="bold">기업</em>회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>

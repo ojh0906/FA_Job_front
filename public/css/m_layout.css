@@ -57,7 +57,7 @@
     text-align: center;
 }
 
-.join_member > li a .i_icon {
+.join_member .join01 a .i_icon {
     display: inline-block;
     width: 70px;
     height: 70px;
@@ -65,12 +65,12 @@
     background: url("../image/register/User\ Male.png") no-repeat;
 }
 
-.join_member a > p {
+.join_member > li > a > p {
     color: #333;
     font-size: 20px;
 }
 
-.join .member a > p > em {
+.join_member > li > a > p > em {
     font-weight: 800;
 }
 
@@ -80,7 +80,7 @@
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.join_member a > span {
+.join_member >li > a .btn {
     text-align: center;
     padding: 8px 20px;
     width: 96px;
