@@ -1,32 +1,30 @@
 /*register type*/
 
 .section01{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
     margin-top: 150px;
-    background-color: yellow;
+    background-color: red;
     width: 1200px;
     height: 394px;
 }
 
-.join_heaer{
+.join_header{
     float: left;
     height: 45px;
 }
 
-.join_heaer .join_bg{
+.join_header .join_bg{
     float: left;
     font-size: 32px;
     font-weight: 700;
 }
 
-.join_heaer .join_step{
+.join_header .join_step{
     float: left;
     margin: 14px 20px;
 }
 
-.join_heaer .join_step > li{
+.join_header .join_step > li{
     margin-left: 25px;
     font-weight: 400;
     font: 14px;
@@ -34,11 +32,11 @@
     color: #777;
 }
 
-.join_heaer .join_step > li:nth-last-child(){
+.join_header .join_step > li:nth-last-child(){
     margin-right: 0px;
 }
 
-.join_heaer .join_step .join_step_01_on{
+.join_header .join_step .join_step_01_on{
     font-weight: 700;
     color: #3E778A;
 }
