@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-        <div class="join_heaer">
+        <div class="join_header">
             <h3 class="join_bg">회원가입</h3>
             <ul class="join_step">
                 <li class="join_step_01_on">01.회원유형 선택</li>
@@ -16,7 +16,7 @@
                     <a href="#">
                         <i class="i_icon"></i>
                         <p>
-                            <em class="bold">일반</em>회원가입
+                            <strong class="bold">일반</strong> 회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>
@@ -25,8 +25,8 @@
                 <li class="join02">
                     <a href="#">
                         <i class="i_icon"></i>
-               ㅌ         <p>
-                            <em class="bold">외국인</em>회원가입
+                        <p>
+                            <strong class="bold">외국인</strong> 회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>
@@ -36,7 +36,7 @@
                     <a href="#">
                         <i class="i_icon"></i>
                         <p>
-                            <em class="bold">기업</em>회원가입
+                            <strong class="bold">기업</strong> 회원가입
                         </p>
                         <span class="btn">가입하기</span>
                     </a>

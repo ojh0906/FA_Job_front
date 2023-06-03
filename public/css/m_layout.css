@@ -1,62 +1,72 @@
 /*register type*/
 
-.section{
-    display: block;
-    margin-top: 150px;
-    background-color: red;
+.section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
     width: 1200px;
     height: 394px;
 }
 
-.join_header{
+.join_header {
     float: left;
+    width: 600px;
     height: 45px;
-    background-color: aquamarine;
 }
 
-.join_header .join_bg{
+.join_header .join_bg {
     float: left;
     font-size: 32px;
     font-weight: 700;
 }
 
-.join_header .join_step{
-    float: left;
-    margin: 14px 20px;
-    background-color: brown;
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
 }
 
-.join_header .join_step > li{
+.join_header .join_step > li {
+    float: left;
     margin-left: 25px;
-    font-weight: 400;
+    font-weight: 300;
     font: 14px;
     vertical-align: middle;
     color: #777;
 }
 
-.join_header .join_step > li:nth-last-child(){
+.join_header .join_step > li:nth-last-child() {
     margin-right: 0px;
 }
 
-.join_header .join_step .join_step_01_on{
+.join_header .join_step .join_step_01_on {
     font-weight: 700;
     color: #3E778A;
 }
 
-.join_member{
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
+.join_member {
+    position: absolute;
+    text-align: center;
+    width: 1200px;
+    height: 311px;
+    top: 235px;
+    background-color: aqua;
 }
 
-.join_member > li a {
-    display: block;
+.join_member li {
+    display: inline-block;
+    margin: 0 40px 60px 0;
     width: 210px;
     height: 249px;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
-    background: #fff;
+    background: fff;
     text-align: center;
+}
+
+.join_member .join03 {
+    margin-right: 0px;
 }
 
 .join_member .join01 a .i_icon {
@@ -83,29 +93,26 @@
     background: url("../image/register/Business\ Building.png") no-repeat;
 }
 
-.join_member > li a > p {
+.join_member li a p {
     color: #333;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
-.join_member > li a > p > em {
-    font-weight: 800;
-}
-
-.join_member li a:hover{
-    background: #E2EEF0;
-    border: 1px solid #70BAB5;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.join_member >li a .btn {
+.join_member li .btn {
     text-align: center;
-    padding: 8px 20px;
+    padding: 6px 20px;
     width: 96px;
     height: 35px;
     background: #3E778A;
     border-radius: 5px;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     color: #fff;
+}
+
+.join_member li:hover{
+    background: #E2EEF0;
+    border: 1px solid #70BAB5;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
 }
