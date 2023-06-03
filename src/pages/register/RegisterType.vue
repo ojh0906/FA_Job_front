@@ -25,7 +25,7 @@
                 <li class="join02">
                     <a href="#">
                         <i class="i_icon"></i>
-                        <p>
+               ㅌ         <p>
                             <em class="bold">외국인</em>회원가입
                         </p>
                         <span class="btn">가입하기</span>
