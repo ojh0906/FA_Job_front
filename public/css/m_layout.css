@@ -1,8 +1,93 @@
 /*register type*/
 
 .section01{
+    margin: 0 auto;
     margin-top: 150px;
     background-color: yellow;
     width: 1200px;
     height: 394px;
+}
+
+.join_heaer{
+    float: left;
+    height: 45px;
+}
+
+.join_heaer .join_bg{
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_heaer .join_step{
+    float: left;
+    margin: 14px 20px;
+}
+
+.join_heaer .join_step > li{
+    margin-left: 25px;
+    font-weight: 400;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_heaer .join_step > li:nth-last-child(){
+    margin-right: 0px;
+}
+
+.join_heaer .join_step .join_step_01_on{
+    font-weight: 700;
+    color: #3E778A;
+}
+
+.join_member{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.join_member > li a {
+    display: block;
+    width: 210px;
+    height: 249px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    background: #fff;
+    text-align: center;
+}
+
+.join_member > li a .i_icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 40px 0 20px 0;
+    background: url("../image/register/User\ Male.png") no-repeat;
+}
+
+.join_member a > p {
+    color: #333;
+    font-size: 20px;
+}
+
+.join .member a > p > em {
+    font-weight: 800;
+}
+
+.join_member li a:hover{
+    background: #E2EEF0;
+    border: 1px solid #70BAB5;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.join_member a > span {
+    text-align: center;
+    padding: 8px 20px;
+    width: 96px;
+    height: 35px;
+    background: #3E778A;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
 }
