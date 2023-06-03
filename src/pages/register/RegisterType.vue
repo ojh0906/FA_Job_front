@@ -1,6 +1,5 @@
 <template>
-    ghldn
-
+    <div class=""></div>
 </template>
 
 <script>
