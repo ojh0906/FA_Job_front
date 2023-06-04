@@ -13,9 +13,13 @@
 
         <div class="agree">
             <!-- 서비스이용약관 -->
-            <div class="agree_box">
+            <div class="agree_box01">
 				<div class="title">
-				    <input type="checkbox"> <h3>서비스 이용약관(필수)</h3>
+				    <ul>
+                        <li class="check"></li>
+                        <li class="h3">서비스 이용약관(필수)</li>
+                        <li class="dropdown"><img src="/images" alt="드롭다운아이콘입니다."></li>
+                    </ul>
 				    <button type="button" class="btn_up">
 						<i class="i_icon"></i>
 					</button>

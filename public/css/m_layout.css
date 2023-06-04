@@ -129,7 +129,6 @@
     padding-top: 150px;
     width: 1200px;
     height: 394px;
-    background-color: #70BAB5;
 }
 
 .join_header {
@@ -177,9 +176,38 @@
     background-color: red;
 }
 
-.agree_box{
+.agree_box01{
+    float: left;
     width: 600px;
-    height: 45px;
+    height: 177px;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
+}
+
+.agree_box01 .title{
+    float: left;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+}
+
+.agree_box01 .title .check {
+    width: 25px;
+    height: 25px;
+    background-color: #3E778A;
+    border-radius: 5px;
+}
+
+.agree_box01 .title .h3{
+    display: inline-block;
+    float: left;
+    margin-left: 8px;
+    font-size: 16px;
+    color: #555555;
+    background-color: #3E778A;
+}
+
+.agree_box01 .cont_body{
+    display: none;
 }
