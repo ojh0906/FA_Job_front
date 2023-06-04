@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Index from "/src/pages/Index.vue";
 import RegisterType from "/src/pages/register/RegisterType.vue";
 import RegisterAgree from "/src/pages/register/RegisterAgree.vue";
+import RegisterLocal from "/src/pages/register/RegisterLocal.vue";
 
 
 const routes = [
@@ -22,6 +23,12 @@ const routes = [
         name: "RegisterAgree",
         component: RegisterAgree,
         meta: { title: "약관동의" },
+    },
+    {
+        path: "/register/register-local",
+        name: "RegisterLocal",
+        component: RegisterLocal,
+        meta: { title: "내국인정보입력" },
     },
 ]
 
