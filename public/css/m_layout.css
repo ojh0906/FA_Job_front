@@ -1,6 +1,6 @@
 /*register type*/
 
-/*회원가입 구분 시작*/
+/*회원가입 구분 시작
 .section {
     display: flex;
     position: relative;
@@ -175,4 +175,11 @@
     height: 346px;
     top: 235px;
     background-color: red;
+}
+
+.agree_box{
+    width: 600px;
+    height: 45px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
 }
