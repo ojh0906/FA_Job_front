@@ -118,6 +118,9 @@
 }
 /*회원가입 구분 끝*/
 
+
+
+
 /*약관동의 시작*/
 .section {
     display: flex;
@@ -126,6 +129,7 @@
     padding-top: 150px;
     width: 1200px;
     height: 394px;
+    background-color: #70BAB5;
 }
 
 .join_header {
@@ -162,4 +166,13 @@
 .join_header .join_step .join_step_02_on {
     font-weight: 700;
     color: #3E778A;
+}
+
+.agree {
+    position: absolute;
+    text-align: center;
+    width: 1200px;
+    height: 346px;
+    top: 235px;
+    background-color: red;
 }

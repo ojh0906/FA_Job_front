@@ -9,6 +9,7 @@
                 <li class="join_step_04">04.가입완료</li>
             </ul>
         </div>
+        <div class="agree"></div>
     </div>
 </template>
 
