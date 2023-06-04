@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from "/src/pages/Index.vue";
 import RegisterType from "/src/pages/register/RegisterType.vue";
-import RegisterType from "/src/pages/register/RegisterAgree.vue";
+import RegisterAgree from "/src/pages/register/RegisterAgree.vue";
 
 
 const routes = [
