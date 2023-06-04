@@ -96,9 +96,10 @@
                     </ul>
 				</div>
 			</div>
+            <div class="agree_next">
+                <div><a href="#">다음</a></div>
+            </div>
         </div>
-
-        <div class="next">다음</div>
     </div>
 </template>
 

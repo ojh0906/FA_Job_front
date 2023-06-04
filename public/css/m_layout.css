@@ -172,7 +172,6 @@
     width: 1200px;
     height: 346px;
     top: 235px;
-    background-color: #red;
 }
 
 .agree_box01 {
@@ -309,6 +308,7 @@
 
 .agree_box04 {
     margin: 20px auto 0;
+    border-bottom: 1px solid #ECECEC;;
     width: 600px;
     height: 45px;
     border: 1px solid #E5E5E5;
@@ -337,13 +337,24 @@
     color: #555555;
 }                    
 
-.next{
+.agree_next {
+    margin: 40px 0 auto;
+    width: 1200px;
+    height: 88px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 30px;
+}
+
+.agree_next a {
+    display: flex;
     margin: 0 auto;
-    margin-top: 30px;
-    text-align: center;
     width: 200px;
     height: 58px;
+    align-items: center;
+    justify-content: center;
     background: #3E778A;
-    border-top: 1px solid #ECECEC;
     border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
 }
