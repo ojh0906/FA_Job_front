@@ -1,5 +1,6 @@
 /*register type*/
 
+/*회원가입 구분 시작*/
 .section {
     display: flex;
     position: relative;
@@ -114,4 +115,51 @@
     background: #E2EEF0;
     border: 1px solid #70BAB5;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+}
+/*회원가입 구분 끝*/
+
+/*약관동의 시작*/
+.section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 394px;
+}
+
+.join_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.join_header .join_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
+
+.join_header .join_step > li {
+    float: left;
+    margin-left: 25px;
+    font-weight: 300;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_header .join_step > li:nth-last-child() {
+    margin-right: 0px;
+}
+
+.join_header .join_step .join_step_02_on {
+    font-weight: 700;
+    color: #3E778A;
 }
