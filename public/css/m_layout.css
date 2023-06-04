@@ -169,27 +169,23 @@
 
 .agree {
     position: absolute;
-    text-align: center;
     width: 1200px;
     height: 346px;
     top: 235px;
-    background-color: red;
+    background-color: #red;
 }
 
-.agree_box01{
-    float: left;
+.agree_box01 {
+    margin: 0 auto;
     width: 600px;
-    height: 177px;
+    height: 45px;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
 }
 
-.agree_box01 .title{
-    float: left;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #BBBBBB;
-    border-radius: 5px;
+.agree_box01 .title ul {
+    display: flex;
+    margin: 10px 10px;
 }
 
 .agree_box01 .title .check {
@@ -199,15 +195,155 @@
     border-radius: 5px;
 }
 
-.agree_box01 .title .h3{
+.agree_box01 .title .h3 {
     display: inline-block;
     float: left;
+    width: 525px;
     margin-left: 8px;
     font-size: 16px;
     color: #555555;
-    background-color: #3E778A;
 }
 
-.agree_box01 .cont_body{
-    display: none;
+.agree_box01 .title .dropdown {
+    float: left;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+
+/* 드롭다운
+.agree_box01 .cont_body {
+    position: relative;
+    padding: 10px 10px 20px 10px;
+    width: 580px;
+    height: 142px;
+    background-color: aquamarine;
+}
+
+.agree_box01 .cont_body .board{
+    width: 580px;
+    height: 132px;
+    background-color: brown;
+}
+
+
+.agree_box01 .cont_body .board .agree{
+    width: 580px;
+    height: 102px;
+    font-size: 14px;
+    color: #777;
+    background-color: #3E778A;
+}
+                        드롭다운*/
+
+.agree_box02 {
+    margin: 20px auto 0;
+    width: 600px;
+    height: 45px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+.agree_box02 .title ul {
+    display: flex;
+    margin: 10px 10px;
+}
+
+.agree_box02 .title .check {
+    width: 25px;
+    height: 25px;
+    background-color: #3E778A;
+    border-radius: 5px;
+}
+
+.agree_box02 .title .h3 {
+    display: inline-block;
+    float: left;
+    width: 525px;
+    margin-left: 8px;
+    font-size: 16px;
+    color: #555555;
+}
+
+.agree_box02 .title .dropdown {
+    float: left;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.agree_box03 {
+    margin: 20px auto 0;
+    width: 600px;
+    height: 45px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+.agree_box03 .title ul {
+    display: flex;
+    margin: 10px 10px;
+}
+
+.agree_box03 .title .check {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #BBBBBB;
+}
+
+.agree_box03 .title .h3 {
+    display: inline-block;
+    float: left;
+    width: 525px;
+    margin-left: 8px;
+    font-size: 16px;
+    color: #555555;
+}
+
+.agree_box03 .title .dropdown {
+    float: left;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.agree_box04 {
+    margin: 20px auto 0;
+    width: 600px;
+    height: 45px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+.agree_box04 .title ul {
+    display: flex;
+    margin: 10px 10px;
+}
+
+.agree_box04 .title .check {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #BBBBBB;
+}
+
+.agree_box04 .title .h3 {
+    display: inline-block;
+    float: left;
+    width: 525px;
+    margin-left: 8px;
+    font-size: 16px;
+    color: #555555;
+}                    
+
+.next{
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    width: 200px;
+    height: 58px;
+    background: #3E778A;
+    border-top: 1px solid #ECECEC;
+    border-radius: 5px;
 }
