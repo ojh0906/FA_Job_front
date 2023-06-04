@@ -12,14 +12,14 @@ const routes = [
         meta: { title: "" },
     },
     {
-        path: "/register/registertype",
-        name: "registertype",
+        path: "/register/register-type",
+        name: "RegisterType",
         component: RegisterType,
         meta: { title: "회원가입구분" },
     },
     {
-        path: "/register/registeragree",
-        name: "registeragree",
+        path: "/register/register-agree",
+        name: "RegisterAgree",
         component: RegisterAgree,
         meta: { title: "약관동의" },
     },
