@@ -15,36 +15,93 @@
             <div class="input_l">
                 <div class="field01">
                     <p>아이디</p>
-                    <input type="text" placeholder="이메일주소">&nbsp;&nbsp;@&nbsp;&nbsp;
-                    <select>
-                        <option value="">직접입력</option>
-                    </select>
+                    <div class="field01_input">
+                        <input type="text" placeholder="이메일주소"><span>@</span>
+                        <select>
+                            <option value="">직접입력</option>
+                        </select>
+                    </div>
                     <a href="#">중복확인</a>
                     <p class="notice">사용 가능한 아이디 입니다.</p>
                 </div>
+
                 <div class="field02">
                     <p>닉네임</p>
+                    <div class="field02_input">
                         <input type="text" placeholder="닉네임">
+                    </div>
                     <a href="#">중복확인</a>
                     <p class="notice">사용 가능한 아이디 입니다.</p>
                 </div>
+
                 <div class="field03">
                     <p>비밀번호</p>
-                    <input class="userpw" type="password" placeholder="비밀번호 입력">
+                    <div class="field03_input">
+                        <input class="userpw" type="password" placeholder="비밀번호 입력">
+                    </div>
                 </div>
+
                 <div class="field04">
                     <p>비밀번호 확인</p>
-                    <input class="userpw_confirm" type="password" placeholder="비밀번호 확인">
+                    <div class="field04_input">
+                        <input class="userpw_confirm" type="password" placeholder="비밀번호 확인">
+                    </div>
                     <p class="notice">비밀번호가 일치하지 않습니다.</p>
                 </div>
+
                 <div class="field05">
                     <p>이름</p>
-                    <input type="text" placeholder="이름">
+                    <div class="field05_input">
+                        <input type="text" placeholder="이름">
+                    </div>
                 </div>
             </div>
-                    <div class="input_r"></div>
+
+            <div class="input_r">
+                <div class="field06">
+                    <p>생년월일</p>
+                    <div class="field06_input">
+                        <input type="text" placeholder="YYYY.MM.DD">
+                    </div>
+                </div>
+
+                <div class="field07">
+                    <p>휴대폰번호</p>
+                    <div class="field07_input">
+                        <input type="text" placeholder="휴대폰 번호">
+                    </div>
+                    <a href="#">인증번호&nbsp;&nbsp;전송</a>
+                    <p class="notice">남은시간 01:44</p>
+                </div>
+
+                <div class="field08">
+                    <div class="field08_input">
+                        <input type="text" placeholder="인증번호">
+                    </div>
+                    <a href="#">인증번호 확인</a>
+                </div>
+
+                <div class="field09">
+                    <p>주소</p>
+                    <div class="field09_input">
+                        <input type="text" placeholder="주소입력">
+                    </div>
+                    <a href="#">주소 찾기</a>
+                </div>
+                    
+                <div class="field10">
+                    <div class="field10_input">
+                        <input type="text" placeholder="상세주소 입력">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="local_agree_next">
+                <div class="btn_prev"><a href="#">이전</a></div>
+                <div class="btn_next"><a href="#">완료</a></div>
+            </div>
+        </div>
 </template>
 
 <script>
