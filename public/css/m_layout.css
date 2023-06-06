@@ -847,6 +847,7 @@
 
 
 
+
 /*외국인정보입력 시작*/
 .section {
     display: flex;
@@ -1417,5 +1418,218 @@
     border-radius: 5px;
     font-weight: 700;
     font-size: 16px;
-    color: #fff;
+    color:#fff;
 }
+/*외국인정보입력 끝*/
+
+
+
+
+/*내국인 회원가입완료 시작*/
+.section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 507px;
+}
+
+.join_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.join_header .join_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
+
+.join_header .join_step > li {
+    float: left;
+    margin-left: 25px;
+    font-weight: 300;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_header .join_step > li:nth-last-child() {
+    margin-right: 0px;
+}
+
+.join_header .join_step .join_step_04_on {
+    font-weight: 700;
+    color: #3E778A;
+}
+
+.input_box{
+    position: absolute;
+    margin-top: 85px;
+    width: 1200px;
+    height: 234px;
+}
+
+.input_box .check{
+    text-align: center;
+    margin-top: 44px;
+}
+
+
+.input_box p{
+    text-align: center;
+    margin-top: 34px;
+    font-size: 20px;
+}
+
+.next_bnt {
+    position: absolute;
+    top: 509px;
+    width: 1200px;
+    height: 88px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 30px;
+}
+
+.next_bnt .btn_01 a {
+    float: left;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 200px;
+    height: 58px;
+    margin-left: 380px;
+    background: #fff;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #777;
+}
+
+.next_bnt .btn_02 a {
+    float: right;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: 380px;
+    width: 200px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    background: #3E778A;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color:#fff;
+}
+/*내국인 회원가입완료 끝*/
+
+
+
+/*외국인 회원가입완료 시작*/
+.section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 575px;
+}
+
+.join_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.join_header .join_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
+
+.join_header .join_step > li {
+    float: left;
+    margin-left: 25px;
+    font-weight: 300;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_header .join_step > li:nth-last-child() {
+    margin-right: 0px;
+}
+
+.join_header .join_step .join_step_04_on {
+    font-weight: 700;
+    color: #3E778A;
+}
+
+.input_box{
+    position: absolute;
+    margin-top: 85px;
+    width: 1200px;
+    height: 302px;
+}
+
+.input_box .check{
+    text-align: center;
+    margin-top: 44px;
+}
+
+
+.input_box p{
+    text-align: center;
+    margin-top: 34px;
+    font-size: 20px;
+}
+
+.input_box .txt02{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.next_btn {
+    position: absolute;
+    text-align: center;
+    top: 577px;
+    width: 1200px;
+    height: 88px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 30px;
+}
+
+.next_btn a {
+    display: inline;
+    box-sizing: border-box;
+    width: 200px;
+    height: 58px;
+    padding: 16px 92px;
+    line-height: 58px;
+    background: #fff;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #777;
+}
+/*외국인 회원가입완료 끝*/
