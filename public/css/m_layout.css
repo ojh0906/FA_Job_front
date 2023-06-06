@@ -1729,3 +1729,120 @@
     color: #777;
 }
 /*외국인 회원가입대기 끝*/
+
+
+
+/*커뮤니티 노하우 시작*/
+.Know_section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 507px;
+}
+
+.title_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.title_header .title_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.know_box{
+    position: absolute;
+    margin-top: 85px;
+    width: 1200px;
+    height: 827px;
+}
+
+.know_box .box_l{
+    float: left;
+    margin-right: 40px;
+    width: 270px;
+    height: 827px;
+}
+
+.know_box .box_l .menu{
+    float: left;
+    width: 268px;
+    height: 118px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.know_box .box_l .menu .menu01 a{
+    float: left;
+    width: 268px;
+    height: 59px;
+    background: #70BAB5;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.know_box .box_l .menu .menu01 p{
+    float: left;
+    margin: 18px 15px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.know_box .box_l .menu .menu02 a{
+    float: left;
+    width: 268px;
+    height: 59px;
+}
+
+.know_box .box_l .menu .menu02 p{
+    float: left;
+    margin: 18px 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.know_box .box_l .menu .menu02 .i_icon{
+    float: right;
+    margin: 22px 20px;
+    width: 16px;
+    height: 16px;
+    background: url("../image/community/right_arrow.png") no-repeat;
+}
+
+.know_box .box_r{
+    float: left;
+    width: 890px;
+    height: 827px;
+    background-color: yellowgreen;
+}
+
+.box_r_header {
+    float: left;
+    width: 890px;
+    height: 44px;
+}
+
+.box_r_header h3 {
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.box_r_header p {
+    float: left;
+    margin: 2px 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.box_r .tap_list{
+    float: left;
+    width: 890px;
+    height: 35px;
+    background-color: #70BAB5;
+}

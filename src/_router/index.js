@@ -7,6 +7,8 @@ import RegisterForeigner from "/src/pages/register/RegisterForeigner.vue";
 import RegisterEnd from "/src/pages/register/RegisterEnd.vue";
 import RegisterEnd02 from "/src/pages/register/RegisterEnd02.vue";
 import RegisterStanby from "/src/pages/register/RegisterStanby.vue";
+import KnowHow from "/src/pages/community/KnowHow.vue";
+
 
 
 const routes = [
@@ -58,7 +60,14 @@ const routes = [
         component: RegisterStanby,
         meta: { title: "외국인 회원가입대기" },
     },
+    {
+        path: "/community/know-how",
+        name: "KnowHow",
+        component: KnowHow,
+        meta: { title: "커뮤니티 노하우" },
+    },
 ]
+
 
 const router = createRouter({
     history: createWebHistory(),
