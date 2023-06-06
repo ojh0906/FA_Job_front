@@ -75,10 +75,10 @@
                </div>
 
                <div class="field08">
-                    <div class="field08_input">
-                        <input type="text" placeholder="인증번호">
-                    </div>
-                    <a href="#">인증번호 확인</a>
+                   <div class="field08_input">
+                       <input type="text" placeholder="인증번호">
+                   </div>
+                   <a href="#">인증번호 확인</a>
                </div>
 
                <div class="field09">
@@ -93,6 +93,23 @@
                    <div class="field10_input">
                        <input type="text" placeholder="상세주소 입력">
                    </div>
+               </div>
+
+               <div class="field11">
+                   <p>외국인등록번호</p>
+                   <div class="field11_input">
+                       <input type="text" placeholder="외국인등록번호">
+                   </div>
+                   <a href="#">중복확인</a>
+                   <p class="notice">인증되었습니다.</p>
+               </div>
+
+               <div class="field12">
+                   <p>외국인등록증</p>
+                   <div class="field12_input">
+                       <input type="text" placeholder="주소입력">
+                   </div>
+                   <a href="#">파일 업로드</a>
                </div>
            </div>
        </div>

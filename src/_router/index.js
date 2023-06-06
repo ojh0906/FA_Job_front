@@ -3,6 +3,7 @@ import Index from "/src/pages/Index.vue";
 import RegisterType from "/src/pages/register/RegisterType.vue";
 import RegisterAgree from "/src/pages/register/RegisterAgree.vue";
 import RegisterLocal from "/src/pages/register/RegisterLocal.vue";
+import RegisterForeigner from "/src/pages/register/RegisterForeigner.vue";
 
 
 const routes = [
@@ -29,6 +30,12 @@ const routes = [
         name: "RegisterLocal",
         component: RegisterLocal,
         meta: { title: "내국인정보입력" },
+    },
+    {
+        path: "/register/register-foreigner",
+        name: "RegisterForeigner",
+        component: RegisterForeigner,
+        meta: { title: "외국인정보입력" },
     },
 ]
 

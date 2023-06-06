@@ -470,7 +470,7 @@
     margin: 24px 0 0 8px;
     padding: 0px 15px;
     width: 88px;
-    height: 50px;
+    height: 48px;
     background: #FFFFFF;
     border: 1px solid #3E778A;
     border-radius: 5px;
@@ -517,7 +517,7 @@
 
 .input_box .input_l .field02 a {
     box-sizing: border-box;
-    margin: 24px 0 0 8px;
+    margin: 26px 0 0 8px;
     padding: 0px 15px;
     width: 88px;
     height: 48px;
@@ -626,10 +626,6 @@
     font-size: 16px;
     color: #999;
 }
-
-
-
-
 
 .input_box .input_r{
     float: left;
@@ -812,6 +808,584 @@
 .local_agree_next {
     position: absolute;
     top: 832px;
+    width: 1200px;
+    height: 88px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 30px;
+}
+
+.local_agree_next .btn_prev a {
+    float: left;
+    box-sizing: border-box;
+    width: 200px;
+    height: 58px;
+    padding: 16px 86px;
+    margin-left: 380px;
+    background: #fff;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #777;
+}
+
+.local_agree_next .btn_next a {
+    float: right;
+    box-sizing: border-box;
+    margin-right: 380px;
+    padding: 16px 86px;
+    width: 200px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    background: #3E778A;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+
+/*외국인정보입력 시작*/
+.section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 980px;
+}
+
+.join_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.join_header .join_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
+
+.join_header .join_step > li {
+    float: left;
+    margin-left: 25px;
+    font-weight: 300;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_header .join_step > li:nth-last-child() {
+    margin-right: 0px;
+}
+
+.join_header .join_step .join_step_03_on {
+    font-weight: 700;
+    color: #3E778A;
+}
+
+.input_box{
+    position: absolute;
+    margin-top: 85px;
+    width: 1200px;
+    height: 647px;
+    background-color: aquamarine;
+}
+
+.input_box .input_l{
+    float: left;
+    width: 565px;
+    height: 557px;
+}
+
+.input_box .input_l .field01 {
+    display: flex;
+    width: 565px;
+    height: 101px;
+}
+
+.input_box .input_l .field01 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_l .field01_input input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 205px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_l .field01_input span {
+     vertical-align: middle;
+     margin: 0 8px;
+}
+
+.input_box .input_l .field01_input select {
+    top: 24px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    width: 232px;
+    height: 48px;
+    border: 1px solid #DDDDDD;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.input_box .input_l .field01 a {
+    box-sizing: border-box;
+    margin: 26px 0 0 8px;
+    padding: 0px 15px;
+    width: 88px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_l .field01 .notice {
+    position: absolute;
+    top: 84px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #3E778A;
+}
+
+.input_box .input_l .field02 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 96px;
+}
+
+.input_box .input_l .field02 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_l .field02_input input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 472px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_l .field02 a {
+    box-sizing: border-box;
+    margin: 24px 0 0 8px;
+    padding: 0px 15px;
+    width: 88px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_l .field02 .notice {
+    position: absolute;
+    top: 210px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #3E778A;
+}
+
+.input_box .input_l .field03 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 69px;
+}
+
+.input_box .input_l .field03 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_l .field03 .field03_input input{
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 565px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_l .field04 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 99px;
+}
+
+.input_box .input_l .field04 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_l .field04 .field04_input input{
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 565px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_l .field04 .notice {
+    position: absolute;
+    top: 438px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ff6565;
+}
+
+.input_box .input_l .field05 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 72px;
+}
+
+.input_box .input_l .field05 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_l .field05 .field05_input input{
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 565px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r{
+    float: left;
+    margin-left: 70px;
+    width: 565px;
+    height: 557px;
+}
+
+.input_box .input_r .field06 {
+    display: flex;
+    width: 565px;
+    height: 72px;
+}
+
+.input_box .input_r .field06 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_r .field06 .field06_input input{
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 565px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field07 {
+    display: flex;
+    margin-top: 30px;
+    width: 436px;
+    height: 96px;
+
+}
+
+.input_box .input_r .field07 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_r .field07_input input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 436px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field07 a {
+    box-sizing: border-box;
+    margin: 24px 0 0 8px;
+    padding: 0px 15px;
+    width: 121px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_r .field07 .notice {
+    position: absolute;
+    top: 181px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #777;
+}
+
+.input_box .input_r .field08 {
+    display: flex;
+    margin-top: 18px;
+    width: 565px;
+    height: 48px;
+}
+
+.input_box .input_r .field08_input input {
+    display: inline-block;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field08 a {
+    box-sizing: border-box;
+    margin-left: 8px;
+    padding: 0px 15px;
+    width: 118px;
+    height: 48px;
+    background: #DEE6E9;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_r .field09 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 80px;
+
+}
+
+.input_box .input_r .field09 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_r .field09_input input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 465px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field09 a {
+    box-sizing: border-box;
+    margin: 24px 0 0 8px;
+    padding: 0px 15px;
+    width: 100px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_r .field10 {
+    display: flex;
+    width: 565px;
+    height: 48px;
+}
+
+.input_box .input_r .field10_input input {
+    display: inline-block;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 565px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field11 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 96px;
+    background-color: yellowgreen;
+}
+
+.input_box .input_r .field11 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_r .field011 input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 472px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field11 a {
+    box-sizing: border-box;
+    margin: 24px 0 0 8px;
+    padding: 0px 15px;
+    width: 88px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.input_box .input_r .field11 .notice {
+    position: absolute;
+    top: 531px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #3E778A;
+}
+
+.input_box .input_r .field12 {
+    display: flex;
+    margin-top: 30px;
+    width: 565px;
+    height: 69px;
+    background-color: rebeccapurple;
+}
+
+.input_box .input_r .field12 p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+}
+
+.input_box .input_r .field012 .input {
+    display: inline-block;
+    margin-top: 24px;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 15px;
+    width: 455px;
+    height: 48px;
+    font-size: 16px;
+    color: #999;
+}
+
+.input_box .input_r .field12 a {
+    box-sizing: border-box;
+    margin: 24px 0 0 8px;
+    padding: 0px 15px;
+    width: 106px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #3E778A;
+    border-radius: 5px;
+    color: #3E778A;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+.local_agree_next {
+    position: absolute;
+    top: 922px;
     width: 1200px;
     height: 88px;
     border-top: 1px solid #ECECEC;
