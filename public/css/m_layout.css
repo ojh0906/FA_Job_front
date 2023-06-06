@@ -897,8 +897,7 @@
     position: absolute;
     margin-top: 85px;
     width: 1200px;
-    height: 647px;
-    background-color: aquamarine;
+    height: 650px;
 }
 
 .input_box .input_l{
@@ -1115,7 +1114,7 @@
     float: left;
     margin-left: 70px;
     width: 565px;
-    height: 557px;
+    height: 647px;
 }
 
 .input_box .input_r .field06 {
@@ -1294,7 +1293,6 @@
     margin-top: 30px;
     width: 565px;
     height: 96px;
-    background-color: yellowgreen;
 }
 
 .input_box .input_r .field11 p {
@@ -1304,7 +1302,7 @@
     color: #555;
 }
 
-.input_box .input_r .field011 input {
+.input_box .input_r .field11 input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1321,7 +1319,7 @@
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
-    width: 88px;
+    width: 85px;
     height: 48px;
     background: #FFFFFF;
     border: 1px solid #3E778A;
@@ -1345,7 +1343,6 @@
     margin-top: 30px;
     width: 565px;
     height: 69px;
-    background-color: rebeccapurple;
 }
 
 .input_box .input_r .field12 p {
@@ -1355,10 +1352,10 @@
     color: #555;
 }
 
-.input_box .input_r .field012 .input {
+.input_box .input_r .field12 input {
     display: inline-block;
     margin-top: 24px;
-    border: 1px solid #DDDDDD;
+    background-color: #EFEFEF;
     box-sizing: border-box;
     border-radius: 5px;
     padding: 0px 15px;
@@ -1371,8 +1368,8 @@
 .input_box .input_r .field12 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
-    padding: 0px 15px;
-    width: 106px;
+    padding: 0px 13px;
+    width: 102px;
     height: 48px;
     background: #FFFFFF;
     border: 1px solid #3E778A;

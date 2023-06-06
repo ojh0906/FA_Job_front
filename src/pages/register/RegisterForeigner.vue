@@ -107,7 +107,7 @@
                <div class="field12">
                    <p>외국인등록증</p>
                    <div class="field12_input">
-                       <input type="text" placeholder="주소입력">
+                       <input type="file" placeholder="">
                    </div>
                    <a href="#">파일 업로드</a>
                </div>
