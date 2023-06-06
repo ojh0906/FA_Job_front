@@ -6,6 +6,8 @@ import RegisterLocal from "/src/pages/register/RegisterLocal.vue";
 import RegisterForeigner from "/src/pages/register/RegisterForeigner.vue";
 import RegisterEnd from "/src/pages/register/RegisterEnd.vue";
 import RegisterEnd02 from "/src/pages/register/RegisterEnd02.vue";
+import RegisterStanby from "/src/pages/register/RegisterStanby.vue";
+
 
 const routes = [
     {
@@ -49,6 +51,12 @@ const routes = [
         name: "RegisterEnd02",
         component: RegisterEnd02,
         meta: { title: "외국인 회원가입완료" },
+    },
+    {
+        path: "/register/register-stanby",
+        name: "RegisterStanby",
+        component: RegisterStanby,
+        meta: { title: "외국인 회원가입대기" },
     },
 ]
 

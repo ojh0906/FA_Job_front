@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="local_section">
        <!--회원가입 순서-->
        <div class="join_header">
            <h3 class="join_bg">회원가입</h3>
@@ -11,7 +11,7 @@
            </ul>
        </div>
 
-       <div class="input_box">
+       <div class="local_input_box">
            <div class="input_l">
                <div class="field01">
                    <p>아이디</p>

@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="foreigner_section">
        <!--회원가입 순서-->
        <div class="join_header">
            <h3 class="join_bg">회원가입</h3>
@@ -11,7 +11,7 @@
            </ul>
        </div>
 
-       <div class="input_box">
+       <div class="foreigner_input_box">
            <div class="input_l">
                <div class="field01">
                    <p>아이디</p>
@@ -114,7 +114,7 @@
            </div>
        </div>
 
-       <div class="local_agree_next">
+       <div class="foreigner_agree_next">
                <div class="btn_prev"><a href="#">이전</a></div>
                <div class="btn_next"><a href="#">완료</a></div>
            </div>

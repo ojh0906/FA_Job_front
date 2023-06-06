@@ -1,7 +1,7 @@
 /*register type*/
 
 /*회원가입 구분 시작*/
-.section {
+.type_section {
     display: flex;
     position: relative;
     margin: 0 auto;
@@ -123,13 +123,13 @@
 
 
 /*약관동의 시작*/
-.section {
+.agree_section {
     display: flex;
     position: relative;
     margin: 0 auto;
     padding-top: 150px;
     width: 1200px;
-    height: 550px;
+    height: 619px;
 }
 
 .join_header {
@@ -198,16 +198,17 @@
 .agree_box01 .title .h3 {
     display: inline-block;
     float: left;
+    padding: 3px 0;
     width: 525px;
     margin-left: 8px;
     font-size: 16px;
     color: #555555;
 }
 
-.agree_box01 .title .dropdown {
+.agree_box01 .title .dropdown a {
     float: left;
     margin-left: 8px;
-    vertical-align: middle;
+    padding: 5px 0;
 }
 
 
@@ -259,16 +260,17 @@
 .agree_box02 .title .h3 {
     display: inline-block;
     float: left;
+    padding: 3px 0;
     width: 525px;
     margin-left: 8px;
     font-size: 16px;
     color: #555555;
 }
 
-.agree_box02 .title .dropdown {
+.agree_box02 .title .dropdown a {
     float: left;
     margin-left: 8px;
-    vertical-align: middle;
+    padding: 5px 0;
 }
 
 .agree_box03 {
@@ -294,6 +296,7 @@
 
 .agree_box03 .title .h3 {
     display: inline-block;
+    padding: 3px 0;
     float: left;
     width: 525px;
     margin-left: 8px;
@@ -301,10 +304,10 @@
     color: #555555;
 }
 
-.agree_box03 .title .dropdown {
+.agree_box03 .title .dropdown a{
     float: left;
     margin-left: 8px;
-    vertical-align: middle;
+    padding: 5px 0;
 }
 
 .agree_box04 {
@@ -331,6 +334,7 @@
 
 .agree_box04 .title .h3 {
     display: inline-block;
+    padding: 3px 0;
     float: left;
     width: 525px;
     margin-left: 8px;
@@ -341,7 +345,7 @@
 .agree_next {
     margin: 40px 0 auto;
     width: 1200px;
-    height: 88px;
+    height: 58px;
     border-top: 1px solid #ECECEC;
     padding-top: 30px;
 }
@@ -365,13 +369,13 @@
 
 
 /*내국인정보입력 시작*/
-.section {
+.local_section {
     display: flex;
     position: relative;
     margin: 0 auto;
     padding-top: 150px;
     width: 1200px;
-    height: 980px;
+    height: 830px;
 }
 
 .join_header {
@@ -410,33 +414,33 @@
     color: #3E778A;
 }
 
-.input_box{
+.local_input_box{
     position: absolute;
     margin-top: 85px;
     width: 1200px;
     height: 557px;
 }
 
-.input_box .input_l{
+.local_input_box .input_l{
     float: left;
     width: 565px;
     height: 557px;
 }
 
-.input_box .input_l .field01 {
+.local_input_box .input_l .field01 {
     display: flex;
     width: 565px;
     height: 101px;
 }
 
-.input_box .input_l .field01 p {
+.local_input_box .input_l .field01 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field01_input input {
+.local_input_box .input_l .field01_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -449,12 +453,12 @@
     color: #999;
 }
 
-.input_box .input_l .field01_input span {
+.local_input_box .input_l .field01_input span {
      vertical-align: middle;
      margin: 0 8px;
 }
 
-.input_box .input_l .field01_input select {
+.local_input_box .input_l .field01_input select {
     top: 24px;
     padding: 0px 15px;
     box-sizing: border-box;
@@ -465,7 +469,7 @@
     border-radius: 5px;
 }
 
-.input_box .input_l .field01 a {
+.local_input_box .input_l .field01 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -480,7 +484,7 @@
     line-height: 45px;
 }
 
-.input_box .input_l .field01 .notice {
+.local_input_box .input_l .field01 .notice {
     position: absolute;
     top: 84px;
     font-weight: 400;
@@ -488,21 +492,21 @@
     color: #3E778A;
 }
 
-.input_box .input_l .field02 {
+.local_input_box .input_l .field02 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 96px;
 }
 
-.input_box .input_l .field02 p {
+.local_input_box .input_l .field02 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field02_input input {
+.local_input_box .input_l .field02_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -515,7 +519,7 @@
     color: #999;
 }
 
-.input_box .input_l .field02 a {
+.local_input_box .input_l .field02 a {
     box-sizing: border-box;
     margin: 26px 0 0 8px;
     padding: 0px 15px;
@@ -530,7 +534,7 @@
     line-height: 45px;
 }
 
-.input_box .input_l .field02 .notice {
+.local_input_box .input_l .field02 .notice {
     position: absolute;
     top: 210px;
     font-weight: 400;
@@ -538,21 +542,21 @@
     color: #3E778A;
 }
 
-.input_box .input_l .field03 {
+.local_input_box .input_l .field03 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 69px;
 }
 
-.input_box .input_l .field03 p {
+.local_input_box .input_l .field03 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field03 .field03_input input{
+.local_input_box .input_l .field03 .field03_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -565,21 +569,21 @@
     color: #999;
 }
 
-.input_box .input_l .field04 {
+.local_input_box .input_l .field04 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 99px;
 }
 
-.input_box .input_l .field04 p {
+.local_input_box .input_l .field04 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field04 .field04_input input{
+.local_input_box .input_l .field04 .field04_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -592,7 +596,7 @@
     color: #999;
 }
 
-.input_box .input_l .field04 .notice {
+.local_input_box .input_l .field04 .notice {
     position: absolute;
     top: 438px;
     font-weight: 400;
@@ -600,21 +604,21 @@
     color: #ff6565;
 }
 
-.input_box .input_l .field05 {
+.local_input_box .input_l .field05 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 72px;
 }
 
-.input_box .input_l .field05 p {
+.local_input_box .input_l .field05 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field05 .field05_input input{
+.local_input_box .input_l .field05 .field05_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -627,27 +631,27 @@
     color: #999;
 }
 
-.input_box .input_r{
+.local_input_box .input_r{
     float: left;
     margin-left: 70px;
     width: 565px;
     height: 557px;
 }
 
-.input_box .input_r .field06 {
+.local_input_box .input_r .field06 {
     display: flex;
     width: 565px;
     height: 72px;
 }
 
-.input_box .input_r .field06 p {
+.local_input_box .input_r .field06 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field06 .field06_input input{
+.local_input_box .input_r .field06 .field06_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -660,7 +664,7 @@
     color: #999;
 }
 
-.input_box .input_r .field07 {
+.local_input_box .input_r .field07 {
     display: flex;
     margin-top: 30px;
     width: 436px;
@@ -668,14 +672,14 @@
 
 }
 
-.input_box .input_r .field07 p {
+.local_input_box .input_r .field07 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field07_input input {
+.local_input_box .input_r .field07_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -688,7 +692,7 @@
     color: #999;
 }
 
-.input_box .input_r .field07 a {
+.local_input_box .input_r .field07 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -703,7 +707,7 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field07 .notice {
+.local_input_box .input_r .field07 .notice {
     position: absolute;
     top: 181px;
     font-weight: 400;
@@ -711,14 +715,14 @@
     color: #777;
 }
 
-.input_box .input_r .field08 {
+.local_input_box .input_r .field08 {
     display: flex;
     margin-top: 18px;
     width: 565px;
     height: 48px;
 }
 
-.input_box .input_r .field08_input input {
+.local_input_box .input_r .field08_input input {
     display: inline-block;
     border: 1px solid #DDDDDD;
     box-sizing: border-box;
@@ -730,7 +734,7 @@
     color: #999;
 }
 
-.input_box .input_r .field08 a {
+.local_input_box .input_r .field08 a {
     box-sizing: border-box;
     margin-left: 8px;
     padding: 0px 15px;
@@ -744,7 +748,7 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field09 {
+.local_input_box .input_r .field09 {
     display: flex;
     margin-top: 30px;
     width: 565px;
@@ -752,14 +756,14 @@
 
 }
 
-.input_box .input_r .field09 p {
+.local_input_box .input_r .field09 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field09_input input {
+.local_input_box .input_r .field09_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -772,7 +776,7 @@
     color: #999;
 }
 
-.input_box .input_r .field09 a {
+.local_input_box .input_r .field09 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -787,13 +791,13 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field10 {
+.local_input_box .input_r .field10 {
     display: flex;
     width: 565px;
     height: 48px;
 }
 
-.input_box .input_r .field10_input input {
+.local_input_box .input_r .field10_input input {
     display: inline-block;
     border: 1px solid #DDDDDD;
     box-sizing: border-box;
@@ -809,7 +813,7 @@
     position: absolute;
     top: 832px;
     width: 1200px;
-    height: 88px;
+    height: 58px;
     border-top: 1px solid #ECECEC;
     padding-top: 30px;
 }
@@ -819,7 +823,7 @@
     box-sizing: border-box;
     width: 200px;
     height: 58px;
-    padding: 16px 86px;
+    padding: 19px 86px;
     margin-left: 380px;
     background: #fff;
     border: 1px solid #BBBBBB;
@@ -849,13 +853,13 @@
 
 
 /*외국인정보입력 시작*/
-.section {
+.foreigner_section {
     display: flex;
     position: relative;
     margin: 0 auto;
     padding-top: 150px;
     width: 1200px;
-    height: 980px;
+    height: 920px;
 }
 
 .join_header {
@@ -894,33 +898,33 @@
     color: #3E778A;
 }
 
-.input_box{
+.foreigner_input_box{
     position: absolute;
     margin-top: 85px;
     width: 1200px;
     height: 650px;
 }
 
-.input_box .input_l{
+.foreigner_input_box .input_l{
     float: left;
     width: 565px;
     height: 557px;
 }
 
-.input_box .input_l .field01 {
+.foreigner_input_box .input_l .field01 {
     display: flex;
     width: 565px;
     height: 101px;
 }
 
-.input_box .input_l .field01 p {
+.foreigner_input_box .input_l .field01 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field01_input input {
+.foreigner_input_box .input_l .field01_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -933,12 +937,12 @@
     color: #999;
 }
 
-.input_box .input_l .field01_input span {
+.foreigner_input_box .input_l .field01_input span {
      vertical-align: middle;
      margin: 0 8px;
 }
 
-.input_box .input_l .field01_input select {
+.foreigner_input_box .input_l .field01_input select {
     top: 24px;
     padding: 0px 15px;
     box-sizing: border-box;
@@ -949,7 +953,7 @@
     border-radius: 5px;
 }
 
-.input_box .input_l .field01 a {
+.foreigner_input_box .input_l .field01 a {
     box-sizing: border-box;
     margin: 26px 0 0 8px;
     padding: 0px 15px;
@@ -964,7 +968,7 @@
     line-height: 45px;
 }
 
-.input_box .input_l .field01 .notice {
+.foreigner_input_box .input_l .field01 .notice {
     position: absolute;
     top: 84px;
     font-weight: 400;
@@ -972,21 +976,21 @@
     color: #3E778A;
 }
 
-.input_box .input_l .field02 {
+.foreigner_input_box .input_l .field02 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 96px;
 }
 
-.input_box .input_l .field02 p {
+.foreigner_input_box .input_l .field02 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field02_input input {
+.foreigner_input_box .input_l .field02_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -999,7 +1003,7 @@
     color: #999;
 }
 
-.input_box .input_l .field02 a {
+.foreigner_input_box .input_l .field02 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -1014,7 +1018,7 @@
     line-height: 45px;
 }
 
-.input_box .input_l .field02 .notice {
+.foreigner_input_box .input_l .field02 .notice {
     position: absolute;
     top: 210px;
     font-weight: 400;
@@ -1022,21 +1026,21 @@
     color: #3E778A;
 }
 
-.input_box .input_l .field03 {
+.foreigner_input_box .input_l .field03 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 69px;
 }
 
-.input_box .input_l .field03 p {
+.foreigner_input_box .input_l .field03 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field03 .field03_input input{
+.foreigner_input_box .input_l .field03 .field03_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1049,21 +1053,21 @@
     color: #999;
 }
 
-.input_box .input_l .field04 {
+.foreigner_input_box .input_l .field04 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 99px;
 }
 
-.input_box .input_l .field04 p {
+.foreigner_input_box .input_l .field04 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field04 .field04_input input{
+.foreigner_input_box .input_l .field04 .field04_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1076,7 +1080,7 @@
     color: #999;
 }
 
-.input_box .input_l .field04 .notice {
+.foreigner_input_box .input_l .field04 .notice {
     position: absolute;
     top: 438px;
     font-weight: 400;
@@ -1084,21 +1088,21 @@
     color: #ff6565;
 }
 
-.input_box .input_l .field05 {
+.foreigner_input_box .input_l .field05 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 72px;
 }
 
-.input_box .input_l .field05 p {
+.foreigner_input_box .input_l .field05 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_l .field05 .field05_input input{
+.foreigner_input_box .input_l .field05 .field05_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1111,27 +1115,27 @@
     color: #999;
 }
 
-.input_box .input_r{
+.foreigner_input_box .input_r{
     float: left;
     margin-left: 70px;
     width: 565px;
     height: 647px;
 }
 
-.input_box .input_r .field06 {
+.foreigner_input_box .input_r .field06 {
     display: flex;
     width: 565px;
     height: 72px;
 }
 
-.input_box .input_r .field06 p {
+.foreigner_input_box .input_r .field06 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field06 .field06_input input{
+.foreigner_input_box .input_r .field06 .field06_input input{
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1144,7 +1148,7 @@
     color: #999;
 }
 
-.input_box .input_r .field07 {
+.foreigner_input_box .input_r .field07 {
     display: flex;
     margin-top: 30px;
     width: 436px;
@@ -1152,14 +1156,14 @@
 
 }
 
-.input_box .input_r .field07 p {
+.foreigner_input_box .input_r .field07 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field07_input input {
+.foreigner_input_box .input_r .field07_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1172,7 +1176,7 @@
     color: #999;
 }
 
-.input_box .input_r .field07 a {
+.foreigner_input_box .input_r .field07 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -1187,7 +1191,7 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field07 .notice {
+.foreigner_input_box .input_r .field07 .notice {
     position: absolute;
     top: 181px;
     font-weight: 400;
@@ -1195,14 +1199,14 @@
     color: #777;
 }
 
-.input_box .input_r .field08 {
+.foreigner_input_box .input_r .field08 {
     display: flex;
     margin-top: 18px;
     width: 565px;
     height: 48px;
 }
 
-.input_box .input_r .field08_input input {
+.foreigner_input_box .input_r .field08_input input {
     display: inline-block;
     border: 1px solid #DDDDDD;
     box-sizing: border-box;
@@ -1214,7 +1218,7 @@
     color: #999;
 }
 
-.input_box .input_r .field08 a {
+.foreigner_input_box .input_r .field08 a {
     box-sizing: border-box;
     margin-left: 8px;
     padding: 0px 15px;
@@ -1228,7 +1232,7 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field09 {
+.foreigner_input_box .input_r .field09 {
     display: flex;
     margin-top: 30px;
     width: 565px;
@@ -1236,14 +1240,14 @@
 
 }
 
-.input_box .input_r .field09 p {
+.foreigner_input_box .input_r .field09 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field09_input input {
+.foreigner_input_box .input_r .field09_input input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1256,7 +1260,7 @@
     color: #999;
 }
 
-.input_box .input_r .field09 a {
+.foreigner_input_box .input_r .field09 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -1271,13 +1275,13 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field10 {
+.foreigner_input_box .input_r .field10 {
     display: flex;
     width: 565px;
     height: 48px;
 }
 
-.input_box .input_r .field10_input input {
+.foreigner_input_box .input_r .field10_input input {
     display: inline-block;
     border: 1px solid #DDDDDD;
     box-sizing: border-box;
@@ -1289,21 +1293,21 @@
     color: #999;
 }
 
-.input_box .input_r .field11 {
+.foreigner_input_box .input_r .field11 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 96px;
 }
 
-.input_box .input_r .field11 p {
+.foreigner_input_box .input_r .field11 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field11 input {
+.foreigner_input_box .input_r .field11 input {
     display: inline-block;
     margin-top: 24px;
     border: 1px solid #DDDDDD;
@@ -1316,7 +1320,7 @@
     color: #999;
 }
 
-.input_box .input_r .field11 a {
+.foreigner_input_box .input_r .field11 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 15px;
@@ -1331,7 +1335,7 @@
     line-height: 45px;
 }
 
-.input_box .input_r .field11 .notice {
+.foreigner_input_box .input_r .field11 .notice {
     position: absolute;
     top: 531px;
     font-weight: 400;
@@ -1339,21 +1343,21 @@
     color: #3E778A;
 }
 
-.input_box .input_r .field12 {
+.foreigner_input_box .input_r .field12 {
     display: flex;
     margin-top: 30px;
     width: 565px;
     height: 69px;
 }
 
-.input_box .input_r .field12 p {
+.foreigner_input_box .input_r .field12 p {
     position: absolute;
     font-weight: 400;
     font-size: 14px;
     color: #555;
 }
 
-.input_box .input_r .field12 input {
+.foreigner_input_box .input_r .field12 input {
     display: inline-block;
     margin-top: 24px;
     background-color: #EFEFEF;
@@ -1366,7 +1370,7 @@
     color: #999;
 }
 
-.input_box .input_r .field12 a {
+.foreigner_input_box .input_r .field12 a {
     box-sizing: border-box;
     margin: 24px 0 0 8px;
     padding: 0px 13px;
@@ -1381,16 +1385,16 @@
     line-height: 45px;
 }
 
-.local_agree_next {
+.foreigner_agree_next {
     position: absolute;
     top: 922px;
     width: 1200px;
-    height: 88px;
+    height: 58px;
     border-top: 1px solid #ECECEC;
     padding-top: 30px;
 }
 
-.local_agree_next .btn_prev a {
+.foreigner_agree_next .btn_prev a {
     float: left;
     box-sizing: border-box;
     width: 200px;
@@ -1405,11 +1409,11 @@
     color: #777;
 }
 
-.local_agree_next .btn_next a {
+.foreigner_agree_next .btn_next a {
     float: right;
     box-sizing: border-box;
     margin-right: 380px;
-    padding: 16px 86px;
+    padding: 19px 86px;
     width: 200px;
     height: 58px;
     align-items: center;
@@ -1426,7 +1430,7 @@
 
 
 /*내국인 회원가입완료 시작*/
-.section {
+.end_section {
     display: flex;
     position: relative;
     margin: 0 auto;
@@ -1471,35 +1475,35 @@
     color: #3E778A;
 }
 
-.input_box{
+.end_input_box{
     position: absolute;
     margin-top: 85px;
     width: 1200px;
     height: 234px;
 }
 
-.input_box .check{
+.end_input_box .check{
     text-align: center;
     margin-top: 44px;
 }
 
 
-.input_box p{
+.end_input_box p{
     text-align: center;
     margin-top: 34px;
     font-size: 20px;
 }
 
-.next_bnt {
+.end_btn {
     position: absolute;
     top: 509px;
     width: 1200px;
-    height: 88px;
+    height: 58px;
     border-top: 1px solid #ECECEC;
     padding-top: 30px;
 }
 
-.next_bnt .btn_01 a {
+.end_btn .btn_01 a {
     float: left;
     display: flex;
     text-align: center;
@@ -1517,7 +1521,7 @@
     color: #777;
 }
 
-.next_bnt .btn_02 a {
+.end_btn .btn_02 a {
     float: right;
     display: flex;
     text-align: center;
@@ -1538,7 +1542,7 @@
 
 
 /*외국인 회원가입완료 시작*/
-.section {
+.end02_section {
     display: flex;
     position: relative;
     margin: 0 auto;
@@ -1583,47 +1587,47 @@
     color: #3E778A;
 }
 
-.input_box{
+.end02_input_box{
     position: absolute;
     margin-top: 85px;
     width: 1200px;
     height: 302px;
 }
 
-.input_box .check{
+.end02_input_box .check{
     text-align: center;
     margin-top: 44px;
 }
 
 
-.input_box p{
+.end02_input_box p{
     text-align: center;
     margin-top: 34px;
     font-size: 20px;
 }
 
-.input_box .txt02{
+.end02_input_box .txt02{
     text-align: center;
     margin-top: 30px;
     font-size: 16px;
 }
 
-.next_btn {
+.end_next_btn {
     position: absolute;
     text-align: center;
     top: 577px;
     width: 1200px;
-    height: 88px;
+    height: 58px;
     border-top: 1px solid #ECECEC;
     padding-top: 30px;
 }
 
-.next_btn a {
+.end_next_btn a {
     display: inline;
     box-sizing: border-box;
     width: 200px;
     height: 58px;
-    padding: 16px 92px;
+    padding: 19px 92px;
     line-height: 58px;
     background: #fff;
     border: 1px solid #BBBBBB;
@@ -1633,3 +1637,95 @@
     color: #777;
 }
 /*외국인 회원가입완료 끝*/
+
+
+
+/*외국인 회원가입대기 시작*/
+.stanby_section {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 1200px;
+    height: 507px;
+}
+
+.join_header {
+    float: left;
+    width: 600px;
+    height: 45px;
+}
+
+.join_header .join_bg {
+    float: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.join_header .join_step {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
+
+.join_header .join_step > li {
+    float: left;
+    margin-left: 25px;
+    font-weight: 300;
+    font: 14px;
+    vertical-align: middle;
+    color: #777;
+}
+
+.join_header .join_step > li:nth-last-child() {
+    margin-right: 0px;
+}
+
+.join_header .join_step .join_step_04_on {
+    font-weight: 700;
+    color: #3E778A;
+}
+
+.stanby_input_box{
+    position: absolute;
+    margin-top: 85px;
+    width: 1200px;
+    height: 234px;
+}
+
+.stanby_input_box .check{
+    text-align: center;
+    margin-top: 44px;
+}
+
+.stanby_input_box p{
+    text-align: center;
+    margin-top: 34px;
+    font-size: 20px;
+}
+
+.stanby_next_btn {
+    position: absolute;
+    text-align: center;
+    top: 509px;
+    width: 1200px;
+    height: 58px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 30px;
+}
+
+.stanby_next_btn a {
+    display: inline;
+    box-sizing: border-box;
+    width: 200px;
+    height: 58px;
+    padding: 19px 92px;
+    line-height: 58px;
+    background: #fff;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #777;
+}
+/*외국인 회원가입대기 끝*/

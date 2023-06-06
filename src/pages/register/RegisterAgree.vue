@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="agree_section">
         <!--회원가입 순서-->
         <div class="join_header">
             <h3 class="join_bg">회원가입</h3>

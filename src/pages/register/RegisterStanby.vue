@@ -1,5 +1,5 @@
 <template>
-    <div class="end02_section">
+    <div class="stanby_section">
        <!--회원가입 순서-->
        <div class="join_header">
            <h3 class="join_bg">회원가입</h3>
@@ -11,17 +11,14 @@
            </ul>
        </div>
 
-        <div class="end02_input_box">
-            <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
+        <div class="stanby_input_box">
+            <div class="check"><img src="/image/register/Typing.png" alt="대기이미지입니다."></div>
             <p>
-                <strong class="bold">닉네임</strong> 님의 가입을 감사드립니다.
+                <strong class="bold">관리자 승인 대기 중입니다.</strong>
             </p>
-
-            <p class="txt02">관리자 승인 후 활동하실 수 있습니다.<br>
-            알림을 통해 승인 여부를 확인하실 수 있습니다.</p>
         </div>
 
-        <div class="end_next_btn">
+        <div class="stanby_next_btn">
             <div><a href="#">홈</a></div>
        </div>
     
