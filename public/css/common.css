@@ -1,180 +1,368 @@
 /*  common  */
-body{
-    min-width: 1300px;
+
+#app {
+  position: relative;
 }
-#container{
-    min-height: 700px;
+
+#container {
+  position: relative;
+  padding: 60px 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 90px auto 0 auto;
+  min-height: calc(100% - 280px);
+  height: 100%;
 }
 /* Header */
-header{
-    position: fixed;
-    width: 100%;
-    border-bottom: 1px solid rgba(159, 190, 197, 0.5);
+header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  border-bottom: 1px solid rgba(159, 190, 197, 0.5);
+  top: 0;
+  background-color: #fff;
+  z-index: 20;
 }
-#header{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    align-items: center;
-    min-width: 1200px;
-    max-width: 1200px;
-}
-#header .logo-wrap{
-    width: 195px;
-}
-#header .logo-wrap img{
-    max-width: 195px;
-    width: 100%;
-}
-#header .gnb-wrap{
-    width: calc(100% - 385px);
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-#header .gnb-wrap .menu-wrap{
-    position: relative;
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-#header .gnb-wrap .menu-wrap a{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    color: #333333;
-    font-family: 'Pretendard' !important;
-}
-#header .gnb-wrap .menu-wrap:hover .submenu{
-    display: block;
-}
-#header .gnb-wrap .menu-wrap .submenu{
-    position: absolute;
-    top: 70px;
-    left: -50%;
-    text-align: center;
-    background: #FFFFFF;
-    border: 1px solid rgba(159, 190, 197, 0.5);
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    width: 120px;
-    display: none;
-}
-#header .gnb-wrap .menu-wrap .submenu a{
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    color: #333333;
-    padding: 15px 0;
-    display: block;
-}
-#header .gnb-wrap .menu-wrap .submenu a:hover{
-    background: #E2EEF0;
-}
-#header .side-wrap{
-    width: 190px;
-}
-#header .side-wrap a{
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    color: #777777;
-    font-family: 'Pretendard' !important;
-    position: relative;
-}
-#header .side-wrap a:nth-last-child(1){
-    margin-left: 24px;
-}
-#header .side-wrap a:nth-last-child(1):after{
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 14px;
-    left: -14px;
-    background: #ddd;
-    top: 0;
+#header {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
 }
 
-
-
+#header .logo-wrap img {
+  max-width: 192px;
+  width: 100%;
+}
+#header .gnb-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+#header .gnb-wrap .menu-wrap {
+  position: relative;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+#header .gnb-wrap .menu-wrap a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  font-family: "Pretendard" !important;
+}
+#header .gnb-wrap .menu-wrap:hover .submenu {
+  display: block;
+}
+#header .gnb-wrap .menu-wrap .submenu {
+  position: absolute;
+  top: 70px;
+  left: -50%;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(159, 190, 197, 0.5);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 120px;
+  display: none;
+}
+#header .gnb-wrap .menu-wrap .submenu a {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  padding: 15px 0;
+  display: block;
+}
+#header .gnb-wrap .menu-wrap .submenu a:hover {
+  background: #e2eef0;
+}
+#header .side-wrap {
+  display: flex;
+  justify-content: end;
+}
+#header .side-wrap a {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #777777;
+  font-family: "Pretendard" !important;
+  position: relative;
+}
+#header .side-wrap a:nth-last-child(1) {
+  margin-left: 24px;
+}
+#header .side-wrap a:nth-last-child(1):after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 14px;
+  left: -14px;
+  background: #ddd;
+  top: 0;
+}
 
 /*  Footer  */
-footer{
-    background: #FAFAFC;
-    border-top: 1px solid #DDDDDD;
-    width: 100%;
+footer {
+  background: #fafafc;
+  border-top: 1px solid #dddddd;
+  width: 100%;
 }
-#footer{
-    display: flex;
-    justify-content: flex-start;
-    gap: 64px;
-    align-items: flex-start;
-    width: 90%;
-    padding: 40px 0;
-    margin: 0 auto;
-    min-width: 1200px;
-    max-width: 1200px;
+#footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 64px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 40px 0;
+  margin: 0 auto;
+  max-width: 1200px;
 }
-#footer .logo-wrap{
-    width: 205px;
+#footer .logo-wrap {
+  width: 205px;
 }
-#footer .logo-wrap img{
-    width: 100%;
+#footer .logo-wrap img {
+  width: 100%;
 }
-#footer .info-wrap{
-    width: calc(100% - 245px);
+#footer .info-wrap {
+  width: calc(100% - 245px);
+}
+#footer .info-wrap .sitemap {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+#footer .info-wrap .sitemap .link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  font-family: "Pretendard" !important;
+  color: #666666;
+}
+#footer .info-wrap .sitemap .link:hover {
+  color: #70bab5;
+  font-weight: 700;
+}
+#footer .info-wrap .line {
+  margin-bottom: 3px;
+}
+#footer .info-wrap .line span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Pretendard" !important;
+  color: #666666;
+  position: relative;
+}
+#footer .info-wrap .line span:nth-child(1) {
+  margin-right: 16px;
+}
+#footer .info-wrap .line span:nth-child(1):before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -8px;
+  width: 2px;
+  height: 14px;
+  background: #ddd;
+}
+#footer .info-wrap .line strong {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Pretendard" !important;
+  color: #666666;
+  margin-right: 10px;
+}
 
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* 공통 CSS */
+input[type="checkbox"] {
+  accent-color: #3e778a;
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  margin: 0;
 }
-#footer .info-wrap .sitemap{
-    display: flex;
-    gap: 40px;
-    margin-bottom: 30px;
-}
-#footer .info-wrap .sitemap .link{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-    font-family: 'Pretendard' !important;
-    color: #666666;
-}
-#footer .info-wrap .sitemap .link:hover{
-    color: #70BAB5;
-    font-weight: 700;
-}
-#footer .info-wrap .line{
-    margin-bottom: 3px;
-}
-#footer .info-wrap .line span{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    font-family: 'Pretendard' !important;
-    color: #666666;
-    position: relative;
-}
-#footer .info-wrap .line span:nth-child(1){
-    margin-right: 16px;
-}
-#footer .info-wrap .line span:nth-child(1):before{
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: -8px;
-    width: 2px;
-    height: 14px;
-    background: #ddd;
 
+/* 
+공통 버튼
+예시) <div class="btn btn1">
+- btn 클래스는 필수
+- padding값 별도
+*/
+
+/* 가장 진한 파랑색 버튼 */
+.btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
 }
-#footer .info-wrap .line strong{
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-    font-family: 'Pretendard' !important;
-    color: #666666;
-    margin-right: 10px;
+.btn1 {
+  background: #3e778a;
+}
+.btn1:hover {
+  background: #245e72;
+}
+
+.btn2 {
+  background: #dee6e9;
+  color: #3e778a !important;
+}
+.btn2:hover {
+  background: #d3e1e5;
+}
+
+.btn3 {
+  background: transparent;
+  border: 1px solid #3e778a;
+  color: #3e778a !important;
+}
+.btn3:hover {
+  background: #e9f1f4;
+}
+
+.btn4 {
+  background: transparent;
+  border: 1px solid #bbbbbb;
+  color: #777777 !important;
+}
+.btn4:hover {
+  background: #f5f5f5;
+}
+
+/* 
+공통 태그 버튼
+예시) <div class="tag tag-click">
+- tag 클래스는 필수
+- 태그 선택 시 클래스 tag-click 추가
+- 별도 설정 없음
+*/
+.tag {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  padding: 5px 20px 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag:hover {
+  background: #f5f5f5;
+}
+
+.tag-click {
+  background: #70bab5 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* 
+수정/삭제 버튼
+예시) <div class="delete-btn">
+- 별도 설정 없음
+*/
+.delete-btn,
+.modify-btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #555555;
+  padding: 7px 15px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 101, 101, 0.15);
+  border: 1px solid #ff6565;
+}
+
+.modify-btn:hover {
+  background: #e2eef0;
+  border: 1px solid #3e778a;
+}
+
+/* 디데이 버튼 */
+.day-btn {
+  background: #ff6565;
+  border-radius: 4px;
+  padding: 3px 8px 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+}
+
+/* 판매중 버튼 */
+.sale-btn {
+  background: #ffffff;
+  border: 1px solid #ff6565;
+  border-radius: 4px;
+  padding: 2px 8px 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ff6565;
+}
+/* 판매 종료 버튼 */
+.sale-end-btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+
+  color: #999999;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 2px 8px 4px;
+}
+
+/* 
+입력창
+예시) 
+<div>
+    <p class="title-input">입력창</p>
+    <input class="text-input" type="text" />
+</div>
+- 별도 설정 없음
+ */
+.title-input {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.text-input {
+  font-family: "Noto Sans Korean";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #999999;
+  width: 100%;
+  padding: 13px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-top: 12px;
 }
