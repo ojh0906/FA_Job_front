@@ -3,9 +3,8 @@
   display: flex;
   position: relative;
   margin: 0 auto;
-  padding-top: 150px;
   width: 1200px;
-  height: 507px;
+  height: 923px;
 }
 
 .title_header {
@@ -84,7 +83,6 @@
   float: left;
   width: 890px;
   height: 827px;
-  background-color: yellowgreen;
 }
 
 .box_r_header {
@@ -110,5 +108,128 @@
   float: left;
   width: 890px;
   height: 35px;
-  background-color: #70bab5;
+}
+
+.box_r .tap_list .btn01 {
+  float: left;
+  margin-right: 10px;
+  padding: 8px 20px;
+}
+
+.box_r .tap_list .btn6 {
+  float: left;
+  margin-right: 10px;
+  padding: 8px 20px;
+}
+
+.t_table{
+  float: left;
+  width: 890px;
+}
+
+.t_table .th_01{
+  text-align: center;
+  vertical-align: middle;
+  width: 78px;
+  height: 56px;
+}
+
+.t_table .th_02{
+  text-align: center;
+  vertical-align: middle;
+  width: 392px;
+  height: 56px;
+}
+
+.t_table .th_03{
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  height: 56px;
+}
+
+.t_table .th_04{
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
+  height: 56px;
+}
+
+.t_table .th_05{
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  height: 56px;
+}
+
+.t_table .th_06{
+  text-align: center;
+  vertical-align: middle;
+  width: 80px;
+  height: 56px;
+}
+
+.t_table .td_01{
+  text-align: center;
+  width: 78px;
+  height: 56px;
+}
+
+.t_table .td_02{
+  width: 392px;
+  height: 56px;
+}
+
+.t_table .td_03{
+  text-align: center;
+  width: 120px;
+}
+
+.t_table .td_04{
+  text-align: center;
+  width: 100px;
+}
+
+.t_table .td_05{
+  text-align: center;
+  width: 120px;
+}
+
+.t_table .td_06{
+  text-align: center;
+  width: 80px;
+}
+
+.row{
+  margin-top: 20px;
+  width: 890px;
+  height: 48px;
+}
+
+.row .text-input{
+  float: left;
+  margin-top: 0px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #CDDCE1;
+  border-radius: 4px;
+}
+
+.row .text-input p{
+  float: left;
+  color: #BBBBBB;
+}
+
+.row .text-input img{
+  float: right;
+  margin-right: 10px;
+}
+
+.row .btn01 {
+  float: right;
+  padding: 13px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
 }

@@ -244,6 +244,22 @@ input[type="checkbox"] {
   background: #f5f5f5;
 }
 
+.btn5 {
+  border-radius: 24px;
+  background: #70BAB5;
+  color: #fff !important;
+}
+
+.btn6 {
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #DDDDDD;
+  color: #999999 !important;
+}
+.btn6:hover {
+  background: #F5F5F5;
+}
+
 /* 
 공통 태그 버튼
 예시) <div class="tag tag-click">
@@ -366,3 +382,65 @@ input[type="checkbox"] {
   border-radius: 5px;
   margin-top: 12px;
 }
+
+
+/* 테이블
+- padding값 별도
+ */
+
+ .t_table{
+  margin-top: 20px;
+ }
+ .t_title{
+  width: 890px;
+  height: 56px;
+  background: #E2EEF0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  vertical-align: middle;
+  color: #333333;
+ }
+ .t_tr:hover {
+  background: #F1F7F7;
+ }
+ .t_tr{
+  float: left;
+  width: 890px;
+  height: 56px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #ECECEC;
+ }
+ .t_td{
+  float: left;
+  padding-top: 16px;
+  font-size: 16px;
+  color: #555555;
+ }
+.t_td span {
+ margin-left: 10px;
+ color: #70BAB5;
+}
+
+
+
+/* 페이지네이션
+ */
+.pagination{
+  display: flex;
+  justify-content: center;
+  width: 890px;
+  height: 24px;
+  padding-top: 20px;
+ }
+
+.pagination a{
+  text-align: center;
+  width: 24px;
+  margin-right: 10px;
+ }
+
+ .pagination a:last-child{
+  margin-right: 0px;
+ }
