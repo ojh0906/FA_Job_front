@@ -1,5 +1,5 @@
 <template>
-    <div class="agree_section" @click="clickSelect">
+    <div id="register_section" @click="clickSelect">
         <!-- 회원가입 헤더 -->
         <RegisterHeader step="2" />
 

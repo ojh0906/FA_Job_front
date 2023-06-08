@@ -11,11 +11,19 @@
 }
 
 .join_member {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.join_member .title {
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  width: 1200px;
-  height: 311px;
-  top: 235px;
+  color: #333333;
 }
 
 .join_member li {
@@ -84,7 +92,7 @@
 /*회원가입 구분 끝*/
 
 /*약관동의 시작*/
-.agree_section {
+#register_section {
   display: flex;
   position: relative;
   flex-wrap: wrap;

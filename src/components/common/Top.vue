@@ -35,8 +35,11 @@
         </div>
       </div>
       <div class="side-wrap">
-        <a>마이페이지</a>
-        <a>로그아웃</a>
+        <router-link :to="{ name: 'RegisterType', query: {} }">
+          회원가입
+        </router-link>
+        <!-- <a>마이페이지</a> -->
+        <!-- <a>로그아웃</a> -->
       </div>
     </div>
   </header>
