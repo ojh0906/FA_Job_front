@@ -355,35 +355,6 @@ input[type="checkbox"] {
   padding: 2px 8px 4px;
 }
 
-/* 
-입력창
-예시) 
-<div>
-    <p class="title-input">입력창</p>
-    <input class="text-input" type="text" />
-</div>
-- 별도 설정 없음
- */
-.title-input {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #000000;
-}
-.text-input {
-  font-family: "Noto Sans Korean";
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #999999;
-  width: 100%;
-  padding: 13px 10px;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  margin-top: 12px;
-}
-
-
 /* 테이블
 - padding값 별도
  */
