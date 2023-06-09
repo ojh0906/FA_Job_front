@@ -146,8 +146,10 @@
         </div>
 
         <div class="next">
-            <div class="btn btn4">이전</div>
-            <div class="btn btn1">완료</div>
+            <div class="btn btn4" @click="$router.go(-1)">이전</div>
+            <router-link :to="{ name: 'RegisterEnd' }">
+                <div class="btn btn1">완료</div>
+            </router-link>
         </div>
     </div>
 </template>

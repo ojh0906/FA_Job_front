@@ -183,7 +183,8 @@
   border: 0;
 }
 
-.next {
+.next,
+.next2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,4 +195,7 @@
 }
 .next .btn {
   padding: 20px 85px;
+}
+.next2 .btn {
+  padding: 20px 45px;
 }

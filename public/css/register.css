@@ -162,8 +162,12 @@
   align-items: baseline;
 }
 
-/*내국인 회원가입완료 시작*/
-.end_section {
+/*회원가입완료*/
+.register-complete {
+  padding-top: 40px;
+}
+
+.register-complete .end_section {
   display: flex;
   position: relative;
   margin: 0 auto;
@@ -172,204 +176,41 @@
   height: 507px;
 }
 
-.join_header .join_bg {
+.register-complete .join_header .join_bg {
   float: left;
   font-size: 32px;
   font-weight: 700;
 }
 
-.join_header .join_step .join_step_04_on {
-  font-weight: 700;
-  color: #3e778a;
-}
-
-.end_input_box {
-  position: absolute;
-  margin-top: 85px;
-  width: 1200px;
-  height: 234px;
-}
-
-.end_input_box .check {
+.register-complete .end_input_box .check {
   text-align: center;
   margin-top: 44px;
 }
 
-.end_input_box p {
-  text-align: center;
-  margin-top: 34px;
-  font-size: 20px;
-}
-
-.end_btn {
-  position: absolute;
-  top: 509px;
-  width: 1200px;
-  height: 58px;
-  border-top: 1px solid #ececec;
-  padding-top: 30px;
-}
-
-.end_btn .btn_01 a {
-  float: left;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 200px;
-  height: 58px;
-  margin-left: 380px;
-  background: #fff;
-  border: 1px solid #bbbbbb;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #777;
-}
-
-.end_btn .btn_02 a {
-  float: right;
-  display: flex;
-  text-align: center;
-  box-sizing: border-box;
-  margin-right: 380px;
-  width: 200px;
-  height: 58px;
-  align-items: center;
-  justify-content: center;
-  background: #3e778a;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #fff;
-}
-/*내국인 회원가입완료 끝*/
-
-/*외국인 회원가입완료 시작*/
-.end02_section {
-  display: flex;
-  position: relative;
-  margin: 0 auto;
-  padding-top: 150px;
-  width: 1200px;
-  height: 575px;
-}
-
-.join_header .join_bg {
-  float: left;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.join_header .join_step .join_step_04_on {
-  font-weight: 700;
-  color: #3e778a;
-}
-
-.end02_input_box {
-  position: absolute;
-  margin-top: 85px;
-  width: 1200px;
-  height: 302px;
-}
-
-.end02_input_box .check {
-  text-align: center;
-  margin-top: 44px;
-}
-
-.end02_input_box p {
-  text-align: center;
-  margin-top: 34px;
-  font-size: 20px;
-}
-
-.end02_input_box .txt02 {
+.register-complete .end_input_box .title {
   text-align: center;
   margin-top: 30px;
-  font-size: 16px;
-}
-
-.end_next_btn {
-  position: absolute;
-  text-align: center;
-  top: 577px;
-  width: 1200px;
-  height: 58px;
-  border-top: 1px solid #ececec;
-  padding-top: 30px;
-}
-
-.end_next_btn a {
-  display: inline;
-  box-sizing: border-box;
-  width: 200px;
-  height: 58px;
-  padding: 19px 92px;
-  line-height: 58px;
-  background: #fff;
-  border: 1px solid #bbbbbb;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #777;
-}
-/*외국인 회원가입완료 끝*/
-
-/*외국인 회원가입대기 시작*/
-.stanby_section {
-  display: flex;
-  position: relative;
-  margin: 0 auto;
-  padding-top: 150px;
-  width: 1200px;
-  height: 507px;
-}
-
-.stanby_input_box {
-  position: absolute;
-  margin-top: 85px;
-  width: 1200px;
-  height: 234px;
-}
-
-.stanby_input_box .check {
-  text-align: center;
-  margin-top: 44px;
-}
-
-.stanby_input_box p {
-  text-align: center;
-  margin-top: 34px;
   font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  padding-bottom: 40px;
 }
 
-.stanby_next_btn {
-  position: absolute;
+.register-complete .end_input_box .sub-title {
   text-align: center;
-  top: 509px;
-  width: 1200px;
-  height: 58px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #333333;
+}
+
+.register-complete .end_btn {
+  margin-top: 40px;
   border-top: 1px solid #ececec;
   padding-top: 30px;
 }
-
-.stanby_next_btn a {
-  display: inline;
-  box-sizing: border-box;
-  width: 200px;
-  height: 58px;
-  padding: 19px 92px;
-  line-height: 58px;
-  background: #fff;
-  border: 1px solid #bbbbbb;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #777;
-}
-/*외국인 회원가입대기 끝*/
+/*회원가입완료 끝*/
 
 .agree_box01,
 .agree_box02,

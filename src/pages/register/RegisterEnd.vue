@@ -1,32 +1,80 @@
 <template>
-    <div class="end_section">
-       <!--회원가입 순서-->
-       <div class="join_header">
-           <h3 class="join_bg">회원가입</h3>
-           <ul class="join_step">
-               <li class="join_step_01">01.회원유형 선택</li>
-               <li class="join_step_02_">02.약관동의</li>
-               <li class="join_step_03">03.정보입력</li>
-               <li class="join_step_04_on">04.가입완료</li>
-           </ul>
-       </div>
+    <div class="register_section">
+        <!-- 회원가입 헤더 -->
+        <RegisterHeader step="4" />
 
-        <div class="end_input_box">
-            <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
-            <p>
-                <strong class="bold">닉네임</strong> 님의 회원가입을 축하드립니다.
-            </p>
-        </div>
+        <!-- 내국인 회원 완료 화면 -->
+        <article class="register-complete" v-if="true">
 
-        <div class="end_btn">
-            <div class="btn_01"><a href="#">FA JOB 시작하기</a></div>
-            <div class="btn_02"><a href="#">이력서 작성하기</a></div>
-       </div>
-    
+            <div class="end_input_box">
+                <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
+                <p class="title">
+                    <strong class="bold">닉네임</strong> 님의 회원가입을 축하드립니다.
+                </p>
+            </div>
+
+            <div class="next2">
+                <div class="btn btn1">FA JOB 시작하기</div>
+                <div class="btn btn2">이력서 작성하기</div>
+            </div>
+        </article>
+
+        <!-- 외국인 회원 완료 승인 화면 -->
+        <article class="register-complete" v-if="false">
+            <div class="end_input_box">
+                <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
+                <p class="title">
+                    <strong class="bold">닉네임</strong> 님의 가입을 감사드립니다.
+                </p>
+
+                <p class="sub-title">관리자 승인 후 활동하실 수 있습니다.<br>
+                    알림을 통해 승인 여부를 확인하실 수 있습니다.</p>
+            </div>
+
+            <div class="next">
+                <router-link :to="{ path: '/' }">
+                    <div class="btn btn4">
+                        홈
+                    </div>
+                </router-link>
+            </div>
+        </article>
+
+        <!-- 외국인 회원 완료 미승인 화면 -->
+        <article class="register-complete" v-if="false">
+            <div class="end_input_box">
+                <div class="check"><img src="/image/register/Typing.png" alt="대기이미지입니다."></div>
+                <p class="title">
+                    <strong class="bold">관리자 승인 대기 중입니다.</strong>
+                </p>
+            </div>
+
+            <div class="next">
+                <router-link :to="{ path: '/' }">
+                    <div class="btn btn4">
+                        홈
+                    </div>
+                </router-link>
+            </div>
+        </article>
     </div>
-
 </template>
 
 <script>
+import RegisterHeader from '/src/components/register/Header.vue';
 
-</script> 
+export default {
+    data() {
+        return {
+        }
+    },
+    components: {
+        RegisterHeader
+    },
+    methods: {
+    },
+    mounted() {
+    }
+}
+
+</script>
