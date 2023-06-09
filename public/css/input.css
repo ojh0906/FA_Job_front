@@ -1,0 +1,197 @@
+/* 
+정보입력 창
+회원가입 정보 입력 참고 : RegisterInput
+*/
+
+.field-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: 30px;
+  align-items: baseline;
+}
+
+.field-wrap .input-title {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+.field-wrap .field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+.field-wrap .field .time,
+.field-wrap .field .yes,
+.field-wrap .field .no {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.field-wrap .field .time {
+  color: #777777;
+}
+
+.field-wrap .field .yes {
+  color: #3e778a;
+}
+.field-wrap .field .no {
+  color: #ff6565;
+}
+
+.field-wrap .field .input-wrap {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.field-wrap .field_input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+.field-wrap .field_input input:focus {
+  /* border: #3e778a 2px solid;
+  outline: #3e778a; */
+  border: 1px solid #dddddd;
+  outline: none;
+}
+
+.field-wrap .field_input input {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  width: 100%;
+}
+
+.field-wrap .field_file {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #555555;
+  width: 100%;
+  background: #efefef;
+  border-radius: 5px;
+  padding: 15px 10px;
+}
+.field-wrap .field_file .file-wrap {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.field-wrap .field_file .file-icon {
+  width: 16px;
+  height: 16px;
+}
+.field-wrap .field_file .del-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.field-wrap .field_input_email {
+  gap: 8px;
+  position: relative;
+}
+.field-wrap .input-email {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  width: 255px;
+}
+
+.field-wrap .input-email:active,
+.field-wrap .input-email:focus {
+  /* border: #3e778a 2px solid;
+  outline: #3e778a; */
+}
+
+.field-wrap .field_input_email input:nth-child(1) {
+  width: calc(100% - 270px);
+}
+.field-wrap .field_input_email span {
+  width: 15px;
+}
+
+.field-wrap .input-email input:focus {
+}
+.field-wrap .input-email input:focus {
+  border: 0;
+  outline: none;
+}
+
+.field-wrap .input-email input {
+  border: none;
+  padding: 0;
+  width: 90% !important;
+}
+.field-wrap .input-email i {
+  width: 10%;
+}
+.field-wrap .select-email {
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  width: 50%;
+  background-color: #ffff;
+  z-index: 10;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 240px;
+}
+.field-wrap .select-email p {
+  padding: 15px;
+}
+.field-wrap .down-icon {
+  width: 12px;
+  height: 7px;
+}
+
+.field-wrap .check-btn {
+  padding: 12px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+.field-wrap .check-phone {
+  margin-top: 15px;
+}
+.field-wrap .check-phone .field_input {
+  width: 140px;
+}
+
+.checked {
+  background-color: #dee6e9;
+  border: 0;
+}
+
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ececec;
+  gap: 40px;
+  padding-top: 30px;
+  margin-top: 40px;
+}
+.next .btn {
+  padding: 20px 85px;
+}

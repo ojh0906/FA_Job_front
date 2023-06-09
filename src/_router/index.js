@@ -2,14 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Index from "/src/pages/Index.vue";
 import RegisterType from "/src/pages/register/RegisterType.vue";
 import RegisterAgree from "/src/pages/register/RegisterAgree.vue";
-import RegisterLocal from "/src/pages/register/RegisterLocal.vue";
-import RegisterForeigner from "/src/pages/register/RegisterForeigner.vue";
+import RegisterInput from "/src/pages/register/RegisterInput.vue";
 import RegisterEnd from "/src/pages/register/RegisterEnd.vue";
 import RegisterEnd02 from "/src/pages/register/RegisterEnd02.vue";
 import RegisterStanby from "/src/pages/register/RegisterStanby.vue";
 import KnowHow from "/src/pages/community/KnowHow.vue";
-
-
 
 const routes = [
     {
@@ -31,16 +28,10 @@ const routes = [
         meta: { title: "약관동의" },
     },
     {
-        path: "/register/register-local",
-        name: "RegisterLocal",
-        component: RegisterLocal,
-        meta: { title: "내국인정보입력" },
-    },
-    {
-        path: "/register/register-foreigner",
-        name: "RegisterForeigner",
-        component: RegisterForeigner,
-        meta: { title: "외국인정보입력" },
+        path: "/register/input",
+        name: "RegisterInput",
+        component: RegisterInput,
+        meta: { title: "정보입력" },
     },
     {
         path: "/register/register-end",

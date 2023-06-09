@@ -94,8 +94,11 @@
                 </div>
             </aside>
 
+            <!-- 정보 입력 페이지 내/외국인 구분 필요(동일 페이지) -->
             <div class="agree_next">
-                <p>다음</p>
+                <router-link :to="{ name: 'RegisterInput' }">
+                    <p>다음</p>
+                </router-link>
             </div>
         </div>
     </div>
