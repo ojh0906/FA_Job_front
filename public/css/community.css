@@ -33,33 +33,25 @@
   background-color: #fff;
 }
 
-.know_box .box_l .menu .menu01 a {
-  width: 268px;
+.know_box .box_l .menu .menu01 {
+  box-sizing: border-box;
+  padding: 18px 20px;
   background: #70bab5;
   border-bottom: 1px solid #ececec;
-}
-
-.know_box .box_l .menu .menu01 p {
-  margin: 18px 15px;
   font-weight: 700;
   font-size: 16px;
   color: #fff;
 }
 
-.know_box .box_l .menu .menu02 a {
-  width: 268px;
-  height: 59px;
-}
-
-.know_box .box_l .menu .menu02 p {
-  margin: 18px 15px;
-  font-size: 16px;
+.know_box .box_l .menu .menu02 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #fff;
   color: #333;
 }
 
 .know_box .box_l .menu .menu02 .i_icon {
   float: right;
-  margin: 22px 20px;
   width: 16px;
   height: 16px;
   background: url("../image/community/right_arrow.png") no-repeat;
@@ -171,12 +163,9 @@
 
 .row{
   margin-top: 20px;
-  width: 890px;
-  height: 48px;
 }
 
 .row .text-input{
-  margin-top: 0px;
   padding: 10px 0 10px 10px;
   width: 300px;
   border: 1px solid #CDDCE1;
@@ -201,6 +190,7 @@
 
 .row .btn01 {
   float: right;
+  box-sizing: border-box;
   padding: 13px 20px;
   border-radius: 5px;
   font-weight: 700;

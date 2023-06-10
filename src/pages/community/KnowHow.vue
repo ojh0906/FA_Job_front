@@ -8,17 +8,17 @@
         <div class="know_box">
             <div class="box_l">
                 <div class="menu">
-                    <div class="menu01">
-                        <a href="#">
-                            <p>Know-how</p>
-                        </a>
-                    </div>
-                    <div class="menu02">
-                        <a href="#">
-                            <p>자유홍보</p>
-                            <i class="i_icon"></i>
-                        </a>
-                    </div>
+                    <a href="#">
+                        <div class="menu01">
+                        Know-how
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="menu02">
+                        자유홍보
+                        <i class="i_icon"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -162,7 +162,7 @@
                       <input type="text" placeholder="게시글 검색">
                       <img src="/image/community/search.png" alt="검색이미지입니다.">
                     </div>
-                    <a class="btn1 btn01">Know-how 등록</a>
+                    <a href="#" class="btn1 btn01">Know-how 등록</a>
                 </div>
             </div>
         </div>
