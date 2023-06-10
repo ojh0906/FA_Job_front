@@ -108,9 +108,10 @@
 }
 
 .t_table02 .th_06 .i_icon{
-  display: flex;
-  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
   width: 32px;
+  height: 32px;
   background: url("../image/community/sharebtn.png") no-repeat;
 }
 
