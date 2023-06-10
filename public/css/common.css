@@ -195,7 +195,7 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-/* 
+/*
 공통 버튼
 예시) <div class="btn btn1">
 - btn 클래스는 필수
@@ -260,7 +260,7 @@ input[type="checkbox"] {
   background: #F5F5F5;
 }
 
-/* 
+/*
 공통 태그 버튼
 예시) <div class="tag tag-click">
 - tag 클래스는 필수
@@ -292,7 +292,7 @@ input[type="checkbox"] {
   font-weight: 700 !important;
 }
 
-/* 
+/*
 수정/삭제 버튼
 예시) <div class="delete-btn">
 - 별도 설정 없음
@@ -376,13 +376,11 @@ input[type="checkbox"] {
   background: #F1F7F7;
  }
  .t_tr{
-  float: left;
   width: 890px;
   background: #FFFFFF;
   border-bottom: 1px solid #ECECEC;
  }
  .t_td{
-  float: left;
   padding-top: 16px;
   font-size: 16px;
   color: #555555;

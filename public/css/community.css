@@ -1,10 +1,8 @@
 /*커뮤니티 노하우 시작*/
 .Know_section {
-  display: flex;
   position: relative;
   margin: 0 auto;
   width: 1200px;
-  height: 923px;
 }
 
 .title_header {
@@ -18,21 +16,18 @@
 }
 
 .know_box {
-  position: absolute;
-  margin-top: 85px;
+  margin-top: 40px;
   width: 1200px;
-  height: 827px;
+  display: flex;
 }
 
 .know_box .box_l {
   margin-right: 40px;
   width: 270px;
-  height: 827px;
 }
 
 .know_box .box_l .menu {
   width: 268px;
-  height: 118px;
   border: 1px solid #dddddd;
   border-radius: 5px;
   background-color: #fff;
@@ -40,7 +35,6 @@
 
 .know_box .box_l .menu .menu01 a {
   width: 268px;
-  height: 59px;
   background: #70bab5;
   border-bottom: 1px solid #ececec;
 }
@@ -72,12 +66,10 @@
 }
 
 .know_box .box_r {
-  display: flex;
   width: 890px;
-  height: 827px;
 }
 
-.box_r_header { 
+.box_r_header {
   display: flex;
   width: 890px;
   padding: 0px 0px 20px;
