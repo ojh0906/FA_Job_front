@@ -260,6 +260,12 @@ input[type="checkbox"] {
   background: #F5F5F5;
 }
 
+.btn7{
+  background: #E2EEF0;
+  border: 1px solid #3E778A;
+  color: #3E778A;
+}
+
 /*
 공통 태그 버튼
 예시) <div class="tag tag-click">
@@ -308,6 +314,7 @@ input[type="checkbox"] {
   padding: 7px 15px 10px;
   border: 1px solid #dddddd;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .delete-btn:hover {
@@ -356,7 +363,6 @@ input[type="checkbox"] {
 }
 
 /* 테이블
-- padding값 별도
  */
 
  .t_table{
@@ -364,7 +370,6 @@ input[type="checkbox"] {
  }
  .t_title{
   width: 890px;
-  padding: 17px 0;
   background: #E2EEF0;
   font-weight: 500;
   font-size: 16px;
@@ -389,6 +394,54 @@ input[type="checkbox"] {
  margin-left: 10px;
  color: #70BAB5;
 }
+
+
+.t_table02{
+  margin-top: 20px;
+ }
+ .t_title02{
+  width: 890px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333333;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+ }
+ .t_td02{
+  font-size: 16px;
+  color: #555555;
+ }
+
+
+
+.comment{
+  width: 890px;
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+.td_com01{
+  width: 120px;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #555;
+}
+.td_com02{
+  width: 630px;
+  padding: 15px 10px;
+  color: #555;
+}
+.td_com03{
+  width: 120px;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  color: #999;
+}
+
 
 
 

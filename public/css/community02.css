@@ -15,25 +15,25 @@
   font-weight: 700;
 }
 
-.know_box {
+.know_box02 {
   margin-top: 40px;
   width: 1200px;
   display: flex;
 }
 
-.know_box .box_l {
+.know_box02 .box_l {
   margin-right: 40px;
   width: 270px;
 }
 
-.know_box .box_l .menu {
+.know_box02 .box_l .menu {
   width: 268px;
   border: 1px solid #dddddd;
   border-radius: 5px;
   background-color: #fff;
 }
 
-.know_box .box_l .menu .menu01 {
+.know_box02 .box_l .menu .menu01 {
   box-sizing: border-box;
   padding: 18px 20px;
   background: #70bab5;
@@ -43,14 +43,14 @@
   color: #fff;
 }
 
-.know_box .box_l .menu .menu02 {
+.know_box02 .box_l .menu .menu02 {
   box-sizing: border-box;
   padding: 18px 20px;
   background: #fff;
   color: #333;
 }
 
-.know_box .box_l .menu .menu02 .i_icon {
+.know_box02 .box_l .menu .menu02 .i_icon {
   float: right;
   position: relative;
   top: 2px;
@@ -59,153 +59,152 @@
   background: url("../image/community/right_arrow.png") no-repeat;
 }
 
-.know_box .box_r {
+.know_box02 .box_r {
   width: 890px;
 }
 
-.box_r_header {
+.box_r_header02 {
   display: flex;
   width: 890px;
-  padding: 0px 0px 20px;
 }
 
-.box_r_header h3 {
+.box_r_header02 h3 {
   display: flex;
-
   font-size: 20px;
   font-weight: 700;
 }
 
-.box_r_header p {
+.box_r_header02 p {
   display: flex;
   margin: 2px 20px;
   font-size: 16px;
   color: #555;
 }
 
-.box_r .tap_list {
+.t_table02{
   display: flex;
+}
+
+.t_table02 .th_01{
+  padding: 17px 0;
+  text-align: center;
+}
+
+.t_table02 .th_02{
+  display: flex;
+  padding: 17px 25px;
+}
+
+.t_table02 .th_03{
+  text-align: center;
+}
+
+.t_table02 .th_04{
+  text-align: center;
+}
+
+.t_table02 .th_05{
+  text-align: center;
+}
+
+.t_table02 .th_06 .i_icon{
+  display: flex;
+  text-align: center;
+  width: 32px;
+  background: url("../image/community/sharebtn.png") no-repeat;
+}
+
+.box_r .btn_area{
+  display: flex;
+  padding: 20px 0px 0px;
   width: 890px;
 }
 
-.box_r .tap_list .btn01 {
-  margin-right: 10px;
-  padding: 8px 20px;
+.btn_area .modify-btn{
+  margin: 0 10px 0 764px;
 }
 
-.box_r .tap_list .btn6 {
-  margin-right: 10px;
-  padding: 8px 20px;
+.btn_area a{
+  padding: 10px 15px;
 }
 
-.t_table .th_01{
+.cont_area{
+  padding: 30px 20px;
+  color: #555;
+  line-height: 24px;
+}
+
+.recommend{
+  display: flex;
+  width: 890px;
+  padding-bottom: 30px;
+}
+
+.recommend .up{
+  display: flex;
+  margin-right: 20px;
+  padding: 12px 13px;
+  border-radius: 5px;
+}
+
+.recommend .up .i_icon{
+  display: flex;
   text-align: center;
+  width: 24px;
+  background: url("../image/community/up.png") no-repeat;
+}
+
+.recommend .up span{
+  display: flex;
+  text-align: center;
+  padding-top: 5px;
+  color: #3E778A;
+}
+
+.recommend .down{
+  display: flex;
+  padding: 12px 13px;
+  border-radius: 5px;
+}
+
+.recommend .down .i_icon{
+  display: flex;
+  text-align: center;
+  width: 24px;
+  background: url("../image/community/down.png") no-repeat;
+}
+
+.recommend .down span{
+  display: flex;
+  text-align: center;
+  padding-top: 5px;
+  color: #777;
+}
+
+.comment .tr_com{
+  padding: 15px 10px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.comment .tr_com02{
+  padding: 15px 10px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.tr_com02 .td_03{
   vertical-align: middle;
-}
-
-.t_table .th_02{
-  text-align: center;
-  vertical-align: middle;
-}
-
-.t_table .th_03{
-  text-align: center;
-  vertical-align: middle;
-}
-
-.t_table .th_04{
-  text-align: center;
-  vertical-align: middle;
-}
-
-.t_table .th_05{
-  text-align: center;
-  vertical-align: middle;
-}
-
-.t_table .th_06{
-  text-align: center;
-  vertical-align: middle;
-}
-
-.t_table .td_01{
-  text-align: center;
-  width: 78px;
-  padding: 18px 0;
-}
-
-.t_table .td_02{
-  width: 392px;
-  padding: 18px 0;
-}
-
-.t_table .td_03{
-  text-align: center;
-  width: 120px;
-  padding: 18px 0;
-}
-
-.t_table .td_04{
-  text-align: center;
-  width: 100px;
-  padding: 18px 0;
-}
-
-.t_table .td_05{
-  text-align: center;
-  width: 120px;
-  padding: 18px 0;
-}
-
-.t_table .td_06{
-  text-align: center;
-  width: 80px;
-  padding: 18px 0;
 }
 
 .row{
-  margin-top: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.row a {
   display: flex;
-  justify-content: space-between;
-}
-
-.row .text-input{
-  padding: 10px 0 10px 10px;
-  width: 300px;
-  border: 1px solid #CDDCE1;
-  border-radius: 4px;
-}
-
-.row .text-input input{
-  width: calc(100% - 38px);
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-.row .text-input input::placeholder{
-  color: #BBBBBB;
-}
-
-.row .text-input img{
-  float: right;
-  margin-right: 10px;
-}
-
-.row .btn01 {
-  float: right;
   box-sizing: border-box;
-  padding: 13px 20px;
+  padding: 20px 72px;
   border-radius: 5px;
   font-weight: 700;
   font-size: 16px;
-  color: #fff;
 }
-
-/*
-   height 빼고 padding으로
-   float 빼기
-   테이블 td, th 공통으로 빼고
-   가로값은 th에 바로 먹이기
-
-*/
