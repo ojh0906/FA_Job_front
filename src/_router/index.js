@@ -5,6 +5,8 @@ import RegisterAgree from "/src/pages/register/RegisterAgree.vue";
 import RegisterInput from "/src/pages/register/RegisterInput.vue";
 import RegisterEnd from "/src/pages/register/RegisterEnd.vue";
 import KnowHow from "/src/pages/community/KnowHow.vue";
+import KnowHow02 from "/src/pages/community/KnowHow02.vue";
+
 
 const routes = [
     {
@@ -42,6 +44,12 @@ const routes = [
         name: "KnowHow",
         component: KnowHow,
         meta: { title: "커뮤니티 노하우" },
+    },
+    {
+        path: "/community/know-how02",
+        name: "KnowHow02",
+        component: KnowHow02,
+        meta: { title: "커뮤니티 노하우 상세" },
     },
 ]
 
