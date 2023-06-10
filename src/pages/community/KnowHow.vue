@@ -38,13 +38,13 @@
                     <div class=""><a class="btn6 ">기타</a></div>
                 </div>
 
-                <table class="t_table">
-                    <th class="t_title th_01">번호</th>
-                    <th class="t_title th_02">제목</th>
-                    <th class="t_title th_03">작성자</th>
-                    <th class="t_title th_04">추천/비추천</th>
-                    <th class="t_title th_05">등록일</th>
-                    <th class="t_title th_06">조회수</th>
+                <table class="t_table" style="width: 890px;">
+                    <th class="t_title th_01" style="width: 78px;">번호</th>
+                    <th class="t_title th_02" style="width: 392px;">제목</th>
+                    <th class="t_title th_03" style="width: 120px;">작성자</th>
+                    <th class="t_title th_04" style="width: 100px;">추천/비추천</th>
+                    <th class="t_title th_05" style="width: 120px;">등록일</th>
+                    <th class="t_title th_06" style="width: 80px;">조회수</th>
                         <tr class="t_tr" >
                             <!-- 첫번째 줄 시작 -->
                             <td class="t_td td_01">10</td>

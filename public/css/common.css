@@ -364,11 +364,10 @@ input[type="checkbox"] {
  }
  .t_title{
   width: 890px;
-  height: 56px;
+  padding: 17px 0;
   background: #E2EEF0;
   font-weight: 500;
   font-size: 16px;
-  line-height: 19px;
   text-align: center;
   vertical-align: middle;
   color: #333333;
@@ -379,7 +378,6 @@ input[type="checkbox"] {
  .t_tr{
   float: left;
   width: 890px;
-  height: 56px;
   background: #FFFFFF;
   border-bottom: 1px solid #ECECEC;
  }
