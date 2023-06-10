@@ -70,14 +70,15 @@
                     <tr class="tr_com02">
                         <td class="td_com01 td_01">김유진</td>
                         <td class="td_com02 td_02">
+                            <i class="i_icon"></i>
                             제목이 노출되는 영역입니다.<br>
                             제목이 노출되는 영역입니다.
                         </td>
-                        <td class="td_com03 td_03">2022.08.11</td>
+                        <td class="td_com03 td_04">2022.08.11</td>
                     </tr>
                     <tr class="tr_com03">
                         <td class="td_01">10</td>
-                        <td class="td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="td_02">제목이 노출되는 영역입니다.</td>
                         <td class="td_03">김유진</td>
                     </tr>
                 </table>

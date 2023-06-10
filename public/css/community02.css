@@ -109,9 +109,10 @@
 
 .t_table02 .th_06 .i_icon{
   display: inline-block;
+  justify-content: center;
   vertical-align: middle;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   background: url("../image/community/sharebtn.png") no-repeat;
 }
 
@@ -143,6 +144,7 @@
 
 .recommend .up{
   display: flex;
+  justify-content: center;
   margin-right: 20px;
   padding: 12px 13px;
   border-radius: 5px;
@@ -150,28 +152,28 @@
 
 .recommend .up .i_icon{
   display: flex;
-  text-align: center;
-  width: 24px;
+  width: 17px;
+  height: 20px;
   background: url("../image/community/up.png") no-repeat;
 }
 
 .recommend .up span{
   display: flex;
-  text-align: center;
-  padding-top: 5px;
+  margin-top: 28px;
   color: #3E778A;
 }
 
 .recommend .down{
   display: flex;
+  text-align: center;
   padding: 12px 13px;
   border-radius: 5px;
 }
 
 .recommend .down .i_icon{
   display: flex;
-  text-align: center;
-  width: 24px;
+  width: 17px;
+  height: 20px;
   background: url("../image/community/down.png") no-repeat;
 }
 
@@ -192,7 +194,18 @@
   border-bottom: 1px solid #DDDDDD;
 }
 
+.tr_com02 .i_icon{
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background: url("../image/community/td.png") no-repeat;
+}
+
 .tr_com02 .td_03{
+  display: flex;
+}
+
+.tr_com02 .td_04{
   vertical-align: middle;
 }
 
