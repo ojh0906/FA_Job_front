@@ -8,13 +8,11 @@
 }
 
 .title_header {
-  float: left;
   width: 600px;
   height: 45px;
 }
 
 .title_header .title_bg {
-  float: left;
   font-size: 32px;
   font-weight: 700;
 }
@@ -27,14 +25,12 @@
 }
 
 .know_box .box_l {
-  float: left;
   margin-right: 40px;
   width: 270px;
   height: 827px;
 }
 
 .know_box .box_l .menu {
-  float: left;
   width: 268px;
   height: 118px;
   border: 1px solid #dddddd;
@@ -43,7 +39,6 @@
 }
 
 .know_box .box_l .menu .menu01 a {
-  float: left;
   width: 268px;
   height: 59px;
   background: #70bab5;
@@ -51,7 +46,6 @@
 }
 
 .know_box .box_l .menu .menu01 p {
-  float: left;
   margin: 18px 15px;
   font-weight: 700;
   font-size: 16px;
@@ -59,13 +53,11 @@
 }
 
 .know_box .box_l .menu .menu02 a {
-  float: left;
   width: 268px;
   height: 59px;
 }
 
 .know_box .box_l .menu .menu02 p {
-  float: left;
   margin: 18px 15px;
   font-size: 16px;
   color: #333;
@@ -80,49 +72,44 @@
 }
 
 .know_box .box_r {
-  float: left;
+  display: flex;
   width: 890px;
   height: 827px;
 }
 
-.box_r_header {
-  float: left;
+.box_r_header { 
+  display: flex;
   width: 890px;
   padding: 0px 0px 20px;
 }
 
 .box_r_header h3 {
-  float: left;
+  display: flex;
+
   font-size: 20px;
   font-weight: 700;
 }
 
 .box_r_header p {
-  float: left;
+  display: flex;
   margin: 2px 20px;
   font-size: 16px;
   color: #555;
 }
 
 .box_r .tap_list {
-  float: left;
+  display: flex;
   width: 890px;
 }
 
 .box_r .tap_list .btn01 {
-  float: left;
   margin-right: 10px;
   padding: 8px 20px;
 }
 
 .box_r .tap_list .btn6 {
-  float: left;
   margin-right: 10px;
   padding: 8px 20px;
-}
-
-.t_table{
-  float: left;
 }
 
 .t_table .th_01{

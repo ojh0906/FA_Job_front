@@ -38,7 +38,7 @@
                     <div class=""><a class="btn6 ">기타</a></div>
                 </div>
 
-                <table class="t_table" style="width: 890px;">
+                <table class="t_table">
                     <th class="t_title th_01" style="width: 78px;">번호</th>
                     <th class="t_title th_02" style="width: 392px;">제목</th>
                     <th class="t_title th_03" style="width: 120px;">작성자</th>
