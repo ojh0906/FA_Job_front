@@ -31,11 +31,11 @@
 
                 <div class="tap_list">
                     <div class=""><a class="btn5 btn01">전체</a></div>
-                    <div class=""><a class="btn6 btn02">하드웨어</a></div>
-                    <div class=""><a class="btn6 btn03">전기/전장</a></div>
-                    <div class=""><a class="btn6 btn04">제어/비전</a></div>
-                    <div class=""><a class="btn6 btn05">설계</a></div>
-                    <div class=""><a class="btn6 btn06">기타</a></div>
+                    <div class=""><a class="btn6 ">하드웨어</a></div>
+                    <div class=""><a class="btn6 ">전기/전장</a></div>
+                    <div class=""><a class="btn6 ">제어/비전</a></div>
+                    <div class=""><a class="btn6 ">설계</a></div>
+                    <div class=""><a class="btn6 ">기타</a></div>
                 </div>
 
                 <table class="t_table">
@@ -45,7 +45,7 @@
                     <th class="t_title th_04">추천/비추천</th>
                     <th class="t_title th_05">등록일</th>
                     <th class="t_title th_06">조회수</th>
-                        <tr class="t_tr">
+                        <tr class="t_tr" >
                             <!-- 첫번째 줄 시작 -->
                             <td class="t_td td_01">10</td>
                             <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
@@ -158,7 +158,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="text-input"><p>게시글 검색</p><img src="/image/community/search.png" alt="검색이미지입니다."></div>
+                    <div class="text-input">
+                      <input type="text" placeholder="게시글 검색">
+                      <img src="/image/community/search.png" alt="검색이미지입니다.">
+                    </div>
                     <a class="btn1 btn01">Know-how 등록</a>
                 </div>
             </div>
@@ -169,4 +172,4 @@
 
 <script>
 
-</script> 
+</script>

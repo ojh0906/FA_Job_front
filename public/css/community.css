@@ -215,8 +215,13 @@
   border-radius: 4px;
 }
 
-.row .text-input p{
-  float: left;
+.row .text-input input{
+  width: calc(100% - 38px);
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.row .text-input input::placeholder{
   color: #BBBBBB;
 }
 
@@ -233,3 +238,11 @@
   font-size: 16px;
   color: #fff;
 }
+
+/*
+   height 빼고 padding으로
+   float 빼기
+   테이블 td, th 공통으로 빼고
+   가로값은 th에 바로 먹이기
+
+*/
