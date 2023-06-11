@@ -1,0 +1,146 @@
+/*커뮤니티 노하우 시작*/
+.notice_section {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+  }
+  
+  .notice_section .title_header {
+    width: 600px;
+    height: 45px;
+  }
+  
+  .title_header .title_bg {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .notice_box {
+    margin-top: 40px;
+    width: 1200px;
+    display: flex;
+  }
+  
+  .notice_box .box_l {
+    margin-right: 40px;
+    width: 270px;
+  }
+  
+  .notice_box .box_l .menu {
+    width: 268px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .notice_box .box_l .menu .menu01 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #70bab5;
+    border-bottom: 1px solid #ececec;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .notice_box .box_l .menu .menu02 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #fff;
+    color: #333;
+    border-bottom: 1px solid #ececec;
+  }
+  
+  .notice_box .box_l .menu .menu02 .i_icon {
+    float: right;
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background: url("../image/community/right_arrow.png") no-repeat;
+  }
+  
+  .notice_box .box_l .menu .menu03 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #fff;
+    color: #333;
+  }
+  
+  .notice_box .box_l .menu .menu03 .i_icon {
+    float: right;
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background: url("../image/community/right_arrow.png") no-repeat;
+  }
+
+  .notice_box .box_r {
+    width: 890px;
+  }
+  
+  .box_r_header {
+    display: flex;
+    width: 890px;
+  }
+  
+.box_r_header h3 {
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+}
+  
+  .t_table .th_01{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .th_02{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .th_03{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .th_04{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .th_05{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .th_06{
+    text-align: center;
+    vertical-align: middle;
+    padding: 17px 0;
+  }
+  
+  .t_table .td_01{
+    text-align: center;
+    width: 78px;
+    padding: 18px 0;
+  }
+  
+  .t_table .td_02{
+    width: 692px;
+    padding: 18px 10px;
+  }
+  
+  .t_table .td_05{
+    text-align: center;
+    width: 120px;
+    padding: 18px 0;
+  }
+ 

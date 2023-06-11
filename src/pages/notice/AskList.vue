@@ -1,0 +1,89 @@
+<template>
+    <div class="ask_section">
+        <!--타이틀-->
+        <div class="title_header">
+            <h3 class="title_bg">고객센터</h3>
+        </div>
+
+        <div class="ask_box">
+            <div class="box_l">
+                <div class="menu">
+                    <a href="#">
+                        <div class="menu01">
+                        공지사항
+                        <i class="i_icon"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="menu02">
+                        문의하기
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="menu03">
+                        FAQ
+                        <i class="i_icon"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="box_r">
+                <div class="ask">
+                    <p>문의주시면 빠른 시간 내에 답변드리겠습니다.</p>
+                    <a href="#" class="btn1">문의 등록</a>
+                </div>
+                <!--타이틀-->
+                <div class="box_r_header">
+                    <h3>내 문의내역</h3>
+                </div>
+
+                <table class="t_table">
+                    <th class="t_title th_01" style="width: 78px;">번호</th>
+                    <th class="t_title th_02" style="width: 612px;">제목</th>
+                    <th class="t_title th_05" style="width: 120px;">등록일</th>
+                    <th class="t_title th_05" style="width: 80px;">답변상태</th>
+                        <tr class="t_tr" >
+                            <!-- 첫번째 줄 시작 -->
+                            <td class="t_td td_01">10</td>
+                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td td_05">2023.06.15</td>
+                            <td class="t_td td_w_06">대기중</td>
+                            <!-- 첫번째 줄 끝 -->
+                        </tr>
+                        <tr class="t_tr">
+                            <!-- 두번째 줄 시작 -->
+                            <td class="t_td td_01">10</td>
+                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td td_05">2023.06.15</td>
+                            <td class="t_td td_e_06">완료</td>
+                            <!-- 두번째 줄 끝 -->
+                        </tr>
+                        <tr class="t_tr">
+                            <!-- 세번째 줄 시작 -->
+                            <td class="t_td td_01">10</td>
+                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td td_05">2023.06.15</td>
+                            <td class="t_td td_e_06">완료</td>
+                            <!-- 세번째 줄 끝 -->
+                        </tr>
+                </table>
+
+                <div class="pagination">
+                    <a href="#"><img src="/image/community/back.png" alt="뒤로가기버튼입니다."></a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#"><img src="/image/community/foward.png" alt="앞으로가기버튼입니다."></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script>
+
+</script>

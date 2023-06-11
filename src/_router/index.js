@@ -6,6 +6,10 @@ import RegisterInput from "/src/pages/register/RegisterInput.vue";
 import RegisterEnd from "/src/pages/register/RegisterEnd.vue";
 import KnowHow from "/src/pages/community/KnowHow.vue";
 import KnowHow02 from "/src/pages/community/KnowHow02.vue";
+import NoticeList from "/src/pages/notice/NoticeList.vue";
+import AskList from "/src/pages/notice/AskList.vue";
+
+
 
 
 const routes = [
@@ -50,6 +54,18 @@ const routes = [
         name: "KnowHow02",
         component: KnowHow02,
         meta: { title: "커뮤니티 노하우 상세" },
+    },
+    {
+        path: "/notice/notice-list",
+        name: "NoticeList",
+        component: NoticeList,
+        meta: { title: "공지사항 리스트" },
+    },
+    {
+        path: "/notice/ask-list",
+        name: "AskList",
+        component: AskList,
+        meta: { title: "문의하기 리스트" },
     },
 ]
 
