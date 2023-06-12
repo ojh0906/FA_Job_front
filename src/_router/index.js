@@ -9,9 +9,6 @@ import KnowHow02 from "/src/pages/community/KnowHow02.vue";
 import NoticeList from "/src/pages/notice/NoticeList.vue";
 import AskList from "/src/pages/notice/AskList.vue";
 
-
-
-
 const routes = [
     {
         path: "/",

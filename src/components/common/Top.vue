@@ -1,8 +1,9 @@
 <template>
-  <header>
+  <header :id="getCurrentRoutePath == '/' ? 'main-header' : ''"
+    :class="getCurrentRoutePath == '/' ? 'main-header-none' : ''">
     <div id="header">
       <div class="logo-wrap">
-        <img src="/image/common/logo-gray.png">
+        <img id="logo" :src="getCurrentRoutePath == '/' ? '/image/common/logo.png' : '/image/common/logo-gray.png'">
       </div>
       <div class="gnb-wrap">
         <div class="menu-wrap">
@@ -46,5 +47,35 @@
 </template>
 
 <script>
-
+export default {
+  components: {
+  },
+  computed: {
+    getCurrentRoutePath() {
+      return this.$route.path
+    },
+  },
+  date() {
+    return {
+    }
+  },
+  methods: {
+    fixedMenu() {
+      let header = document.querySelector("#main-header");
+      let logo = document.querySelector("#logo");
+      window.onscroll = () => {
+        if (window.scrollY >= 5) {
+          logo.src = '/image/common/logo-gray.png';
+          header.classList.remove("main-header-none");
+        } else {
+          logo.src = '/image/common/logo.png';
+          header.classList.add("main-header-none");
+        }
+      }
+    },
+  },
+  mounted() {
+    this.fixedMenu();
+  }
+}
 </script>
