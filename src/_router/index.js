@@ -9,13 +9,15 @@ import KnowHow02 from "/src/pages/community/KnowHow02.vue";
 import NoticeList from "/src/pages/notice/NoticeList.vue";
 import AskList from "/src/pages/notice/AskList.vue";
 
-
-
+/* 프로젝트 */
+import ProjectList from "/src/pages/project/List.vue";
+import ProjectSearch from "/src/pages/project/Search.vue";
+import ProjectDetail from "/src/pages/project/Detail.vue";
 
 const routes = [
     {
         path: "/",
-        name: "index",
+        name: "Index",
         component: Index,
         meta: { title: "" },
     },
@@ -66,6 +68,30 @@ const routes = [
         name: "AskList",
         component: AskList,
         meta: { title: "문의하기 리스트" },
+    },
+    {
+        path: "/project",
+        name: "AskList",
+        children: [
+            {
+                path: "list",
+                name: 'ProjectList',
+                component: ProjectList,
+                meta: { title: "프로젝트 리스트" },
+            },
+            {
+                path: "search",
+                name: 'ProjectSearch',
+                component: ProjectSearch,
+                meta: { title: "프로젝트 검색 결과" },
+            },
+            {
+                path: "detail",
+                name: 'ProjectDetail',
+                component: ProjectDetail,
+                meta: { title: "프로젝트 상세" },
+            },
+        ]
     },
 ]
 

@@ -1,0 +1,152 @@
+/* 프로젝트 컴포넌트 */
+#main-container .project-slider .swiper-slide {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-box-container {
+  position: relative;
+}
+
+.project-slide-btn-wrap {
+  display: flex;
+  width: 110%;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 28px);
+  z-index: 10;
+  left: -5%;
+}
+
+.project-slide-btn-wrap .project-button-prev img,
+.project-slide-btn-wrap .project-button-next img {
+  width: 56px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.project-slide-btn-wrap .project-button-prev img {
+  transform: rotate(180deg);
+}
+
+/*프로젝트 콘텐츠 */
+#project-box {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  width: 45%;
+  padding: 15px;
+}
+
+#project-box {
+}
+
+#project-box .project-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+#project-box .project-title-wrap .company {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: #555555;
+}
+#project-box .project-title-wrap .title {
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: #555555;
+}
+
+#project-box .info-btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+#project-box .info-wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#project-box .info-wrap > div {
+  width: 100%;
+}
+#project-box .info-wrap .info-box {
+  display: flex;
+}
+#project-box .info-wrap .info-col {
+  width: 50%;
+}
+#project-box .info-wrap .info-title {
+  padding: 4px 8px;
+  background: #eeeeee;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #333333;
+}
+#project-box .info-wrap .info-text {
+  font-weight: 500;
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+
+  color: #666666;
+}
+
+#project-box .btn-wrap .day-btn {
+  text-align: center;
+  padding: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#project-box .btn-wrap .unlike-btn,
+#project-box .btn-wrap .like-btn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  gap: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#project-box .btn-wrap .unlike-btn {
+  border: 1px solid #bbbbbb;
+  color: #777777;
+}
+
+#project-box .btn-wrap .like-btn {
+  color: #ff6565;
+  background: #fff0f0;
+  border: 1px solid #ff6565;
+}
+
+#project-box .btn-wrap .like-icon {
+  width: 14px;
+  height: 12px;
+}

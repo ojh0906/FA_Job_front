@@ -18,7 +18,8 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     vertical-align: baseline;
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
     color: #333;
     letter-spacing: -0.05em;
     line-height: 1.4em;

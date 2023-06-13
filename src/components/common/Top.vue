@@ -1,8 +1,11 @@
 <template>
-  <header>
+  <header :id="getCurrentRoutePath == '/' ? 'main-header' : ''"
+    :class="getCurrentRoutePath == '/' ? 'main-header-none' : ''">
     <div id="header">
       <div class="logo-wrap">
-        <img src="/image/common/logo-gray.png">
+        <router-link :to="{ name: 'Index', query: {} }">
+          <img id="logo" :src="getCurrentRoutePath == '/' ? '/image/common/logo.png' : '/image/common/logo-gray.png'">
+        </router-link>
       </div>
       <div class="gnb-wrap">
         <div class="menu-wrap">
@@ -13,7 +16,9 @@
           </div>
         </div>
         <div class="menu-wrap">
-          <a>프로젝트</a>
+          <router-link :to="{ name: 'ProjectList', query: {} }">
+            <a>프로젝트</a>
+          </router-link>
         </div>
         <div class="menu-wrap">
           <a>커뮤니티</a>
@@ -46,5 +51,35 @@
 </template>
 
 <script>
-
+export default {
+  components: {
+  },
+  computed: {
+    getCurrentRoutePath() {
+      return this.$route.path
+    },
+  },
+  date() {
+    return {
+    }
+  },
+  methods: {
+    fixedMenu() {
+      let header = document.querySelector("#main-header");
+      let logo = document.querySelector("#logo");
+      window.onscroll = () => {
+        if (window.scrollY >= 5) {
+          logo.src = '/image/common/logo-gray.png';
+          header.classList.remove("main-header-none");
+        } else {
+          logo.src = '/image/common/logo.png';
+          header.classList.add("main-header-none");
+        }
+      }
+    },
+  },
+  mounted() {
+    this.fixedMenu();
+  }
+}
 </script>
