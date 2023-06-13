@@ -3,7 +3,9 @@
     :class="getCurrentRoutePath == '/' ? 'main-header-none' : ''">
     <div id="header">
       <div class="logo-wrap">
-        <img id="logo" :src="getCurrentRoutePath == '/' ? '/image/common/logo.png' : '/image/common/logo-gray.png'">
+        <router-link :to="{ name: 'Index', query: {} }">
+          <img id="logo" :src="getCurrentRoutePath == '/' ? '/image/common/logo.png' : '/image/common/logo-gray.png'">
+        </router-link>
       </div>
       <div class="gnb-wrap">
         <div class="menu-wrap">
@@ -14,7 +16,9 @@
           </div>
         </div>
         <div class="menu-wrap">
-          <a>프로젝트</a>
+          <router-link :to="{ name: 'ProjectList', query: {} }">
+            <a>프로젝트</a>
+          </router-link>
         </div>
         <div class="menu-wrap">
           <a>커뮤니티</a>
