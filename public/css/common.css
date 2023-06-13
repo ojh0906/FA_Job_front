@@ -448,6 +448,30 @@ input[type="checkbox"] {
 }
 
 
+.ask_table {
+  display: flex;
+  width: 890px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-top: 1px solid #ddd;
+  margin-bottom: 1px solid #ddd;
+}
+
+.ask_tr{
+  display: flex;
+  width: 890px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #ddd;
+ }
+
+ .ask_td01{
+  display: flex;
+  background-color: #F5F5F5;
+  width: 120px;
+  padding: 20px 0;
+ }
+
+
 
 
 /* 페이지네이션

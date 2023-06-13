@@ -1,0 +1,126 @@
+/*커뮤니티 노하우 시작*/
+.ask_section {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+  }
+  
+  .ask_section .title_header {
+    width: 600px;
+    height: 45px;
+  }
+  
+  .title_header .title_bg {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .ask_box {
+    margin-top: 40px;
+    width: 1200px;
+    display: flex;
+  }
+  
+  .ask_box .box_l {
+    margin-right: 40px;
+    width: 270px;
+  }
+  
+  .ask_box .box_l .menu {
+    width: 268px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .ask_box .box_l .menu .menu01 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #fff;
+    color: #333;
+  }
+
+  .ask_box .box_l .menu .menu01 .i_icon {
+    float: right;
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background: url("../image/community/right_arrow.png") no-repeat;
+  }
+  
+  .ask_box .box_l .menu .menu02 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #70bab5;
+    border-bottom: 1px solid #ececec;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .ask_box .box_l .menu .menu03 {
+    box-sizing: border-box;
+    padding: 18px 20px;
+    background: #fff;
+    color: #333;
+  }
+  
+  .ask_box .box_l .menu .menu03 .i_icon {
+    float: right;
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background: url("../image/community/right_arrow.png") no-repeat;
+  }
+
+  .ask_box .box_r {
+    width: 890px;
+  }
+  
+  .box_r_header {
+    display: flex;
+    width: 890px;
+  }
+  
+.box_r_header h3 {
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.td_01{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #333;
+}
+
+.td_02 input{
+  padding: 20px 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999999;
+  width: 770px;
+}
+
+.td_02 ::placeholder{
+  padding-left: 10px;
+}
+
+.ask_tr02 .td_01{
+  display: flex;
+  padding: 150px 0;
+}
+
+.ask_tr02 input{
+  padding: 150px 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999999;
+  width: 770px;
+}
+
+  
