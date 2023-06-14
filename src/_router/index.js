@@ -3,6 +3,7 @@ import MemberRoutes from "./register.routes";
 import CommunityRoutes from "./community.routes";
 import CScenterRoutes from "./community.routes";
 import ProjectRoutes from "./project.routes";
+import MypageRoutes from "./project.routes";
 
 
 import Index from "/src/pages/Index.vue";
@@ -22,6 +23,7 @@ const routes = [
     ...CommunityRoutes,
     ...CScenterRoutes,
     ...ProjectRoutes,
+    ...MypageRoutes,
     { path: "/:pathMatch(.*)*", redirect: "/" },
 ]
 
