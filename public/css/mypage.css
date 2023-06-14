@@ -1,0 +1,51 @@
+#mypage{
+    display: flex;
+    justify-content: center;
+}
+#mypage .menu-container{
+
+}
+#mypage .menu-container .box{
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    /* 16px */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+#mypage .menu-container .box .profile-wrap{
+    padding: 20px 15px;
+    box-sizing: border-box;
+
+}
+#mypage .menu-container .box .profile-wrap .profile-info{
+    display: flex;
+    gap: 20px;
+}
+#mypage .menu-container .box .profile-wrap .profile-info .profile{
+    background-size: cover !important;
+    background-position: center center !important;
+    width: 80px;
+    height: 80px;
+}
+#mypage .menu-container .box .profile-wrap .profile-info .info-wrap{
+
+}
+#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .name{
+    color: #333333;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .type{
+    color: #555555;
+    font-weight: 400;
+    font-size: 14px;
+    margin-right: 10px;
+}
+#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .lv{
+    background: #E2EEF0;
+    border: 1px solid #CDDCE1;
+    border-radius: 5px;
+    padding: 4px 6px;
+    box-sizing: border-box;
+}

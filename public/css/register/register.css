@@ -46,7 +46,7 @@
   width: 70px;
   height: 70px;
   margin: 40px 0 20px 0;
-  background: url("../image/register/User_Male.png") no-repeat;
+  background: url("../../image/register/User_Male.png") no-repeat;
 }
 
 .join_member .join02 a .i_icon {
@@ -54,7 +54,7 @@
   width: 70px;
   height: 70px;
   margin: 40px 0 20px 0;
-  background: url("../image/register/User_Male02.png") no-repeat;
+  background: url("../../image/register/User_Male02.png") no-repeat;
 }
 
 .join_member .join03 a .i_icon {
@@ -62,7 +62,7 @@
   width: 70px;
   height: 70px;
   margin: 40px 0 20px 0;
-  background: url("../image/register/Business_Building.png") no-repeat;
+  background: url("../../image/register/Business_Building.png") no-repeat;
 }
 
 .join_member li a p {
