@@ -1,0 +1,101 @@
+.register_section02 {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.register_section02 .title_header {
+  width: 600px;
+  height: 45px;
+}
+
+.title_header .title_bg {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.ask_box {
+  margin-top: 40px;
+  width: 1200px;
+  display: flex;
+}
+
+.ask_box .box_l {
+  margin-right: 40px;
+  width: 270px;
+}
+
+.ask_box .box_l .menu {
+  width: 268px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.ask_box .box_l .menu .menu01 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #fff;
+  color: #333;
+}
+
+.ask_box .box_l .menu .menu01 .i_icon {
+  float: right;
+  position: relative;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url("../image/community/right_arrow.png") no-repeat;
+}
+
+.ask_box .box_l .menu .menu02 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #70bab5;
+  border-bottom: 1px solid #ececec;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+
+.ask_box .box_l .menu .menu03 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #fff;
+  color: #333;
+}
+
+.ask_box .box_l .menu .menu03 .i_icon {
+  float: right;
+  position: relative;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url("../image/community/right_arrow.png") no-repeat;
+}
+
+.ask_box .box_r {
+  width: 890px;
+}
+
+.register-complete .end_input_box .title02 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  padding-bottom: 30px;
+}
+
+.sub-title02 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #333333;
+}
+
+.sub-title02 span{
+  color: #3E778A;
+}
