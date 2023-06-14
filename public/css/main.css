@@ -81,17 +81,17 @@
 }
 
 /* 검색창 */
-#main-container .search-container {
+.search-container {
   width: 100%;
   padding: 20px 0;
   background: #70bab5;
 }
-#main-container .search-container aside {
+.search-container aside {
   max-width: 1200px;
   width: 100%;
   margin: auto;
 }
-#main-container .search-container .search-wrap {
+.search-container .search-wrap {
   font-family: "Noto Sans Korean";
   font-weight: 400;
   font-size: 16px;
@@ -106,16 +106,16 @@
   max-width: 370px;
   width: 40%;
 }
-#main-container .search-wrap input::placeholder {
+.search-wrap input::placeholder {
   color: #bbbbbb;
 }
-#main-container .search-wrap input {
+.search-wrap input {
   border: 0;
   outline: none;
   width: calc(100% - 20px);
 }
 
-#main-container .search-wrap .search-icon {
+.search-wrap .search-icon {
   width: 18px;
   height: 18px;
   cursor: pointer;
