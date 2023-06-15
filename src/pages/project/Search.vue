@@ -45,39 +45,41 @@
                             </thead>
                             <tbody>
                                 <tr class="t_tr" v-for="v in 10">
-                                    <td class="t_td">상성프로에이치 기업</td>
-                                    <td class="t_td title-td">
-                                        <p class="t-title">프로젝트 사람 구함</p>
-                                        <div class="info-box">
-                                            <div class="info">
-                                                <p class="info-title">
-                                                    기간
-                                                </p>
-                                                <p class="info-text">
-                                                    2023.06.15 ~ 2024.06.14
-                                                </p>
+                                    <router-link :to="{ name: 'ProjectDetail', query: {} }" class="table-row">
+                                        <td class="t_td">상성프로에이치 기업</td>
+                                        <td class="t_td title-td">
+                                            <p class="t-title">프로젝트 사람 구함</p>
+                                            <div class="info-box">
+                                                <div class="info">
+                                                    <p class="info-title">
+                                                        기간
+                                                    </p>
+                                                    <p class="info-text">
+                                                        2023.06.15 ~ 2024.06.14
+                                                    </p>
+                                                </div>
+                                                <div class="info">
+                                                    <p class="info-title">
+                                                        분야
+                                                    </p>
+                                                    <p class="info-text">
+                                                        노동
+                                                    </p>
+                                                </div>
+                                                <div class="info">
+                                                    <p class="info-title">
+                                                        산업
+                                                    </p>
+                                                    <p class="info-text">
+                                                        디스플레이
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="info">
-                                                <p class="info-title">
-                                                    분야
-                                                </p>
-                                                <p class="info-text">
-                                                    노동
-                                                </p>
-                                            </div>
-                                            <div class="info">
-                                                <p class="info-title">
-                                                    산업
-                                                </p>
-                                                <p class="info-text">
-                                                    디스플레이
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="t_td">충남 천안</td>
-                                    <td class="t_td">1000</td>
-                                    <td class="t_td">~2023.06.30</td>
+                                        </td>
+                                        <td class="t_td">충남 천안</td>
+                                        <td class="t_td">1000</td>
+                                        <td class="t_td">~2023.06.30</td>
+                                    </router-link>
                                 </tr>
                             </tbody>
                         </table>
