@@ -68,12 +68,14 @@ export default {
       let header = document.querySelector("#main-header");
       let logo = document.querySelector("#logo");
       window.onscroll = () => {
-        if (window.scrollY >= 5) {
-          logo.src = '/image/common/logo-gray.png';
-          header.classList.remove("main-header-none");
-        } else {
-          logo.src = '/image/common/logo.png';
-          header.classList.add("main-header-none");
+        if (this.getCurrentRoutePath == '/') {
+          if (window.scrollY >= 5) {
+            logo.src = '/image/common/logo-gray.png';
+            header.classList.remove("main-header-none");
+          } else {
+            logo.src = '/image/common/logo.png';
+            header.classList.add("main-header-none");
+          }
         }
       }
     },

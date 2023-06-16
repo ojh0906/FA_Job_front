@@ -1,6 +1,7 @@
 <template>
   <Top />
-  <div :id="getCurrentRoutePath == '/' ? 'main-container' : 'container'">
+  <div
+    :id="getCurrentRoutePath.path == '/' ? 'main-container' : getCurrentRoutePath.matched[0].path == '/project/' ? 'project-container' : 'container'">
     <router-view />
   </div>
   <Footer />
@@ -16,12 +17,12 @@ export default {
   },
   computed: {
     getCurrentRoutePath() {
-      return this.$route.path
+      return this.$route
     },
-    methods: {
-    },
-    mounted() {
-    }
+  },
+  methods: {
+  },
+  mounted() {
   }
 }
 </script>

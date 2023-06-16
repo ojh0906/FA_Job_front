@@ -2,10 +2,9 @@
 #main-container .project-slider .swiper-slide {
   position: relative;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .project-box-container {
@@ -33,16 +32,17 @@
   transform: rotate(180deg);
 }
 
+#main-container .project-slider .swiper-slide > a {
+  width: 100%;
+}
 /*프로젝트 콘텐츠 */
 #project-box {
   background: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
-  width: 45%;
+  width: 100%;
   padding: 15px;
-}
-
-#project-box {
+  box-sizing: border-box;
 }
 
 #project-box .project-title-wrap {
@@ -149,4 +149,504 @@
 #project-box .btn-wrap .like-icon {
   width: 14px;
   height: 12px;
+}
+
+/* 프로젝트 리스트 페이지 */
+
+#project-nav {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  max-width: 270px;
+  width: 100%;
+}
+#project-nav .project-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  padding: 15px 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+#project-nav .category-wrap {
+  padding: 15px 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#project-nav .category-wrap:nth-last-child(2) {
+  border-bottom: none;
+}
+
+#project-nav .category-wrap .title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+#project-nav .category-wrap .category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#project-nav .category-wrap .check-text {
+  width: auto;
+  min-width: 47%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#project-nav .category-wrap .check-text input {
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  width: 20px;
+  height: 20px;
+}
+
+#project-nav .fitler-btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #3e778a;
+  background: #dee6e9;
+  border-radius: 5px;
+  padding: 14px;
+  margin: 20px 10px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 프로젝트 리스트 페이지 */
+#project-list {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  margin: 60px auto 0;
+}
+#project-list .project-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+#project-list .project {
+  max-width: 890px;
+  width: 100%;
+}
+
+#project-list .project-title-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+#project-list .project-title-wrap .project-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #333333;
+}
+#project-list .project-title-wrap .project-sub-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+}
+
+#project-list .project-title-wrap .project-title span {
+  color: #3e778a;
+}
+
+#project-list .project-title-wrap .project-sub-title span {
+  font-weight: 800;
+  color: #70bab5;
+}
+
+#project-list .ad-box-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3e778a;
+
+  background: #e2eef0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+#project-list .ad-project-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#project-list .ad-project-box #project-box {
+  width: auto;
+}
+
+/* 프로젝트 필터 */
+#project-filter-wrap {
+  font-family: "Noto Sans Korean";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #555555;
+  justify-content: end;
+  display: flex;
+  margin: 30px 0 20px 0;
+}
+
+.search-fiter-wrap {
+  margin: 0 0 20px 0 !important;
+}
+
+#project-filter-wrap .open {
+  display: flex;
+}
+#project-filter-wrap .close {
+  display: none;
+}
+#project-filter-wrap .filter-item {
+  position: relative;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+#project-filter-wrap .filter-item .filter-text {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+#project-filter-wrap .filter-list-wrap {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 90px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+#project-filter-wrap .filter-list {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#project-filter-wrap .filter-list input {
+  accent-color: #70bab5;
+  margin: 0;
+}
+#project-filter-wrap .filter-list label {
+  width: 100%;
+}
+
+/* 프로젝트 테이블 */
+#project-table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #cddce1;
+}
+
+#project-table thead .t_title {
+  width: auto;
+}
+
+#project-table thead .th-title {
+  width: 460px;
+}
+
+#project-table tbody tr td {
+  padding: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #555555;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#project-table .title-td {
+  text-align: left;
+}
+
+#project-table .t-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+#project-table .table-row {
+  width: 100%;
+  display: contents;
+}
+
+#project-table .info-box {
+  display: flex;
+  gap: 16px;
+}
+
+#project-table .info-box .info {
+  display: flex;
+  gap: 4px;
+}
+
+#project-table .info-box .info .info-title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #333333;
+  padding: 4px 8px;
+  background: #eeeeee;
+  border-radius: 4px;
+}
+
+#project-table .info-box .info .info-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #777777;
+}
+
+/* 프로젝트 상세 페이지 */
+#project-detail {
+  max-width: 1200px;
+  width: 100%;
+  margin: 60px auto 0;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #dddddd;
+}
+#project-detail .title-box {
+  padding: 20px;
+  background: #f1f7f7;
+  border: 1px solid #9fbec5;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#project-detail .title-box .title-box-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+#project-detail .title-box .info-box-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#project-detail .title-box .info-box {
+  background: #ffffff;
+  border: 1px solid #9fbec5;
+  border-radius: 5px;
+  display: flex;
+  height: 40px;
+}
+
+#project-detail .title-box .info-box .info {
+  display: flex;
+  padding: 10px;
+  gap: 15px;
+}
+#project-detail .title-box .info-box .info:nth-child(2) {
+  border-right: 1px #cddce1 solid;
+  border-left: 1px #cddce1 solid;
+}
+#project-detail .title-box .info-box .info .title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #333333;
+}
+#project-detail .title-box .info-box .info .text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+
+  color: #555555;
+}
+#project-detail .title-box .date {
+  display: flex;
+  font-size: 14px;
+  line-height: 17px;
+  color: #666666;
+}
+#project-detail .title-box .date .title {
+  font-weight: 700;
+  color: #666666;
+  margin-right: 5px;
+}
+#project-detail .title-box .date .text {
+  font-weight: 400;
+  color: #666666;
+}
+#project-detail .title-box .date .line {
+  /* border: 1px solid #cddce1; */
+  color: #cddce1;
+  margin: 0 10px;
+}
+
+.project-detail-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  min-height: 400px;
+  height: 100%;
+}
+
+.project-content .summary-title {
+}
+.project-content .content-title {
+  margin: 60px 0 10px 0;
+}
+.project-content .content-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #555555;
+}
+.project-content img,
+.project-content .content-text img {
+  width: 100%;
+}
+
+.project-detail-content .project-content .summary-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  margin: 40px 0 10px 0;
+}
+.project-detail-content .project-content {
+  width: calc(100% - 370px);
+}
+
+/* 요약 테이블 */
+.project-detail-table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #9fbec5;
+}
+
+.project-detail-table tr {
+  border-bottom: 1px solid #dee6e9;
+}
+.project-detail-table tr td {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #555555;
+  padding: 15px 10px;
+}
+.project-detail-table tr .td-title {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #555555;
+  width: 140px;
+  background: #f1f7f7;
+}
+
+.project-detail-content .project-etc {
+  padding: 0px 40px;
+  width: 370px;
+  box-sizing: border-box;
+  border-left: 1px solid #dddddd;
+  position: relative;
+}
+
+.project-detail-content .project-etc .like-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  margin-top: 35px;
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  color: #999999;
+  vertical-align: middle;
+}
+.project-detail-content .project-etc .like-text img {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+/* .project-detail-content .project-etc .like-text img { */
+.project-detail-content .project-etc > div {
+}
+.project-detail-content .project-etc .like-project-btn,
+.project-detail-content .project-etc .share-btn,
+.project-detail-content .project-etc .apply-btn,
+.project-detail-content .project-etc .team-apply-btn {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 290px;
+}
+.project-detail-content .project-etc .like-project-btn img {
+  width: 20px;
+  height: 18px;
+}
+.project-detail-content .project-etc .share-btn {
+  margin-top: 15px;
+}
+.project-detail-content .project-etc .share-btn img {
+  width: 19px;
+  height: 19px;
+}
+
+.project-detail-content .project-etc .apply-btn-wrap {
+  position: absolute;
+  bottom: 0;
+}
+.project-detail-content .project-etc .apply-btn {
+}
+.project-detail-content .project-etc .apply-btn img {
+  width: 16px;
+  height: 20px;
+}
+.project-detail-content .project-etc .team-apply-btn {
+  margin-top: 15px;
+}
+.project-detail-content .project-etc .team-apply-btn img {
+  width: 20px;
+  height: 18px;
+}
+
+#main-container .project-slide-container {
+  padding: 80px 0 20px;
 }

@@ -13,6 +13,14 @@
   min-height: calc(100% - 280px);
   height: 100%;
 }
+#project-container {
+  position: relative;
+  padding-bottom: 60px;
+  width: 100%;
+  margin: 90px auto 0 auto;
+  min-height: calc(100% - 280px);
+  height: 100%;
+}
 
 #main-container {
   position: relative;
