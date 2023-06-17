@@ -310,6 +310,7 @@ input[type="checkbox"] {
 - 태그 선택 시 클래스 tag-click 추가
 - 별도 설정 없음
 */
+
 .tag {
   background: #ffffff;
   border: 1px solid #dddddd;
@@ -455,6 +456,7 @@ input[type="checkbox"] {
   border-radius: 5px;
 }
 .td_com01 {
+  vertical-align: middle;
   width: 120px;
   padding: 15px 10px;
   text-align: center;
@@ -480,6 +482,67 @@ input[type="checkbox"] {
   width: 30px;
   vertical-align: middle;
 }
+.td_com05 {
+  display: flex;
+  vertical-align: middle;
+  width: 630px;
+  color: #555;
+}
+.td_com05 p{
+  padding: 15px 10px;
+}
+
+
+.comment02 {
+  width: 1200px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+.bltd_com01 {
+  width: 100px;
+  padding: 15px 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-size: 16px;
+  color: #555;
+}
+.bltd_com02 {
+  display: flex;
+  vertical-align: middle;
+  width: 940px;
+  padding: 15px 10px;
+  color: #555;
+}
+.bltd_com03 {
+  width: 120px;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  color: #999;
+}
+.bltd_com04 {
+  display: flex;
+  vertical-align: middle;
+  width: 960px;
+  color: #555;
+}
+.bltd_com04 p{
+  padding: 15px 10px;
+}
+.fw_com01{
+  vertical-align: middle;
+  width: 100px;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+}
+
+
+
 
 /* 페이지네이션
  */
@@ -499,4 +562,121 @@ input[type="checkbox"] {
 
 .pagination a:last-child {
   margin-right: 0px;
+}
+
+.pagination02 {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  height: 24px;
+  padding-top: 20px;
+}
+
+.pagination02 a {
+  text-align: center;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.pagination02 a:last-child {
+  margin-right: 0px;
+}
+
+
+
+/*자유홍보*/
+.cont01{
+  display: flex;
+  padding: 20px 0px;
+  width: 890px;
+  background: #FFFFFF;
+  border-top: 1px solid #DDDDDD;
+}
+
+.cont01 .img_area{
+  display: flex;
+}
+
+.ptxt_area{
+  margin-left: 20px;
+}
+
+.ptxt_area ul{
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+.ptxt_area ul li{
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #E5E5E5;
+}
+
+.ptxt_area ul li:last-child{
+  margin-right: 0px;
+  border-right: 0px;
+}
+
+.freecont_area{
+  display: flex;
+  margin-top: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+/*블랙리스트*/
+.bl_line01{
+  display: flex;
+  width: 1200px;
+  margin-bottom: 20px;
+}
+
+.bl_list01 {
+  text-align: center;
+  width: 373px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+}
+
+.bl_list01:hover{
+  background: #e2eef0;
+  border: 1px solid #3e778a;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bl_list01 h3{
+  padding: 10px 0;
+  width: 313px;
+  border-bottom: 1px solid #DDDDDD;
+  font-size: 16px;
+  font-weight: 700;
+  color: #666;
+}
+
+.list01_info {
+  margin-top: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.list01_p {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list01_p span {
+  display: flex;
+  margin-right: 8px;
+  font-weight: 700;
 }

@@ -1,16 +1,16 @@
 /*커뮤니티 노하우 시작*/
-.Know_section {
+#Know_section01 {
   position: relative;
   margin: 0 auto;
   width: 1200px;
 }
 
-.title_header {
+.know_header {
   width: 600px;
   height: 45px;
 }
 
-.title_header .title_bg {
+.know_header .title_bg {
   font-size: 32px;
   font-weight: 700;
 }
@@ -59,147 +59,147 @@
   background: url("../image/community/right_arrow.png") no-repeat;
 }
 
-.know_box .box_r {
+.know_box .know_r {
   width: 890px;
 }
 
-.box_r_header {
+.know_r .know_r_header {
   display: flex;
   width: 890px;
 }
 
-.box_r_header h3 {
+.know_r .know_r_header h3 {
   display: flex;
   font-size: 20px;
   font-weight: 700;
 }
 
-.box_r_header p {
+.know_r .know_r_header p {
   display: flex;
   margin: 2px 20px;
   font-size: 16px;
   color: #555;
 }
 
-.box_r .tap_list {
+.know_r .tap_list {
   display: flex;
   width: 890px;
   margin-top: 20px;
 }
 
-.box_r .tap_list .btn01 {
+.know_r .tap_list .btn01 {
   display: inline-block;
   margin-right: 10px;
   padding: 8px 20px;
 }
 
-.box_r .tap_list .btn6 {
+.know_r .tap_list .btn6 {
   display: inline-block;
   margin-right: 10px;
   padding: 8px 20px;
 }
 
-.t_table .th_01{
+.know_r .know_table01 .know01_th_01{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .th_02{
+.know_table01 .know01_th_02{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .th_03{
+.know_table01 .know01_th_03{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .th_04{
+.know_table01 .know01_th_04{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .th_05{
+.know_table01 .know01_th_05{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .th_06{
+.know_table01 .know01_th_06{
   text-align: center;
   vertical-align: middle;
   padding: 17px 0;
 }
 
-.t_table .td_01{
+.know_table01 .know01 .td_01{
   text-align: center;
   width: 78px;
   padding: 18px 0;
 }
 
-.t_table .td_02{
+.know_table01 .td_02{
   width: 392px;
   padding: 18px 0;
 }
 
-.t_table .td_03{
+.know_table01 .td_03{
   text-align: center;
   width: 120px;
   padding: 18px 0;
 }
 
-.t_table .td_04{
+.know_table01 .td_04{
   text-align: center;
   width: 100px;
   padding: 18px 0;
 }
 
-.t_table .td_05{
+.know_table01 .td_05{
   text-align: center;
   width: 120px;
   padding: 18px 0;
 }
 
-.t_table .td_06{
+.know_table01 .td_06{
   text-align: center;
   width: 80px;
   padding: 18px 0;
 }
 
-.row{
+.know01_row{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.row .text-input{
+.know01_row .text-input{
   padding: 10px 0 10px 10px;
   width: 300px;
   border: 1px solid #CDDCE1;
   border-radius: 4px;
 }
 
-.row .text-input input{
+.know01_row .text-input input{
   width: calc(100% - 38px);
   border: none;
   outline: none;
   font-size: 16px;
 }
 
-.row .text-input input::placeholder{
+.know01_row .text-input input::placeholder{
   color: #BBBBBB;
 }
 
-.row .text-input img{
+.know01_row .text-input img{
   float: right;
   margin-right: 10px;
 }
 
-.row .btn01 {
+.know01_row .btn01 {
   float: right;
   box-sizing: border-box;
   padding: 13px 20px;

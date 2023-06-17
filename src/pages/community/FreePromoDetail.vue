@@ -1,35 +1,34 @@
 <template>
-    <div id="Know_section02">
+    <div id="free_section02">
         <!--타이틀-->
-        <div class="know_header02">
+        <div class="free02_header">
             <h3 class="title_bg">커뮤니티</h3>
         </div>
 
-        <div class="know_box02">
-            <div class="box_l">
+        <div class="free02_box">
+            <div class="free02_l">
                 <div class="menu">
                     <a href="#">
                         <div class="menu01">
                         Know-how
+                        <i class="i_icon"></i>
                         </div>
                     </a>
                     <a href="#">
                         <div class="menu02">
                         자유홍보
-                        <i class="i_icon"></i>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <div class="know_r02">
+            <div class="free02_r">
                 <!--타이틀-->
-                <div class="box_r_header02">
-                    <h3>Know-how</h3>
-                    <p>여러분의 노하우를 공유해주세요.</p>
+                <div class="free02_r_header">
+                    <h3>자유홍보글</h3>
                 </div>
 
-                <table class="t_table02">
+                <table class="free_table02">
                     <th class="t_title02 th_01" style="width: 78px;">전기</th>
                     <th class="t_title02 th_02" style="width: 460px;">제 노하우를 알려드립니다.</th>
                     <th class="t_title02 th_03" style="width: 120px;">김유진</th>
@@ -44,21 +43,11 @@
                 </div>
 
                 <div class="cont_area">
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                </div>
-
-                <div class="recommend">
-                    <a href="#" class="btn7 up">
-                        <i class="i_icon"></i>
-                        <span>추천154</span>
-                    </a>
-                    <a href="#" class="btn4 down">
-                        <i class="i_icon"></i>
-                        <span>비추천1</span>
-                    </a>
+                    <img src="/image/community/image_3.png" alt="이미지입니다.">
+                    자유홍보 내용이 들어가는 영역입니다.<br>
+                    자유홍보 내용이 들어가는 영역입니다.<br>
+                    자유홍보 내용이 들어가는 영역입니다.<br>
+                    자유홍보 내용이 들어가는 영역입니다.<br>
                 </div>
 
                 <table class="comment">
@@ -89,7 +78,7 @@
                     </tr>
                 </table>
 
-                <div class="know02_row">
+                <div class="free02_row">
                     <a href="#" class="btn4">목록으로</a>
                 </div>
             </div>

@@ -1,16 +1,15 @@
 /*커뮤니티 노하우 시작*/
-.Know_section {
+#Know_section02 {
   position: relative;
   margin: 0 auto;
   width: 1200px;
 }
 
-.title_header {
+#Know_section02 .know_header02 {
   width: 600px;
-  height: 45px;
 }
 
-.title_header .title_bg {
+#Know_section02 .know_header02 .title_bg {
   font-size: 32px;
   font-weight: 700;
 }
@@ -59,7 +58,7 @@
   background: url("../image/community/right_arrow.png") no-repeat;
 }
 
-.know_box02 .box_r {
+.know_box02 .know_r02 {
   width: 890px;
 }
 
@@ -116,17 +115,17 @@
   background: url("../image/community/sharebtn.png") no-repeat;
 }
 
-.box_r .btn_area{
+.know_r02 .btn_area{
   display: flex;
-  padding: 20px 0px 0px;
+  margin-top: 20px;
   width: 890px;
 }
 
-.btn_area .modify-btn{
+.know_r02 .btn_area .modify-btn{
   margin: 0 10px 0 764px;
 }
 
-.btn_area a{
+.know_r02 .btn_area a{
   padding: 10px 15px;
 }
 
@@ -136,86 +135,126 @@
   line-height: 24px;
 }
 
-.recommend{
+.know_r02 .recommend{
   display: flex;
+  justify-content: center;
   width: 890px;
   padding-bottom: 30px;
 }
 
-.recommend .up{
-  display: flex;
+.know_r02 .recommend .up{
   justify-content: center;
   margin-right: 20px;
   padding: 12px 13px;
   border-radius: 5px;
 }
 
-.recommend .up .i_icon{
+.know_r02 .recommend .up .i_icon{
   display: flex;
   width: 17px;
   height: 20px;
   background: url("../image/community/up.png") no-repeat;
 }
 
-.recommend .up span{
+.know_r02 .recommend .up span{
   display: flex;
-  margin-top: 28px;
+  margin-top: 8px;
   color: #3E778A;
 }
 
-.recommend .down{
-  display: flex;
+.know_r02 .recommend .down{
   text-align: center;
   padding: 12px 13px;
   border-radius: 5px;
 }
 
-.recommend .down .i_icon{
+.know_r02 .recommend .down .i_icon{
   display: flex;
   width: 17px;
   height: 20px;
   background: url("../image/community/down.png") no-repeat;
 }
 
-.recommend .down span{
+.know_r02 .recommend .down span{
   display: flex;
-  text-align: center;
-  padding-top: 5px;
+  margin-top: 8px;
   color: #777;
 }
 
-.comment .tr_com{
+.know_r02 .comment .tr_com{
   padding: 15px 10px;
   border-bottom: 1px solid #DDDDDD;
 }
 
-.comment .tr_com02{
+.know_r02 .comment .tr_com02{
   padding: 15px 10px;
   border-bottom: 1px solid #DDDDDD;
 }
 
-.tr_com02 .i_icon{
+.know_r02 .comment .tr_com02 .i_icon{
   display: flex;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 68px;
   background: url("../image/community/td.png") no-repeat;
 }
 
-.tr_com02 .td_03{
+.know_r02 .comment .tr_com02 .td_03{
   display: flex;
 }
 
-.tr_com02 .td_04{
+.know_r02 .comment .tr_com02 .td_04{
   vertical-align: middle;
 }
 
-.row{
+.know_r02 .comment .tr_com03 .td_01{
+  font-weight: 400;
+  color: #555;
+}
+
+.know_r02 .comment .tr_com03 .td_02 .field_input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.know_r02 .comment .tr_com03 .td_02 .field_input input:focus {
+  /* border: #3e778a 2px solid;
+  outline: #3e778a; */
+  border: 1px solid #dddddd;
+  outline: none;
+}
+
+.know_r02 .comment .tr_com03 .td_02 .field_input input {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px 10px 53px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.know_r02 .comment .tr_com03 a{
+  display: flex;
+  margin: 15px 15px 15px 0;
+  padding: 31px 42px;
+  background-color: #3E778A;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: #fff;
+}
+
+.know02_row{
+  display: flex;
   margin-top: 30px;
   justify-content: center;
 }
 
-.row a {
-  display: flex;
+.know02_row a {
   box-sizing: border-box;
   padding: 20px 72px;
   border-radius: 5px;
