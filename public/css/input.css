@@ -59,6 +59,7 @@
   align-items: center;
   width: 100%;
 }
+.field-wrap .field_input textarea:focus,
 .field-wrap .field_input input:focus {
   /* border: #3e778a 2px solid;
   outline: #3e778a; */
@@ -66,7 +67,8 @@
   outline: none;
 }
 
-.field-wrap .field_input input {
+.field-wrap .field_input input,
+.field-wrap .field_input textarea {
   border: 1px solid #dddddd;
   border-radius: 5px;
   padding: 15px;

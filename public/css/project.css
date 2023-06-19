@@ -650,3 +650,269 @@
 #main-container .project-slide-container {
   padding: 80px 0 20px;
 }
+
+#apply {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 60px;
+  /* padding-bottom: 60px; */
+}
+
+#apply .apply-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #333333;
+  margin-bottom: 40px;
+}
+
+#apply .field-wrap {
+  width: 100%;
+}
+
+#apply .field-wrap .field_input textarea {
+  height: 144px;
+  resize: none;
+}
+
+#apply .field-wrap .team-list-wrap {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  width: 100%;
+}
+#apply .field-wrap .team-list {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dddddd;
+}
+#apply .field-wrap .team-list:nth-last-child(1) {
+  border-bottom: none;
+}
+
+#apply .field-wrap .team-list .name {
+  width: 187px;
+}
+#apply .field-wrap .team-list .phone,
+#apply .field-wrap .team-list .email {
+  width: 476px;
+}
+
+#apply .add-member-wrap {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dddddd;
+}
+#apply .add-member-wrap .add-member {
+  padding: 12px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#apply .add-member-wrap .add-member img {
+  width: 16px;
+  height: 16px;
+}
+
+#apply .field-wrap .team-list .close-icon {
+  width: 14px;
+  height: 14px;
+}
+
+#apply .team-apply-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+#apply .team-apply-btn {
+  margin-top: 30px;
+  padding: 20px 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+#apply .team-apply-btn img {
+  width: 20px;
+  height: 18px;
+}
+
+#apply .completion-box-wrap {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 80px;
+}
+#apply .completion-box {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  background: #e2eef0;
+  gap: 10px;
+  border-radius: 5px;
+}
+#apply .completion-box .title {
+  font-weight: 700;
+}
+
+/* 팝업 */
+#popup {
+  position: fixed;
+  top: -90px;
+  bottom: 0;
+  left: 0;
+  padding-top: 90px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+#popup .popup-box-wrap {
+  border-radius: 5px;
+  width: 700px;
+  height: 520px;
+  background-color: #fff;
+}
+#popup .popup-box {
+  padding: 30px 20px;
+}
+#popup .popup-title {
+  padding: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f7f7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#popup .popup-title img {
+  width: 17px;
+  height: 17px;
+}
+#popup .popup-box .search-title {
+  font-family: "Noto Sans CJK KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.05em;
+
+  color: #555555;
+  margin-bottom: 10px;
+}
+#popup .popup-box .popup-search {
+  padding: 10px;
+  gap: 10px;
+  width: 373px;
+  background: #ffffff;
+  border: 1px solid #cddce1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+#popup .popup-box .popup-search input:focus,
+#popup .popup-box .popup-search input {
+  outline: none;
+  border: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+#popup .popup-box .popup-search input::placeholder {
+  color: #bbb;
+}
+#popup .popup-box .popup-search img {
+  width: 18px;
+  height: 18px;
+}
+#popup .popup-box .popup-search {
+}
+
+#popup .popup-box .field-wrap {
+  width: 100%;
+}
+
+#popup .popup-box .field-wrap .team-search-list {
+  height: 162px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+#popup .popup-box .field-wrap .team-list-wrap {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#popup .popup-box .field-wrap .team-list {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dddddd;
+}
+#popup .popup-box .field-wrap .team-list:nth-last-child(1) {
+  border-bottom: none;
+}
+
+#popup .popup-box .field-wrap .team-list .name {
+  width: 30%;
+}
+#popup .popup-box .field-wrap .team-list .phone,
+#popup .popup-box .field-wrap .team-list .email {
+  width: 35%;
+}
+
+#popup .popup-box .field-wrap .add-member-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+#popup .popup-box .field-wrap .add-member-wrap .add-member {
+  padding: 19px 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#popup .popup-box .field-wrap .add-member-wrap .add-member img {
+  width: 16px;
+  height: 16px;
+}
+
+#popup .popup-box .field-wrap .team-list .close-icon {
+  width: 14px;
+  height: 14px;
+}

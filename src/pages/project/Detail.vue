@@ -78,10 +78,12 @@
                             <img class="share-icon" src='/image/project/person.png' />
                             개인 지원하기
                         </div>
-                        <div class="team-apply-btn btn btn1">
-                            <img class="share-icon" src='/image/project/team.png' />
-                            팀 지원하기
-                        </div>
+                        <router-link :to="{ name: 'ProjectApplyTeam', query: {} }">
+                            <div class="team-apply-btn btn btn1">
+                                <img class="share-icon" src='/image/project/team.png' />
+                                팀 지원하기
+                            </div>
+                        </router-link>
                     </div>
                 </aside>
             </article>
