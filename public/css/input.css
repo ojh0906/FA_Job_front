@@ -19,6 +19,11 @@
   line-height: 20px;
   color: #555555;
 }
+.field-wrap .input-title span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
 .field-wrap .field {
   display: flex;
   flex-wrap: wrap;

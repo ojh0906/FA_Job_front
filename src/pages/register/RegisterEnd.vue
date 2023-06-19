@@ -4,8 +4,7 @@
         <RegisterHeader step="4" />
 
         <!-- 내국인 회원 완료 화면 -->
-        <article class="register-complete" v-if="true">
-
+        <article class="register-complete" v-if="false">
             <div class="end_input_box">
                 <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
                 <p class="title">
@@ -14,8 +13,28 @@
             </div>
 
             <div class="next2">
-                <div class="btn btn1">FA JOB 시작하기</div>
-                <div class="btn btn2">이력서 작성하기</div>
+                <router-link :to="{ name: 'Index' }">
+                    <div class="btn btn1">FA JOB 시작하기</div>
+                </router-link>
+                <router-link :to="{ name: '' }">
+                    <div class="btn btn2">이력서 작성하기</div>
+                </router-link>
+            </div>
+        </article>
+
+        <!-- 기업 회원 완료 화면 -->
+        <article class="register-complete" v-if="true">
+            <div class="end_input_box">
+                <div class="check"><img src="/image/register/Checkmark.png" alt="완료이미지입니다."></div>
+                <p class="title">
+                    <strong class="bold">닉네임</strong> 님의 회원가입을 축하드립니다.
+                </p>
+            </div>
+
+            <div class="next2">
+                <router-link :to="{ name: 'Index' }">
+                    <div class="btn btn1">FA JOB 시작하기</div>
+                </router-link>
             </div>
         </article>
 
@@ -32,7 +51,7 @@
             </div>
 
             <div class="next">
-                <router-link :to="{ path: '/' }">
+                <router-link :to="{ name: 'Index' }">
                     <div class="btn btn4">
                         홈
                     </div>
@@ -50,7 +69,7 @@
             </div>
 
             <div class="next">
-                <router-link :to="{ path: '/' }">
+                <router-link :to="{ name: 'Index' }">
                     <div class="btn btn4">
                         홈
                     </div>
