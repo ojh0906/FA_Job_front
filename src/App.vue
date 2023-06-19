@@ -1,10 +1,12 @@
 <template>
-  <Top />
-  <div
-    :id="getCurrentRoutePath.path == '/' ? 'main-container' : getCurrentRoutePath.matched[0].path == '/project/' ? 'project-container' : 'container'">
-    <router-view />
+  <div @click="check($event)">
+    <Top ref="top" />
+    <div
+      :id="getCurrentRoutePath.path == '/' ? 'main-container' : getCurrentRoutePath.matched[0].path == '/project/' ? 'project-container' : 'container'">
+      <router-view />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script>
@@ -21,6 +23,9 @@ export default {
     },
   },
   methods: {
+    check(event) {
+      this.$refs.top.clickSelect(event);
+    },
   },
   mounted() {
   }

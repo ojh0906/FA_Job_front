@@ -112,7 +112,7 @@ header {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #333333;
+  color: #333333 !important;
   padding: 15px 0;
   display: block;
 }
@@ -142,6 +142,92 @@ header {
   left: -14px;
   background: #ddd;
   top: 0;
+}
+#header .side-wrap .alarm-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.15));
+}
+#header .side-wrap .alarm {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 6px;
+  background: #ff6464;
+  border-radius: 50px;
+  gap: 4px;
+}
+#header .side-wrap .alarm span {
+  color: #ffffff;
+}
+#header .side-wrap .alarm img {
+  width: 14px;
+  height: 15px;
+}
+#header .right-menu {
+  display: flex;
+  justify-content: end;
+  gap: 16px;
+  align-items: center;
+}
+#header .alarm-popup {
+  position: absolute;
+  top: 30px;
+  left: -120px;
+  width: 280px;
+  max-height: 330px;
+  height: auto;
+  min-width: 66px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-break: keep-all;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  background: #ffffff;
+  z-index: 50;
+}
+#header .alarm-popup .new {
+  background: #fff0f0;
+}
+#header .alarm-popup > div:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#header .alarm-popup > div {
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid #ececec;
+}
+#header .alarm-popup > div:nth-last-child(1) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: none;
+}
+#header .alarm-popup .title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 5px;
+  color: #777777;
+}
+#header .alarm-popup .title span {
+  font-weight: 700;
+  color: #333333;
+}
+#header .alarm-popup .text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #555555;
 }
 
 /*  Footer  */
@@ -485,10 +571,10 @@ input[type="checkbox"] {
   margin-left: 10px;
   color: #70bab5;
 }
-.t_td.center{
+.t_td.center {
   text-align: center;
 }
-.t_td.left{
+.t_td.left {
   text-align: left;
 }
 
@@ -547,10 +633,9 @@ input[type="checkbox"] {
   width: 630px;
   color: #555;
 }
-.td_com05 p{
+.td_com05 p {
   padding: 15px 10px;
 }
-
 
 .comment02 {
   width: 1200px;
@@ -587,10 +672,10 @@ input[type="checkbox"] {
   width: 960px;
   color: #555;
 }
-.bltd_com04 p{
+.bltd_com04 p {
   padding: 15px 10px;
 }
-.fw_com01{
+.fw_com01 {
   vertical-align: middle;
   width: 100px;
   padding: 15px 10px;
@@ -599,9 +684,6 @@ input[type="checkbox"] {
   font-size: 16px;
   color: #333;
 }
-
-
-
 
 /* 페이지네이션
  */
@@ -641,44 +723,42 @@ input[type="checkbox"] {
   margin-right: 0px;
 }
 
-
-
 /*자유홍보*/
-.cont01{
+.cont01 {
   display: flex;
   padding: 20px 0px;
   width: 890px;
-  background: #FFFFFF;
-  border-top: 1px solid #DDDDDD;
+  background: #ffffff;
+  border-top: 1px solid #dddddd;
 }
 
-.cont01 .img_area{
+.cont01 .img_area {
   display: flex;
 }
 
-.ptxt_area{
+.ptxt_area {
   margin-left: 20px;
 }
 
-.ptxt_area ul{
+.ptxt_area ul {
   display: flex;
   margin-bottom: 10px;
   font-size: 12px;
   color: #777;
 }
 
-.ptxt_area ul li{
+.ptxt_area ul li {
   padding-right: 10px;
   margin-right: 10px;
-  border-right: 1px solid #E5E5E5;
+  border-right: 1px solid #e5e5e5;
 }
 
-.ptxt_area ul li:last-child{
+.ptxt_area ul li:last-child {
   margin-right: 0px;
   border-right: 0px;
 }
 
-.freecont_area{
+.freecont_area {
   display: flex;
   margin-top: 10px;
   line-height: 20px;
@@ -686,10 +766,8 @@ input[type="checkbox"] {
   color: #555;
 }
 
-
-
 /*블랙리스트*/
-.bl_line01{
+.bl_line01 {
   display: flex;
   width: 1200px;
   margin-bottom: 20px;
@@ -698,23 +776,23 @@ input[type="checkbox"] {
 .bl_list01 {
   text-align: center;
   width: 373px;
-  background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 20px 30px;
 }
 
-.bl_list01:hover{
+.bl_list01:hover {
   background: #e2eef0;
   border: 1px solid #3e778a;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.bl_list01 h3{
+.bl_list01 h3 {
   padding: 10px 0;
   width: 313px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   font-size: 16px;
   font-weight: 700;
   color: #666;
