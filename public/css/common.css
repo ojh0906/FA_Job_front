@@ -407,30 +407,37 @@ input[type="checkbox"] {
   margin-top: 20px;
 }
 .t_title {
-  width: 890px;
   background: #e2eef0;
   font-weight: 500;
   font-size: 16px;
   text-align: center;
   vertical-align: middle;
   color: #333333;
+  padding: 17px 0;
 }
 .t_tr:hover {
   background: #f1f7f7;
 }
 .t_tr {
-  width: 890px;
   background: #ffffff;
   border-bottom: 1px solid #ececec;
 }
 .t_td {
-  padding-top: 16px;
+  padding: 16px 10px;
+  box-sizing: border-box;
   font-size: 16px;
   color: #555555;
+  text-align: center;
 }
 .t_td span {
   margin-left: 10px;
   color: #70bab5;
+}
+.t_td.center{
+  text-align: center;
+}
+.t_td.left{
+  text-align: left;
 }
 
 .t_table02 {

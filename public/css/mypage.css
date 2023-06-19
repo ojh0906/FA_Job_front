@@ -1,21 +1,32 @@
 #mypage{
     display: flex;
     justify-content: center;
+    gap: 40px;
+}
+#mypage .left{
+    width: 270px;
 }
 #mypage .menu-container{
-
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid #DDDDDD;
+    background: #FFFFFF;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
 }
 #mypage .menu-container .box{
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
     /* 16px */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+    background: #F5F5F5;
+    border-bottom: 1px solid #ECECEC;
+    padding: 20px 15px;
+
 }
 #mypage .menu-container .box .profile-wrap{
-    padding: 20px 15px;
     box-sizing: border-box;
-
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 #mypage .menu-container .box .profile-wrap .profile-info{
     display: flex;
@@ -27,25 +38,176 @@
     width: 80px;
     height: 80px;
 }
-#mypage .menu-container .box .profile-wrap .profile-info .info-wrap{
+#mypage .menu-container .box .profile-wrap .info-wrap{
 
 }
-#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .name{
+#mypage .menu-container .box .profile-wrap .info-wrap .name{
     color: #333333;
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 5px;
 }
-#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .type{
+#mypage .menu-container .box .profile-wrap .info-wrap .type{
     color: #555555;
     font-weight: 400;
     font-size: 14px;
     margin-right: 10px;
 }
-#mypage .menu-container .box .profile-wrap .profile-info .info-wrap .lv{
+#mypage .menu-container .box .profile-wrap .info-wrap .lv{
     background: #E2EEF0;
     border: 1px solid #CDDCE1;
     border-radius: 5px;
     padding: 4px 6px;
     box-sizing: border-box;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
 }
+#mypage .menu-container .box .profile-wrap .info-wrap .residual{
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 4px 5px;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 10px;
+}
+#mypage .menu-container .box .lv-bar{
+    width: 100%;
+    background: #CCCCCC;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#mypage .menu-container .box .lv-bar .lv-status{
+    background: #3E778A;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    padding: 2px 0;
+    text-align: center;
+}
+#mypage .menu-container .box .lv-info{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #777777;
+    margin-bottom: 24px;
+    margin-top: 5px;
+}
+#mypage .menu-container .box .setting-wrap{
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+#mypage .menu-container .box .setting-wrap .btn{
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #555555;
+    position: relative;
+}
+#mypage .menu-container .box .setting-wrap .btn:nth-child(1){
+    border-right: 1px solid #F5F5F5;
+}
+#mypage .menu-container .menu-wrap{
+    background: #fff;
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+#mypage .menu-container .menu-wrap .menu{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #333333;
+    padding: 20px 0;
+    display: inline-block;
+}
+#mypage .menu-container .menu-wrap .menu:after{
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #333333;
+    right: 20px;
+    position: absolute;
+}
+#mypage .sub-menu-wrap{
+    margin-top: 30px;
+}
+#mypage .sub-menu-wrap .menu{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #777777;
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+}
+#mypage .content-container{
+    width: calc(100% - 310px);
+    min-width: 890px;
+}
+/* common */
+#mypage .content-container .area-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+#mypage .content-container .table-wrap{
+    width: 100%;
+}
+#mypage .content-container .table-wrap table{
+    width: 100%;
+
+}
+#mypage .content-container .table-wrap table .colored{
+
+}
+
+
+#mypage .content-container .mypage-info-container .info-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+#mypage .content-container .mypage-info-container .info-tab div{
+    border-right: 1px solid #DDDDDD;
+    width: 25%;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    text-align: center;
+    color: #555555;
+
+}
+#mypage .content-container .mypage-info-container .info-tab div:nth-last-child(1) {
+    border-right: none;
+}
+#mypage .content-container .mypage-info-container .info-tab strong{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+

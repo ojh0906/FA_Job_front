@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MemberRoutes from "./register.routes";
-import CommunityRoutes from "./community.routes";
-import CScenterRoutes from "./community.routes";
-import ProjectRoutes from "./project.routes";
-import MypageRoutes from "./mypage.routes";
+import MemberRoutes from "./register.routes.js";
+import CommunityRoutes from "./community.routes.js";
+import CSCenterRoutes from "./cscenter.routes.js";
+import ProjectRoutes from "./project.routes.js";
+import MypageRoutes from "./mypage.routes.js";
 
 
 import Index from "/src/pages/Index.vue";
@@ -21,7 +21,7 @@ const routes = [
 
     ...MemberRoutes,
     ...CommunityRoutes,
-    ...CScenterRoutes,
+    ...CSCenterRoutes,
     ...ProjectRoutes,
     ...MypageRoutes,
     { path: "/:pathMatch(.*)*", redirect: "/" },

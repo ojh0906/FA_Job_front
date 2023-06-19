@@ -39,32 +39,32 @@
                 </div>
 
                 <table class="t_table">
-                    <th class="t_title th_01" style="width: 78px;">번호</th>
-                    <th class="t_title th_02" style="width: 612px;">제목</th>
-                    <th class="t_title th_05" style="width: 120px;">등록일</th>
-                    <th class="t_title th_05" style="width: 80px;">답변상태</th>
+                    <th class="t_title " style="width: 78px;">번호</th>
+                    <th class="t_title " style="width: 612px;">제목</th>
+                    <th class="t_title " style="width: 120px;">등록일</th>
+                    <th class="t_title " style="width: 80px;">답변상태</th>
                         <tr class="t_tr" >
                             <!-- 첫번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_w_06">대기중</td>
+                            <td class="t_td ">10</td>
+                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td ">2023.06.15</td>
+                            <td class="t_td ">대기중</td>
                             <!-- 첫번째 줄 끝 -->
                         </tr>
                         <tr class="t_tr">
                             <!-- 두번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_e_06">완료</td>
+                            <td class="t_td ">10</td>
+                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td ">2023.06.15</td>
+                            <td class="t_td ">완료</td>
                             <!-- 두번째 줄 끝 -->
                         </tr>
                         <tr class="t_tr">
                             <!-- 세번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_e_06">완료</td>
+                            <td class="t_td ">10</td>
+                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                            <td class="t_td ">2023.06.15</td>
+                            <td class="t_td ">완료</td>
                             <!-- 세번째 줄 끝 -->
                         </tr>
                 </table>

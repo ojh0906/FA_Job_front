@@ -3,13 +3,12 @@ import KnowHowDetail from "/src/pages/community/KnowHowDetail.vue";
 import FreePromo from "/src/pages/community/FreePromo.vue";
 import FreePromoDetail from "/src/pages/community/FreePromoDetail.vue";
 import FreePromoWrite from "/src/pages/community/FreePromoWrite.vue";
-
 import BlackList from "/src/pages/blacklist/BlackList.vue";
 import BlackDetail from "/src/pages/blacklist/BlackDetail.vue";
 
 
 
- 
+
 export default [
     {
         path: "/community/",
