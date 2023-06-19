@@ -169,6 +169,7 @@
 }
 #mypage .content-container .table-wrap{
     width: 100%;
+    margin-bottom: 40px;
 }
 #mypage .content-container .table-wrap table{
     width: 100%;
@@ -210,4 +211,140 @@
     font-size: 16px;
     line-height: 19px;
 }
+#mypage .content-container .mypage-info-container .filter-wrap{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#mypage .content-container .mypage-info-container .filter-wrap span{
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 24px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #999999;
+    cursor: pointer;
+}
+#mypage .content-container .mypage-info-container .filter-wrap span:hover,
+#mypage .content-container .mypage-info-container .filter-wrap span.active{
+    background: #70BAB5;
+    color: #fff;
+}
 
+/* 회원탈퇴 */
+#mypage .content-container .withdraw-info-container{
+
+}
+#mypage .content-container .withdraw-info-container.withdraw2{
+    width: 400px;
+    margin: 0 auto;
+}
+#mypage .content-container .withdraw-info-container .info-box{
+    background: rgba(255, 101, 101, 0.15);
+    border-radius: 5px;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+#mypage .content-container .withdraw-info-container .box{
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    max-height: 140px;
+    overflow-y: scroll;
+}
+#mypage .content-container .withdraw-info-container .box strong{
+    font-size: 16px;
+    line-height: 20px;
+}
+#mypage .content-container .withdraw-info-container .agree-wrap{
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+#mypage .content-container .withdraw-info-container .agree-wrap label{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #999999;
+}
+#mypage .content-container .withdraw-info-container .agree-wrap input {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+#mypage .content-container .withdraw-info-container .input-wrap{
+    width: 100%;
+    margin-bottom: 50px;
+}
+#mypage .content-container .withdraw-info-container .input-wrap .input-wrap .label{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: -0.05em;
+    color: #555555;
+    margin-bottom: 4px;
+}
+#mypage .content-container .withdraw-info-container .input-wrap input{
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    padding: 14px 15px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+}
+#mypage .content-container .withdraw-info-container .input-wrap input::placeholder {
+    color: #999999;
+}
+#mypage .content-container .withdraw-info-container .success{
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #ECECEC;
+    margin-bottom: 30px;
+}
+#mypage .content-container .withdraw-info-container .success img{
+    width: 80px;
+    margin-bottom: 30px;
+}
+#mypage .content-container .withdraw-info-container .success .top{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #333333;
+    margin-bottom: 30px;
+}
+#mypage .content-container .withdraw-info-container .success .bottom{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    text-align: center;
+    color: #333333;
+}

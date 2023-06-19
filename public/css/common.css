@@ -302,7 +302,59 @@ input[type="checkbox"] {
   border: 1px solid #3e778a;
   color: #3e778a;
 }
-
+.big-btn-type-a{
+  background: #3E778A;
+  border-radius: 5px;
+  text-align: center;
+  padding: 19px 0;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  cursor: pointer;
+}
+.big-btn-type-b{
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+  text-align: center;
+  padding: 19px 0;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  cursor: pointer;
+}
+.big-btn-type-a-red{
+  background: #FF6565;
+  border-radius: 5px;
+  text-align: center;
+  padding: 19px 0;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  cursor: pointer;
+}
+.small-btn-type-b{
+  color: #3E778A;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border: 1px solid #3E778A;
+  border-radius: 5px;
+  cursor: pointer;
+}
 /*
 공통 태그 버튼
 예시) <div class="tag tag-click">
