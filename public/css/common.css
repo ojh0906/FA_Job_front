@@ -430,7 +430,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .small-btn-type-b{
-  color: #3E778A;
+  color: #3E778A !important;
   letter-spacing: -0.02em;
   font-weight: 700;
   font-size: 14px;

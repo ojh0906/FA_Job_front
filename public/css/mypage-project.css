@@ -1,0 +1,94 @@
+/* 이후에 mypage와 합칠 예정 */
+
+#mypage .content-container .mypage-info-container .project-tab {
+  display: flex;
+  gap: 20px;
+}
+
+#mypage .content-container .mypage-info-container .project-tab > div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 10px;
+
+  flex-wrap: wrap;
+  width: 162px;
+  height: 133px;
+
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #333333;
+}
+#mypage .content-container .mypage-info-container .project-tab > div span {
+  font-weight: 800;
+}
+
+#mypage .content-container .mypage-info-container .project-tab > div strong {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  width: 100%;
+  color: #333;
+}
+
+#mypage .content-container .mypage-info-container .project-tab .click {
+  color: #fff;
+  background: #3e778a;
+}
+
+#mypage .content-container .mypage-info-container .project-tab .click span,
+#mypage .content-container .mypage-info-container .project-tab .click strong {
+  color: #fff;
+}
+
+#mypage .content-container .mypage-info-container .table-wrap .td_company_info {
+  cursor: pointer;
+}
+
+#mypage .content-container .mypage-info-container .table-color-row td {
+  padding: 15.5px 10px;
+}
+
+#mypage .content-container .check-pw-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#mypage .content-container .check-pw-container .text-box {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 10px;
+  width: 500px;
+
+  background: #e2eef0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#mypage .content-container .check-pw-container .check-pw {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#mypage .content-container .check-pw-container .check-pw .field-wrap {
+  width: 100%;
+}

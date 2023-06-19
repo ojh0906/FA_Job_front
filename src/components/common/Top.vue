@@ -43,7 +43,7 @@
         <router-link v-if="false" :to="{ name: 'RegisterType', query: {} }">
           회원가입
         </router-link>
-        <div class="right-menu">
+        <div class="right-menu" v-if="true">
           <!-- 알림 -->
           <div class="alarm-wrap a-item">
             <div class="alarm a-item" @click="this.alarmPopup = !this.alarmPopup">
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div>
-            <router-link :to="{ name: 'RegisterType', query: {} }">마이페이지</router-link>
+            <router-link :to="{ name: 'Mypage', query: {} }">마이페이지</router-link>
             <a>로그아웃
             </a>
           </div>
