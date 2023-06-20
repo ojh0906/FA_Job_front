@@ -18,16 +18,20 @@
         </div>
         <p class="lv-info">다음레벨까지 남은 경험치 : 500exp</p>
         <div class="setting-wrap">
-          <a class="btn">회원정보 관리</a>
+          <router-link :to="{ name: 'ProfileInfo', query: {} }" class="btn">
+            회원정보 관리
+          </router-link>
           <a class="btn">비밀번호 변경 </a>
         </div>
       </div>
       <div class="menu-wrap">
         <a class="menu">이력서 관리</a>
       </div>
-      <div class="menu-wrap">
-        <a class="menu">프로젝트 관리</a>
-      </div>
+      <router-link :to="{ name: 'MypageProject', query: {} }">
+        <div class="menu-wrap">
+          <a class="menu">프로젝트 관리</a>
+        </div>
+      </router-link>
       <div class="menu-wrap">
         <a class="menu">문의 내역</a>
       </div>
