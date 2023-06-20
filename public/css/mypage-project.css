@@ -68,7 +68,6 @@
   line-height: 19px;
   text-align: center;
 
-  color: #333333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,9 +75,16 @@
   gap: 10px;
   width: 500px;
 
-  background: #e2eef0;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+#mypage .content-container .check-pw-container .blue-box {
+  color: #333333;
+  background: #e2eef0;
+}
+#mypage .content-container .check-pw-container .red-box {
+  color: #ff6565;
+  background: #fff0f0;
 }
 
 #mypage .content-container .check-pw-container .check-pw {
@@ -119,4 +125,9 @@
 
 #mypage .content-container .profile-edit .field-wrap {
   width: 420px;
+}
+
+#mypage .content-container .check-pw-container .edit-pw {
+  flex-wrap: wrap;
+  gap: 20px;
 }

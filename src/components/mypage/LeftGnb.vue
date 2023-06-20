@@ -21,7 +21,9 @@
           <router-link :to="{ name: 'ProfileInfo', query: {} }" class="btn">
             회원정보 관리
           </router-link>
-          <a class="btn">비밀번호 변경 </a>
+          <router-link :to="{ name: 'checkPassword', query: {} }" class="btn">
+            비밀번호 변경
+          </router-link>
         </div>
       </div>
       <div class="menu-wrap">
