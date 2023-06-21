@@ -7,11 +7,6 @@ import BlackList from "/src/pages/blacklist/BlackList.vue";
 import BlackDetail from "/src/pages/blacklist/BlackDetail.vue";
 import BlackRequest from "/src/pages/blacklist/BlackRequest.vue";
 
-
-
-
-
-
 export default [
     {
         path: "/community/",

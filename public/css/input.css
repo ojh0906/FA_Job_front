@@ -72,6 +72,10 @@
   outline: none;
 }
 
+.field-wrap .field_input input::placeholder,
+.field-wrap .field_input textarea::placeholder {
+  color: #999999;
+}
 .field-wrap .field_input input,
 .field-wrap .field_input textarea {
   border: 1px solid #dddddd;
@@ -80,7 +84,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #999999;
+  color: #333;
   width: 100%;
 }
 

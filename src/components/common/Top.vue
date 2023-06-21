@@ -40,10 +40,15 @@
         </div>
       </div>
       <div class="side-wrap">
-        <router-link v-if="false" :to="{ name: 'RegisterType', query: {} }">
-          회원가입
-        </router-link>
         <div class="right-menu" v-if="true">
+          <router-link :to="{ name: 'RegisterType', query: {} }">
+            회원가입
+          </router-link>
+          <router-link :to="{ name: 'Login', query: {} }">
+            로그인
+          </router-link>
+        </div>
+        <div class="right-menu" v-if="false">
           <!-- 알림 -->
           <div class="alarm-wrap a-item">
             <div class="alarm a-item" @click="this.alarmPopup = !this.alarmPopup">
