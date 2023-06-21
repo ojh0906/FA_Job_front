@@ -435,3 +435,257 @@
 #main-container .ad-container .ad-content .text-wrap .google {
   width: 190px;
 }
+
+#login {
+  display: flex;
+  gap: 70px;
+  margin-bottom: -60px;
+}
+#login article {
+  width: 50%;
+  position: relative;
+}
+#login .img-content .title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #333333;
+
+  width: 100%;
+  margin-bottom: 86px;
+}
+#login .img-content .phone-img {
+  width: 400px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#login .input-content {
+  width: 400px;
+}
+#login .input-content .input-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+
+  letter-spacing: -0.02em;
+
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+#login .input-content .field-wrap {
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#login .input-content .field-wrap .input-password {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#login .input-content .field-wrap .input-password input {
+  border: 0;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  border-radius: 0px;
+}
+#login .input-content .field-wrap .input-password img {
+  width: 20px;
+  height: 15px;
+}
+
+#login .input-content .field-checkbox {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+#login .input-content .field-checkbox p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #555555;
+}
+#login .input-content .field-checkbox label {
+  width: 23px;
+  height: 23px;
+  position: relative;
+}
+#login .input-content .field-checkbox .check-img {
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 10px;
+}
+#login .input-content .field-checkbox .check-box {
+  accent-color: #70bab5;
+  /* border-radius: 50%; */
+  /* width: 1rem;
+height: 1rem; */
+  border-radius: 50%;
+  border: 2px solid #70bab5;
+  appearance: none;
+
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+
+  /* transition: background 0.2s; */
+}
+
+#login .input-content .field-checkbox .check-box:checked {
+  background: #70bab5;
+  border: none;
+}
+
+#login .input-content .btn {
+  padding: 14.5px;
+  margin-bottom: 10px;
+}
+
+#login .input-content .find-id-pw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#login .input-content .find-id-pw .line {
+  color: #e5e5e5;
+  margin: 0 24px;
+}
+#login .input-content .find-id-pw p {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #777777;
+}
+
+#login .input-content .login-box-wrap {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 80px;
+}
+#login .input-content .login-box-wrap .login-box {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  padding: 14.5px 0;
+  border: 1px solid #3e778a;
+  border-radius: 5px;
+}
+
+#login .input-content .login-box-wrap .login-box p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #555555;
+}
+#login .input-content .login-box-wrap .login-box img {
+  width: 20px;
+  height: 18px;
+}
+
+#login .input-content .input-title-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+#login .input-content .input-title-box .check a {
+  color: #333333 !important;
+}
+#login .input-content .input-title-box .title a {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #bbbbbb;
+}
+#login .input-content .input-title-box .title:nth-child(2) {
+  border-left: 1px solid #bbbbbb;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+#login .input-content .field_input .btn {
+  padding: 8px 10px;
+  margin-bottom: 0px;
+  white-space: nowrap;
+}
+
+#login .input-content .field-wrap .input-check {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#login .input-content .field-wrap .input-check input {
+  border: 0;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  border-radius: 0px;
+}
+
+#login .idpw-content {
+  margin-bottom: 263px;
+}
+#login .idpw-content .text-box {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #555555;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 10px;
+  width: 500px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#login .idpw-content .text-box2 {
+  padding: 20px 0px !important;
+  color: #555 !important;
+}
+
+#login .idpw-content .text-box span {
+  color: #3e778a;
+  font-weight: 700;
+}
+
+#login .input-content .blue-box {
+  box-sizing: border-box;
+  color: #333333;
+  background: #e2eef0;
+  /* width: 400px; */
+  width: 100%;
+}
