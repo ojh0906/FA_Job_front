@@ -13,6 +13,9 @@ import ContactWrite from "/src/pages/mypage/contact/Write.vue";
 import ContactDetail from "/src/pages/mypage/contact/Detail.vue";
 import MypageList from "/src/pages/mypage/List.vue";
 
+import MypagePay1 from "/src/pages/mypage/payment/Step1.vue";
+import MypagePay2 from "/src/pages/mypage/payment/Step2.vue";
+
 export default [
     {
         path: "/mypage/",
@@ -31,6 +34,8 @@ export default [
             { path: "contact-write", name: 'ContactWrite', component: ContactWrite, meta: { title: "문의하기 - 작성" } },
             { path: "contact-detail", name: 'ContactDetail', component: ContactDetail, meta: { title: "문의하기 - 상세" } },
             { path: "list", name: 'MypageList', component: MypageList, meta: { title: "내가 쓴 글" } },
+            { path: "payment-step1", name: 'MypagePay1', component: MypagePay1, meta: { title: "서비스 결제 안내" } },
+            { path: "payment-step2", name: 'MypagePay2', component: MypagePay2, meta: { title: "서비스 결제" } },
         ],
     },
 ];

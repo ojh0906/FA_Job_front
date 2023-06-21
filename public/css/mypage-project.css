@@ -522,3 +522,138 @@
   justify-content: center;
   align-items: center;
 }
+
+#mypage .content-container .pay-table {
+  border: 1px solid #dddddd;
+}
+#mypage .content-container .pay-table .t_table {
+  margin-top: 0px;
+}
+
+#mypage .content-container .pay-table tr:hover {
+  background-color: transparent;
+}
+
+#mypage .content-container .next-btn-wrap .btn {
+  padding: 19.5px 86px;
+}
+
+#mypage .content-container .list {
+  list-style: disc;
+}
+
+#mypage .content-container .list p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 40px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+#mypage .content-container .list li {
+  margin-left: 25px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+
+#mypage .content-container .product-btn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+#mypage .content-container .product-btn p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  margin-left: 10px;
+  color: #555555;
+}
+#mypage .content-container .product-btn .btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 4px;
+  background: #eff3f4;
+  border: 1px solid #3e778a;
+  border-radius: 5px;
+}
+
+#mypage .content-container .product-btn .btn-wrap p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 0;
+  color: #555555;
+}
+
+#mypage .content-container .product-btn .btn-wrap img {
+  width: 24px;
+  height: 24px;
+}
+
+#mypage .content-container .pay-table2 {
+}
+
+#mypage .content-container .pay-table2 .t_title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  color: #333333;
+  padding: 10px;
+}
+#mypage .content-container .pay-table2 .t_title:nth-child(2) {
+  text-align: center;
+}
+
+#mypage .content-container .pay-table2 .t_tr {
+  border-bottom: 0;
+}
+
+#mypage .content-container .pay-table2 .t_td {
+  padding: 10px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+  text-align: left;
+}
+
+#mypage .content-container .pay-table2 .t_td:nth-child(2) {
+  text-align: right;
+}
+
+#mypage .content-container .order-pay {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#mypage .content-container .order-pay p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #222222;
+}

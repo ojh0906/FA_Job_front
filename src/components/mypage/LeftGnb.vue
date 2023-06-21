@@ -47,9 +47,11 @@
       <div class="menu-wrap">
         <a class="menu">업무일지 관리</a>
       </div>
-      <div class="menu-wrap">
-        <a class="menu">서비스 결제</a>
-      </div>
+      <router-link :to="{ name: 'MypagePay1', query: {} }">
+        <div class="menu-wrap">
+          <a class="menu">서비스 결제</a>
+        </div>
+      </router-link>
     </div>
     <div class="sub-menu-wrap">
       <a class="menu">로그아웃</a>
