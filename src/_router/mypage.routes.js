@@ -11,6 +11,7 @@ import checkPassword from "/src/pages/mypage/editpw/checkPw.vue";
 import ContactList from "/src/pages/mypage/contact/List.vue";
 import ContactWrite from "/src/pages/mypage/contact/Write.vue";
 import ContactDetail from "/src/pages/mypage/contact/Detail.vue";
+import MypageList from "/src/pages/mypage/List.vue";
 
 export default [
     {
@@ -29,6 +30,7 @@ export default [
             { path: "contact", name: 'ContactList', component: ContactList, meta: { title: "문의하기 - 문의내역" } },
             { path: "contact-write", name: 'ContactWrite', component: ContactWrite, meta: { title: "문의하기 - 작성" } },
             { path: "contact-detail", name: 'ContactDetail', component: ContactDetail, meta: { title: "문의하기 - 상세" } },
+            { path: "list", name: 'MypageList', component: MypageList, meta: { title: "내가 쓴 글" } },
         ],
     },
 ];

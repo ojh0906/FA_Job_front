@@ -34,14 +34,16 @@
           <a class="menu">프로젝트 관리</a>
         </div>
       </router-link>
-       <router-link :to="{ name: 'ContactList', query: {} }">
+      <router-link :to="{ name: 'ContactList', query: {} }">
         <div class="menu-wrap">
           <a class="menu">문의 내역</a>
         </div>
       </router-link>
-      <div class="menu-wrap">
-        <a class="menu">내가 쓴글</a>
-      </div>
+      <router-link :to="{ name: 'MypageList', query: {} }">
+        <div class="menu-wrap">
+          <a class="menu">내가 쓴 글</a>
+        </div>
+      </router-link>
       <div class="menu-wrap">
         <a class="menu">업무일지 관리</a>
       </div>
