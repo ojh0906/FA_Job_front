@@ -37,7 +37,6 @@
         <p class="title">
           블랙리스트
         </p>
-
         <div class="more-btn" @click="goToPage('BlacklistList')">
           <p>
             더보기
@@ -51,7 +50,7 @@
         <div class="tag" :class="this.blacklist_target === 1 ? 'tag-click':''" @click="this.blacklist_target = 1; this.getBlacklistList();">프리랜서</div>
         <div class="tag" :class="this.blacklist_target === 2 ? 'tag-click':''" @click="this.blacklist_target = 2; this.getBlacklistList();">기타</div>
       </div>
-      <BlackSlider />
+      <BlackSlider :blacklistList="this.blacklistList"/>
     </article>
 
     <!-- 게시판-->
@@ -142,6 +141,7 @@ export default {
       board_type:0,
       projectList: [],
       blacklistList: [],
+      blackListEndPage:99999,
       noticeList: [],
       knowhowList: [],
       marketingList: [],
@@ -169,16 +169,15 @@ export default {
     },
     getBlacklistList() {
       this.blacklistList = [];
-      let param = {
+      let option = {
 
       }
       if(this.blacklist_target >= 0){
-        param.target = this.blacklist_target;
+        option.target = this.blacklist_target;
       }
-      this.mainStore.listBlacklist(param).then((resp) => {
+      this.mainStore.listBlacklist(option).then((resp) => {
         if (resp.data.code == 200) {
           this.blacklistList = resp.data.body;
-          console.log(resp.data.body)
         }
       }).catch(err => {
         console.log("err", err);
