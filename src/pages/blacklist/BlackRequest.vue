@@ -32,7 +32,7 @@
                     </tr>
 
                     <tr class="tr_com">
-                        <td class="fw_com01">분류</td>
+                        <td class="fw_com01">제목</td>
                         <td class="fw_com02">
                             <div class="field_input">
                                 <input type="text" placeholder="제목을 입력해주세요.">

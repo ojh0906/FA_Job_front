@@ -715,6 +715,27 @@ input[type="checkbox"] {
   border-radius: 5px;
   margin-right: 10px;
 }
+.fa_com01 {
+  vertical-align: middle;
+  width: 120px;
+  padding: 19px 25px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  background-color: #F5F5F5;
+}
+.fa_com02 {
+  display: flex;
+  vertical-align: middle;
+  padding: 8px 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+
 
 
 /* 페이지네이션

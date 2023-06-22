@@ -1,55 +1,55 @@
 /*커뮤니티 노하우 시작*/
-.ask_section {
+#ask_section {
     position: relative;
     margin: 0 auto;
     width: 1200px;
   }
   
-  .ask_section .title_header {
+#ask_section .atitle03_header {
     width: 600px;
     height: 45px;
-  }
+}
   
-  .title_header .title_bg {
+#ask_section .atitle03_header .atitle03_bg {
     font-size: 32px;
     font-weight: 700;
-  }
+}
   
-  .ask_box {
+#ask_section .ask_box {
     margin-top: 40px;
     width: 1200px;
     display: flex;
-  }
+}
   
-  .ask_box .box_l {
+#ask_section .ask_box .a03_l {
     margin-right: 40px;
     width: 270px;
-  }
+}
   
-  .ask_box .box_l .menu {
+#ask_section .ask_box .a03_l .menu {
     width: 268px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     background-color: #fff;
-  }
+}
   
-  .ask_box .box_l .menu .menu01 {
+#ask_section .ask_box .a03_l .menu .menu01 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #fff;
     color: #333;
-  }
+}
 
-  .ask_box .box_l .menu .menu01 .i_icon {
+#ask_section .ask_box .a03_l .menu .menu01 .i_icon {
     float: right;
     position: relative;
     top: 2px;
     width: 16px;
     height: 16px;
     background: url("../image/community/right_arrow.png") no-repeat;
-  }
+}
   
-  .ask_box .box_l .menu .menu02 {
+#ask_section .ask_box .a03_l .menu .menu02 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #70bab5;
@@ -57,70 +57,115 @@
     font-weight: 700;
     font-size: 16px;
     color: #fff;
-  }
+}
   
-  .ask_box .box_l .menu .menu03 {
+#ask_section .ask_box .a03_l .menu .menu03 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #fff;
     color: #333;
-  }
+}
   
-  .ask_box .box_l .menu .menu03 .i_icon {
+#ask_section .ask_box .a03_l .menu .menu03 .i_icon {
     float: right;
     position: relative;
     top: 2px;
     width: 16px;
     height: 16px;
     background: url("../image/community/right_arrow.png") no-repeat;
-  }
+}
 
-  .ask_box .box_r {
+#ask_section .ask_box .a03_r {
     width: 890px;
-  }
+}
   
-  .box_r_header {
+#ask_section .ask_box .a03_r .a03r_header {
     display: flex;
     width: 890px;
   }
   
-.box_r_header h3 {
+#ask_section .ask_box .a03_r .a03r_header h3 {
     display: flex;
     font-size: 20px;
     font-weight: 700;
 }
 
-.td_01{
+#ask_section .ask_box .a03_r .ask_table{
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#ask_section .ask_box .a03_r .ask_table .tr_com{
+  border-bottom: 1px solid #ddd;
+}
+
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .fa_com02 .field_input {
+  display: flex;
+  background-color: #fff;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  color: #999999;
+  opacity: 0.5;
+}
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .fa_com02 .field_input input:focus {
+  /* border: #3e778a 2px solid;
+  outline: #3e778a; */
+  border: 1px solid #dddddd;
+  outline: none;
+}
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .fa_com02 .field_input input {
+  border: none;
+  padding: 12px 0px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
+}
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .td_02 .field_input input {
+  border: none;
+  padding: 12px 0px 200px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
+}
+
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .fw_02 .fw_01 .i_icon{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 22px;
+  margin-right: 8px;
+  background: url("../image/black/file02.png") no-repeat;
+}
+
+#ask_section .ask_box .a03_r .ask_table .tr_com .fw_02 p{
+  color: #777;
+  padding: 10px 0;
+  font-weight: 300;
+  margin: 0 10px;
+}
+
+
+.ask_box .fw_next,
+.next2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
-  color: #333;
+  gap: 40px;
+  padding-top: 30px;
 }
-
-.td_02 input{
-  padding: 20px 0;
-  font-weight: 400;
-  font-size: 16px;
-  color: #999999;
-  width: 770px;
+.ask_box .fw_next .btn {
+  padding: 20px 85px;
 }
-
-.td_02 ::placeholder{
-  padding-left: 10px;
+.ask_box .next2 .btn {
+  padding: 20px 45px;
 }
-
-.ask_tr02 .td_01{
-  display: flex;
-  padding: 150px 0;
-}
-
-.ask_tr02 input{
-  padding: 150px 0;
-  font-weight: 400;
-  font-size: 16px;
-  color: #999999;
-  width: 770px;
-}
-
   
