@@ -306,6 +306,7 @@
 }
 
 #main-container .board-container .board-title-box .tag-wrap .tag {
+  cursor: pointer;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;

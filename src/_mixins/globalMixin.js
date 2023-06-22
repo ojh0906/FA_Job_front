@@ -1,7 +1,11 @@
 import dayjs from "dayjs";
+import router from '@/_router';
 
 export default {
   methods: {
+    goToPage(name){
+      router.push({name:name});
+    },
     getFirstImagePath: (data) => {
       if (
         data !== "" &&

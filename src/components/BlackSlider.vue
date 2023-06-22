@@ -10,7 +10,7 @@
             class="black-slider">
             <swiper-slide v-for="v in 4">
                 <article class="black-box">
-                    <p class="black-title">박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</p>
+                    <p class="black-title">박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성 {{v}}</p>
                     <div class="black-sub">
                         <p class="black-sub-title">분류<span>프리랜서</span></p>
                         <p class="black-sub-title">피해사례<span>대금미지급</span></p>

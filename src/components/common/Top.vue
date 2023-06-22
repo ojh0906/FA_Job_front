@@ -17,7 +17,7 @@
         </div>
         <div class="menu-wrap">
           <router-link :to="{ name: 'ProjectList', query: {} }">
-            <a>프로젝트</a>
+            프로젝트
           </router-link>
         </div>
         <div class="menu-wrap">
@@ -28,7 +28,9 @@
           </div>
         </div>
         <div class="menu-wrap">
-          <a>블랙리스트</a>
+          <router-link :to="{ name: 'BlacklistList', query: {} }">
+            블랙리스트
+          </router-link>
         </div>
         <div class="menu-wrap">
           <a>고객센터</a>

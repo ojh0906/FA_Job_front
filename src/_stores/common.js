@@ -3,10 +3,10 @@ import { http } from '@/_services';
 import router from '@/_router';
 import dayjs from 'dayjs';
 
-const baseUrl = `/usr`;
+const baseUrl = `/member`;
 
 export const useAuthStore = defineStore({
-  id: 'usr',
+  id: 'member',
   state: () => ({
     usr: null,
     loginCheck:false,
@@ -16,6 +16,9 @@ export const useAuthStore = defineStore({
     return_url: null,
   }),
   actions: {
+    async save(params) { // 회원가입
+      return await http.post(`${baseUrl}/save`, params);
+    },
     async login(id, password) {
       try {
           const usr = await http.post(`${baseUrl}/login`, { id:id, password:password }).then((resp) => {

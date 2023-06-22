@@ -9,9 +9,7 @@ export const useMemberStore = defineStore({
   state: () => ({
   }),
   actions: {
-    async save(params) { // 회원가입
-      return await http.post(`${baseUrl}/save`, params);
-    },
+
   },
   persist: true,
 });
