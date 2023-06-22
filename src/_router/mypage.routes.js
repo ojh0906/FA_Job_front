@@ -16,6 +16,11 @@ import MypageList from "/src/pages/mypage/List.vue";
 import MypagePay1 from "/src/pages/mypage/payment/Step1.vue";
 import MypagePay2 from "/src/pages/mypage/payment/Step2.vue";
 
+
+import ResumeManage from "/src/pages/mypage/resume/Manage.vue";
+import ResumeNone from "/src/pages/mypage/resume/None.vue";
+
+
 export default [
     {
         path: "/mypage/",
@@ -36,6 +41,8 @@ export default [
             { path: "list", name: 'MypageList', component: MypageList, meta: { title: "내가 쓴 글" } },
             { path: "payment-step1", name: 'MypagePay1', component: MypagePay1, meta: { title: "서비스 결제 안내" } },
             { path: "payment-step2", name: 'MypagePay2', component: MypagePay2, meta: { title: "서비스 결제" } },
+            { path: "resume-none", name: 'ResumeNone', component: ResumeNone, meta: { title: "이력서 없음" } },
+            { path: "resume-management", name:'ResumeManage', component: ResumeManage, meta: { title: "이력서 관리" } },
         ],
     },
 ];
