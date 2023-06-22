@@ -1,12 +1,12 @@
 <template>
-    <div class="ask_section">
+    <div id="ask01_section">
         <!--타이틀-->
-        <div class="title_header">
-            <h3 class="title_bg">고객센터</h3>
+        <div class="aitle01_header">
+            <h3 class="atitle01_bg">고객센터</h3>
         </div>
 
-        <div class="ask_box">
-            <div class="box_l">
+        <div class="ask01_box">
+            <div class="a01_l">
                 <div class="menu">
                     <a href="#">
                         <div class="menu01">
@@ -28,13 +28,13 @@
                 </div>
             </div>
 
-            <div class="box_r">
+            <div class="a01_r">
                 <div class="ask">
                     <p>문의주시면 빠른 시간 내에 답변드리겠습니다.</p>
                     <a href="#" class="btn1">문의 등록</a>
                 </div>
                 <!--타이틀-->
-                <div class="box_r_header">
+                <div class="a01_r_header">
                     <h3>내 문의내역</h3>
                 </div>
 
