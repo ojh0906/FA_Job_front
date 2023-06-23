@@ -5,15 +5,16 @@ import dayjs from 'dayjs';
 
 const baseUrl = `/member`;
 
-export const useAuthStore = defineStore({
+export const useCommonStore = defineStore({
   id: 'member',
   state: () => ({
-    usr: null,
+    member: null,
     loginCheck:false,
     auth_token: "",
     expiryTime: "",
     isAuthenticated: false,
     return_url: null,
+    field: null,
   }),
   actions: {
     async save(params) { // 회원가입
@@ -21,9 +22,9 @@ export const useAuthStore = defineStore({
     },
     async login(id, password) {
       try {
-          const usr = await http.post(`${baseUrl}/login`, { id:id, password:password }).then((resp) => {
+          const member = await http.post(`${baseUrl}/login`, { id:id, password:password }).then((resp) => {
           if (resp.data.code === 200) {
-            this.usr = resp.data.body.usr;
+            this.member = resp.data.body.member;
             this.auth_token = resp.data.body.token;
             this.isAuthenticated = true;
             this.expiryTime = dayjs(new Date()).add(resp.data.body.expiryHour, 'hour').format('YYYY-MM-DD HH:mm:ss');
@@ -34,7 +35,7 @@ export const useAuthStore = defineStore({
             return resp;
           }
         });
-        return usr;
+        return member;
         // redirect to previous url or default to home page
       } catch (error) {
         this.loginCheck = true;
@@ -43,22 +44,22 @@ export const useAuthStore = defineStore({
     },
     async refresh() {
       try {
-        const usr = await http.get(`${baseUrl}/${this.usr.idx}`).then((resp) => {
+        const member = await http.get(`${baseUrl}/${this.member.member}`).then((resp) => {
           if (resp.data.code === 200) {
-            this.usr = resp.data.body;
+            this.member = resp.data.body;
             //console.log(this.usr);
           }else{
             return resp;
           }
         });
-        return usr;
+        return member;
         // redirect to previous url or default to home page
       } catch (error) {
         console.log("error user auth", error);
       }
     },
     logout() {
-      this.usr = null;
+      this.member = null;
       this.auth_token = "";
       this.isAuthenticated = false;
       this.expiryTime = "";
@@ -67,6 +68,20 @@ export const useAuthStore = defineStore({
     },
     setReturnUrl(url){
       this.return_url = url;
+    },
+    async getField() {
+      try {
+        const field = await http.post(`/main/field/list`, {}).then((resp) => {
+          if (resp.data.code === 200) {
+            this.field = resp.data.body;
+            //console.log(this.field);
+          }
+        });
+        return field;
+        // redirect to previous url or default to home page
+      } catch (error) {
+        console.log("error user auth", error);
+      }
     },
   },
   persist: true,

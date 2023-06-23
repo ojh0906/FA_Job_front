@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import ProjectBox from '/src/components/ProjectBox.vue';
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -49,7 +47,6 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    ProjectBox
   },
   setup() {
     return {
@@ -59,8 +56,6 @@ export default {
   methods: {
   },
   mounted() {
-    console.log(this.blacklistList)
-    console.log(this.blackListEndPage)
   }
 }
 

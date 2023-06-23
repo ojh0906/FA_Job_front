@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useAuthStore } from "@/_stores";
 import { http } from "@/_services";
 
 const baseUrl = `/main`;
@@ -9,7 +8,7 @@ export const useMainStore = defineStore({
   state: () => ({
   }),
   actions: {
-    async listProject( option = {}, pages = { page: 1, page_block: 4 }) {
+    async listProject( option = {}, pages = { page: 1, page_block: 20 }) {
       let params = {
         ...option,
         ...pages,

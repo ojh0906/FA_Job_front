@@ -27,7 +27,7 @@
         </div>
       </div>
       <aside class="project-box-container">
-        <ProjectSlider />
+        <ProjectSlider :projectList="this.projectList" />
       </aside>
     </article>
 
@@ -121,7 +121,7 @@
 import MainSlider from '/src/components/MainSlider.vue';
 import ProjectSlider from '/src/components/ProjectSlider.vue';
 import BlackSlider from '/src/components/BlackSlider.vue';
-import {useMainStore} from '@/_stores';
+import {useCommonStore,useMainStore} from '@/_stores';
 
 export default {
   components: {
@@ -130,8 +130,10 @@ export default {
     BlackSlider,
   },
   setup() {
+    const commonStore = useCommonStore();
     const mainStore = useMainStore();
     return {
+      commonStore,
       mainStore,
     }
   },
@@ -140,6 +142,8 @@ export default {
       blacklist_target:-1,
       board_type:0,
       projectList: [],
+      projectList_prev: [],
+      projectList_next: [],
       blacklistList: [],
       blackListEndPage:99999,
       noticeList: [],
@@ -215,6 +219,7 @@ export default {
     },
   },
   mounted() {
+    this.commonStore.getField();
     this.getInitList();
   }
 }

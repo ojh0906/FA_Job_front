@@ -1,19 +1,30 @@
 <template>
-    <swiper :navigation="{ nextEl: '.project-button-next', prevEl: '.project-button-prev' }" :loop="true" :modules="modules"
-        class="project-slider">
-        <swiper-slide v-for="v in 2">
-            <ProjectBox v-for="v in 4" />
-        </swiper-slide>
-    </swiper>
-    <!--  navigation -->
-    <aside class="project-slide-btn-wrap">
-        <div class="project-button-prev">
-            <img class="more-icon" src="/image/main/next.png" />
-        </div>
-        <div class="project-button-next">
-            <img class="more-icon" src="/image/main/next.png" />
-        </div>
-    </aside>
+  <swiper class="project-slider" :navigation="{ nextEl: '.project-button-next', prevEl: '.project-button-prev' }" :loop="true" :modules="modules">
+    <swiper-slide>
+      <ProjectBox v-for="project in this.projectList.slice(0,4)" :project="project" />
+    </swiper-slide>
+    <swiper-slide v-if="this.projectList.length > 4">
+      <ProjectBox v-for="project in this.projectList.slice(4,8)" :project="project" />
+    </swiper-slide>
+    <swiper-slide v-if="this.projectList.length > 8">
+      <ProjectBox v-for="project in this.projectList.slice(8,12)" :project="project" />
+    </swiper-slide>
+    <swiper-slide v-if="this.projectList.length > 12">
+      <ProjectBox v-for="project in this.projectList.slice(12,16)" :project="project" />
+    </swiper-slide>
+    <swiper-slide v-if="this.projectList.length > 16">
+      <ProjectBox v-for="project in this.projectList.slice(16,20)" :project="project" />
+    </swiper-slide>
+  </swiper>
+  <!--  navigation -->
+  <aside class="project-slide-btn-wrap">
+    <div class="project-button-prev">
+      <img class="more-icon" src="/image/main/next.png" />
+    </div>
+    <div class="project-button-next">
+      <img class="more-icon" src="/image/main/next.png" />
+    </div>
+  </aside>
 </template>
 
 <script>
@@ -27,24 +38,28 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 
 export default {
-    data() {
-        return {
-        }
-    },
-    components: {
-        Swiper,
-        SwiperSlide,
-        ProjectBox
-    },
-    setup() {
-        return {
-            modules: [Pagination, Navigation],
-        };
-    },
-    methods: {
-    },
-    mounted() {
+  props:['projectList'],
+  components: {
+    Swiper,
+    SwiperSlide,
+    ProjectBox
+  },
+  data() {
+    return {
+      cnt: 0,
     }
+  },
+  setup() {
+    return {
+      modules: [Pagination, Navigation],
+    };
+  },
+  methods: {
+  },
+  mounted() {
+  },
+  created() {
+  }
 }
 
 </script>

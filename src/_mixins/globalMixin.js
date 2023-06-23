@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import router from '@/_router';
+import { useCommonStore } from '@/_stores';
 
 export default {
   methods: {
@@ -47,6 +48,10 @@ export default {
       } else {
         return '';
       }
+    },
+    getFieldName(field){
+      const commonStore = useCommonStore();
+      return commonStore.field[commonStore.field.findIndex(f => f.field === field)].name;
     },
   },
 };

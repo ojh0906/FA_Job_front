@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useAuthStore } from '@/_stores';
+import { useCommonStore } from '@/_stores';
 
 export const http = axios.create({
     // baseURL: `${import.meta.env.VITE_LOCAL_API_URL}`,
@@ -12,13 +12,13 @@ export const http = axios.create({
 http.interceptors.request.use(
   (resp) => {
     // console.log("http request", resp);
-    const authStore = useAuthStore();
+    const commonStore = useCommonStore();
 
-    const isAuthenticated = authStore.isAuthenticated;
+    const isAuthenticated = commonStore.isAuthenticated;
     const matches = resp.url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
     const domain = matches && matches[1];
     if (isAuthenticated) {
-        const token = authStore.auth_token;
+        const token = commonStore.auth_token;
         resp.headers.Authorization = `Bearer ${token}`;
     }
     return resp;
