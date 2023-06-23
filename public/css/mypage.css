@@ -349,3 +349,117 @@
     text-align: center;
     color: #333333;
 }
+
+
+
+/*이력서없음*/
+#mypage .content-container .resume-container .not-inputbox{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#mypage .content-container .resume-container .not-inputbox p{
+    margin: 30px 0 40px 0;
+}
+
+#mypage .content-container .resume-container .not-inputbox a{
+    margin-top: 30px;
+}
+
+
+
+/*이력서 관리*/
+#mypage .content-container .resume-container .table-manage-row{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+}
+
+#mypage .content-container .resume-container .row02{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
+#mypage .content-container .resume-container .table-manage-row tr{
+    border-bottom: 1px solid #DDDDDD;
+}
+#mypage .content-container .resume-container .table-manage-row tr:last-child{
+    border-bottom: none;
+}
+
+#mypage .content-container .resume-container .table-manage-row td{
+    padding: 17px 0;
+}
+
+#mypage .content-container .resume-container .table-manage-row td:nth-child(1) {
+    text-align: center;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .table-manage-row td:nth-child(2) {
+    text-align: center;
+    width: 176px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+
+#mypage .content-container .resume-container .table-manage-row td:nth-child(3) {
+    text-align: center;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .table-manage-row td:nth-child(4) {
+    text-align: center;
+    width: 176px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+#mypage .content-container .resume-container .table-manage-row td:nth-child(5) {
+    text-align: center;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .table-manage-row td:nth-child(6) {
+    text-align: center;
+    width: 176px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+
+#mypage .content-container .resume-container .row02 .line02{
+    padding: 9px 0;
+}
+
+#mypage .content-container .resume-container .row3 .line01 {
+    text-align: center;
+    width: 130px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+}

@@ -715,6 +715,27 @@ input[type="checkbox"] {
   border-radius: 5px;
   margin-right: 10px;
 }
+.fa_com01 {
+  vertical-align: middle;
+  width: 120px;
+  padding: 19px 25px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  background-color: #F5F5F5;
+}
+.fa_com02 {
+  display: flex;
+  vertical-align: middle;
+  padding: 8px 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+
 
 
 /* 페이지네이션
@@ -849,3 +870,71 @@ input[type="checkbox"] {
   margin-right: 8px;
   font-weight: 700;
 }
+
+
+
+/*FAQ 드롭다운 메뉴*/
+.accordion-container{
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+.faq-acco{
+  cursor: pointer;
+}
+.faq-acco .accordion-label{
+  display: flex;
+  margin-bottom: 16px;
+  width: 100%;
+  background-color: #F1F7F7;
+}
+.accordion-label p{
+  width: 780px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 17px 25px;
+}
+.accordion-label .up{
+  display: inline-block;
+  margin: 13px 15px;
+  width: 30px;
+  height: 30px;
+  background: url("../image/cscenter/up.png") no-repeat;
+}
+.accordion-label .down{
+  display: inline-block;
+  margin: 13px 15px;
+  width: 30px;
+  height: 30px;
+  background: url("../image/cscenter/down.png") no-repeat;
+}
+.accordion-cont{
+  display: flex;
+  width: 100%;
+}
+.accordion-cont .text-wrap{
+  padding: 25px 20px;
+}
+.accordion-cont .text-wrap strong{
+  display: inline;
+  color: #3E778A;
+  font-size: 16px;
+  font-weight: 900;
+  margin-right: 30px;
+}
+.accordion-cont .text-wrap h3{
+  display: inline;
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 700;
+}
+.accordion-cont .text-wrap p{
+  display: flex;
+  margin: 20px 0 0 47px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+}
+

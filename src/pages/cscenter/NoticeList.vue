@@ -1,12 +1,12 @@
 <template>
-    <div class="notice_section">
+    <div id="notice01_section">
         <!--타이틀-->
-        <div class="title_header">
-            <h3 class="title_bg">고객센터</h3>
+        <div class="ntitle01_header">
+            <h3 class="ntitle01_bg">고객센터</h3>
         </div>
 
-        <div class="notice_box">
-            <div class="box_l">
+        <div class="notice01_box">
+            <div class="n01_l">
                 <div class="menu">
                     <a href="#">
                         <div class="menu01">
@@ -28,9 +28,9 @@
                 </div>
             </div>
 
-            <div class="box_r">
+            <div class="n01_r">
                 <!--타이틀-->
-                <div class="box_r_header">
+                <div class="n01_r_header">
                     <h3>공지사항</h3>
                 </div>
 
