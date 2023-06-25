@@ -19,6 +19,8 @@ import MypagePay2 from "/src/pages/mypage/payment/Step2.vue";
 
 import ResumeManage from "/src/pages/mypage/resume/Manage.vue";
 import ResumeNone from "/src/pages/mypage/resume/None.vue";
+import ResumeWrite from "/src/pages/mypage/resume/Write.vue";
+
 
 
 export default [
@@ -43,6 +45,7 @@ export default [
             { path: "payment-step2", name: 'MypagePay2', component: MypagePay2, meta: { title: "서비스 결제" } },
             { path: "resume-none", name: 'ResumeNone', component: ResumeNone, meta: { title: "이력서 없음" } },
             { path: "resume-management", name:'ResumeManage', component: ResumeManage, meta: { title: "이력서 관리" } },
+            { path: "resume-write", name:'ResumeWrite', component: ResumeWrite, meta: { title: "이력서 작성 및 수정" } },
         ],
     },
 ];

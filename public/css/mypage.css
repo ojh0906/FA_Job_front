@@ -357,6 +357,7 @@
     width: 100%;
     margin-top: 40px;
     text-align: center;
+    display: grid;
 }
 
 #mypage .content-container .resume-container .not-inputbox p{
@@ -381,6 +382,18 @@
     margin-top: 20px;
 }
 
+#mypage .content-container .resume-container .row03{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
+#mypage .content-container .resume-container .row04{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
 #mypage .content-container .resume-container .table-manage-row tr{
     border-bottom: 1px solid #DDDDDD;
 }
@@ -394,6 +407,7 @@
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(1) {
     text-align: center;
+    vertical-align: middle;
     width: 120px;
     background: #e2eef0;
     font-weight: 500;
@@ -404,7 +418,6 @@
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(2) {
     text-align: center;
-    width: 176px;
     font-weight: 400;
     font-size: 17px;
     line-height: 17px;
@@ -414,6 +427,7 @@
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(3) {
     text-align: center;
+    vertical-align: middle;
     width: 120px;
     background: #e2eef0;
     font-weight: 500;
@@ -433,6 +447,7 @@
 }
 #mypage .content-container .resume-container .table-manage-row td:nth-child(5) {
     text-align: center;
+    vertical-align: middle;
     width: 120px;
     background: #e2eef0;
     font-weight: 500;
@@ -455,11 +470,286 @@
     padding: 9px 0;
 }
 
-#mypage .content-container .resume-container .row3 .line01 {
+#mypage .content-container .resume-container .row03 td:nth-child(2) {
     text-align: center;
-    width: 130px;
     font-weight: 400;
     font-size: 17px;
     line-height: 17px;
     color: #555555;
+    background: #FFFFFF;
+}
+
+
+#mypage .content-container .resume-container .row04 .line01 {
+    text-align: center;
+    vertical-align: middle;
+    width: 130px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .row04 th {
+    text-align: center;
+    padding: 19px 0;
+    vertical-align: middle;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    border-top: 1px solid #777777;
+}
+
+#mypage .content-container .resume-container .row04 td:nth-child(1) {
+    text-align: center;
+    width: 150px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .row04 td:nth-child(2) {
+    text-align: center;
+    width: 150px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resume-container .row04 td:nth-child(3) {
+    text-align: center;
+    width: 416px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+.resume-container .fw_next,
+.next2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 30px;
+}
+.resume-container .fw_next .btn .i_icon {
+    float: right;
+    position: relative;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    background: url("../image/mypage/download.png") no-repeat;
+}
+.resume-container .fw_next .btn {
+  padding: 20px 85px;
+}
+.resume-container .next2 .btn {
+  padding: 20px 45px;
+}
+
+
+
+/*이력서 작성*/
+#mypage .content-container .resumew-container .table-manage-row{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+}
+
+#mypage .content-container .resumew-container .row02{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
+#mypage .content-container .resumew-container .row03{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
+#mypage .content-container .resumew-container .row04{
+    border-collapse: collapse;
+    border: 1px solid #777777;
+    margin-top: 20px;
+}
+
+#mypage .content-container .resumew-container .table-manage-row tr{
+    border-bottom: 1px solid #DDDDDD;
+}
+#mypage .content-container .resumew-container .table-manage-row tr:last-child{
+    border-bottom: none;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td{
+    padding: 17px 0;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(1) {
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(2) {
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(3) {
+    text-align: center;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(4) {
+    text-align: center;
+    width: 176px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(5) {
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .table-manage-row td:nth-child(6) {
+    text-align: center;
+    width: 176px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+
+#mypage .content-container .resumew-container .row02 .line02{
+    padding: 9px 0;
+}
+
+#mypage .content-container .resumew-container .row03 td:nth-child(2) {
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    color: #555555;
+    background: #FFFFFF;
+}
+
+#mypage .content-container .resumew-container .row03 td .i_icon {
+    float: right;
+    position: relative;
+    right: 10px;
+    top: -3px;
+    width: 20px;
+    height: 20px;
+    background: url("../image/mypage/down.png") no-repeat;
+    cursor: pointer;
+}
+
+#mypage .content-container .resumew-container .row03 .field_input input {
+    border: none;
+    padding: 0px 0px 100px 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 750px;
+}
+
+
+
+#mypage .content-container .resumew-container .row04 .line01 {
+    text-align: center;
+    vertical-align: middle;
+    width: 130px;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .row04 th {
+    text-align: center;
+    padding: 19px 0;
+    vertical-align: middle;
+    background: #e2eef0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+    border-top: 1px solid #777777;
+}
+
+#mypage .content-container .resumew-container .row04 td:nth-child(1) {
+    text-align: center;
+    width: 150px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .row04 td:nth-child(2) {
+    text-align: center;
+    width: 150px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+#mypage .content-container .resumew-container .row04 td:nth-child(3) {
+    text-align: center;
+    width: 416px;
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    color: #333333;
+}
+
+
+.resumew-container .fw_next,
+.next2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 30px;
+}
+.resumew-container .fw_next .btn {
+  padding: 20px 85px;
 }
