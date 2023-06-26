@@ -1,126 +1,133 @@
 /* 블랙리스트 시작*/
 #blacklist-page {
-    position: relative;
-    margin: 0 auto;
-    width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
 }
 
-#blacklist-page .bl01_header{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
+#blacklist-page .bl01_header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
 }
-  
+
 #blacklist-page .bl01_header .bl01_title {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 38px;
-    color: #333333;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #333333;
 }
 
 #blacklist-page .bl01_header .bl01_sub_title {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #666666;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
 }
 
 #blacklist-page .bl01_header .bl01_sub_title span {
-    font-weight: 800;
-    color: #70bab5;
+  font-weight: 800;
+  color: #70bab5;
 }
 
-#blacklist-page .bl_container{
-    margin: 0 auto;
-    width: 100%;
-    margin-top: 40px;
-    padding: 20px 0;
-    background-color: #70BAB5;
+#blacklist-page .bl_container {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #70bab5;
 }
 
-#blacklist-page .bl_container p{
-    text-align: center;
-    padding-bottom: 10px;
-    color: #fff;
-    font-weight: 400;
+#blacklist-page .bl_container p {
+  text-align: center;
+  padding-bottom: 10px;
+  color: #fff;
+  font-weight: 400;
 }
 
-#blacklist-page .bl_container .text-input{
-    margin: 0 auto;
-    padding: 10px 0 10px 10px;
-    width: 400px;
-    border: 1px solid #CDDCE1;
-    border-radius: 4px;
-    background-color: #fff;
+#blacklist-page .bl_container .text-input {
+  margin: 0 auto;
+  padding: 10px 0 10px 10px;
+  width: 400px;
+  border: 1px solid #cddce1;
+  border-radius: 4px;
+  background-color: #fff;
 }
-  
-#blacklist-page .bl_container .text-input input{
-    width: calc(100% - 38px);
-    border: none;
-    outline: none;
-    font-size: 16px;
+
+#blacklist-page .bl_container .text-input input {
+  width: calc(100% - 38px);
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
-  
-#blacklist-page .bl_container .text-input input::placeholder{
-    color: #BBBBBB;
+
+#blacklist-page .bl_container .text-input input::placeholder {
+  color: #bbbbbb;
 }
-  
-#blacklist-page .bl_container .text-input img{
-    float: right;
-    margin-right: 10px;
+
+#blacklist-page .bl_container .text-input img {
+  float: right;
+  margin-right: 10px;
 }
 
 #blacklist-page .bltap_list {
-    display: flex;
-    width: 890px;
-    margin-top: 20px;
+  display: flex;
+  width: 890px;
+  margin-top: 20px;
 }
-  
+
 #blacklist-page .bltap_list .btn01 {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 8px 20px;
-  }
-  
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 20px;
+}
+
 #blacklist-page .bltap_list .btn6 {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 8px 20px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 20px;
 }
 
-  
 #blacklist-page #bl01_box {
-    margin-top: 20px;
-    width: 1200px;
+  margin-top: 20px;
+  width: 1200px;
 }
 
-
-#blacklist-page #bl01_box .list02{
-    margin: 0 40px;
+#blacklist-page #bl01_box .list-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 20px;
 }
 
-#blacklist-page #bl01_box .list05{
-    margin: 0 40px;
+#blacklist-page .bl_list01 h3 {
+  text-align: left;
 }
 
-#blacklist-page #bl01_box .list08{
-    margin: 0 40px;
+#blacklist-page #bl01_box .list02 {
+  margin: 0 40px;
 }
 
-#bl01_box .bl01_row{
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
+#blacklist-page #bl01_box .list05 {
+  margin: 0 40px;
+}
+
+#blacklist-page #bl01_box .list08 {
+  margin: 0 40px;
+}
+
+#bl01_box .bl01_row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #bl01_box .bl01_row .btn01 {
-    box-sizing: border-box;
-    padding: 13px 20px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 16px;
-    color: #fff;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
 }
-
-  

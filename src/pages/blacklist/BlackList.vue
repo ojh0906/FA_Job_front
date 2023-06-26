@@ -21,88 +21,10 @@
     </div>
 
     <div id="bl01_box">
-      <div class="bl_line01 line01">
-        <div class="bl_list01 list01">
+      <div class="list-box">
+        <div class="bl_list01" v-for="v in 2">
           <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
           <div class="list01_info info01">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list02">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info02">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list03">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info03">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="bl_line01 line02">
-        <div class="bl_list01 list04">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info04">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list05">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info05">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list06">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info06">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="bl_line01 line03">
-        <div class="bl_list01 list07">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info07">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list08">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info08">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
-          </div>
-        </div>
-
-        <div class="bl_list01 list09">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
-          <div class="list01_info info09">
             <p class="list01_p"><span>분류</span>프리랜서</p>
             <p class="list01_p"><span>피해사례</span>대금미지급</p>
             <p class="list01_p"><span>등록일</span>2023.09.12</p>
@@ -114,11 +36,12 @@
         <a class="pointer" v-if="this.pages.start !== 1" @click="onChangePage(this.pages.start - 1)">
           <img src="/image/community/back.png" alt="뒤로가기버튼입니다.">
         </a>
-        <a :class="this.pages.page == page ? 'active':'pointer'" v-for="page in this.pages.pagesList"
-           @click="onChangePage(page)">
+        <a :class="this.pages.page == page ? 'active' : 'pointer'" v-for="page in this.pages.pagesList"
+          @click="onChangePage(page)">
           {{ page }}
         </a>
-        <a class="pointer" v-if="this.pages.end !== this.pages.end_page + 1" @click="onChangePage(this.pages.start + this.pages.num_block)">
+        <a class="pointer" v-if="this.pages.end !== this.pages.end_page + 1"
+          @click="onChangePage(this.pages.start + this.pages.num_block)">
           <img src="/image/community/foward.png" alt="앞으로가기버튼입니다.">
         </a>
       </div>
@@ -128,7 +51,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -149,14 +71,14 @@ export default {
     return {
       pages: {
         page: 1,
-        page_block:  3,
+        page_block: 3,
         start: 9999,
         end: 1,
-        end_page:1,
-        pagesList:[],
-        num_block:2,
+        end_page: 1,
+        pagesList: [],
+        num_block: 2,
       },
-      blacklist_list_total:0,
+      blacklist_list_total: 0,
       blacklist_list: [],
     }
   },
@@ -174,7 +96,7 @@ export default {
         console.log("err", err);
       });
     },
-    onChangePage(page){
+    onChangePage(page) {
       this.pages.page = page;
       this.getList()
     }
