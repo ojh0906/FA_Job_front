@@ -23,11 +23,12 @@
           <div class="input-wrap">
             <div class="field_input">
               <label class="input-password">
-                <input class="pw" type="password" placeholder="비밀번호를 입력해주세요." v-model="this.password" @keypress.enter="onSubmit">
+                <input class="pw" type="password" placeholder="비밀번호를 입력해주세요." v-model="this.password" @keyup="this.commonStore.loginCheck = false;" @keypress.enter="onSubmit">
                 <img class="eye-img" src="/image/login/eye.png" />
               </label>
             </div>
           </div>
+          <p class="no" v-if="this.commonStore.loginCheck">잘못된 정보 입니다. 다시 입력해 주세요.</p>
         </div>
         <div class="field-checkbox">
           <label>

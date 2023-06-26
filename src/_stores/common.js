@@ -65,17 +65,20 @@ export const useCommonStore = defineStore({
       this.isAuthenticated = false;
       this.expiryTime = "";
       this.return_url = null;
+      this.loginCheck = false;
       router.push('/');
     },
     setReturnUrl(url){
       this.return_url = url;
     },
     async getField() {
-      try {
-        return await http.post(`/main/field/list`, {});
-      } catch (error) {
-        console.log("error user auth", error);
-      }
+      return await http.post(`/main/field/list`, {});
+    },
+    async find(params) {
+      return await http.post(`${baseUrl}/find`, params);
+    },
+    async modifyPassword(params) {
+      return await http.put(`${baseUrl}/find/password`, params);
     },
   },
   persist: true,
