@@ -23,8 +23,12 @@
         <div class="menu-wrap">
           <a>커뮤니티</a>
           <div class="submenu">
-            <a>Know-How</a>
-            <a>자유홍보</a>
+            <router-link :to="{ name: 'KnowHowList', query: {} }">
+              Know-How
+            </router-link>
+            <router-link :to="{ name: 'FreePromo', query: {} }">
+              자유홍보
+            </router-link>
           </div>
         </div>
         <div class="menu-wrap">
@@ -42,7 +46,7 @@
         </div>
       </div>
       <div class="side-wrap">
-        <div class="right-menu" v-if="true">
+        <div class="right-menu" v-if="this.commonStore.member == null">
           <router-link :to="{ name: 'RegisterType', query: {} }">
             회원가입
           </router-link>
@@ -50,7 +54,7 @@
             로그인
           </router-link>
         </div>
-        <div class="right-menu" v-if="false">
+        <div class="right-menu" v-else>
           <!-- 알림 -->
           <div class="alarm-wrap a-item">
             <div class="alarm a-item" @click="this.alarmPopup = !this.alarmPopup">
@@ -76,8 +80,7 @@
           </div>
           <div>
             <router-link :to="{ name: 'Mypage', query: {} }">마이페이지</router-link>
-            <a>로그아웃
-            </a>
+            <a @click="logout">로그아웃</a>
           </div>
         </div>
       </div>
@@ -86,7 +89,15 @@
 </template>
 
 <script>
+import { useCommonStore } from '@/_stores';
+
 export default {
+  setup() {
+    const commonStore = useCommonStore()
+    return {
+      commonStore,
+    }
+  },
   components: {
   },
   data() {
@@ -121,6 +132,9 @@ export default {
         this.alarmPopup = false;
       }
     },
+    logout(){
+      this.commonStore.logout()
+    }
   },
   mounted() {
     this.fixedMenu();

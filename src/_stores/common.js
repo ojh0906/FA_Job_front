@@ -20,9 +20,10 @@ export const useCommonStore = defineStore({
     async save(params) { // 회원가입
       return await http.post(`${baseUrl}/save`, params);
     },
-    async login(id, password) {
+    async login(email, password, auto_login) {
       try {
-          const member = await http.post(`${baseUrl}/login`, { id:id, password:password }).then((resp) => {
+          const member = await http.post(`${baseUrl}/login`, { email:email, password:password,auto_login:auto_login }).then((resp) => {
+            console.log(resp);
           if (resp.data.code === 200) {
             this.member = resp.data.body.member;
             this.auth_token = resp.data.body.token;
