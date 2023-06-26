@@ -11,8 +11,8 @@
         <article class="black-box">
           <p class="black-title">{{ item.title }}</p>
           <div class="black-sub">
-            <p class="black-sub-title">분류<span>{{ item.target }}</span></p>
-            <p class="black-sub-title">피해사례<span>{{ item.type }}</span></p>
+            <p class="black-sub-title">분류<span>{{ this.getFieldName(item.target) }}</span></p>
+            <p class="black-sub-title">피해사례<span>{{ this.getFieldName(item.type) }}</span></p>
             <p class="black-sub-title">등록일<span>{{ formattedDate(item.reg_date) }}</span></p>
           </div>
         </article>

@@ -27,6 +27,9 @@ export const useBlacklistStore = defineStore({
     async remove(id) {
       return await http.delete(`${baseUrl}/${id}`);
     },
+    async saveReply(id, params) {
+      return await http.post(`${baseUrl}/${id}/reply/save`, params);
+    },
   },
   persist: true,
 });

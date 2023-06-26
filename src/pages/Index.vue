@@ -45,10 +45,12 @@
         </div>
       </div>
       <div class="tag-wrap">
-        <div class="tag" :class="this.blacklist_target === -1 ? 'tag-click':''" @click="this.blacklist_target = -1; this.getBlacklistList();">전체</div>
-        <div class="tag" :class="this.blacklist_target === 0 ? 'tag-click':''" @click="this.blacklist_target = 0; this.getBlacklistList();">업체</div>
-        <div class="tag" :class="this.blacklist_target === 1 ? 'tag-click':''" @click="this.blacklist_target = 1; this.getBlacklistList();">프리랜서</div>
-        <div class="tag" :class="this.blacklist_target === 2 ? 'tag-click':''" @click="this.blacklist_target = 2; this.getBlacklistList();">기타</div>
+        <div class="tag" :class="this.blacklist_target === 0 ? 'tag-click':''" @click="this.blacklist_target = 0; this.getBlacklistList();">전체</div>
+        <div class="tag" :class="this.blacklist_target === target.field ? 'tag-click':''"
+             @click="this.blacklist_target = target.field; this.getBlacklistList();"
+             v-for="target in this.getFieldList('blacklist_target').sort((a, b) => a.field - b.field)">
+          {{ target.name }}
+        </div>
       </div>
       <BlackSlider :blacklist_list="this.blacklist_list"/>
     </article>
@@ -139,7 +141,7 @@ export default {
   },
   data() {
     return {
-      blacklist_target:-1,
+      blacklist_target:0,
       board_type:0,
       project_list: [],
       blacklist_list: [],
@@ -173,7 +175,7 @@ export default {
       let option = {
 
       }
-      if(this.blacklist_target >= 0){
+      if(this.blacklist_target !== 0){
         option.target = this.blacklist_target;
       }
       this.mainStore.listBlacklist(option).then((resp) => {
@@ -217,7 +219,14 @@ export default {
   },
   mounted() {
     this.commonStore.getField();
-    this.getInitList();
+    this.commonStore.getField().then((resp) => {
+      if (resp.data.code == 200) {
+        this.commonStore.field = resp.data.body;
+        this.getInitList();
+      }
+    }).catch(err => {
+      console.log("err", err);
+    });
   }
 }
 </script>

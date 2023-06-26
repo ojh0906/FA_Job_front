@@ -7,6 +7,9 @@ export default {
     goToPage(name){
       router.push({name:name});
     },
+    goToDetail(name, key){
+      router.push({name:name, query:{key:key}});
+    },
     getFirstImagePath: (data) => {
       if (
         data !== "" &&
@@ -49,7 +52,12 @@ export default {
         return '';
       }
     },
+    getFieldList(type_name){
+      const commonStore = useCommonStore();
+      return commonStore.field.filter(f => f.type_name === type_name);
+    },
     getFieldName(field){
+      if(field === 0) return '';
       const commonStore = useCommonStore();
       return commonStore.field[commonStore.field.findIndex(f => f.field === field)].name;
     },
