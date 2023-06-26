@@ -700,6 +700,9 @@ input[type="checkbox"] {
   color: #333;
   background-color: #fff;
 }
+.fw_com02 .hidden{
+  display: none;
+}
 .fr_com01 {
   vertical-align: middle;
   width: 100px;

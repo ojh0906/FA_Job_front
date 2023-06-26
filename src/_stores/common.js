@@ -72,14 +72,7 @@ export const useCommonStore = defineStore({
     },
     async getField() {
       try {
-        const field = await http.post(`/main/field/list`, {}).then((resp) => {
-          if (resp.data.code === 200) {
-            this.field = resp.data.body;
-            //console.log(this.field);
-          }
-        });
-        return field;
-        // redirect to previous url or default to home page
+        return await http.post(`/main/field/list`, {});
       } catch (error) {
         console.log("error user auth", error);
       }

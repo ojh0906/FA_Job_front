@@ -3,31 +3,34 @@
     <!--타이틀-->
     <div class="bl01_header">
       <h3 class="bl01_title">블랙리스트</h3>
-      <p class="bl01_sub_title">등록된 글이 <span>912건</span> 있습니다.</p>
+      <p class="bl01_sub_title">등록된 글이 <span>{{ this.blacklist_list_total }}건</span> 있습니다.</p>
     </div>
 
     <div class="bl_container">
       <p>블랙리스트 설명 카피 노출 영역입니다. 블랙리스트 설명 카피 노출 영역입니다.</p>
       <div class="text-input">
-        <input type="search" placeholder="제목 / 작성자 검색">
-        <img src="/image/community/search.png" alt="검색이미지입니다.">
+        <input type="search" placeholder="제목 검색" v-model="this.searchKeyword" @keypress.enter="this.getList">
+        <img src="/image/community/search.png" alt="검색이미지입니다." @click="this.getList">
       </div>
     </div>
 
     <div class="bltap_list">
-      <div class=""><a class="btn5 btn01">전체</a></div>
-      <div class=""><a class="btn6 ">업체</a></div>
-      <div class=""><a class="btn6 ">프리랜서</a></div>
+      <div class="" @click="this.target = 0; this.getList();"><a :class="this.target === 0 ? 'btn5 btn01' : 'btn6'">전체</a></div>
+      <div class=""
+           @click="this.target = target.field; this.getList();"
+           v-for="target in this.getFieldList('blacklist_target').sort((a, b) => a.field - b.field)">
+        <a :class="this.target === target.field ? 'btn5 btn01' : 'btn6'">{{ target.name }}</a>
+      </div>
     </div>
 
     <div id="bl01_box">
       <div class="list-box">
-        <div class="bl_list01" v-for="v in 2">
-          <h3>박O민 ㅇㅇㅇㅇㅇ업체 / 사기내용작성</h3>
+        <div class="bl_list01" v-for="item in this.blacklist_list" @click="goToDetail('BlacklistDetail',item.blacklist)">
+          <h3>{{ item.title }}</h3>
           <div class="list01_info info01">
-            <p class="list01_p"><span>분류</span>프리랜서</p>
-            <p class="list01_p"><span>피해사례</span>대금미지급</p>
-            <p class="list01_p"><span>등록일</span>2023.09.12</p>
+            <p class="list01_p"><span>분류</span>{{ this.getFieldName(item.target) }}</p>
+            <p class="list01_p"><span>피해사례</span>{{ this.getFieldName(item.type) }}</p>
+            <p class="list01_p"><span>등록일</span>{{ formattedDate(item.reg_date) }}</p>
           </div>
         </div>
       </div>
@@ -47,7 +50,9 @@
       </div>
 
       <div class="bl01_row">
-        <a href="#" class="btn1 btn01">블랙리스트 등록 요청</a>
+        <router-link class="btn1 btn01" :to="{ name: 'BlackRequest', query: {} }">
+          블랙리스트 등록 요청
+        </router-link>
       </div>
     </div>
   </div>
@@ -69,23 +74,34 @@ export default {
   },
   data() {
     return {
+      target: 0,
       pages: {
         page: 1,
-        page_block: 3,
+        page_block: 9,
         start: 9999,
         end: 1,
         end_page: 1,
         pagesList: [],
-        num_block: 2,
+        num_block: 5,
       },
       blacklist_list_total: 0,
       blacklist_list: [],
+      searchKeyword:'',
     }
   },
   methods: {
     getList() {
       this.blacklist_list = [];
-      this.blacklistStore.list().then((resp) => {
+      let option = {
+
+      }
+      if(this.target !== 0){
+        option.target = this.target;
+      }
+      if(this.searchKeyword !== ''){
+        option.searchKeyword = this.searchKeyword;
+      }
+      this.blacklistStore.list(option, this.pages).then((resp) => {
         if (resp.data.code == 200) {
           this.blacklist_list = resp.data.body;
           this.blacklist_list_total = resp.data.total;
@@ -104,6 +120,7 @@ export default {
   mounted() {
     this.commonStore.getField();
     this.getList();
+
   }
 }
 </script>
