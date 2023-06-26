@@ -1,138 +1,142 @@
 /*자유홍보 시작*/
 #free_section01 {
-    position: relative;
-    margin: 0 auto;
-    width: 1200px;
-  }
-  
-  #free_section01 .free_header {
-    width: 600px;
-    height: 45px;
-  }
-  
-  #free_section01 .free_header h3 {
-    font-size: 32px;
-    font-weight: 700;
-  }
-  
-  #free_section01 .free_box {
-    margin-top: 40px;
-    width: 1200px;
-    display: flex;
-  }
-  
-  #free_section01 .free_box .free01_l {
-    margin-right: 40px;
-    width: 270px;
-  }
-  
-  #free_section01 .free_box .free01_l .menu {
-    width: 268px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  #free_section01 .free_box .free01_l .menu .menu01 {
-    box-sizing: border-box;
-    padding: 18px 20px;
-    border-bottom: 1px solid #ececec;
-    background: #fff;
-    color: #333;
-  }
-  
-  #free_section01 .free_box .free01_l .menu .menu01 .i_icon {
-    float: right;
-    position: relative;
-    top: 2px;
-    width: 16px;
-    height: 16px;
-    background: url("../image/community/right_arrow.png") no-repeat;
-  }
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+}
 
-  #free_section01 .free_box .free01_l .menu .menu02 {
-    box-sizing: border-box;
-    padding: 18px 20px;
-    background: #70bab5;
-    font-weight: 700;
-    font-size: 16px;
-    color: #fff;
-  }
-  
-  #free_section01 .free_box .free01_r {
-    width: 890px;
-  }
-  
-  .free01_r .free_r_header {
-    display: flex;
-    width: 890px;
-  }
-  
-  .free01_r .free_r_header h3 {
-    display: flex;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  
-  .free01_r .free_r_header p {
-    display: flex;
-    margin: 2px 20px;
-    font-size: 16px;
-    color: #555;
-  }
+#free_section01 .free_header {
+  width: 600px;
+  height: 45px;
+}
 
-  .free01_r .free_cont{
-    margin-top: 20px;
-  }
+#free_section01 .free_header h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
 
-  .free_cont .c_05{
-    border-bottom: 1px solid #DDDDDD;
-  }
+#free_section01 .free_box {
+  margin-top: 40px;
+  width: 1200px;
+  display: flex;
+}
 
-  .free01_row{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .free01_row .text-input{
-    padding: 10px 0 10px 10px;
-    width: 300px;
-    border: 1px solid #CDDCE1;
-    border-radius: 4px;
-  }
-  
-  .free01_row .text-input input{
-    width: calc(100% - 38px);
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  
-  .free01_row .text-input input::placeholder{
-    color: #BBBBBB;
-  }
-  
-  .free01_row .text-input img{
-    float: right;
-    margin-right: 10px;
-  }
-  
-  .free01_row .btn01 {
-    float: right;
-    box-sizing: border-box;
-    padding: 13px 20px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 16px;
-    color: #fff;
-  }
-  
-  /*
+.free01_l {
+  margin-right: 40px;
+  width: 270px;
+}
+
+.free01_l .menu {
+  width: 268px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.free01_l .menu .menu01 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  border-bottom: 1px solid #ececec;
+  background: #fff;
+  color: #333;
+}
+
+.free01_l .menu .menu01 .i_icon {
+  float: right;
+  position: relative;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url("../image/community/right_arrow.png") no-repeat;
+}
+
+.free01_l .menu .menu02 {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #70bab5;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+
+#free_section01 .free_box .free01_r {
+  width: 890px;
+}
+
+.free01_r .free_r_header {
+  display: flex;
+  width: 890px;
+}
+
+.free01_r .free_r_header h3 {
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.free01_r .free_r_header p {
+  display: flex;
+  margin: 2px 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.free01_r .free_cont {
+  margin-top: 20px;
+}
+
+.free01_r .cont01 a {
+  width: 100%;
+  display: flex;
+}
+
+.free_cont .c_05 {
+  border-bottom: 1px solid #dddddd;
+}
+
+.free01_row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.free01_row .text-input {
+  padding: 10px 0 10px 10px;
+  width: 300px;
+  border: 1px solid #cddce1;
+  border-radius: 4px;
+}
+
+.free01_row .text-input input {
+  width: calc(100% - 38px);
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.free01_row .text-input input::placeholder {
+  color: #bbbbbb;
+}
+
+.free01_row .text-input img {
+  float: right;
+  margin-right: 10px;
+}
+
+.free01_row .btn01 {
+  float: right;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+
+/*
      height 빼고 padding으로
      float 빼기
      테이블 td, th 공통으로 빼고
      가로값은 th에 바로 먹이기
   
   */
-  

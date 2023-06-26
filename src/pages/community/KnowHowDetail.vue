@@ -6,21 +6,7 @@
         </div>
 
         <div class="know_box02">
-            <div class="box_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        Know-how
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        자유홍보
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <Menu click="1" />
 
             <div class="know_r02">
                 <!--타이틀-->
@@ -72,7 +58,7 @@
                         <td class="td_com05 td_02">
                             <i class="i_icon"></i>
                             <p>제목이 노출되는 영역입니다.<br>
-                            제목이 노출되는 영역입니다.</p>
+                                제목이 노출되는 영역입니다.</p>
                         </td>
                         <td class="td_com03 td_04">2022.08.11</td>
                     </tr>
@@ -83,9 +69,9 @@
                                 <input type="text" placeholder="답변을 입력하세요.">
                             </div>
                         </td>
-                    <td class="td_com03 td_03">
-                        <a href="">등록</a>
-                    </td>
+                        <td class="td_com03 td_03">
+                            <a href="">등록</a>
+                        </td>
                     </tr>
                 </table>
 
@@ -95,9 +81,14 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
+import Menu from '/src/components/community/Menu.vue'
 
+export default {
+    components: {
+        Menu
+    },
+}
 </script>
