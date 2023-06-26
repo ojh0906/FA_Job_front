@@ -900,6 +900,7 @@
   width: 100%;
   margin-top: 20px;
 }
+
 #popup .popup-box .field-wrap .add-member-wrap .add-member {
   padding: 19px 58px;
   display: flex;
@@ -920,6 +921,127 @@
 #popup .popup-table-wrap {
   width: 500px;
   height: 380px;
+}
+
+#popup .popup-lv-wrap {
+  width: 700px;
+  height: 450px;
+}
+
+#popup .my-lv {
+  color: #333;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+#popup .my-lv span {
+  color: #3e778a;
+}
+
+#popup .lv-bar {
+  width: 100%;
+  background: #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+#popup .lv-bar .lv-status {
+  background: #3e778a;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  padding: 2px 0;
+  text-align: center;
+}
+
+#popup .lv-text {
+  color: #777;
+  font-size: 14px;
+  font-family: Pretendard;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+#popup .lv-box {
+  display: flex;
+  gap: 40px;
+}
+#popup .lv-box .lv-info-box {
+}
+
+#popup .lv-box .lv-info-box .lv-detail {
+  display: flex;
+  height: 40px;
+  /* width: 320px; */
+}
+#popup .lv-box .lv-info-box .lv-detail .num {
+  padding: 11.5px 16.5px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+}
+
+#popup .lv-box .lv-info-box .lv-detail:nth-child(1) .num {
+  background: #70bab5;
+  border-top-left-radius: 5px;
+}
+#popup .lv-box .lv-info-box .lv-detail:nth-child(2) .num {
+  background: #63ada9;
+}
+#popup .lv-box .lv-info-box .lv-detail:nth-child(3) .num {
+  background: #5f8a99;
+}
+#popup .lv-box .lv-info-box .lv-detail:nth-child(4) .num {
+  border-bottom-left-radius: 5px;
+  background: #3e778a;
+}
+
+#popup .lv-box .lv-info-box .lv-detail .text {
+  padding: 11.5px 15px;
+  color: #333;
+  font-size: 14px;
+  font-family: Pretendard;
+  background: #f5f5f5;
+  width: 180px;
+  text-align: center;
+}
+
+#popup .lv-box .lv-info-box .lv-detail:nth-child(1) .text {
+  border-top-right-radius: 5px;
+}
+#popup .lv-box .lv-info-box .lv-detail:nth-child(4) .text {
+  border-bottom-right-radius: 5px;
+}
+
+#popup .lv-box .lv-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: calc(100% - 320px);
+}
+
+#popup .lv-box .lv-info > div {
+  width: 100%;
+}
+
+#popup .lv-box .lv-info .title {
+  color: #333;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+#popup .lv-box .lv-info .text {
+  color: #555;
+  font-size: 14px;
+  font-family: Noto Sans KR;
+  letter-spacing: -0.7px;
 }
 
 .table-color-row {
