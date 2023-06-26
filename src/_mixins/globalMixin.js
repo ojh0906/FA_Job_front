@@ -53,5 +53,22 @@ export default {
       const commonStore = useCommonStore();
       return commonStore.field[commonStore.field.findIndex(f => f.field === field)].name;
     },
+    getPageNums(total, pages){
+      pages.pagesList = [];
+      pages.end_page = Math.ceil(total / pages.page_block)
+      let pagesList = [];
+
+      pages.start = (Math.ceil(pages.page / pages.num_block) - 1) * pages.num_block + 1;
+      pages.end = pages.start + pages.num_block;
+      if(pages.end > pages.end_page){
+        pages.end = pages.end_page + 1;
+      }
+
+      for (let i = pages.start; i < pages.end; i++) {
+        pages.pagesList.push(i)
+      }
+
+      return pages;
+    }
   },
 };

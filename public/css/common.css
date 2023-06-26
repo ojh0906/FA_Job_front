@@ -766,6 +766,14 @@ input[type="checkbox"] {
   padding-top: 20px;
 }
 
+.pagination02 .active{
+  color: #70bab5;
+}
+
+.pagination02 .pointer{
+  cursor: pointer;
+}
+
 .pagination02 a {
   text-align: center;
   width: 24px;

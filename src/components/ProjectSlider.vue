@@ -1,19 +1,19 @@
 <template>
   <swiper class="project-slider" :navigation="{ nextEl: '.project-button-next', prevEl: '.project-button-prev' }" :loop="true" :modules="modules">
     <swiper-slide>
-      <ProjectBox v-for="project in this.projectList.slice(0,4)" :project="project" />
+      <ProjectBox v-for="project in this.project_list.slice(0,4)" :project="project" />
     </swiper-slide>
-    <swiper-slide v-if="this.projectList.length > 4">
-      <ProjectBox v-for="project in this.projectList.slice(4,8)" :project="project" />
+    <swiper-slide v-if="this.project_list.length > 4">
+      <ProjectBox v-for="project in this.project_list.slice(4,8)" :project="project" />
     </swiper-slide>
-    <swiper-slide v-if="this.projectList.length > 8">
-      <ProjectBox v-for="project in this.projectList.slice(8,12)" :project="project" />
+    <swiper-slide v-if="this.project_list.length > 8">
+      <ProjectBox v-for="project in this.project_list.slice(8,12)" :project="project" />
     </swiper-slide>
-    <swiper-slide v-if="this.projectList.length > 12">
-      <ProjectBox v-for="project in this.projectList.slice(12,16)" :project="project" />
+    <swiper-slide v-if="this.project_list.length > 12">
+      <ProjectBox v-for="project in this.project_list.slice(12,16)" :project="project" />
     </swiper-slide>
-    <swiper-slide v-if="this.projectList.length > 16">
-      <ProjectBox v-for="project in this.projectList.slice(16,20)" :project="project" />
+    <swiper-slide v-if="this.project_list.length > 16">
+      <ProjectBox v-for="project in this.project_list.slice(16,20)" :project="project" />
     </swiper-slide>
   </swiper>
   <!--  navigation -->
@@ -38,7 +38,7 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 
 export default {
-  props:['projectList'],
+  props:['project_list'],
   components: {
     Swiper,
     SwiperSlide,

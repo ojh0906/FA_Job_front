@@ -27,7 +27,7 @@
         </div>
       </div>
       <aside class="project-box-container">
-        <ProjectSlider :projectList="this.projectList" />
+        <ProjectSlider :project_list="this.project_list" />
       </aside>
     </article>
 
@@ -50,7 +50,7 @@
         <div class="tag" :class="this.blacklist_target === 1 ? 'tag-click':''" @click="this.blacklist_target = 1; this.getBlacklistList();">프리랜서</div>
         <div class="tag" :class="this.blacklist_target === 2 ? 'tag-click':''" @click="this.blacklist_target = 2; this.getBlacklistList();">기타</div>
       </div>
-      <BlackSlider :blacklistList="this.blacklistList"/>
+      <BlackSlider :blacklist_list="this.blacklist_list"/>
     </article>
 
     <!-- 게시판-->
@@ -80,15 +80,15 @@
             <p class="reg-date">등록일</p>
           </div>
         </div>
-        <div class="table-body" v-for="item in this.noticeList" v-if="this.board_type === 0">
+        <div class="table-body" v-for="item in this.notice_list" v-if="this.board_type === 0">
           <p class="title">{{ item.title }}</p>
           <p class="reg-date">{{ formattedDate(item.reg_date) }}</p>
         </div>
-        <div class="table-body" v-for="item in this.knowhowList" v-if="this.board_type === 1">
+        <div class="table-body" v-for="item in this.knowhow_list" v-if="this.board_type === 1">
           <p class="title">{{ item.title }}</p>
           <p class="reg-date">{{ formattedDate(item.reg_date) }}</p>
         </div>
-        <div class="table-body" v-for="item in this.marketingList" v-if="this.board_type === 2">
+        <div class="table-body" v-for="item in this.marketing_list" v-if="this.board_type === 2">
           <p class="title">{{ item.title }}</p>
           <p class="reg-date">{{ formattedDate(item.reg_date) }}</p>
         </div>
@@ -141,14 +141,11 @@ export default {
     return {
       blacklist_target:-1,
       board_type:0,
-      projectList: [],
-      projectList_prev: [],
-      projectList_next: [],
-      blacklistList: [],
-      blackListEndPage:99999,
-      noticeList: [],
-      knowhowList: [],
-      marketingList: [],
+      project_list: [],
+      blacklist_list: [],
+      notice_list: [],
+      knowhow_list: [],
+      marketing_list: [],
     }
   },
   methods: {
@@ -160,11 +157,11 @@ export default {
       this.getMarketingList();
     },
     getProjectList() {
-      this.projectList = [];
+      this.project_list = [];
       // TODO {ad_yn:true} 추후에 광고한애들 불러오려면 파라미터 교체
       this.mainStore.listProject({}).then((resp) => {
         if (resp.data.code == 200) {
-          this.projectList = resp.data.body;
+          this.project_list = resp.data.body;
           //console.log(resp.data.body)
         }
       }).catch(err => {
@@ -172,7 +169,7 @@ export default {
       });
     },
     getBlacklistList() {
-      this.blacklistList = [];
+      this.blacklist_list = [];
       let option = {
 
       }
@@ -181,37 +178,37 @@ export default {
       }
       this.mainStore.listBlacklist(option).then((resp) => {
         if (resp.data.code == 200) {
-          this.blacklistList = resp.data.body;
+          this.blacklist_list = resp.data.body;
         }
       }).catch(err => {
         console.log("err", err);
       });
     },
     getNoticeList() {
-      this.noticeList = [];
+      this.notice_list = [];
       this.mainStore.listNotice().then((resp) => {
         if (resp.data.code == 200) {
-          this.noticeList = resp.data.body;
+          this.notice_list = resp.data.body;
         }
       }).catch(err => {
         console.log("err", err);
       });
     },
     getKnowhowList() {
-      this.knowhowList = [];
+      this.knowhow_list = [];
       this.mainStore.listKnowhow().then((resp) => {
         if (resp.data.code == 200) {
-          this.knowhowList = resp.data.body;
+          this.knowhow_list = resp.data.body;
         }
       }).catch(err => {
         console.log("err", err);
       });
     },
     getMarketingList() {
-      this.marketingList = [];
+      this.marketing_list = [];
       this.mainStore.listMarketing().then((resp) => {
         if (resp.data.code == 200) {
-          this.marketingList = resp.data.body;
+          this.marketing_list = resp.data.body;
         }
       }).catch(err => {
         console.log("err", err);

@@ -66,7 +66,7 @@ export default {
   mounted() {
   },
   created() {
-    console.log(this.project)
+    //console.log(this.project)
   }
 }
 

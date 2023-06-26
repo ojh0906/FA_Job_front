@@ -7,7 +7,7 @@
       <swiper :slidesPerView="3" :spaceBetween="40" :loop="true"
               :navigation="{ nextEl: '.black-button-next', prevEl: '.black-button-prev' }" :modules="modules"
               class="black-slider">
-      <swiper-slide  v-for="item in this.blacklistList">
+      <swiper-slide  v-for="item in this.blacklist_list">
         <article class="black-box">
           <p class="black-title">{{ item.title }}</p>
           <div class="black-sub">
@@ -39,7 +39,7 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 
 export default {
-  props:['blacklistList'],
+  props:['blacklist_list'],
   data() {
     return {
     }
