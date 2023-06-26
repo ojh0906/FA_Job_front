@@ -3,7 +3,7 @@ import { http } from "@/_services";
 
 const baseUrl = `/faq`;
 
-export const useMemberStore = defineStore({
+export const useFaqStore = defineStore({
   id: "faq",
   state: () => ({
   }),

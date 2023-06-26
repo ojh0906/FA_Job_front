@@ -3,7 +3,7 @@ import { http } from "@/_services";
 
 const baseUrl = `/contact`;
 
-export const useMemberStore = defineStore({
+export const useContactStore = defineStore({
   id: "contact",
   state: () => ({
   }),

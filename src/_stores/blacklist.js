@@ -3,7 +3,7 @@ import { http } from "@/_services";
 
 const baseUrl = `/blacklist`;
 
-export const useMemberStore = defineStore({
+export const useBlacklistStore = defineStore({
   id: "blacklist",
   state: () => ({
   }),

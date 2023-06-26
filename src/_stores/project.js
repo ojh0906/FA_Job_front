@@ -1,10 +1,10 @@
 import { defineStore } from "pinia";
 import { http } from "@/_services";
 
-const baseUrl = `/member`;
+const baseUrl = `/project`;
 
-export const useMemberStore = defineStore({
-  id: "member",
+export const useProjectStore = defineStore({
+  id: "project",
   state: () => ({
   }),
   actions: {
