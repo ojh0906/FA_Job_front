@@ -2,8 +2,8 @@
     <div id="mypage">
       <LeftGnb/>
       <div class="content-container">
-        <div class="resume-container">
-          <p class="area-title">이력서 관리</p>
+        <div class="resumew-container">
+          <p class="area-title">이력서 작성</p>
           <table class="table-manage-row">
             <tr>
               <td>이름</td>
@@ -30,27 +30,53 @@
           <table class="table-manage-row row02">
             <tr>
               <td>자차여부</td>
-              <td>있음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
               <td>여권발권여부</td>
-              <td>있음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
               <td>생년월일</td>
               <td>1972년 12월 13일</td>
             </tr>
             <tr>
               <td>방진복</td>
-              <td>없음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+                <a href="#" class="btn6 fw_01">사이즈<i class="i_icon"></i></a>
+              </td>
               <td>방진두건</td>
-              <td>없음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
               <td>방진화</td>
-              <td>있음/280</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
             </tr>
             <tr>
               <td>안전화</td>
-              <td>있음/280</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
               <td>개인공구</td>
-              <td>있음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+
+              </td>
               <td class="line02">건설업 기초안전보건교육</td>
-              <td>있음</td>
+              <td>
+                <a href="#" class="btn6 fw_01">없음</a>
+                <a href="#" class="btn7 fw_01">있음</a>
+              </td>
             </tr>
           </table>
 
@@ -65,60 +91,38 @@
               <td>희망단가</td>
               <td></td>
               <td>설계</td>
-              <td></td>
+              <td>해당없음<i class="i_icon"></i></td>
             </tr>
             <tr>
               <td>전기</td>
-              <td></td>
+              <td>해당없음<i class="i_icon"></i></td>
               <td>제어</td>
-              <td></td>
+              <td>해당없음<i class="i_icon"></i></td>
               <td>비전</td>
-              <td></td>
+              <td>해당없음<i class="i_icon"></i></td>
             </tr>
             <tr>
               <td>기구</td>
-              <td>해당없음</td>
+              <td>해당없음<i class="i_icon"></i></td>
               <td>도면해석(2D)</td>
-              <td>해당없음</td>
+              <td>해당없음<i class="i_icon"></i></td>
               <td>도면해석(3D)</td>
-              <td>해당없음</td>
+              <td>해당없음<i class="i_icon"></i></td>
             </tr>
             <tr>
               <td>경력사항</td>
-              <td colspan="5"></td>
+              <td colspan="5" class="w01">
+                <div class="field_input">
+                    <input type="text" placeholder="경력사항을 입력하세요.">
+                </div>
+              </td>
             </tr>
           </table>
 
-          <table class="table-manage-row row04">
-            <tr>
-              <th rowspan="5" class="line01">프로젝트<br>완료내역</th>
-            </tr>
-            <tr>
-              <th>기업명</th>
-              <th>제목</th>
-              <th>기간</th>
-            </tr>
-            <tr>
-              <td>일신산업</td>
-              <td>프로젝트 제목이 노출됩니다.</td>
-              <td>2023.05.25~2023.05.31</td>
-            </tr>
-            <tr>
-              <td>일신산업</td>
-              <td>프로젝트 제목이 노출됩니다.</td>
-              <td>2023.05.25~2023.05.31</td>
-            </tr>
-            <tr>
-              <td>일신산업</td>
-              <td>프로젝트 제목이 노출됩니다.</td>
-              <td>2023.05.25~2023.05.31</td>
-            </tr>
-          </table>
 
           <div class="fw_next">
-                <div class="btn btn2" @click="$router.go(-1)">다운로드<i class="i_icon"></i></div>
                 <router-link :to="{ name: 'RegisterEnd' }">
-                    <div class="btn btn1">수정하기</div>
+                    <div class="btn btn1">작성 완료</div>
                 </router-link>
             </div>
         </div>
