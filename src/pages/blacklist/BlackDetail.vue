@@ -114,7 +114,7 @@ export default {
   mounted() {
     if(this.$route.query.key == null){
       alert('잘못된 접근입니다.');
-      this.$router.push({name:'BlacklistList'})
+      this.$router.push({name:'BlacklistList'});
     } else {
       this.get();
       this.blacklistStore.saveClick(this.$route.query.key,{member:this.commonStore.member.member}); // 조회수 증가

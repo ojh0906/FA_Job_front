@@ -50,7 +50,9 @@
       </div>
 
       <div class="bl01_row">
-        <a href="#" class="btn1 btn01">블랙리스트 등록 요청</a>
+        <router-link class="btn1 btn01" :to="{ name: 'BlackRequest', query: {} }">
+          블랙리스트 등록 요청
+        </router-link>
       </div>
     </div>
   </div>
