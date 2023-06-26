@@ -57,6 +57,7 @@
           <td class="fw_com02 fw_02">
             <input id="files_new" name="files_new" ref="files_new" class="hidden" type="file" @change="handleChange($event)" />
             <a href="#" class="btn2 fw_01" @click.prevent="addFiles('files_new')"><i class="i_icon"></i>파일올리기</a>
+            <p class="file01" v-for="(item, idx) in this.files_info">{{ item.name }}<a @click="removeFile(idx, 'files_info')"><i class="i_icon"></i></a></p>
             <p class="file01" v-for="(item, idx) in this.files_new">{{ item.name }}<a @click="removeFile(idx, 'files_new')"><i class="i_icon"></i></a></p>
           </td>
         </tr>
@@ -65,7 +66,7 @@
 
       <div class="fw_next">
         <div class="btn btn4" @click="$router.go(-1)">이전</div>
-        <div class="btn btn1" @click="this.save">등록</div>
+        <div class="btn btn1" @click="this.save">{{ this.blacklist === 0 ? '등록':'수정' }}</div>
       </div>
     </div>
   </div>
@@ -88,11 +89,14 @@ export default {
   },
   data() {
     return {
+      blacklist:0,
       target:0,
       type:0,
       title:'',
       content:'',
+      files_info:[],
       files_new:[],
+      files_del:[],
     }
   },
   methods: {
@@ -117,7 +121,10 @@ export default {
       }
     },
     removeFile(key, target_files) {
-      this[target_files].splice(key, 1);
+      let removeTarget = this[target_files].splice(key, 1);
+      if(target_files === 'files_info'){
+        this.files_del.push(removeTarget[0]);
+      }
     },
     save() {
       if(this.target === 0 || this.type === 0 || this.title === '' || this.content === ''){
@@ -138,10 +145,42 @@ export default {
         });
       }
 
-      this.blacklistStore.save(paramData).then((resp) => {
+      if(this.blacklist === 0){ // 신규
+        this.blacklistStore.save(paramData).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('등록되었습니다.');
+            this.$router.push({name:'BlacklistList'});
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      } else {
+        if(this.files_del.length !== 0){
+          paramData.append("files_del", JSON.stringify(this.files_del));
+        }
+/*        for (const pair of paramData.entries()) {
+          console.log(`${pair[0]}, ${pair[1]}`);
+        }*/
+
+        this.blacklistStore.modify(this.blacklist, paramData).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('수정되었습니다.');
+            this.$router.push({name:'BlacklistList'});
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      }
+    },
+    get() {
+      this.blacklistStore.getById(this.blacklist).then((resp) => {
         if (resp.data.code == 200) {
-          alert('등록되었습니다.');
-          this.$router.push({name:'BlacklistList'});
+          this.blacklist = resp.data.body.blacklist;
+          this.target = resp.data.body.target;
+          this.type = resp.data.body.type;
+          this.title = resp.data.body.title;
+          this.content = resp.data.body.content;
+          this.files_info = JSON.parse(resp.data.body.files)
         }
       }).catch(err => {
         console.log("err", err);
@@ -149,6 +188,12 @@ export default {
     },
   },
   mounted() {
+    if(this.$route.query.key == null){ // 신규
+
+    } else {
+      this.blacklist = this.$route.query.key;
+      this.get();
+    }
   }
 }
 </script>

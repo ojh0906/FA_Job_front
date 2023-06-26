@@ -15,9 +15,11 @@
         <th class="t_title02 bl_06" style="width: 56px;"><i class="i_icon"></i></th>
       </table>
 
-      <div class="blbtn_area" v-if="true"> <!-- TODO 작성자만 보이게-->
-        <a href="#" class="modify-btn">수정</a>
-        <a href="#" class="delete-btn">삭제</a>
+      <div class="blbtn_area" v-if="this.blacklist.member === this.commonStore.member.member">
+        <router-link class="modify-btn" :to="{ name: 'BlackRequest', query: {key:this.blacklist.blacklist} }">
+          수정
+        </router-link>
+        <a class="delete-btn" @click="remove">삭제</a>
       </div>
 
       <div class="blcont_area" v-html="this.blacklist.content"></div>
@@ -67,6 +69,8 @@ export default {
   data() {
     return {
       blacklist:{
+        blacklist:0,
+        member:0,
         target:0,
         type:0,
         title:'',
@@ -110,6 +114,18 @@ export default {
         console.log("err", err);
       });
     },
+    remove(){
+      if(confirm('정말 삭제하시겠습니까?')){
+        this.blacklistStore.remove(this.$route.query.key).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('삭제되었습니다.');
+            this.$router.push({name:'BlacklistList'});
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      }
+    }
   },
   mounted() {
     if(this.$route.query.key == null){
