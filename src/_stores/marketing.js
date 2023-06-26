@@ -30,6 +30,9 @@ export const useMarketingStore = defineStore({
     async saveReply(id, params) {
       return await http.post(`${baseUrl}/${id}/reply/save`, params);
     },
+    async saveClick(id, params) {
+      return await http.post(`${baseUrl}/${id}/click/save`, params);
+    },
   },
   persist: true,
 });
