@@ -18,7 +18,7 @@ export const useKnowhowStore = defineStore({
     async getById(id) {
       return await http.get(`${baseUrl}/${id}`);
     },
-    async save(id, params) {
+    async save(params) {
       return await http.post(`${baseUrl}/save`, params);
     },
     async modify(id, params) {

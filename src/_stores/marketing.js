@@ -18,11 +18,11 @@ export const useMarketingStore = defineStore({
     async getById(id) {
       return await http.get(`${baseUrl}/${id}`);
     },
-    async save(id, params) {
-      return await http.post(`${baseUrl}/save`, params);
+    async save(params) {
+      return await http.post(`${baseUrl}/save`, params, { headers: { "Content-Type": "multipart/form-data" } });
     },
     async modify(id, params) {
-      return await http.put(`${baseUrl}/${id}`, params);
+      return await http.put(`${baseUrl}/${id}`, params, { headers: { "Content-Type": "multipart/form-data" } });
     },
     async remove(id) {
       return await http.delete(`${baseUrl}/${id}`);
