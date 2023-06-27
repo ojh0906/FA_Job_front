@@ -21,7 +21,7 @@
                     <th class="t_title02 th_05" style="width: 80px;">{{ this.marketing.other_info.click_cnt }}</th>
                     <th class="t_title02 th_06" style="width: 32px;"><i class="i_icon"></i></th>
                 </table>
-
+                
                 <div class="btn_area">
                     <router-link class="modify-btn"
                         :to="{ name: 'FreePromoWrite', query: { id: this.marketing.marketing } }">
@@ -29,8 +29,9 @@
                     </router-link>
                     <a class="delete-btn" @click="remove">삭제</a>
                 </div>
-
-                <img v-if="this.marketing.thumb !== '[]'" :src="getFirstImagePath(this.marketing.thumb)" alt="이미지입니다.">
+                <div class="file-img-wrap" v-for="(thumb, idx) in this.thumbs_img" :key="idx">
+                    <img class="file-img" :src="getImagePath(thumb.path)" alt="이미지입니다.">
+                </div>
                 <div class="cont_area" v-html="this.marketing.content"></div>
 
                 <table class="comment">
@@ -94,6 +95,7 @@ export default {
                     click_cnt: 0
                 },
             },
+            thumbs_img: [],
             reply_list: {},
             click_cnt: 0,
             content: '', // 댓글 입력
@@ -104,6 +106,7 @@ export default {
             this.marketingStore.getById(this.$route.query.id).then((resp) => {
                 if (resp.data.code == 200) {
                     this.marketing = resp.data.body;
+                    this.getThumb(resp.data.body.thumb);
                     if (this.marketing.other_info.reply_list == null) {
                         this.marketing.other_info.reply_list = [];
                     }
@@ -134,18 +137,29 @@ export default {
                 this.marketingStore.remove(this.$route.query.id).then((resp) => {
                     if (resp.data.code == 200) {
                         alert('삭제되었습니다.');
-                        goToPage('FreePromo');
+                        this.goToPage('FreePromo');
                     }
                 }).catch(err => {
                     console.log("err", err);
                 });
+            }
+        },
+        getThumb(data) {
+            if (
+                data !== "" &&
+                data !== "[]" &&
+                typeof data !== "undefined" &&
+                data != null
+            ) {
+                let file = JSON.parse(data);
+                this.thumbs_img = file;
             }
         }
     },
     mounted() {
         if (this.$route.query.id == null) {
             alert('잘못된 접근입니다.');
-            goToPage('FreePromo');
+            this.goToPage('FreePromo');
         } else {
             this.getMarketing();
             this.marketingStore.saveClick(this.$route.query.id, { member: this.commonStore.member.member }); // 조회수 증가

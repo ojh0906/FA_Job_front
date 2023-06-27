@@ -183,6 +183,10 @@
   outline: #3e778a;
 }
 
+.free02_r .comment .tr_com03 .td_02 .field_input input::placeholder {
+  color: #999;
+}
+
 .free02_r .comment .tr_com03 .td_02 .field_input input {
   background-color: #fff;
   border: 1px solid #dddddd;
@@ -191,9 +195,9 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #999999;
+  color: #333;
   width: 100%;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 .free02_r .comment .tr_com03 a {
@@ -219,4 +223,15 @@
   border-radius: 5px;
   font-weight: 700;
   font-size: 16px;
+}
+
+#free_section02 .file-img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#free_section02 .file-img {
+  width: 300px;
+  height: auto;
 }

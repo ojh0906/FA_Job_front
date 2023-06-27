@@ -186,3 +186,22 @@
 .free03_box .next2 .btn {
   padding: 20px 45px;
 }
+
+#free_section03 .fw_02 .fw_01 .i_icon{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 22px;
+    margin-right: 8px;
+    background: url("../image/black/file02.png") no-repeat;
+}
+
+
+#free_section03 .fw_02 .file01 .i_icon{
+    display: inline-block;
+    margin-left: 4px; 
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    background: url("../image/black/del.png") no-repeat;
+}

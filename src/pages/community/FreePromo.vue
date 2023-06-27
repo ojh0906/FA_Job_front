@@ -24,7 +24,7 @@
                             <div class="ptxt_area a_01">
                                 <ul class="etc gap">
                                     <li><strong>등록일</strong> {{ formattedDate(marketing.reg_date) }}</li>
-                                    <li><strong>조회수</strong> 103</li>
+                                    <li><strong>조회수</strong> {{ marketing.other_info.click_cnt }}</li>
                                 </ul>
                                 <h3>{{ marketing.title }}</h3>
                                 <div class="freecont_area f_01">
@@ -58,7 +58,6 @@
                     <router-link class="btn1 btn01" :to="{ name: 'FreePromoWrite', query: {} }">
                         자유홍보글 등록
                     </router-link>
-
                 </div>
             </div>
         </div>
@@ -110,7 +109,6 @@ export default {
                 if (resp.data.code == 200) {
                     this.marketing_list = resp.data.body;
                     this.marketing_list_total = resp.data.total;
-                    // console.log('this.marketing_list ', this.marketing_list);
                     this.pagesList = this.getPageNums(this.marketing_list_total, this.pages);
                 }
             }).catch(err => {
