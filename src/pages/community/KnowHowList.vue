@@ -6,21 +6,7 @@
         </div>
 
         <div class="know_box">
-            <div class="box_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        Know-how
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        자유홍보
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+             <Menu click="1" />
 
             <div class="know_r">
                 <!--타이틀-->
@@ -45,106 +31,106 @@
                     <th class="t_title know01_th_04" style="width: 100px;">추천/비추천</th>
                     <th class="t_title know01_th_05" style="width: 120px;">등록일</th>
                     <th class="t_title know01_th_06" style="width: 80px;">조회수</th>
-                        <tr class="t_tr know01" >
-                            <!-- 첫번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 첫번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 두번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 두번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 세번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 세번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 네번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 네번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 다섯번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 다섯번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 여섯째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 여섯번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 일곱번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 일곱번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 여덟번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 뎌럽번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 아홉번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 아홉번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr know01">
-                            <!-- 열번째 줄 시작 -->
-                            <td class="t_td td_01">10</td>
-                            <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
-                            <td class="t_td td_03">김유진</td>
-                            <td class="t_td td_04">154/5</td>
-                            <td class="t_td td_05">2023.06.15</td>
-                            <td class="t_td td_06">380</td>
-                            <!-- 열번째 줄 끝 -->
-                        </tr>
+                    <tr class="t_tr know01">
+                        <!-- 첫번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 첫번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 두번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 두번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 세번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 세번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 네번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 네번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 다섯번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 다섯번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 여섯째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 여섯번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 일곱번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 일곱번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 여덟번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 뎌럽번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 아홉번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 아홉번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr know01">
+                        <!-- 열번째 줄 시작 -->
+                        <td class="t_td td_01">10</td>
+                        <td class="t_td td_02">제목이 노출되는 영역입니다.<span>8</span></td>
+                        <td class="t_td td_03">김유진</td>
+                        <td class="t_td td_04">154/5</td>
+                        <td class="t_td td_05">2023.06.15</td>
+                        <td class="t_td td_06">380</td>
+                        <!-- 열번째 줄 끝 -->
+                    </tr>
                 </table>
 
                 <div class="pagination">
@@ -159,17 +145,21 @@
 
                 <div class="know01_row">
                     <div class="text-input">
-                      <input type="text" placeholder="게시글 검색">
-                      <img src="/image/community/search.png" alt="검색이미지입니다.">
+                        <input type="text" placeholder="게시글 검색">
+                        <img src="/image/community/search.png" alt="검색이미지입니다.">
                     </div>
                     <a href="#" class="btn1 btn01">Know-how 등록</a>
                 </div>
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
-
+import Menu from '/src/components/community/Menu.vue'
+export default {
+    components: {
+        Menu
+    },
+}
 </script>

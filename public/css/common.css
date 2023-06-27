@@ -304,11 +304,6 @@ footer {
   margin-right: 10px;
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
 /* 공통 CSS */
 input[type="checkbox"] {
   accent-color: #3e778a;
@@ -388,22 +383,22 @@ input[type="checkbox"] {
   border: 1px solid #3e778a;
   color: #3e778a;
 }
-.big-btn-type-a{
-  background: #3E778A;
+.big-btn-type-a {
+  background: #3e778a;
   border-radius: 5px;
   text-align: center;
   padding: 19px 0;
   letter-spacing: -0.02em;
   font-size: 16px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   display: block;
   margin: 0 auto;
   width: 200px;
   cursor: pointer;
 }
-.big-btn-type-b{
-  border: 1px solid #BBBBBB;
+.big-btn-type-b {
+  border: 1px solid #bbbbbb;
   border-radius: 5px;
   text-align: center;
   padding: 19px 0;
@@ -415,29 +410,29 @@ input[type="checkbox"] {
   width: 200px;
   cursor: pointer;
 }
-.big-btn-type-a-red{
-  background: #FF6565;
+.big-btn-type-a-red {
+  background: #ff6565;
   border-radius: 5px;
   text-align: center;
   padding: 19px 0;
   letter-spacing: -0.02em;
   font-size: 16px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   display: block;
   margin: 0 auto;
   width: 200px;
   cursor: pointer;
 }
-.small-btn-type-b{
-  color: #3E778A !important;
+.small-btn-type-b {
+  color: #3e778a !important;
   letter-spacing: -0.02em;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   padding: 10px 15px;
   box-sizing: border-box;
-  border: 1px solid #3E778A;
+  border: 1px solid #3e778a;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -591,7 +586,8 @@ input[type="checkbox"] {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.t_title03{  width: 890px;
+.t_title03 {
+  width: 890px;
   background: #fff;
   font-weight: 500;
   font-size: 16px;
@@ -691,8 +687,10 @@ input[type="checkbox"] {
   font-size: 16px;
   color: #333;
 }
+
 .fw_com02 {
   display: flex;
+  align-items: center;
   vertical-align: middle;
   padding: 8px 10px;
   font-weight: 500;
@@ -700,7 +698,7 @@ input[type="checkbox"] {
   color: #333;
   background-color: #fff;
 }
-.fw_com02 .hidden{
+.fw_com02 .hidden {
   display: none;
 }
 .fr_com01 {
@@ -712,7 +710,7 @@ input[type="checkbox"] {
   font-size: 16px;
   color: #333;
 }
-.fw_01{
+.fw_01 {
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -726,7 +724,7 @@ input[type="checkbox"] {
   font-weight: 500;
   font-size: 16px;
   color: #333;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .fa_com02 {
   display: flex;
@@ -737,9 +735,6 @@ input[type="checkbox"] {
   color: #333;
   background-color: #fff;
 }
-
-
-
 
 /* 페이지네이션
  */
@@ -769,11 +764,13 @@ input[type="checkbox"] {
   padding-top: 20px;
 }
 
-.pagination02 .active{
+.pagination .active,
+.pagination02 .active {
   color: #70bab5;
 }
 
-.pagination02 .pointer{
+.pagination .pointer,
+.pagination02 .pointer {
   cursor: pointer;
 }
 
@@ -882,70 +879,67 @@ input[type="checkbox"] {
   font-weight: 700;
 }
 
-
-
 /*FAQ 드롭다운 메뉴*/
-.accordion-container{
+.accordion-container {
   display: flex;
   width: 100%;
   margin-top: 20px;
 }
-.faq-acco{
+.faq-acco {
   cursor: pointer;
 }
-.faq-acco .accordion-label{
+.faq-acco .accordion-label {
   display: flex;
   margin-bottom: 16px;
   width: 100%;
-  background-color: #F1F7F7;
+  background-color: #f1f7f7;
 }
-.accordion-label p{
+.accordion-label p {
   width: 780px;
   color: #333;
   font-size: 16px;
   font-weight: 500;
   padding: 17px 25px;
 }
-.accordion-label .up{
+.accordion-label .up {
   display: inline-block;
   margin: 13px 15px;
   width: 30px;
   height: 30px;
   background: url("../image/cscenter/up.png") no-repeat;
 }
-.accordion-label .down{
+.accordion-label .down {
   display: inline-block;
   margin: 13px 15px;
   width: 30px;
   height: 30px;
   background: url("../image/cscenter/down.png") no-repeat;
 }
-.accordion-cont{
+.accordion-cont {
   display: flex;
   width: 100%;
 }
-.accordion-cont .text-wrap{
+.accordion-cont .text-wrap {
   padding: 25px 20px;
 }
-.accordion-cont .text-wrap strong{
+.accordion-cont .text-wrap strong {
   display: inline;
-  color: #3E778A;
+  color: #3e778a;
   font-size: 16px;
   font-weight: 900;
   margin-right: 30px;
 }
-.accordion-cont .text-wrap h3{
+.accordion-cont .text-wrap h3 {
   display: inline;
   margin-bottom: 20px;
   color: #555;
   font-size: 16px;
   font-weight: 700;
 }
-.accordion-cont .text-wrap p{
+.accordion-cont .text-wrap p {
   display: flex;
   margin: 20px 0 0 47px;
   color: #555;
   font-size: 16px;
   font-weight: 300;
 }
-
