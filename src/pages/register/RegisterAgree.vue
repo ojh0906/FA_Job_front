@@ -12,7 +12,7 @@
             <ul class="agree-select">
               <div class="agree-select-wrap" @click="onSelect(1)">
                 <div class="check-text">
-                  <input type="checkbox" required name="service" v-model="this.agree1" @click="chkAll" />
+                  <input type="checkbox" required name="service" v-model="this.agree1" @change="chkAll" />
                   <li class="h3">서비스 이용약관 (필수)</li>
                 </div>
                 <li class="dropdown">
@@ -37,7 +37,7 @@
             <ul class="agree-select">
               <div class="agree-select-wrap" @click="onSelect(2)">
                 <div class="check-text">
-                  <input type="checkbox" required name="service" v-model="this.agree2" @click="chkAll" />
+                  <input type="checkbox" required name="service" v-model="this.agree2" @change="chkAll" />
                   <li class="h3">개인정보처리방침 (필수)</li>
                 </div>
                 <li class="dropdown">
@@ -62,7 +62,7 @@
             <ul class="agree-select">
               <div class="agree-select-wrap" @click="onSelect(3)">
                 <div class="check-text">
-                  <input type="checkbox" name="service" v-model="this.agree3" @click="chkAll" />
+                  <input type="checkbox" name="service" v-model="this.agree3" @change="chkAll" />
                   <li class="h3">이벤트 정보 수집 동의 (선택)</li>
                 </div>
                 <li class="dropdown">
@@ -86,7 +86,7 @@
           <div class="title">
             <ul>
               <div class="check-text">
-                <input type="checkbox" name="service" v-model="this.all" @click="" />
+                <input type="checkbox" name="service" v-model="this.all" @click="initAgree(!this.all);" />
                 <li class="h3">전체동의</li>
               </div>
             </ul>
@@ -96,9 +96,9 @@
 
       <!-- 정보 입력 페이지 내/외국인 구분 필요(동일 페이지) -->
       <div class="agree_next">
-        <router-link :to="{ name: 'RegisterInput' }">
+        <a @click="next">
           <p>다음</p>
-        </router-link>
+        </a>
       </div>
     </div>
   </div>
@@ -125,16 +125,16 @@ export default {
   },
   methods: {
     onSelect(num) {
-      if (num == 1) {
-        this.agree_select1 = !this.agree_select1
+      if (num === 1) {
+        this.agree_select1 = !this.agree_select1;
         this.agree_select2 = false;
         this.agree_select3 = false;
-      } else if (num == 2) {
-        this.agree_select2 = !this.agree_select2
+      } else if (num === 2) {
+        this.agree_select2 = !this.agree_select2;
         this.agree_select1 = false;
         this.agree_select3 = false;
-      } else if (num == 3) {
-        this.agree_select3 = !this.agree_select3
+      } else if (num === 3) {
+        this.agree_select3 = !this.agree_select3;
         this.agree_select1 = false;
         this.agree_select2 = false;
       }
@@ -144,11 +144,25 @@ export default {
         this.agree_select1 = false;
       }
     },
-    initAgree(){
-      this.select1 = false;
-      this.select2 = false;
-      this.select3 = false;
-      this.all = false;
+    initAgree(bool){
+      this.agree1 = bool;
+      this.agree2 = bool;
+      this.agree3 = bool;
+      this.all = bool;
+    },
+    chkAll(){
+      if(this.agree1 && this.agree2 && this.agree3){
+        this.all = true;
+      } else {
+        this.all = false;
+      }
+    },
+    next(){
+      if(this.agree1 && this.agree2){
+        this.$router.push({name:'RegisterInput', query:{type:this.type, event_info_yn:this.agree3}})
+      } else {
+        alert('필수항목에 체크해주세요.')
+      }
     }
   },
   mounted() {
@@ -157,7 +171,7 @@ export default {
       this.$router.push({name:'RegisterType'})
     } else {
       this.type = this.$route.query.type;
-      this.initAgree();
+      this.initAgree(false);
     }
   }
 }

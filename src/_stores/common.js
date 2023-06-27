@@ -18,19 +18,28 @@ export const useCommonStore = defineStore({
   }),
   actions: {
     async save(params) { // 회원가입
-      return await http.post(`${baseUrl}/save`, params);
+      return await http.post(`${baseUrl}/save`, params, { headers: { "Content-Type": "multipart/form-data" } });
     },
     async login(email, password, auto_login) {
       try {
           const member = await http.post(`${baseUrl}/login`, { email:email, password:password,auto_login:auto_login }).then((resp) => {
-            console.log(resp);
           if (resp.data.code === 200) {
-            this.member = resp.data.body.member;
-            this.auth_token = resp.data.body.token;
-            this.isAuthenticated = true;
-            this.expiryTime = dayjs(new Date()).add(resp.data.body.expiryHour, 'hour').format('YYYY-MM-DD HH:mm:ss');
-            this.loginCheck = false;
-            router.push(this.return_url || '/');
+            console.log(resp)
+            if(resp.data.body.member.state === 0){ // 미승인
+              let query = {
+                nick_name: resp.data.body.member.nick_name,
+                isForeigner: true,
+                state: resp.data.body.member.state,
+              }
+              router.push({name:'RegisterEnd', query:query});
+            } else {
+              this.member = resp.data.body.member;
+              this.auth_token = resp.data.body.token;
+              this.isAuthenticated = true;
+              this.expiryTime = dayjs(new Date()).add(resp.data.body.expiryHour, 'hour').format('YYYY-MM-DD HH:mm:ss');
+              this.loginCheck = false;
+              router.push(this.return_url || '/');
+            }
           }else{
             this.loginCheck = true;
             return resp;
@@ -79,6 +88,9 @@ export const useCommonStore = defineStore({
     },
     async modifyPassword(params) {
       return await http.put(`${baseUrl}/find/password`, params);
+    },
+    async duple(params) {
+      return await http.post(`${baseUrl}/duple`, params);
     },
   },
   persist: true,

@@ -56,6 +56,10 @@ export default {
       const commonStore = useCommonStore();
       return commonStore.field.filter(f => f.type_name === type_name);
     },
+    getField(type_name, name){
+      const commonStore = useCommonStore();
+      return commonStore.field[commonStore.field.findIndex(f => f.type_name === type_name && f.name === name)].field;
+    },
     getFieldName(field){
       if(field === 0) return '';
       const commonStore = useCommonStore();

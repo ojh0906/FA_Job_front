@@ -7,7 +7,7 @@
       <p class="title">가입 유형을 선택해주세요.</p>
       <ul>
         <li class="join01">
-          <router-link :to="{ name: 'RegisterAgree', query:{type:1} }">
+          <router-link :to="{ name: 'RegisterAgree', query:{type:getField('member_type', '일반')} }">
             <i class="i_icon"></i>
             <p>
               <strong class="bold">일반</strong> 회원가입
@@ -16,7 +16,7 @@
           </router-link>
         </li>
         <li class="join02">
-          <router-link :to="{ name: 'RegisterAgree', query:{type:2} }">
+          <router-link :to="{ name: 'RegisterAgree', query:{type:getField('member_type', '외국인')} }">
             <i class="i_icon"></i>
             <p>
               <strong class="bold">외국인</strong> 회원가입
@@ -25,7 +25,7 @@
           </router-link>
         </li>
         <li class="join03">
-          <router-link :to="{ name: 'RegisterAgree', query:{type:3} }">
+          <router-link :to="{ name: 'RegisterAgree', query:{type:getField('member_type', '기업')} }">
             <i class="i_icon"></i>
             <p>
               <strong class="bold">기업</strong> 회원가입

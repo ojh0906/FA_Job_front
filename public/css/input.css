@@ -58,6 +58,11 @@
   gap: 8px;
   width: 100%;
 }
+
+.field-wrap .field .input-wrap .hidden{
+  display: none;
+}
+
 .field-wrap .field_input {
   display: flex;
   gap: 8px;
