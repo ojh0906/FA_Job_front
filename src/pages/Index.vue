@@ -218,7 +218,6 @@ export default {
     },
   },
   mounted() {
-    this.commonStore.getField();
     this.commonStore.getField().then((resp) => {
       if (resp.data.code == 200) {
         this.commonStore.field = resp.data.body;

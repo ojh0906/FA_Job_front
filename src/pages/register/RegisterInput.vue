@@ -390,13 +390,15 @@ export default {
           alert('필수값을 입력해주세요.');
           return;
         } else {
-          paramData.append("state", 0); // 외국인은 승인 필요
+          paramData.append("state", this.getField('member_state','미승인')); // 외국인은 승인 필요
           paramData.append("foreigner_yn", this.isForeigner);
           paramData.append("foreigner_number", this.foreigner_number);
           this.foreigner_file_new.forEach((element, index) => {
             paramData.append(`foreigner_file_new`, element);
           });
         }
+      } else {
+        paramData.append("state", this.getField('member_state','승인'));
       }
 
       if(this.isCompany){ // 기업인 경우
