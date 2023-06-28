@@ -39,9 +39,15 @@
         <div class="menu-wrap">
           <a>고객센터</a>
           <div class="submenu">
-            <a>공지사항</a>
-            <a>문의하기</a>
-            <a>FAQ</a>
+            <router-link :to="{ name: 'NoticeList', query: {} }">
+              공지사항
+            </router-link>
+            <router-link :to="{ name: 'AskList', query: {} }">
+              문의하기
+            </router-link>
+            <router-link :to="{ name: 'Faq', query: {} }">
+              FAQ
+            </router-link>
           </div>
         </div>
       </div>
@@ -132,7 +138,7 @@ export default {
         this.alarmPopup = false;
       }
     },
-    logout(){
+    logout() {
       this.commonStore.logout()
     }
   },

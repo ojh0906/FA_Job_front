@@ -6,27 +6,8 @@
         </div>
 
         <div class="ask01_box">
-            <div class="a01_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        공지사항
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        문의하기
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu03">
-                        FAQ
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <Menu click="2" />
+
 
             <div class="a01_r">
                 <div class="ask">
@@ -43,30 +24,30 @@
                     <th class="t_title " style="width: 612px;">제목</th>
                     <th class="t_title " style="width: 120px;">등록일</th>
                     <th class="t_title " style="width: 80px;">답변상태</th>
-                        <tr class="t_tr" >
-                            <!-- 첫번째 줄 시작 -->
-                            <td class="t_td ">10</td>
-                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td ">2023.06.15</td>
-                            <td class="t_td ">대기중</td>
-                            <!-- 첫번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr">
-                            <!-- 두번째 줄 시작 -->
-                            <td class="t_td ">10</td>
-                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td ">2023.06.15</td>
-                            <td class="t_td ">완료</td>
-                            <!-- 두번째 줄 끝 -->
-                        </tr>
-                        <tr class="t_tr">
-                            <!-- 세번째 줄 시작 -->
-                            <td class="t_td ">10</td>
-                            <td class="t_td left">제목이 노출되는 영역입니다.</td>
-                            <td class="t_td ">2023.06.15</td>
-                            <td class="t_td ">완료</td>
-                            <!-- 세번째 줄 끝 -->
-                        </tr>
+                    <tr class="t_tr">
+                        <!-- 첫번째 줄 시작 -->
+                        <td class="t_td ">10</td>
+                        <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                        <td class="t_td ">2023.06.15</td>
+                        <td class="t_td ">대기중</td>
+                        <!-- 첫번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr">
+                        <!-- 두번째 줄 시작 -->
+                        <td class="t_td ">10</td>
+                        <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                        <td class="t_td ">2023.06.15</td>
+                        <td class="t_td ">완료</td>
+                        <!-- 두번째 줄 끝 -->
+                    </tr>
+                    <tr class="t_tr">
+                        <!-- 세번째 줄 시작 -->
+                        <td class="t_td ">10</td>
+                        <td class="t_td left">제목이 노출되는 영역입니다.</td>
+                        <td class="t_td ">2023.06.15</td>
+                        <td class="t_td ">완료</td>
+                        <!-- 세번째 줄 끝 -->
+                    </tr>
                 </table>
 
                 <div class="pagination">
@@ -81,9 +62,30 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
+import { useCommonStore, useContactStore } from '@/_stores';
+import Menu from '/src/components/cscenter/Menu.vue'
 
+export default {
+    components: {
+        Menu
+    },
+    setup() {
+        const commonStore = useCommonStore();
+        const contactStore = useContactStore();
+
+        return {
+            commonStore,
+            contactStore,
+        }
+    },
+
+    data() {
+        return {
+        }
+    },
+
+}
 </script>

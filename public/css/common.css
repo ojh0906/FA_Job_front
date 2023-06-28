@@ -552,6 +552,14 @@ input[type="checkbox"] {
 .t_tr:hover {
   background: #f1f7f7;
 }
+
+.nd_next_table a,
+.nd_before_table a,
+.t_tr a {
+  width: 100%;
+  display: contents;
+}
+
 .t_tr {
   background: #ffffff;
   border-bottom: 1px solid #ececec;
@@ -585,6 +593,7 @@ input[type="checkbox"] {
   color: #333333;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+
 }
 .t_title03 {
   width: 890px;

@@ -6,27 +6,7 @@
         </div>
 
         <div class="faq_box">
-            <div class="faq_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        공지사항
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        문의하기
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu03">
-                        FAQ
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <Menu click="3" />
 
             <div class="faq_r">
                 <div class="faq_r_header">
@@ -74,5 +54,28 @@
 </template>
 
 <script>
+import { useCommonStore, useFaqStore } from '@/_stores';
+import Menu from '/src/components/cscenter/Menu.vue'
 
+export default {
+    components: {
+        Menu
+    },
+    setup() {
+        const commonStore = useCommonStore();
+        const faqStore = useFaqStore();
+
+        return {
+            commonStore,
+            faqStore,
+        }
+    },
+
+    data() {
+        return {
+        }
+    },
+
+}
 </script>
+

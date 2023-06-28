@@ -6,27 +6,7 @@
         </div>
 
         <div class="ask_box">
-            <div class="a03_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        공지사항
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        문의하기
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu03">
-                        FAQ
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <Menu click="2" />
 
             <div class="a03_r">
                 <!--타이틀-->
@@ -63,17 +43,40 @@
                 </table>
 
                 <div class="fw_next">
-                <div class="btn btn4" @click="$router.go(-1)">이전</div>
-                <router-link :to="{ name: 'RegisterEnd' }">
-                    <div class="btn btn1">등록</div>
-                </router-link>
-            </div>
+                    <div class="btn btn4" @click="$router.go(-1)">이전</div>
+                    <router-link :to="{ name: 'RegisterEnd' }">
+                        <div class="btn btn1">등록</div>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
-
 </template>
 
-<script>
 
+<script>
+import { useCommonStore, useContactStore } from '@/_stores';
+import Menu from '/src/components/cscenter/Menu.vue'
+
+export default {
+    components: {
+        Menu
+    },
+    setup() {
+        const commonStore = useCommonStore();
+        const contactStore = useContactStore();
+
+        return {
+            commonStore,
+            contactStore,
+        }
+    },
+
+    data() {
+        return {
+        }
+    },
+
+}
 </script>
+
