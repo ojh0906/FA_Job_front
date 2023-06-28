@@ -4,9 +4,14 @@ import router from '@/_router';
 import dayjs from 'dayjs';
 
 const baseUrl = `/member`;
+const level_list = [
+  { idx: 0, maxLevel:40, requiredExp: 1200 },
+  { idx: 1, maxLevel:80, requiredExp: 3600 },
+  { idx: 2, maxLevel:100, requiredExp: 9600 },
+]
 
 export const useCommonStore = defineStore({
-  id: 'member',
+  id: 'common',
   state: () => ({
     member: null,
     loginCheck:false,
@@ -24,8 +29,7 @@ export const useCommonStore = defineStore({
       try {
           const member = await http.post(`${baseUrl}/login`, { email:email, password:password,auto_login:auto_login }).then((resp) => {
           if (resp.data.code === 200) {
-            console.log(resp)
-            if(resp.data.body.member.state === 0){ // 미승인
+            if(resp.data.body.member.state === this.field[this.field.findIndex(f => f.type_name === 'member_state' && f.name === '미승인')].field){ // 미승인
               let query = {
                 nick_name: resp.data.body.member.nick_name,
                 isForeigner: true,
@@ -38,6 +42,7 @@ export const useCommonStore = defineStore({
               this.isAuthenticated = true;
               this.expiryTime = dayjs(new Date()).add(resp.data.body.expiryHour, 'hour').format('YYYY-MM-DD HH:mm:ss');
               this.loginCheck = false;
+              this.setMemberLevel();
               router.push(this.return_url || '/');
             }
           }else{
@@ -57,7 +62,7 @@ export const useCommonStore = defineStore({
         const member = await http.get(`${baseUrl}/${this.member.member}`).then((resp) => {
           if (resp.data.code === 200) {
             this.member = resp.data.body;
-            //console.log(this.usr);
+            this.setMemberLevel();
           }else{
             return resp;
           }
@@ -91,6 +96,26 @@ export const useCommonStore = defineStore({
     },
     async duple(params) {
       return await http.post(`${baseUrl}/duple`, params);
+    },
+    setMemberLevel(){
+      let idx = -1;
+      for(let i=0; i<level_list.length; i++){
+        if(this.member.other_info.member_point <= (level_list[i].maxLevel * level_list[i].requiredExp)){
+          idx = level_list[i].idx;
+          break;
+        }
+      }
+
+      this.member.other_info.member_level = Math.floor( this.member.other_info.member_point / level_list[idx].requiredExp)
+      this.member.other_info.member_required = level_list[idx].requiredExp - (this.member.other_info.member_point % level_list[idx].requiredExp);
+      this.member.other_info.member_percent = Math.round((this.member.other_info.member_point % level_list[idx].requiredExp) / level_list[idx].requiredExp * 100);
+      if(this.member.type === this.field[this.field.findIndex(f => f.type_name === 'member_type' && f.name === '기업')].field){
+        this.member.nick_name = this.member.company_name;
+      }
+      console.log(this.member);
+    },
+    async matchPassword(id, params) {
+      return await http.post(`${baseUrl}/${id}/match/password`, params);
     },
   },
   persist: true,

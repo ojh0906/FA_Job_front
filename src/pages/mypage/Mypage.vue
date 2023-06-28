@@ -6,39 +6,39 @@
         <p class="area-title">나의 프로젝트</p>
         <div class="info-tab">
           <div>
-            관심 프로젝트 <strong>24건</strong>
+            관심 프로젝트 <strong>{{ this.commonStore.member.other_info.project_like_cnt }}건</strong>
           </div>
           <div>
-            지원 프로젝트 <strong>24건</strong>
+            지원 프로젝트 <strong>{{ this.commonStore.member.other_info.project_apply_cnt }}건</strong>
           </div>
           <div>
-            매칭 프로젝트 <strong>24건</strong>
+            매칭 프로젝트 <strong>{{ this.commonStore.member.other_info.project_match_cnt }}건</strong>
           </div>
           <div>
-            종료 프로젝트 <strong>24건</strong>
+            종료 프로젝트 <strong>{{ this.commonStore.member.other_info.project_end_cnt }}건</strong>
           </div>
         </div>
         <div class="table-wrap">
           <table class="t_table">
             <thead>
-              <tr>
-                <th class="t_title" width="10%">번호</th>
-                <th class="t_title" width="10%">분류</th>
-                <th class="t_title" width="12%">기업명</th>
-                <th class="t_title">제목</th>
-                <th class="t_title" width="10%">상태</th>
-                <th class="t_title" width="15%">업무일지</th>
-              </tr>
+            <tr>
+              <th class="t_title" width="10%">번호</th>
+              <th class="t_title" width="10%">분류</th>
+              <th class="t_title" width="12%">기업명</th>
+              <th class="t_title">제목</th>
+              <th class="t_title" width="10%">상태</th>
+              <th class="t_title" width="15%">업무일지</th>
+            </tr>
             </thead>
             <tbody>
-              <tr class="t_tr">
-                <td class="t_td">5</td>
-                <td class="t_td">관심</td>
-                <td class="t_td">홍신</td>
-                <td class="t_td left">프로젝트 제목</td>
-                <td class="t_td">대기 중</td>
-                <td class="t_td"><span class="small-btn-type-b">작성하기</span></td>
-              </tr>
+            <tr class="t_tr">
+              <td class="t_td">5</td>
+              <td class="t_td">관심</td>
+              <td class="t_td">홍신</td>
+              <td class="t_td left">프로젝트 제목</td>
+              <td class="t_td">대기 중</td>
+              <td class="t_td"><span class="small-btn-type-b">작성하기</span></td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -75,14 +75,32 @@
   </div>
 </template>
 
-
 <script>
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
+import { useCommonStore } from '@/_stores';
 
 export default {
   components: {
     LeftGnb
   },
-}
+  setup() {
+    const commonStore = useCommonStore()
+    return {
+      commonStore,
+    }
+  },
+  data() {
+    return {
+      member_level: 0,
+    }
+  },
+  methods: {
+    getMemberLevel() {
 
+    }
+  },
+  mounted() {
+    this.commonStore.refresh();
+  }
+}
 </script>
