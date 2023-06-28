@@ -6,27 +6,7 @@
         </div>
 
         <div class="ask_box">
-            <div class="box_l">
-                <div class="menu">
-                    <a href="#">
-                        <div class="menu01">
-                        공지사항
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu02">
-                        문의하기
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="menu03">
-                        FAQ
-                        <i class="i_icon"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+                       <Menu click="2" />
 
             <div class="box_r">
                 <div class="register-complete">
@@ -50,6 +30,29 @@
     </div>
 </template>
 
-<script>
 
+<script>
+import { useCommonStore, useContactStore } from '@/_stores';
+import Menu from '/src/components/cscenter/Menu.vue'
+
+export default {
+    components: {
+        Menu
+    },
+    setup() {
+        const commonStore = useCommonStore();
+        const contactStore = useContactStore();
+
+        return {
+            commonStore,
+            contactStore,
+        }
+    },
+
+    data() {
+        return {
+        }
+    },
+
+}
 </script>

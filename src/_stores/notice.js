@@ -8,7 +8,7 @@ export const useNoticeStore = defineStore({
   state: () => ({
   }),
   actions: {
-    async list(option = { }, pages = { page: 1, page_block: 10 }) {
+    async list(option = {}, pages = { page: 1, page_block: 10 }) {
       let params = {
         ...option,
         ...pages,
@@ -17,6 +17,9 @@ export const useNoticeStore = defineStore({
     },
     async getById(id) {
       return await http.get(`${baseUrl}/${id}`);
+    },
+    async saveClick(id, params) {
+      return await http.post(`${baseUrl}/${id}/click/save`, params);
     },
   },
   persist: true,

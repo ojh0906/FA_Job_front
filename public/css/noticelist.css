@@ -21,19 +21,19 @@
     display: flex;
 }
 
-#notice01_section .notice01_box .n01_l {
+.n01_l {
   margin-right: 40px;
     width: 270px;
 }
 
-#notice01_section .notice01_box .n01_l .menu {
+.n01_l .menu {
     width: 268px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     background-color: #fff;
 }
 
-#notice01_section .notice01_box .n01_l .menu .menu01 {
+.n01_l .menu .menu01 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #70bab5;
@@ -43,7 +43,7 @@
     color: #fff;
 }
 
-#notice01_section .notice01_box .n01_l .menu .menu02 {
+.n01_l .menu .menu02 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #fff;
@@ -51,7 +51,7 @@
     border-bottom: 1px solid #ececec;
 }
 
-#notice01_section .notice01_box .n01_l .menu .menu02 .i_icon {
+.n01_l .menu .menu02 .i_icon {
     float: right;
     position: relative;
     top: 2px;
@@ -60,14 +60,14 @@
     background: url("../image/community/right_arrow.png") no-repeat;
 }
 
-#notice01_section .notice01_box .n01_l .menu .menu03 {
+.n01_l .menu .menu03 {
     box-sizing: border-box;
     padding: 18px 20px;
     background: #fff;
     color: #333;
 }
 
-#notice01_section .notice01_box .n01_l .menu .menu03 .i_icon {
+.n01_l .menu .menu03 .i_icon {
     float: right;
     position: relative;
     top: 2px;
