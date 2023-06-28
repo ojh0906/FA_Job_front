@@ -50,7 +50,6 @@ export default {
   data() {
     return {
       password:'',
-      check_request:false,
       check:true,
     }
   },

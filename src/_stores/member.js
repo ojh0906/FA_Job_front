@@ -14,6 +14,13 @@ export const useMemberStore = defineStore({
     async modifyPassword(id, params) {
       return await http.put(`${baseUrl}/${id}/password`, params);
     },
+    async modify(id, params) {
+      return await http.put(`${baseUrl}/${id}`, params, { headers: { "Content-Type": "multipart/form-data" } });
+    },
+    async remove(id) {
+      return await http.delete(`${baseUrl}/${id}`);
+    },
+
   },
   persist: true,
 });

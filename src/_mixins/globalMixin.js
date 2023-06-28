@@ -18,7 +18,6 @@ export default {
         data != null
       ) {
         let file = JSON.parse(data);
-        // console.log("getFirstImagePath", data);
         return `${import.meta.env.VITE_FILE_URL}${file[0].path}`;
       }
       return "";

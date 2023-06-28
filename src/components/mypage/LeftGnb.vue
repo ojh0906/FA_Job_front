@@ -4,8 +4,8 @@
       <div class="box">
         <div class="profile-wrap">
           <div class="profile-info">
-            <div class="profile" style="background: url('/image/mypage/temp/image.png')" v-if="this.commonStore.member.profile_file == null"></div>
-            <div class="profile" style="background: url('/image/mypage/temp/image.png')" v-else></div>
+            <div class="profile" style="background: url('/image/mypage/temp/image.png')" v-if="this.commonStore.member.profile_file === '[]'"></div>
+            <div class="profile" :style="'background: url('+this.getFirstImagePath(this.commonStore.member.profile_file)+')'" v-else></div>
           </div>
           <div class="info-wrap">
             <p class="name">{{ this.commonStore.member.nick_name }}</p>
@@ -55,8 +55,8 @@
       </router-link>
     </div>
     <div class="sub-menu-wrap">
-      <a class="menu">로그아웃</a>
-      <a class="menu">회원탈퇴</a>
+      <a class="menu" @click="this.commonStore.logout()">로그아웃</a>
+      <a class="menu" @click="removeMember">회원탈퇴</a>
     </div>
   </div>
 
@@ -120,15 +120,17 @@
 </template>
 
 <script>
-import { useCommonStore } from '@/_stores';
+import { useCommonStore,useMemberStore } from '@/_stores';
 
 export default {
   components: {
   },
   setup() {
     const commonStore = useCommonStore()
+    const memberStore = useMemberStore()
     return {
       commonStore,
+      memberStore,
     }
   },
   data() {
@@ -143,7 +145,18 @@ export default {
         this.popupLv = false;
       }
     },
-
+    removeMember() {
+      if(confirm('이 회원과 관련된 데이터가 전부 삭제됩니다.\n정말 탈퇴하시겠습니까?')){
+        this.memberStore.remove(this.commonStore.member.member).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('탈퇴되었습니다.');
+            this.commonStore.logout();
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      }
+    }
   }
 }
 </script>
