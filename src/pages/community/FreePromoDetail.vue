@@ -22,7 +22,7 @@
                     <th class="t_title02 th_06" style="width: 32px;"><i class="i_icon"></i></th>
                 </table>
                 
-                <div class="btn_area">
+                <div class="btn_area"  v-if="this.commonStore.member.member === this.marketing.member">
                     <router-link class="modify-btn"
                         :to="{ name: 'FreePromoWrite', query: { key: this.marketing.marketing } }">
                         수정

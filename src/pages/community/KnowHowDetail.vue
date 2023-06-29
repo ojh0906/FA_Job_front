@@ -17,66 +17,59 @@
 
                 <table class="t_table02">
                     <th class="t_title02 th_01" style="width: 78px;">전기</th>
-                    <th class="t_title02 th_02" style="width: 460px;">제 노하우를 알려드립니다.</th>
-                    <th class="t_title02 th_03" style="width: 120px;">김유진</th>
-                    <th class="t_title02 th_04" style="width: 120px;">2023.06.23</th>
-                    <th class="t_title02 th_05" style="width: 80px;">380</th>
+                    <th class="t_title02 th_02" style="width: 460px;">{{ this.knowhow.title }}</th>
+                    <th class="t_title02 th_03" style="width: 120px;">{{ this.knowhow.name }}</th>
+                    <th class="t_title02 th_04" style="width: 120px;">{{ formattedDate(knowhow.reg_date) }}</th>
+                    <th class="t_title02 th_05" style="width: 80px;">{{ this.knowhow.other_info.click_cnt }}</th>
                     <th class="t_title02 th_06" style="width: 32px;"><i class="i_icon"></i></th>
                 </table>
 
-                <div class="btn_area">
-                    <a href="#" class="modify-btn">수정</a>
-                    <a href="#" class="delete-btn">삭제</a>
+                <div class="btn_area" v-if="this.commonStore.member.member === this.knowhow.member">
+                    <router-link class="modify-btn" :to="{ name: '', query: { id: this.knowhow.knowhow } }">
+                        수정
+                    </router-link>
+                    <a class="delete-btn" @click="remove">삭제</a>
                 </div>
 
-                <div class="cont_area">
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                    노하우 내용이 들어가는 영역입니다.<br>
-                </div>
+                <div class="cont_area" v-html="this.knowhow.content"></div>
 
                 <div class="recommend">
-                    <a href="#" class="btn7 up">
+                    <a href="#" :class="[this.recommend && this.recommend !== '' ? 'btn7' : 'btn4', 'up']"
+                        @click="this.recommend = true; getRecommendSave();">
                         <i class="i_icon"></i>
-                        <span>추천154</span>
+                        <span>추천 {{ knowhow.other_info.recommend_cnt }}</span>
                     </a>
-                    <a href="#" class="btn4 down">
+                    <a href="#" :class="[!this.recommend && this.recommend !== '' ? 'btn7' : 'btn4', 'down']"
+                        @click="this.recommend = false; getRecommendSave();">
                         <i class="i_icon"></i>
-                        <span>비추천1</span>
+                        <span>비추천 {{ knowhow.other_info.recommend_not_cnt }}</span>
                     </a>
                 </div>
 
                 <table class="comment">
-                    <tr class="tr_com">
-                        <td class="td_com01 td_01">오준호</td>
-                        <td class="td_com02 td_02">좋은 정보 감사합니다~</td>
-                        <td class="td_com03 td_03">2022.08.11</td>
-                    </tr>
-                    <tr class="tr_com02">
-                        <td class="td_com01 td_01">김유진</td>
-                        <td class="td_com05 td_02">
-                            <i class="i_icon"></i>
-                            <p>제목이 노출되는 영역입니다.<br>
-                                제목이 노출되는 영역입니다.</p>
-                        </td>
-                        <td class="td_com03 td_04">2022.08.11</td>
+                    <tr class="tr_com" v-for="(item, idx) in this.knowhow.other_info.reply_list" :key="idx">
+                        <td class="td_com01 td_01">{{ item.name }}</td>
+                        <td class="td_com02 td_02">{{ item.content }}</td>
+                        <td class="td_com03 td_03">{{ formattedDate(item.reg_date) }}</td>
                     </tr>
                     <tr class="tr_com03">
                         <td class="td_com01 td_01">댓글작성</td>
                         <td class="td_com02 td_02">
                             <div class="field_input">
-                                <input type="text" placeholder="답변을 입력하세요.">
+                                <input type="text" placeholder="답변을 입력하세요." v-model="this.content"
+                                    @keypress.enter="this.reply" />
                             </div>
                         </td>
                         <td class="td_com03 td_03">
-                            <a href="">등록</a>
+                            <a @click="this.reply">등록</a>
                         </td>
                     </tr>
                 </table>
 
                 <div class="know02_row">
-                    <a href="#" class="btn4">목록으로</a>
+                    <router-link class="btn4" :to="{ name: 'KnowHowList', query: {} }">
+                        목록으로
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -84,11 +77,121 @@
 </template>
 
 <script>
+import { useCommonStore, useKnowhowStore } from '@/_stores';
 import Menu from '/src/components/community/Menu.vue'
 
 export default {
     components: {
         Menu
     },
+
+    setup() {
+        const commonStore = useCommonStore();
+        const knowhowStore = useKnowhowStore();
+
+        return {
+            commonStore,
+            knowhowStore,
+        }
+    },
+
+    data() {
+        return {
+            knowhow: {
+                knowhow: 0,
+                member: 0,
+                title: '',
+                content: '',
+                reg_date: '',
+                other_info: {
+                    reply_list: [],
+                    click_cnt: 0
+                },
+            },
+            reply_list: {},
+            click_cnt: 0,
+            content: '', // 댓글 입력
+            recommend: '', // 사용자의 추천/비추천 상태 정보
+        }
+    },
+    methods: {
+        getKnowhow() {
+            this.knowhowStore.getById(this.$route.query.key).then((resp) => {
+                if (resp.data.code == 200) {
+                    this.knowhow = resp.data.body;
+                    if (this.knowhow.other_info.reply_list == null) {
+                        this.knowhow.other_info.reply_list = [];
+                    }
+                }
+            }).catch(err => {
+                console.log("err", err);
+            });
+        },
+        reply() {
+            if (this.content === '') {
+                alert('댓글 내용을 입력해주세요.');
+            }
+            let params = {
+                member: this.commonStore.member.member,
+                content: this.content,
+            }
+            this.knowhowStore.saveReply(this.$route.query.key, params).then((resp) => {
+                if (resp.data.code == 200) {
+                    this.content = '';
+                    this.getKnowhow();
+                }
+            }).catch(err => {
+                console.log("err", err);
+            });
+        },
+        remove() {
+            if (confirm('정말 삭제하시겠습니까?')) {
+                this.knowhowStore.remove(this.$route.query.key).then((resp) => {
+                    if (resp.data.code == 200) {
+                        alert('삭제되었습니다.');
+                        this.goToPage('FreePromo');
+                    }
+                }).catch(err => {
+                    console.log("err", err);
+                });
+            }
+        },
+        getRecommendMember() {
+            this.knowhowStore.getRecommend(this.$route.query.key, this.commonStore.member.member).then((resp) => {
+                if (resp.data.code == 200) {
+                    this.recommend = resp.data.body.recommend;
+                } else {
+                    this.recommend = '';
+                }
+            }).catch(err => {
+                console.log("err", err);
+            });
+        },
+        getRecommendSave() {
+            let param = {
+                member: this.commonStore.member.member,
+                recommend: this.recommend
+            };
+
+            this.knowhowStore.saveRecommend(this.$route.query.key, param).then((resp) => {
+                if (resp.data.code == 200) {
+                    this.getKnowhow();
+                }
+            }).catch(err => {
+                console.log("err", err);
+            });
+        }
+    },
+    mounted() {
+        if (this.$route.query.key == null) {
+            alert('잘못된 접근입니다.');
+            this.goToPage('KnowHowList');
+        } else {
+            this.getKnowhow();
+            this.getRecommendMember();
+            this.knowhowStore.saveClick(this.$route.query.key, { member: this.commonStore.member.member }); // 조회수 증가
+        }
+    }
+
 }
 </script>
