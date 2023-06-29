@@ -151,7 +151,7 @@ export default {
         console.log("err", err);
       });
     },
-    showAlert() {
+    showAlert() { // TODO 개발시 없앨것
       alert('해당 기능은 아직 개발중입니다.');
     }
   },
