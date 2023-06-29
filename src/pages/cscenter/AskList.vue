@@ -26,14 +26,14 @@
                     <th class="t_title " style="width: 120px;">등록일</th>
                     <th class="t_title " style="width: 80px;">답변상태</th>
                     <tr class="t_tr" v-for="contact in contact_list" :key="contact.contact">
-                        <!-- <router-link :to="{ name: 'Ask', query: { key: contact.contact } }"> -->
-                        <td class="t_td ">{{ contact.contact }}</td>
-                        <td class="t_td left">{{ contact.title }}</td>
-                        <td class="t_td ">{{ formattedDate(contact.reg_date) }}</td>
-                        <td :class="[contact.answer == null ? '' : 't_td_color', 't_td']">
-                            {{ contact.answer == null ? '대기중' : '완료' }}
-                        </td>
-                        <!-- </router-link> -->
+                        <router-link :to="{ name: 'ContactDetail', query: { key: contact.contact } }">
+                            <td class="t_td ">{{ contact.contact }}</td>
+                            <td class="t_td left">{{ contact.title }}</td>
+                            <td class="t_td ">{{ formattedDate(contact.reg_date) }}</td>
+                            <td :class="[contact.answer == null ? '' : 't_td_color', 't_td']">
+                                {{ contact.answer == null ? '대기중' : '완료' }}
+                            </td>
+                        </router-link>
                     </tr>
                 </table>
 
@@ -109,9 +109,7 @@ export default {
         }
     },
     mounted() {
-        this.commonStore.getField();
         this.getList();
     }
-
 }
 </script>

@@ -111,7 +111,6 @@ export default {
                 return;
             }
             let paramData = new FormData();
-            paramData.append("member", this.commonStore.member.member);
             paramData.append("title", this.title);
             paramData.append("content", this.content);
 
@@ -121,10 +120,7 @@ export default {
                 });
             }
 
-            for (const v of paramData.keys()) {
-                console.log('date', v, paramData.get(v));
-            }
-
+            paramData.append("member", this.commonStore.member.member);
             this.contactStore.save(paramData).then((resp) => {
                 if (resp.data.code == 200) {
                     alert('등록되었습니다.');
@@ -134,7 +130,6 @@ export default {
                 console.log("err", err);
             });
         },
-
     },
     mounted() {
     }
