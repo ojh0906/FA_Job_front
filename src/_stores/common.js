@@ -112,7 +112,6 @@ export const useCommonStore = defineStore({
       if(this.member.type === this.field[this.field.findIndex(f => f.type_name === 'member_type' && f.name === '기업')].field){
         this.member.nick_name = this.member.company_name;
       }
-      console.log(this.member);
     },
     async matchPassword(id, params) {
       return await http.post(`${baseUrl}/${id}/match/password`, params);
