@@ -173,10 +173,10 @@ export default {
         },
     },
     mounted() {
-        console.log('this.$route.query.id ', this.$route.query.id)
-        if (this.$route.query.id == undefined) { // 신규
+        // console.log('this.$route.query.key ', this.$route.query.key)
+        if (this.$route.query.key == undefined) { // 신규
         } else {
-            this.marketing = this.$route.query.id;
+            this.marketing = this.$route.query.key;
             this.get();
         }
     }

@@ -99,6 +99,7 @@
 #notice_detail .notice02_box .ndbox_r .nd_table .th_01 {
   display: flex;
   padding: 17px 25px;
+  justify-content: left;
 }
 
 #notice_detail .notice02_box .ndbox_r .nd_table .th_02 {
