@@ -71,8 +71,12 @@ export default {
             })
         },
         openAccordion(idx) {
-            this.closeAllAccordion();
-            this.accordions[idx] = true;
+            if (this.accordions[idx] == true) {
+                this.accordions[idx] = false;
+            } else {
+                this.closeAllAccordion();
+                this.accordions[idx] = true;
+            }
         },
     },
     mounted() {
