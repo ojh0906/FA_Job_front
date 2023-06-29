@@ -33,6 +33,12 @@ export const useKnowhowStore = defineStore({
     async saveClick(id, params) {
       return await http.post(`${baseUrl}/${id}/click/save`, params);
     },
+    async getRecommend(id, member) {
+      return await http.post(`${baseUrl}/${id}/recommend/member`, {member:member});
+    },
+    async saveRecommend(id, params) {
+      return await http.post(`${baseUrl}/${id}/recommend/save`, params);
+    },
   },
   persist: true,
 });
