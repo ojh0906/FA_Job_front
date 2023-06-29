@@ -24,7 +24,7 @@
                 
                 <div class="btn_area">
                     <router-link class="modify-btn"
-                        :to="{ name: 'FreePromoWrite', query: { id: this.marketing.marketing } }">
+                        :to="{ name: 'FreePromoWrite', query: { key: this.marketing.marketing } }">
                         수정
                     </router-link>
                     <a class="delete-btn" @click="remove">삭제</a>
@@ -103,7 +103,7 @@ export default {
     },
     methods: {
         getMarketing() {
-            this.marketingStore.getById(this.$route.query.id).then((resp) => {
+            this.marketingStore.getById(this.$route.query.key).then((resp) => {
                 if (resp.data.code == 200) {
                     this.marketing = resp.data.body;
                     this.getThumb(resp.data.body.thumb);
@@ -123,7 +123,7 @@ export default {
                 member: this.commonStore.member.member,
                 content: this.content,
             }
-            this.marketingStore.saveReply(this.$route.query.id, params).then((resp) => {
+            this.marketingStore.saveReply(this.$route.query.key, params).then((resp) => {
                 if (resp.data.code == 200) {
                     this.content = '';
                     this.getMarketing();
@@ -134,7 +134,7 @@ export default {
         },
         remove() {
             if (confirm('정말 삭제하시겠습니까?')) {
-                this.marketingStore.remove(this.$route.query.id).then((resp) => {
+                this.marketingStore.remove(this.$route.query.key).then((resp) => {
                     if (resp.data.code == 200) {
                         alert('삭제되었습니다.');
                         this.goToPage('FreePromo');
@@ -157,12 +157,12 @@ export default {
         }
     },
     mounted() {
-        if (this.$route.query.id == null) {
+        if (this.$route.query.key == null) {
             alert('잘못된 접근입니다.');
             this.goToPage('FreePromo');
         } else {
             this.getMarketing();
-            this.marketingStore.saveClick(this.$route.query.id, { member: this.commonStore.member.member }); // 조회수 증가
+            this.marketingStore.saveClick(this.$route.query.key, { member: this.commonStore.member.member }); // 조회수 증가
         }
     }
 }

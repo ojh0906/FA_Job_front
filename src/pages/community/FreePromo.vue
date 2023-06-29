@@ -15,7 +15,7 @@
 
                 <div class="free_cont">
                     <div class="cont01 c_01" v-for="marketing in marketing_list" :key="marketing.marketing">
-                        <router-link :to="{ name: 'FreePromoDetail', query: { id: marketing.marketing } }">
+                        <router-link :to="{ name: 'FreePromoDetail', query: { key: marketing.marketing } }">
                             <div class="img_area">
                                 <img v-if="marketing.thumb !== '[]'" :src="getFirstImagePath(marketing.thumb)"
                                     alt="이미지영역입니다.">
