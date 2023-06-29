@@ -134,6 +134,7 @@
     color: #333333;
     padding: 20px 0;
     display: inline-block;
+    cursor: pointer;
 }
 #mypage .menu-container .menu-wrap .menu:after{
     content: "\f054";

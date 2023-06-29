@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="menu-wrap">
-        <a class="menu">이력서 관리</a>
+        <a class="menu" @click="checkResume">이력서 관리</a>
       </div>
       <router-link :to="{ name: 'MypageProject', query: {} }">
         <div class="menu-wrap">
@@ -46,13 +46,11 @@
         </div>
       </router-link>
       <div class="menu-wrap">
-        <a class="menu">업무일지 관리</a>
+        <a class="menu" @click="showAlert">업무일지 관리</a>
       </div>
-      <router-link :to="{ name: 'MypagePay1', query: {} }">
-        <div class="menu-wrap">
-          <a class="menu">서비스 결제</a>
-        </div>
-      </router-link>
+      <div class="menu-wrap">
+        <a class="menu" @click="showAlert">서비스 결제</a>
+      </div>
     </div>
     <div class="sub-menu-wrap">
       <a class="menu" @click="this.commonStore.logout()">로그아웃</a>
@@ -156,6 +154,16 @@ export default {
           console.log("err", err);
         });
       }
+    },
+    checkResume(){
+      if(this.commonStore.member.other_info.member_resume == null){
+        this.$router.push({name:'ResumeNone'});
+      } else {
+
+      }
+    },
+    showAlert(){ // TODO 개발시 없앨것
+      alert('해당 기능은 아직 개발중입니다.');
     }
   }
 }

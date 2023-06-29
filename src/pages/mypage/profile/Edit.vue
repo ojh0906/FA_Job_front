@@ -8,7 +8,7 @@
         <div class="profile-edit">
           <div class="profile-info">
             <img src="/image/mypage/temp/image.png" class="profile-img" v-if="this.profile_file.length === 0 && this.profile_file_new.length === 0"/>
-            <img :src="this.getFirstImagePath(this.profile_file)" class="profile-img" v-else />
+            <img :src="this.getImagePath(this.profile_file[0].path)" class="profile-img" v-else-if="this.profile_file_new.length === 0" />
             <img :src="this.profile_file_new[0].preview" class="profile-img" v-else />
             <img src="/image/mypage/camerabtn.png" class="camera-icon" @click.prevent="addFiles('profile_file_new')"/>
             <input id="profile_file_new" name="profile_file_new" ref="profile_file_new" class="hidden" type="file" @change="handleChange($event)" accept="image/*" />
