@@ -1,538 +1,539 @@
-#mypage{
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+#mypage {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
-#mypage .left{
-    width: 270px;
+#mypage .left {
+  width: 270px;
 }
-#mypage .menu-container{
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
-    border: 1px solid #DDDDDD;
-    background: #FFFFFF;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
+#mypage .menu-container {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
 }
-#mypage .menu-container .box{
-    /* 16px */
-    background: #F5F5F5;
-    border-bottom: 1px solid #ECECEC;
-    padding: 20px 15px;
-
+#mypage .menu-container .box {
+  /* 16px */
+  background: #f5f5f5;
+  border-bottom: 1px solid #ececec;
+  padding: 20px 15px;
 }
-#mypage .menu-container .box .profile-wrap{
-    box-sizing: border-box;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 20px;
+#mypage .menu-container .box .profile-wrap {
+  box-sizing: border-box;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
 }
-#mypage .menu-container .box .profile-wrap .profile-info{
-    display: flex;
-    gap: 20px;
+#mypage .menu-container .box .profile-wrap .profile-info {
+  display: flex;
+  gap: 20px;
 }
-#mypage .menu-container .box .profile-wrap .profile-info .profile{
-    background-size: cover !important;
-    background-position: center center !important;
-    width: 80px;
-    height: 80px;
+#mypage .menu-container .box .profile-wrap .profile-info .profile {
+  background-size: cover !important;
+  background-position: center center !important;
+  width: 80px;
+  height: 80px;
 }
-#mypage .menu-container .box .profile-wrap .info-wrap{
-
+#mypage .menu-container .box .profile-wrap .info-wrap {
 }
-#mypage .menu-container .box .profile-wrap .info-wrap .name{
-    color: #333333;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 5px;
+#mypage .menu-container .box .profile-wrap .info-wrap .name {
+  color: #333333;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
-#mypage .menu-container .box .profile-wrap .info-wrap .type{
-    color: #555555;
-    font-weight: 400;
-    font-size: 14px;
-    margin-right: 10px;
+#mypage .menu-container .box .profile-wrap .info-wrap .type {
+  color: #555555;
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 10px;
 }
-#mypage .menu-container .box .profile-wrap .info-wrap .lv{
-    background: #E2EEF0;
-    border: 1px solid #CDDCE1;
-    border-radius: 5px;
-    padding: 4px 6px;
-    box-sizing: border-box;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    cursor: pointer;
+#mypage .menu-container .box .profile-wrap .info-wrap .lv {
+  background: #e2eef0;
+  border: 1px solid #cddce1;
+  border-radius: 5px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer;
 }
-#mypage .menu-container .box .profile-wrap .info-wrap .residual{
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    padding: 4px 5px;
-    box-sizing: border-box;
-    display: block;
-    margin-top: 10px;
+#mypage .menu-container .box .profile-wrap .info-wrap .residual {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 4px 5px;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 10px;
 }
-#mypage .menu-container .box .lv-bar{
-    width: 100%;
-    background: #CCCCCC;
-    border-radius: 20px;
-    overflow: hidden;
+#mypage .menu-container .box .lv-bar {
+  width: 100%;
+  background: #cccccc;
+  border-radius: 20px;
+  overflow: hidden;
 }
-#mypage .menu-container .box .lv-bar .lv-status{
-    background: #3E778A;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: #FFFFFF;
-    padding: 2px 0;
-    text-align: center;
+#mypage .menu-container .box .lv-bar .lv-status {
+  background: #3e778a;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  padding: 2px 0;
+  text-align: center;
 }
-#mypage .menu-container .box .lv-info{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: #777777;
-    margin-bottom: 24px;
-    margin-top: 5px;
+#mypage .menu-container .box .lv-info {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #777777;
+  margin-bottom: 24px;
+  margin-top: 5px;
 }
-#mypage .menu-container .box .setting-wrap{
-    display: flex;
-    border-radius: 5px;
-    overflow: hidden;
-    background: #fff;
+#mypage .menu-container .box .setting-wrap {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
 }
-#mypage .menu-container .box .setting-wrap .btn{
-    width: 50%;
-    text-align: center;
-    padding: 10px 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-    text-align: center;
-    color: #555555;
-    position: relative;
+#mypage .menu-container .box .setting-wrap .btn {
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  color: #555555;
+  position: relative;
 }
-#mypage .menu-container .box .setting-wrap .btn:nth-child(1){
-    border-right: 1px solid #F5F5F5;
+#mypage .menu-container .box .setting-wrap .btn:nth-child(1) {
+  border-right: 1px solid #f5f5f5;
 }
-#mypage .menu-container .menu-wrap{
-    background: #fff;
-    position: relative;
-    padding: 0 15px;
-    box-sizing: border-box;
+#mypage .menu-container .menu-wrap {
+  background: #fff;
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
-#mypage .menu-container .menu-wrap .menu{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    color: #333333;
-    padding: 20px 0;
-    display: inline-block;
-    cursor: pointer;
+#mypage .menu-container .menu-wrap .menu {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #333333;
+  padding: 20px 0;
+  display: inline-block;
+  cursor: pointer;
 }
-#mypage .menu-container .menu-wrap .menu:after{
-    content: "\f054";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #333333;
-    right: 20px;
-    position: absolute;
+#mypage .menu-container .menu-wrap .menu:after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #333333;
+  right: 20px;
+  position: absolute;
 }
-#mypage .sub-menu-wrap{
-    margin-top: 30px;
-    display: flex;
+#mypage .sub-menu-wrap {
+  margin-top: 30px;
+  display: flex;
 }
-#mypage .sub-menu-wrap .menu{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    color: #777777;
-    display: block;
-    padding: 15px;
-    box-sizing: border-box;
+#mypage .sub-menu-wrap .menu {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #777777;
+  display: block;
+  padding: 15px;
+  box-sizing: border-box;
 }
-#mypage .content-container{
-    width: calc(100% - 310px);
-    min-width: 890px;
+#mypage .content-container {
+  width: calc(100% - 310px);
+  min-width: 890px;
 }
 /* common */
-#mypage .content-container .area-title{
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    color: #333333;
-    margin-bottom: 20px;
+#mypage .content-container .area-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 20px;
 }
-#mypage .content-container .table-wrap{
-    width: 100%;
-    margin-bottom: 40px;
+#mypage .content-container .table-wrap {
+  width: 100%;
+  margin-bottom: 40px;
 }
-#mypage .content-container .table-wrap table{
-    width: 100%;
-
+#mypage .content-container .table-wrap table {
+  width: 100%;
 }
-#mypage .content-container .table-wrap table .colored{
-
+#mypage .content-container .table-wrap table .colored {
 }
 
-
-#mypage .content-container .mypage-info-container .info-tab{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 100%;
+#mypage .content-container .mypage-info-container .info-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
 }
-#mypage .content-container .mypage-info-container .info-tab div{
-    border-right: 1px solid #DDDDDD;
-    width: 25%;
-    padding: 20px 0;
-    text-align: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    text-align: center;
-    color: #555555;
-
+#mypage .content-container .mypage-info-container .info-tab div {
+  border-right: 1px solid #dddddd;
+  width: 25%;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  text-align: center;
+  color: #555555;
 }
-#mypage .content-container .mypage-info-container .info-tab div:nth-last-child(1) {
-    border-right: none;
+#mypage
+  .content-container
+  .mypage-info-container
+  .info-tab
+  div:nth-last-child(1) {
+  border-right: none;
 }
-#mypage .content-container .mypage-info-container .info-tab strong{
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
+#mypage .content-container .mypage-info-container .info-tab strong {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
 }
-#mypage .content-container .mypage-info-container .filter-wrap{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+#mypage .content-container .mypage-info-container .filter-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-#mypage .content-container .mypage-info-container .filter-wrap span{
-    background: #FFFFFF;
-    border: 1px solid #DDDDDD;
-    border-radius: 24px;
-    padding: 8px 20px;
-    box-sizing: border-box;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    color: #999999;
-    cursor: pointer;
+#mypage .content-container .mypage-info-container .filter-wrap span {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 24px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #999999;
+  cursor: pointer;
 }
 #mypage .content-container .mypage-info-container .filter-wrap span:hover,
-#mypage .content-container .mypage-info-container .filter-wrap span.active{
-    background: #70BAB5;
-    color: #fff;
+#mypage .content-container .mypage-info-container .filter-wrap span.active {
+  background: #70bab5;
+  color: #fff;
 }
 
 /* 회원탈퇴 */
-#mypage .content-container .withdraw-info-container{
-
+#mypage .content-container .withdraw-info-container {
 }
-#mypage .content-container .withdraw-info-container.withdraw2{
-    width: 400px;
-    margin: 0 auto;
+#mypage .content-container .withdraw-info-container.withdraw2 {
+  width: 400px;
+  margin: 0 auto;
 }
-#mypage .content-container .withdraw-info-container .info-box{
-    background: rgba(255, 101, 101, 0.15);
-    border-radius: 5px;
-    padding: 40px 20px;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #333333;
-    margin-bottom: 20px;
+#mypage .content-container .withdraw-info-container .info-box {
+  background: rgba(255, 101, 101, 0.15);
+  border-radius: 5px;
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
 }
-#mypage .content-container .withdraw-info-container .box{
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-    padding: 20px;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-    max-height: 140px;
-    overflow-y: scroll;
+#mypage .content-container .withdraw-info-container .box {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  max-height: 140px;
+  overflow-y: scroll;
 }
-#mypage .content-container .withdraw-info-container .box strong{
-    font-size: 16px;
-    line-height: 20px;
+#mypage .content-container .withdraw-info-container .box strong {
+  font-size: 16px;
+  line-height: 20px;
 }
-#mypage .content-container .withdraw-info-container .agree-wrap{
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-    padding: 12px;
-    box-sizing: border-box;
-    margin: 20px 0;
+#mypage .content-container .withdraw-info-container .agree-wrap {
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 20px 0;
 }
-#mypage .content-container .withdraw-info-container .agree-wrap label{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    color: #999999;
+#mypage .content-container .withdraw-info-container .agree-wrap label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #999999;
 }
 #mypage .content-container .withdraw-info-container .agree-wrap input {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-    border: 1px solid #BBBBBB;
-    border-radius: 5px;
-    vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  vertical-align: middle;
 }
-#mypage .content-container .withdraw-info-container .input-wrap{
-    width: 100%;
-    margin-bottom: 50px;
+#mypage .content-container .withdraw-info-container .input-wrap {
+  width: 100%;
+  margin-bottom: 50px;
 }
-#mypage .content-container .withdraw-info-container .input-wrap .input-wrap .label{
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-    letter-spacing: -0.05em;
-    color: #555555;
-    margin-bottom: 4px;
+#mypage
+  .content-container
+  .withdraw-info-container
+  .input-wrap
+  .input-wrap
+  .label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  letter-spacing: -0.05em;
+  color: #555555;
+  margin-bottom: 4px;
 }
-#mypage .content-container .withdraw-info-container .input-wrap input{
-    border: 1px solid #DDDDDD;
-    border-radius: 5px;
-    padding: 14px 15px;
-    box-sizing: border-box;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    width: 100%;
+#mypage .content-container .withdraw-info-container .input-wrap input {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 14px 15px;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
 }
-#mypage .content-container .withdraw-info-container .input-wrap input::placeholder {
-    color: #999999;
+#mypage
+  .content-container
+  .withdraw-info-container
+  .input-wrap
+  input::placeholder {
+  color: #999999;
 }
-#mypage .content-container .withdraw-info-container .success{
-    text-align: center;
-    padding: 40px 0;
-    border-bottom: 1px solid #ECECEC;
-    margin-bottom: 30px;
+#mypage .content-container .withdraw-info-container .success {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 30px;
 }
-#mypage .content-container .withdraw-info-container .success img{
-    width: 80px;
-    margin-bottom: 30px;
+#mypage .content-container .withdraw-info-container .success img {
+  width: 80px;
+  margin-bottom: 30px;
 }
-#mypage .content-container .withdraw-info-container .success .top{
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
-    color: #333333;
-    margin-bottom: 30px;
+#mypage .content-container .withdraw-info-container .success .top {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  color: #333333;
+  margin-bottom: 30px;
 }
-#mypage .content-container .withdraw-info-container .success .bottom{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    text-align: center;
-    color: #333333;
+#mypage .content-container .withdraw-info-container .success .bottom {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  text-align: center;
+  color: #333333;
 }
-
-
 
 /*이력서없음*/
-#mypage .content-container .resume-container .not-inputbox{
-    width: 100%;
-    margin-top: 40px;
-    text-align: center;
-    display: grid;
+#mypage .content-container .resume-container .not-inputbox {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+  display: grid;
 }
 
-#mypage .content-container .resume-container .not-inputbox p{
-    margin: 30px 0 40px 0;
+#mypage .content-container .resume-container .not-inputbox p {
+  margin: 30px 0 40px 0;
 }
 
-#mypage .content-container .resume-container .not-inputbox a{
-    margin-top: 30px;
+#mypage .content-container .resume-container .not-inputbox a {
+  margin-top: 30px;
 }
-
-
 
 /*이력서 관리*/
-#mypage .content-container .resume-container .table-manage-row{
-    border-collapse: collapse;
-    border: 1px solid #777777;
+#mypage .content-container .resume-container .table-manage-row {
+  border-collapse: collapse;
+  border: 1px solid #777777;
 }
 
-#mypage .content-container .resume-container .row02{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resume-container .row02 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resume-container .row03{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resume-container .row03 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resume-container .row04{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resume-container .row04 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resume-container .table-manage-row tr{
-    border-bottom: 1px solid #DDDDDD;
+#mypage .content-container .resume-container .table-manage-row tr {
+  border-bottom: 1px solid #dddddd;
 }
-#mypage .content-container .resume-container .table-manage-row tr:last-child{
-    border-bottom: none;
+#mypage .content-container .resume-container .table-manage-row tr:last-child {
+  border-bottom: none;
 }
 
-#mypage .content-container .resume-container .table-manage-row td{
-    padding: 17px 0;
+#mypage .content-container .resume-container .table-manage-row td {
+  padding: 17px 0;
 }
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(1) {
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(2) {
-    text-align: center;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+  text-align: center;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(3) {
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(4) {
-    text-align: center;
-    width: 176px;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+  text-align: center;
+  width: 176px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 #mypage .content-container .resume-container .table-manage-row td:nth-child(5) {
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .table-manage-row td:nth-child(6) {
-    text-align: center;
-    width: 176px;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+  text-align: center;
+  width: 176px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 
-#mypage .content-container .resume-container .row02 .line02{
-    padding: 9px 0;
+#mypage .content-container .resume-container .row02 .line02 {
+  padding: 9px 0;
 }
 
 #mypage .content-container .resume-container .row03 td:nth-child(2) {
-    text-align: center;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+  text-align: center;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 
-
 #mypage .content-container .resume-container .row04 .line01 {
-    text-align: center;
-    vertical-align: middle;
-    width: 130px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  width: 130px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .row04 th {
-    text-align: center;
-    padding: 19px 0;
-    vertical-align: middle;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
-    border-top: 1px solid #777777;
+  text-align: center;
+  padding: 19px 0;
+  vertical-align: middle;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
+  border-top: 1px solid #777777;
 }
 
 #mypage .content-container .resume-container .row04 td:nth-child(1) {
-    text-align: center;
-    width: 150px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 150px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .row04 td:nth-child(2) {
-    text-align: center;
-    width: 150px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 150px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resume-container .row04 td:nth-child(3) {
-    text-align: center;
-    width: 416px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 416px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 .resume-container .fw_next,
@@ -544,12 +545,12 @@
   padding-top: 30px;
 }
 .resume-container .fw_next .btn .i_icon {
-    float: right;
-    position: relative;
-    left: 4px;
-    width: 20px;
-    height: 20px;
-    background: url("../image/mypage/download.png") no-repeat;
+  float: right;
+  position: relative;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background: url("../image/mypage/download.png") no-repeat;
 }
 .resume-container .fw_next .btn {
   padding: 20px 85px;
@@ -558,191 +559,211 @@
   padding: 20px 45px;
 }
 
-
-
 /*이력서 작성*/
-#mypage .content-container .resumew-container .table-manage-row{
-    border-collapse: collapse;
-    border: 1px solid #777777;
+#mypage .content-container .resumew-container .table-manage-row {
+  border-collapse: collapse;
+  border: 1px solid #777777;
 }
 
-#mypage .content-container .resumew-container .row02{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resumew-container .row02 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resumew-container .row03{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resumew-container .row03 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resumew-container .row04{
-    border-collapse: collapse;
-    border: 1px solid #777777;
-    margin-top: 20px;
+#mypage .content-container .resumew-container .row04 {
+  border-collapse: collapse;
+  border: 1px solid #777777;
+  margin-top: 20px;
 }
 
-#mypage .content-container .resumew-container .table-manage-row tr{
-    border-bottom: 1px solid #DDDDDD;
+#mypage .content-container .resumew-container .table-manage-row tr {
+  border-bottom: 1px solid #dddddd;
 }
-#mypage .content-container .resumew-container .table-manage-row tr:last-child{
-    border-bottom: none;
-}
-
-#mypage .content-container .resumew-container .table-manage-row td{
-    padding: 17px 0;
+#mypage .content-container .resumew-container .table-manage-row tr:last-child {
+  border-bottom: none;
 }
 
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(1) {
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+#mypage .content-container .resumew-container .table-manage-row td {
+  padding: 17px 0;
 }
 
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(2) {
-    text-align: center;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(1) {
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(3) {
-    text-align: center;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(2) {
+  text-align: center;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(4) {
-    text-align: center;
-    width: 176px;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
-}
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(5) {
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(3) {
+  text-align: center;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
+  vertical-align: middle;
 }
 
-#mypage .content-container .resumew-container .table-manage-row td:nth-child(6) {
-    text-align: center;
-    width: 176px;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(4) {
+  text-align: center;
+  width: 176px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
+}
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(5) {
+  text-align: center;
+  vertical-align: middle;
+  width: 120px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
-#mypage .content-container .resumew-container .row02 .line02{
-    padding: 9px 0;
+#mypage
+  .content-container
+  .resumew-container
+  .table-manage-row
+  td:nth-child(6) {
+  text-align: center;
+  width: 176px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
+}
+
+#mypage .content-container .resumew-container .row02 .line02 {
+  padding: 9px 0;
 }
 
 #mypage .content-container .resumew-container .row03 td:nth-child(2) {
-    text-align: center;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 17px;
-    color: #555555;
-    background: #FFFFFF;
+  text-align: center;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #555555;
+  background: #ffffff;
 }
 
 #mypage .content-container .resumew-container .row03 td .i_icon {
-    float: right;
-    position: relative;
-    right: 10px;
-    top: -3px;
-    width: 20px;
-    height: 20px;
-    background: url("../image/mypage/down.png") no-repeat;
-    cursor: pointer;
+  float: right;
+  position: relative;
+  right: 10px;
+  top: -3px;
+  width: 20px;
+  height: 20px;
+  background: url("../image/mypage/down.png") no-repeat;
+  cursor: pointer;
 }
 
 #mypage .content-container .resumew-container .row03 .field_input input {
-    border: none;
-    padding: 0px 0px 100px 10px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    width: 750px;
+  border: none;
+  padding: 0px 0px 100px 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 750px;
 }
 
-
-
 #mypage .content-container .resumew-container .row04 .line01 {
-    text-align: center;
-    vertical-align: middle;
-    width: 130px;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  width: 130px;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resumew-container .row04 th {
-    text-align: center;
-    padding: 19px 0;
-    vertical-align: middle;
-    background: #e2eef0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
-    border-top: 1px solid #777777;
+  text-align: center;
+  padding: 19px 0;
+  vertical-align: middle;
+  background: #e2eef0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
+  border-top: 1px solid #777777;
 }
 
 #mypage .content-container .resumew-container .row04 td:nth-child(1) {
-    text-align: center;
-    width: 150px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 150px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resumew-container .row04 td:nth-child(2) {
-    text-align: center;
-    width: 150px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 150px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
 
 #mypage .content-container .resumew-container .row04 td:nth-child(3) {
-    text-align: center;
-    width: 416px;
-    background: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 17px;
-    color: #333333;
+  text-align: center;
+  width: 416px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #333333;
 }
-
 
 .resumew-container .fw_next,
 .next2 {
@@ -754,4 +775,211 @@
 }
 .resumew-container .fw_next .btn {
   padding: 20px 85px;
+}
+
+#resume .btn-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#resume .check-radio-btn {
+  border: 1px solid #3e778a;
+  background: #eff3f4;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+#resume .radio-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+#resume input[type="radio"] {
+  display: none;
+}
+
+#resume input[type="radio"] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+#resume input[type="radio"] + label .off {
+  display: flex;
+  width: 24px;
+  height: 24px;
+}
+#resume input[type="radio"] + label .on {
+  display: none;
+}
+#resume input[type="radio"] + label p {
+  color: #999;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#resume input[type="radio"]:checked {
+}
+#resume input[type="radio"]:checked + label {
+}
+#resume input[type="radio"]:checked + label p {
+  color: #555;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#resume input[type="radio"]:checked + label .off {
+  display: none !important;
+}
+#resume input[type="radio"]:checked + label .on {
+  display: flex !important;
+  width: 24px;
+  height: 24px;
+}
+
+#resume .field-wrap {
+  position: relative;
+  width: 150px;
+  justify-content: center;
+}
+
+#resume .field-wrap .select-email {
+  width: 150px;
+}
+#resume .field-wrap .input-email {
+  width: 150px;
+  justify-content: space-between;
+  padding: 8.5px 10px;
+}
+
+#resume .mini-select-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0 10px;
+}
+#resume .mini-select {
+  justify-content: end;
+  border: 1px solid #3e778a;
+  border-radius: 5px;
+}
+#resume .mini-select .select-email {
+}
+
+#resume .mini-select,
+#resume .mini-select .select-email,
+#resume .mini-select .input-email {
+  width: 71px !important;
+}
+#resume .field-wrap .input-email p {
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #333;
+}
+#resume .field-wrap .default {
+  color: #999 !important;
+}
+
+#resume .field-wrap .select-email {
+  position: absolute;
+  top: 45px;
+  right: -1px;
+  color: #555;
+  text-align: left;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: #fff;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.1);
+}
+#resume .field-wrap .select-email p {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+#resume .field-wrap .select-email p:nth-last-child(1) {
+  border-bottom: 0;
+}
+#resume .t-row {
+  height: 56px;
+}
+#resume .t-row .btn-select {
+  position: relative;
+  padding: 0px !important;
+  background: transparent !important;
+  top: -6px;
+}
+/* #resume td{
+  padding: 11px 0 !important;
+} */
+
+#resume .career-select,
+#resume .career-select .select-email,
+#resume .career-select .input-email {
+  width: 100% !important;
+  border: 0;
+}
+#resume .career-select .select-email {
+  border: 1px solid #555;
+}
+
+#resume .career-select .input-email {
+  justify-content: space-between;
+}
+#resume .career-select .input-email > p {
+  width: 100%;
+  color: #555 !important;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#resume .p-small {
+  padding: 11px 0 !important;
+}
+
+#resume .input-wrap2 {
+  padding: 10px 0;
+  width: 80%;
+  border: 0;
+  text-align: right;
+}
+
+#resume .textarea {
+  width: 97%;
+  border: 0;
+  /* padding: 5px; */
+  resize: vertical;
+  min-height: 80px;
+}
+#resume .input-wrap {
+  padding: 10px 0;
+  width: 80%;
+  border: 0;
+}
+
+#resume .input-wrap3 {
+  padding: 10px 0;
+  width: 95%;
+  border: 0;
+}
+
+#resume .cols4 {
+  width: auto !important;
+  background: #fff !important;
+  border-left: 1px #ddd solid;
 }
