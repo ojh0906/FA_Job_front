@@ -20,7 +20,9 @@ export const useMemberStore = defineStore({
     async remove(id) {
       return await http.delete(`${baseUrl}/${id}`);
     },
-
+    async saveResume(id, params) {
+      return await http.post(`${baseUrl}/${id}/resume/save`, params);
+    },
   },
   persist: true,
 });

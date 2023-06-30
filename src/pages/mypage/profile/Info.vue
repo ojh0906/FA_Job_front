@@ -7,7 +7,7 @@
         <table class="table-color-row">
           <tr>
             <td>국적</td>
-            <td>{{ this.commonStore.member.type === this.getField('member_type','외국인') ? '외국인':'한국인' }}</td>
+            <td>{{ this.commonStore.member.type === this.getField('member_type','외국인') ? '외국인':'내국인' }}</td>
           </tr>
           <tr>
             <td v-if="!this.isCompany">닉네임</td>

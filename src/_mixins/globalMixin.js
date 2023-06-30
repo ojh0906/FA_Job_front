@@ -41,6 +41,14 @@ export default {
       // return 0;
       return end_date.diff(start_date, unit);
     },
+    calAge(birth){
+      const today = dayjs(new Date());
+      const mybirth = dayjs(birth);
+      const mybirthThisYear = dayjs(today.format('YYYY') + birth.substring(4,8));
+      const age = today.diff(mybirth,'y');
+
+      return age + (mybirthThisYear.diff(dayjs(today),'d') >= 0 ? -1:0);
+    },
     formattedDate(value, format = "YYYY.MM.DD") {
       return dayjs(value).format(format);
     },

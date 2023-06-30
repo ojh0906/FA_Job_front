@@ -159,7 +159,7 @@ export default {
       if(this.commonStore.member.other_info.member_resume == null){
         this.$router.push({name:'ResumeNone'});
       } else {
-
+        this.$router.push({name:'ResumeWrite'});
       }
     },
     showAlert(){ // TODO 개발시 없앨것
