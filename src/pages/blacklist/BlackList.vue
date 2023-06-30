@@ -106,7 +106,7 @@ export default {
           this.blacklist_list = resp.data.body;
           this.blacklist_list_total = resp.data.total;
           // 페이징 셋팅
-          this.pagesList = this.getPageNums(this.blacklist_list_total, this.pages);
+          this.getPageNums(this.blacklist_list_total, this.pages);
         }
       }).catch(err => {
         console.log("err", err);

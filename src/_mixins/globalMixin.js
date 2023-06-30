@@ -78,8 +78,6 @@ export default {
       for (let i = pages.start; i < pages.end; i++) {
         pages.pagesList.push(i)
       }
-
-      return pages;
     }
   },
 };
