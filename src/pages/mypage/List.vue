@@ -44,7 +44,7 @@
               <tbody>
                 <tr class="t_tr" v-for="(item,idx) in this.knowhow_list">
                   <td class="t_td">{{ idx + 1 }}</td>
-                  <td class="t_td left">
+                  <td class="t_td left" @click="goToDetail('KnowHowDetail',item.knowhow)" style="cursor:pointer;">
                     {{ item.title }}
                     <span class="num">{{ item.other_info.reply_cnt }}</span>
                   </td>
@@ -85,7 +85,7 @@
                   <li><strong>등록일</strong> {{ formattedDate(item.reg_date) }}</li>
                   <li><strong>조회수</strong> {{ item.other_info.click_cnt }}</li>
                 </ul>
-                <h3>{{ item.title }}</h3>
+                <h3 @click="goToDetail('FreePromoDetail',item.marketing)" style="cursor:pointer;">{{ item.title }}</h3>
                 <div class="freecont_area f_01" v-html="showEnterContent(item.preview)">
                 </div>
               </div>
@@ -113,7 +113,7 @@
 
             <div class="blacklist-box">
               <div class="bl_list01 list01" v-for="(item, idx) in this.blacklist_list">
-                <h3>{{ item.title }}</h3>
+                <h3 @click="goToDetail('BlacklistDetail',item.blacklist)" style="cursor:pointer;">{{ item.title }}</h3>
                 <div class="list01_info info01">
                   <p class="list01_p"><span>분류</span>{{ this.getFieldName(item.target) }}</p>
                   <p class="list01_p"><span>피해사례</span>{{ this.getFieldName(item.type) }}</p>
