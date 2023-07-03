@@ -16,7 +16,7 @@
                 </div>
 
                 <table class="t_table02">
-                    <th class="t_title02 th_01" style="width: 78px;">전기</th>
+                    <th class="t_title02 th_01" style="width: 78px;">{{ this.knowhow.type.name }}</th>
                     <th class="t_title02 th_02" style="width: 460px;">{{ this.knowhow.title }}</th>
                     <th class="t_title02 th_03" style="width: 120px;">{{ this.knowhow.name }}</th>
                     <th class="t_title02 th_04" style="width: 120px;">{{ formattedDate(knowhow.reg_date) }}</th>
@@ -25,7 +25,7 @@
                 </table>
 
                 <div class="btn_area" v-if="this.commonStore.member.member === this.knowhow.member">
-                    <router-link class="modify-btn" :to="{ name: '', query: { id: this.knowhow.knowhow } }">
+                    <router-link class="modify-btn" :to="{ name: 'KnowHowWrite', query: { key: this.knowhow.knowhow } }">
                         수정
                     </router-link>
                     <a class="delete-btn" @click="remove">삭제</a>
@@ -45,7 +45,6 @@
                         <span>비추천 {{ knowhow.other_info.recommend_not_cnt }}</span>
                     </a>
                 </div>
-
                 <table class="comment">
                     <tr class="tr_com" v-for="(item, idx) in this.knowhow.other_info.reply_list" :key="idx">
                         <td class="td_com01 td_01">{{ item.name }}</td>
@@ -65,7 +64,6 @@
                         </td>
                     </tr>
                 </table>
-
                 <div class="know02_row">
                     <router-link class="btn4" :to="{ name: 'KnowHowList', query: {} }">
                         목록으로
@@ -100,6 +98,10 @@ export default {
             knowhow: {
                 knowhow: 0,
                 member: 0,
+                type: {
+                    field: 0,
+                    name: '전체',
+                },
                 title: '',
                 content: '',
                 reg_date: '',
@@ -119,6 +121,7 @@ export default {
             this.knowhowStore.getById(this.$route.query.key).then((resp) => {
                 if (resp.data.code == 200) {
                     this.knowhow = resp.data.body;
+                    this.getType();
                     if (this.knowhow.other_info.reply_list == null) {
                         this.knowhow.other_info.reply_list = [];
                     }
@@ -180,6 +183,13 @@ export default {
             }).catch(err => {
                 console.log("err", err);
             });
+        },
+        getType() {
+            if (this.knowhow.type === 0) {
+                this.knowhow.type = { field: 0, name: '전체' };
+            } else {
+                this.getFieldList('knowhow_type').map(v => v.field == this.knowhow.type ? this.knowhow.type = v : false);
+            }
         }
     },
     mounted() {

@@ -74,7 +74,7 @@
                             @keypress.enter="this.getList">
                         <img src="/image/community/search.png" alt="검색이미지입니다." @click="this.getList">
                     </div>
-                    <router-link class="btn1 btn01" :to="{ name: '', query: {} }"><!-- KnowHowWrite -->
+                    <router-link class="btn1 btn01" :to="{ name: 'KnowHowWrite', query: {} }">
                         Know-how 등록
                     </router-link>
                 </div>
