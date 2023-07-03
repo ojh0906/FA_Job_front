@@ -38,7 +38,7 @@
           <div class="day-btn">
             D-{{ differenceDate(new Date(), this.project.apply_end) }}
           </div>
-          <div :class="this.project.other_info.like_yn === 0 ? 'unlike-btn' : 'like-btn'">
+          <div :class="this.project.other_info.like_yn === 0 ? 'unlike-btn' : 'like-btn'" @click.prevent="console.log('like');">
             <img class="like-icon" :src="this.project.other_info.like_yn === 0 ? '/image/main/unlike.png' : '/image/main/like.png'" />
             {{ this.project.other_info.like_yn === 0 ? '관심' : this.project.other_info.like_cnt+'명' }}
           </div>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  props:['project'],
+  props: ['project'],
   components: {
   },
   data() {
@@ -66,7 +66,7 @@ export default {
   mounted() {
   },
   created() {
-    console.log(this.project)
+    //console.log(this.project)
   }
 }
 
