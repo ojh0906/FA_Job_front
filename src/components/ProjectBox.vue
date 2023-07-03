@@ -38,7 +38,7 @@
           <div class="day-btn">
             D-{{ differenceDate(new Date(), this.project.apply_end) }}
           </div>
-          <div :class="this.project.other_info.like_yn === 0 ? 'unlike-btn' : 'like-btn'" @click.prevent="console.log('like');">
+          <div :class="this.project.other_info.like_yn === 0 ? 'unlike-btn' : 'like-btn'" @click.prevent="saveLike">
             <img class="like-icon" :src="this.project.other_info.like_yn === 0 ? '/image/main/unlike.png' : '/image/main/like.png'" />
             {{ this.project.other_info.like_yn === 0 ? '관심' : this.project.other_info.like_cnt+'명' }}
           </div>
@@ -49,24 +49,50 @@
 </template>
 
 <script>
+import {useCommonStore,useProjectStore} from '@/_stores';
+
 export default {
   props: ['project'],
   components: {
+  },
+  setup() {
+    const commonStore = useCommonStore();
+    const projectStore = useProjectStore();
+    return {
+      commonStore,
+      projectStore,
+    }
   },
   data() {
     return {
     }
   },
-  setup() {
-    return {
-    };
-  },
   methods: {
+    saveLike(){
+      if(this.commonStore.member === null){
+        alert('로그인먼저 해주세요.');
+        return;
+      }
+      this.projectStore.saveLike(this.project.project, { member:this.commonStore.member.member,} ).then((resp) => {
+        console.log(resp)
+        if (resp.data.code == 200) {
+          if(this.project.other_info.like_yn === 0){
+            this.project.other_info.like_yn = 1;
+            this.project.other_info.like_cnt++;
+          } else {
+            this.project.other_info.like_yn = 0;
+            this.project.other_info.like_cnt--;
+          }
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    }
   },
   mounted() {
   },
   created() {
-    //console.log(this.project)
+    console.log(this.project)
   }
 }
 
