@@ -3,8 +3,8 @@
     <article class="search-container">
       <aside>
         <label for="search" class="search-wrap">
-          <input type="text" name="search" placeholder="프로젝트 검색" />
-          <img class="search-icon" src="/image/main/search.png" />
+          <input type="text" name="search" placeholder="프로젝트 검색" v-model="this.searchKeyword" @keypress.enter="this.searchProject"/>
+          <img class="search-icon" src="/image/main/search.png" @click="this.searchProject"/>
         </label>
       </aside>
     </article>
@@ -16,7 +16,7 @@
       </div>
       <div class="project-content">
         <!-- 프로젝트 필터 설정 -->
-        <Nav />
+        <Nav @setFieldFilter="setFieldFilter" />
         <article class="project">
           <!-- 프로젝트 광고 리스트 -->
           <aside v-if="this.project_ad_list.length !== 0">
@@ -34,14 +34,14 @@
               <!-- 필터 -->
               <div class="filter-item">
                 <p class="filter-text project-radio" @click="this.projectFilter = !this.projectFilter">
-                  {{ filter }}
+                  {{ this.order_type.name }}
                   <img class="dropdown-img project-radio" src="/image/register/down.png" />
                 </p>
                 <div class="filter-list-wrap project-radio" :class="this.projectFilter ? 'open' : 'close'">
-                  <div v-for="(item, index) in 4" :key="index" class="filter-list project-radio">
-                    <input type="radio" :name="item" v-model="filter" :value="item"
+                  <div v-for="(item, index) in this.order_type_list" :key="index" class="filter-list project-radio">
+                    <input type="radio" :name="item" v-model="order_type" :value="item"
                            class="project-radio" />
-                    <label :for="item" class="project-radio">{{ item }}</label>
+                    <label :for="item" class="project-radio">{{ item.name }}</label>
                   </div>
                 </div>
               </div>
@@ -122,16 +122,22 @@ import {useCommonStore,useProjectStore} from '@/_stores';
 
 export default {
   setup() {
+    const order_type_list = [
+      { idx:0, name:'최신순', value:'reg_date_desc'},
+      { idx:0, name:'인기순', value:'like_desc'}
+    ];
     const commonStore = useCommonStore();
     const projectStore = useProjectStore();
     return {
+      order_type_list,
       commonStore,
       projectStore,
     }
   },
   data() {
     return {
-      filter: '',
+      searchKeyword:'',
+      order_type: this.order_type_list[0],
       projectFilter: false,
       project_ad_list:[],
       project_list:[],
@@ -145,11 +151,19 @@ export default {
         pagesList: [],
         num_block: 5,
       },
+      fieldList:[],
     }
   },
   components: {
     Nav,
     ProjectBox,
+  },
+  watch:{
+    order_type : {
+      handler(newValue, oldValue) {
+        this.onChangePage(1);
+      },
+    },
   },
   methods: {
     clickSelect(event) {
@@ -159,9 +173,19 @@ export default {
     },
     getProjectList() {
       this.project_list = [];
-      // TODO {ad_yn:true} 추후에 광고한애들 불러오려면 파라미터 교체
-      this.projectStore.list({},this.project_pages).then((resp) => {
-        console.log(resp)
+      let params = {
+        login_member: this.commonStore.member.member,
+        fieldList: this.fieldList,
+        orderType: this.order_type.value,
+        searchType:'project_user_search' // 모집중인것만
+      }
+
+      if(this.searchKeyword !== ''){
+        params.searchKeyword = this.searchKeyword;
+      }
+
+      console.log(params)
+      this.projectStore.list(params,this.project_pages).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
           this.project_list_total = resp.data.total;
@@ -173,7 +197,13 @@ export default {
     },
     getProjectAdList() {
       this.project_ad_list = [];
-      this.projectStore.list({ad_yn:true}, {page:1, page_block: 4}).then((resp) => {
+      this.project_pages.pagesList = [];
+      let params = {
+        login_member: this.commonStore.member.member,
+        // ad_yn:true, // TODO 광고인애들
+        searchType:'project_user_search'
+      }
+      this.projectStore.list(params, {page:1, page_block: 4}).then((resp) => {
         if (resp.data.code == 200) {
           this.project_ad_list = resp.data.body;
         }
@@ -185,9 +215,19 @@ export default {
       this.project_pages.page = page;
       this.getProjectList();
     },
+    setFieldFilter(fieldList){
+      this.fieldList = fieldList;
+      this.onChangePage(1);
+    },
+    searchProject(){
+      if(this.searchKeyword === ''){
+        alert('검색어를 입력해주세요.');
+        return;
+      }
+      this.onChangePage(1);
+    }
   },
   mounted() {
-    this.filter = '최신순';
     this.getProjectList();
     this.getProjectAdList();
   }

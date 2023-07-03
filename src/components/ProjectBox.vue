@@ -36,11 +36,11 @@
 
         <div class="btn-wrap">
           <div class="day-btn">
-            D-100
+            D-{{ differenceDate(new Date(), this.project.apply_end) }}
           </div>
-          <div :class="true ? 'like-btn' : 'unlike-btn'">
-            <img class="like-icon" :src="true ? '/image/main/like.png' : '/image/main/unlike.png'" />
-            {{ true ? `00명` : '관심' }}
+          <div :class="this.project.other_info.like_yn === 0 ? 'unlike-btn' : 'like-btn'">
+            <img class="like-icon" :src="this.project.other_info.like_yn === 0 ? '/image/main/unlike.png' : '/image/main/like.png'" />
+            {{ this.project.other_info.like_yn === 0 ? '관심' : this.project.other_info.like_cnt+'명' }}
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default {
   mounted() {
   },
   created() {
-    //console.log(this.project)
+    console.log(this.project)
   }
 }
 

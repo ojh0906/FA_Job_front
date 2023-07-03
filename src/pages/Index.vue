@@ -160,8 +160,14 @@ export default {
     },
     getProjectList() {
       this.project_list = [];
-      // TODO {ad_yn:true} 추후에 광고한애들 불러오려면 파라미터 교체
-      this.mainStore.listProject({}).then((resp) => {
+      let params = {
+        // ad_yn:true, // TODO 광고인애들
+        searchType:'project_user_search'
+      }
+      if(this.commonStore.member != null){
+        params.login_member = this.commonStore.member.member
+      }
+      this.mainStore.listProject(params).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
           //console.log(resp.data.body)
