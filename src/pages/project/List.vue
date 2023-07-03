@@ -10,16 +10,19 @@
     </article>
 
     <section id="project-list" @click="clickSelect">
-      <div class="project-title-wrap">
+      <div class="project-title-wrap" v-if="!this.search">
         <p class="project-title">프로젝트</p>
         <p class="project-sub-title">등록된 프로젝트가 <span>{{ this.project_list_total }}건</span> 있습니다.</p>
+      </div>
+      <div class="project-title-wrap" v-else>
+        <p class="project-title">"{{ this.searchKeyword }}"로 검색된 프로젝트 <span>{{ this.project_list_total }}</span>건</p>
       </div>
       <div class="project-content">
         <!-- 프로젝트 필터 설정 -->
         <Nav @setFieldFilter="setFieldFilter" />
         <article class="project">
           <!-- 프로젝트 광고 리스트 -->
-          <aside v-if="this.project_ad_list.length !== 0">
+          <aside v-if="this.project_ad_list.length !== 0 && !this.search">
             <div class="ad-box-title">
               AD
             </div>
@@ -136,6 +139,7 @@ export default {
   },
   data() {
     return {
+      search:false,
       searchKeyword:'',
       order_type: this.order_type_list[0],
       projectFilter: false,
@@ -224,6 +228,7 @@ export default {
         alert('검색어를 입력해주세요.');
         return;
       }
+      this.search = true;
       this.onChangePage(1);
     }
   },
