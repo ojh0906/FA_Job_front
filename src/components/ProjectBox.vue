@@ -38,7 +38,7 @@
           <div class="day-btn">
             D-100
           </div>
-          <div :class="true ? 'like-btn' : 'unlike-btn'">
+          <div :class="true ? 'like-btn' : 'unlike-btn'" @click.prevent="console.log('like');">
             <img class="like-icon" :src="true ? '/image/main/like.png' : '/image/main/unlike.png'" />
             {{ true ? `00명` : '관심' }}
           </div>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  props:['project'],
+  props: ['project'],
   components: {
   },
   data() {
