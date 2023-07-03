@@ -105,7 +105,7 @@ export default {
     },
     getProjectList() {
       this.project_list = [];
-      this.mainStore.listProject({my_member:this.commonStore.member.member},{}).then((resp) => {
+      this.mainStore.listProject({my_member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
           //console.log(resp.data.body)
@@ -125,7 +125,7 @@ export default {
       }
     },
     getBlacklistList() {
-      this.mainStore.listBlacklist({member:this.commonStore.member.member},{page:1, page_block:3}).then((resp) => {
+      this.mainStore.listBlacklist({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
@@ -134,7 +134,7 @@ export default {
       });
     },
     getKnowhowList() {
-      this.mainStore.listKnowhow({member:this.commonStore.member.member},{page:1, page_block:3}).then((resp) => {
+      this.mainStore.listKnowhow({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
@@ -143,7 +143,7 @@ export default {
       });
     },
     getMarketingList() {
-      this.mainStore.listMarketing({member:this.commonStore.member.member},{page:1, page_block:3}).then((resp) => {
+      this.mainStore.listMarketing({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
