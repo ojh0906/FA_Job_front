@@ -68,7 +68,7 @@
               </thead>
               <tbody>
                 <tr class="t_tr" v-for="(item, idx) in this.project_list">
-                  <router-link :to="{ name: 'ProjectDetail', query: {} }" class="table-row">
+                  <router-link :to="{ name: 'ProjectDetail', query: { key: item.project } }" class="table-row">
                     <td class="t_td">{{ item.other_info.member_info.company_name }}</td>
                     <td class="t_td title-td">
                       <p class="t-title">{{ item.name }}</p>
@@ -81,23 +81,6 @@
                             {{ this.getFieldName(item.period_type) }}
                           </p>
                         </div>
-                        <div class="info">
-                          <p class="info-title">
-                            분야
-                          </p>
-                          <p class="info-text">
-                            {{ this.getFieldName(item.area) }}
-                          </p>
-                        </div>
-                        <div class="info">
-                          <p class="info-title">
-                            산업
-                          </p>
-                          <p class="info-text">
-                            {{ this.getFieldName(item.industry) }}
-                          </p>
-                        </div>
-                      </div>
                     </td>
                     <td class="t_td">{{ this.getFieldName(item.location1) }} {{ this.getFieldName(item.location2) }}</td>
                     <td class="t_td">{{ item.people_cnt }}</td>
@@ -197,7 +180,6 @@ export default {
         params.searchKeyword = this.searchKeyword;
       }
 
-      console.log(params)
       this.projectStore.list(params, this.project_pages).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;

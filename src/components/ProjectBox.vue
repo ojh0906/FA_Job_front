@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'ProjectDetail', query: {} }">
+  <router-link :to="{ name: 'ProjectDetail', query: {key:this.project.project} }">
     <section id="project-box">
       <aside class="project-title-wrap">
         <p class="company">수원엔지니어링</p>
@@ -74,7 +74,6 @@ export default {
         return;
       }
       this.projectStore.saveLike(this.project.project, { member:this.commonStore.member.member,} ).then((resp) => {
-        console.log(resp)
         if (resp.data.code == 200) {
           if(this.project.other_info.like_yn === 0){
             this.project.other_info.like_yn = 1;
@@ -92,7 +91,7 @@ export default {
   mounted() {
   },
   created() {
-    console.log(this.project)
+    //console.log(this.project)
   }
 }
 

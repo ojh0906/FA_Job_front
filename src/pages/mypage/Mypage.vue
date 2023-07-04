@@ -105,7 +105,11 @@ export default {
     },
     getProjectList() {
       this.project_list = [];
-      this.mainStore.listProject({my_member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
+      let params = {
+        my_member:this.commonStore.member.member,
+        login_member:this.commonStore.member.member,
+      }
+      this.mainStore.listProject(params,{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
           //console.log(resp.data.body)
