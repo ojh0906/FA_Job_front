@@ -110,7 +110,7 @@
   width: 120px;
   height: 120px;
 }
-#mypage .content-container .profile-edit .profile-info .hidden{
+#mypage .content-container .profile-edit .profile-info .hidden {
   display: none;
 }
 #mypage .content-container .profile-edit .profile-info .profile-img {
@@ -659,4 +659,191 @@
   letter-spacing: -0.02em;
 
   color: #222222;
+}
+
+/* 기업 프로젝트 관리 */
+#company-project-box {
+}
+#company-project-box {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#company-project-box:nth-child(1) {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+#company-project-box .left-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#company-project-box .left-box .state-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#company-project-box .left-box .state-box > p {
+  border-right: 1px solid #e5e5e5;
+  padding-right: 10px;
+}
+#company-project-box .left-box .state-box > p:nth-last-child(1) {
+  border-right: 0;
+}
+
+#company-project-box .left-box .ad-ing {
+  color: #dd7878;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+#company-project-box .left-box .state {
+  color: #555;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+#company-project-box .left-box .state-ing {
+  color: #ff6464 !important;
+}
+#company-project-box .left-box .state-start {
+  color: #70bab5 !important;
+}
+#company-project-box .left-box .state-end {
+  color: #999 !important;
+}
+
+#company-project-box .left-box .area {
+  color: #555;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+#company-project-box .left-box .area span {
+  font-weight: 400;
+}
+
+#company-project-box .left-box .title {
+  color: #333;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 100%;
+}
+#company-project-box .left-box .title-end {
+  color: #bbb;
+}
+
+#company-project-box .left-box .btn-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#company-project-box .left-box .btn-wrap .btn {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+#company-project-box .right-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 130px;
+  box-sizing: border-box;
+}
+
+#company-project-box .right-box .applicant-wrap {
+  display: flex;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+#company-project-box .right-box .applicant-wrap .applicant {
+  color: #555;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+#company-project-box .right-box .applicant-wrap .applicant-color {
+  color: #3e778a;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+#company-project-box .right-box .applicant-wrap .num {
+  color: #555;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+#company-project-box .right-box .applicant-wrap .num-red {
+  color: #ff6565;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+#company-project-box .applicant-wrap .num-thin {
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+#company-project-box .right-box .btn {
+  padding: 15.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  width: 128px;
+  box-sizing: border-box;
+}
+#company-project-box .right-box .btn,
+#company-project-box .right-box .btn3,
+#company-project-box .right-box .btn5 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 5px;
+  letter-spacing: -0.28px;
+  background: #fff;
+}
+
+#company-project-box .right-box .btn3 {
+  color: #3e778a !important;
+}
+
+#company-project-box .right-box .btn5 {
+  color: #ff6565 !important;
+  border: 1px solid #ff6565;
 }

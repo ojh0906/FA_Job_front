@@ -4,8 +4,10 @@
       <div class="box">
         <div class="profile-wrap">
           <div class="profile-info">
-            <div class="profile" style="background: url('/image/mypage/temp/image.png')" v-if="this.commonStore.member.profile_file === '[]'"></div>
-            <div class="profile" :style="'background: url('+this.getFirstImagePath(this.commonStore.member.profile_file)+')'" v-else></div>
+            <div class="profile" style="background: url('/image/mypage/temp/image.png')"
+              v-if="this.commonStore.member.profile_file === '[]'"></div>
+            <div class="profile"
+              :style="'background: url(' + this.getFirstImagePath(this.commonStore.member.profile_file) + ')'" v-else></div>
           </div>
           <div class="info-wrap">
             <p class="name">{{ this.commonStore.member.nick_name }}</p>
@@ -15,7 +17,8 @@
           </div>
         </div>
         <div class="lv-bar">
-          <div class="lv-status" :style="'width: '+this.commonStore.member.other_info.member_percent+'%'">{{ this.commonStore.member.other_info.member_level }}Lv</div>
+          <div class="lv-status" :style="'width: ' + this.commonStore.member.other_info.member_percent + '%'">{{
+            this.commonStore.member.other_info.member_level }}Lv</div>
         </div>
         <p class="lv-info">다음레벨까지 남은 경험치 : {{ this.commonStore.member.other_info.member_required }}exp</p>
         <div class="setting-wrap">
@@ -30,7 +33,8 @@
       <div class="menu-wrap">
         <a class="menu" @click="checkResume">이력서 관리</a>
       </div>
-      <router-link :to="{ name: 'MypageProject', query: {} }">
+      <!-- TODO : 일반과 기업 프로젝트 관리 페이지 다름  -->
+      <router-link :to="{ name: false ? 'MypageProject' : 'MypageCompanyProject', query: {} }">
         <div class="menu-wrap">
           <a class="menu">프로젝트 관리</a>
         </div>
@@ -118,7 +122,7 @@
 </template>
 
 <script>
-import { useCommonStore,useMemberStore } from '@/_stores';
+import { useCommonStore, useMemberStore } from '@/_stores';
 
 export default {
   components: {
@@ -144,7 +148,7 @@ export default {
       }
     },
     removeMember() {
-      if(confirm('이 회원과 관련된 데이터가 전부 삭제됩니다.\n정말 탈퇴하시겠습니까?')){
+      if (confirm('이 회원과 관련된 데이터가 전부 삭제됩니다.\n정말 탈퇴하시겠습니까?')) {
         this.memberStore.remove(this.commonStore.member.member).then((resp) => {
           if (resp.data.code == 200) {
             alert('탈퇴되었습니다.');
@@ -155,14 +159,14 @@ export default {
         });
       }
     },
-    checkResume(){
-      if(this.commonStore.member.other_info.member_resume == null){
-        this.$router.push({name:'ResumeNone'});
+    checkResume() {
+      if (this.commonStore.member.other_info.member_resume == null) {
+        this.$router.push({ name: 'ResumeNone' });
       } else {
-        this.$router.push({name:'ResumeWrite'});
+        this.$router.push({ name: 'ResumeWrite' });
       }
     },
-    showAlert(){ // TODO 개발시 없앨것
+    showAlert() { // TODO 개발시 없앨것
       alert('해당 기능은 아직 개발중입니다.');
     }
   }
