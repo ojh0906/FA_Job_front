@@ -107,12 +107,12 @@
             </div>
           </div>
 
-          <div class="apply-btn-wrap">
-            <div class="apply-btn btn btn1">
+          <div class="apply-btn-wrap" v-if="!this.apply_yn">
+            <div class="apply-btn btn btn1" @click="saveApply">
               <img class="share-icon" src='/image/project/person.png' />
               개인 지원하기
             </div>
-            <router-link :to="{ name: 'ProjectApplyTeam', query: {} }" v-if="this.project.team_yn">
+            <router-link :to="{ name: 'ProjectApplyTeam', query: {key:this.project.project} }" v-if="this.project.team_yn">
               <div class="team-apply-btn btn btn1">
                 <img class="share-icon" src='/image/project/team.png' />
                 팀 지원하기
@@ -217,6 +217,7 @@ export default {
         }
       },
       like_yn:false,
+      apply_yn:false,
       project_list:[],
     }
   },
@@ -229,7 +230,7 @@ export default {
         if (resp.data.code == 200) {
           this.project = resp.data.body;
           this.getLike();
-          console.log(this.project)
+          this.getApply();
         }
       }).catch(err => {
         console.log("err", err);
@@ -239,7 +240,6 @@ export default {
       this.projectStore.getLike(this.$route.query.key, this.commonStore.member.member).then((resp) => {
         if (resp.data.code == 200) {
           this.like_yn = resp.data.body == 0 ? false:true;
-          console.log(this.like_yn)
         }
       }).catch(err => {
         console.log("err", err);
@@ -253,6 +253,34 @@ export default {
       }).catch(err => {
         console.log("err", err);
       });
+    },
+    getApply() {
+      this.projectStore.getApply(this.$route.query.key, this.commonStore.member.member).then((resp) => {
+        if (resp.data.code == 200) {
+          this.apply_yn = resp.data.body == 0 ? false:true;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    saveApply(){
+      if(confirm('지원하시겠습니까?')){
+        let params = {
+          member: this.commonStore.member.member,
+          type: this.getField('project_apply','개인'),
+          team_name:'',
+          team_info:'',
+          leader:true,
+        }
+        this.projectStore.saveApply(this.project.project, params).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('지원되었습니다.');
+            this.get();
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      }
     },
     getProjectList() {
       this.project_list = [];

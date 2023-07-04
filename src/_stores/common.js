@@ -80,7 +80,7 @@ export const useCommonStore = defineStore({
       this.expiryTime = "";
       this.return_url = null;
       this.loginCheck = false;
-      router.push('/');
+      router.push('/login');
     },
     setReturnUrl(url){
       this.return_url = url;

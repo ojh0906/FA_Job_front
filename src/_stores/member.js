@@ -8,6 +8,13 @@ export const useMemberStore = defineStore({
   state: () => ({
   }),
   actions: {
+    async list(option = { }, pages = { page: 1, page_block: 10 }) {
+      let params = {
+        ...option,
+        ...pages,
+      };
+      return await http.post(`${baseUrl}/list`, params);
+    },
     async matchPassword(id, params) {
       return await http.post(`${baseUrl}/${id}/match/password`, params);
     },
