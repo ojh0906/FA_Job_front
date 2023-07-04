@@ -18,7 +18,7 @@
         </div>
 
         <!-- 기업 회원에게만 보여야 함 -->
-        <router-link :to="{ name: 'RegisterProject', query: {} }">
+        <router-link :to="{ name: 'RegisterProject', query: {} }" v-if="this.commonStore.member.type === this.getField('member_type','기업')">
           <div class="btn btn1">
             프로젝트 등록
           </div>
