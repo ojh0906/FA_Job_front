@@ -18,7 +18,7 @@
         </div>
 
         <!-- 기업 회원에게만 보여야 함 -->
-        <router-link :to="{ name: 'RegisterProjectInfo', query: {} }">
+        <router-link :to="{ name: 'RegisterProject', query: {} }">
           <div class="btn btn1">
             프로젝트 등록
           </div>
@@ -81,6 +81,7 @@
                             {{ this.getFieldName(item.period_type) }}
                           </p>
                         </div>
+                      </div>
                     </td>
                     <td class="t_td">{{ this.getFieldName(item.location1) }} {{ this.getFieldName(item.location2) }}</td>
                     <td class="t_td">{{ item.people_cnt }}</td>
