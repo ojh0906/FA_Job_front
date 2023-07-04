@@ -777,28 +777,47 @@
   padding: 20px 85px;
 }
 
+#project-regist-wrap .project-regist-field .btn-wrap,
 #resume .btn-wrap {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 #resume .check-radio-btn {
   border: 1px solid #3e778a;
   background: #eff3f4;
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+#project-regist-wrap .project-regist-field .check-radio-btn {
+  border: 1px solid #3e778a;
+  background: #eff3f4;
+  padding: 9px 14px;
+  border-radius: 5px;
+}
+
+#project-regist-wrap .project-regist-field .radio-btn {
+  padding: 9px 14px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
 #resume .radio-btn {
   padding: 5px 10px;
   border-radius: 5px;
   background: #fff;
   border: 1px solid #ddd;
 }
+#project-regist-wrap .project-regist-field input[type="radio"],
 #resume input[type="radio"] {
   display: none;
 }
 
+#project-regist-wrap .project-regist-field input[type="radio"] + label,
 #resume input[type="radio"] + label {
   display: flex;
   justify-content: center;
@@ -806,14 +825,17 @@
   gap: 4px;
 }
 
+#project-regist-wrap .project-regist-field input[type="radio"] + label .off,
 #resume input[type="radio"] + label .off {
   display: flex;
   width: 24px;
   height: 24px;
 }
+#project-regist-wrap .project-regist-field input[type="radio"] + label .on,
 #resume input[type="radio"] + label .on {
   display: none;
 }
+#project-regist-wrap .project-regist-field input[type="radio"] + label p,
 #resume input[type="radio"] + label p {
   color: #999;
   font-size: 14px;
@@ -823,10 +845,17 @@
   line-height: normal;
 }
 
+#project-regist-wrap .project-regist-field input[type="radio"]:checked,
 #resume input[type="radio"]:checked {
 }
+#project-regist-wrap .project-regist-field input[type="radio"]:checked + label,
 #resume input[type="radio"]:checked + label {
 }
+#project-regist-wrap
+  .project-regist-field
+  input[type="radio"]:checked
+  + label
+  p,
 #resume input[type="radio"]:checked + label p {
   color: #555;
   font-size: 14px;
@@ -834,9 +863,19 @@
   font-weight: 400;
   line-height: normal;
 }
+#project-regist-wrap
+  .project-regist-field
+  input[type="radio"]:checked
+  + label
+  .off,
 #resume input[type="radio"]:checked + label .off {
   display: none !important;
 }
+#project-regist-wrap
+  .project-regist-field
+  input[type="radio"]:checked
+  + label
+  .on,
 #resume input[type="radio"]:checked + label .on {
   display: flex !important;
   width: 24px;
