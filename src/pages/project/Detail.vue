@@ -11,12 +11,14 @@
 
     <div id="project-detail">
       <div class="title-box">
-        <p class="title-box-title">사람 구함</p>
+        <p class="title-box-title">{{ this.project.name }}</p>
         <div class="info-box-wrap">
           <div class="info-box">
             <div class="info">
               <p class="title">모집기간</p>
-              <p class="text">{{ formattedDate(this.project.apply_start) }}~{{ formattedDate(this.project.apply_end) }}</p>
+              <p class="text">
+                {{ formattedDate(this.project.apply_start) }}~{{ formattedDate(this.project.apply_end) }}
+              </p>
             </div>
             <div class="info">
               <p class="title">지역</p>
@@ -38,7 +40,7 @@
       </div>
 
       <article class="project-detail-content">
-        <div class="project-content">
+        <div class="project-content" :class="this.isComplete ? 'opacity' : ''">
           <p class="summary-title">요약</p>
           <table class="project-detail-table">
             <tr>
@@ -63,14 +65,15 @@
               <td class="td-title">설비명</td>
               <td>{{ this.project.equipment }}</td>
               <td class="td-title">식사제공여부</td>
-              <td>{{ this.project.meal_yn ? '제공 O':'제공 X' }}</td>
+              <td>{{ this.project.meal_yn ? '제공 O' : '제공 X' }}</td>
             </tr>
             <tr>
               <td class="td-title">공사기간</td>
-              <td v-if="this.project.period_type !== getField('project_period_type','일정선택')">{{ getFieldName(this.project.period_type) }}</td>
+              <td v-if="this.project.period_type !== getField('project_period_type', '일정선택')">{{
+                getFieldName(this.project.period_type) }}</td>
               <td v-else>{{ this.project.period_start }} ~ {{ this.project.period_end }}</td>
               <td class="td-title">숙소제공여부</td>
-              <td>{{ this.project.lodge_yn ? '제공 O':'제공 X' }}</td>
+              <td>{{ this.project.lodge_yn ? '제공 O' : '제공 X' }}</td>
             </tr>
             <tr>
               <td class="td-title" rowspan="2">근무스킬</td>
@@ -85,7 +88,7 @@
             </tr>
             <tr>
               <td class="td-title">팀 참여 가능 여부</td>
-              <td>{{ this.project.lodge_yn ? '가능':'불가능' }}</td>
+              <td>{{ this.project.lodge_yn ? '가능' : '불가능' }}</td>
             </tr>
           </table>
 
@@ -93,13 +96,42 @@
           <div class="content-text" v-html="this.project.detail"></div>
         </div>
         <aside class="project-etc">
-          <div>
 
-            <p class="like-text"><img class="text-like-icon" src='/image/project/like.png' /> {{ this.project.other_info.like_cnt }}명이 관심을 갖고 있습니다.
+          <!-- 완료 프로젝트일 경우 -->
+          <div v-if="this.isComplete">
+            <p class="company-text2">완료된 프로젝트입니다.</p>
+          </div>
+
+          <!-- 기업 화면 -->
+          <div v-if="this.isCompany">
+            <p class="like-text"><img class="text-like-icon" src='/image/project/like.png' /> {{
+              this.project.other_info.like_cnt }}명이 관심을 갖고 있습니다.
+            </p>
+
+            <p class="company-text">모집중인 프로젝트</p>
+            <p class="company-apply">
+              <img class="" src='/image/project/User.png' />
+              개인 지원자 11명
+            </p>
+            <p class="company-apply">
+              <img class="" src='/image/project/People.png' />
+              개인 지원자 11명
+            </p>
+
+            <router-link :to="{ name: '', query: { key: 0 } }">
+              <div class="team-apply-btn apply-list-btn btn btn1">
+                지원자 목록 보기
+              </div>
+            </router-link>
+          </div>
+
+          <div v-if="!isCompany">
+            <p class="like-text"><img class="text-like-icon" src='/image/project/like.png' /> {{
+              this.project.other_info.like_cnt }}명이 관심을 갖고 있습니다.
             </p>
             <div class="like-project-btn btn btn4" @click="saveLike">
               <img class="like-icon" :src="this.like_yn ? '/image/project/like.png' : '/image/project/unlike.png'" />
-              {{ this.like_yn ? '관심 프로젝트 제거':'관심 프로젝트 추가' }}
+              {{ this.like_yn ? '관심 프로젝트 제거' : '관심 프로젝트 추가' }}
             </div>
             <div class="share-btn btn btn2">
               <img class="share-icon" src='/image/project/share.png' />
@@ -107,12 +139,13 @@
             </div>
           </div>
 
-          <div class="apply-btn-wrap" v-if="!this.apply_yn">
+          <div class="apply-btn-wrap" v-if="!this.apply_yn && !isCompany">
             <div class="apply-btn btn btn1" @click="saveApply">
               <img class="share-icon" src='/image/project/person.png' />
               개인 지원하기
             </div>
-            <router-link :to="{ name: 'ProjectApplyTeam', query: {key:this.project.project} }" v-if="this.project.team_yn">
+            <router-link :to="{ name: 'ProjectApplyTeam', query: { key: this.project.project } }"
+              v-if="this.project.team_yn">
               <div class="team-apply-btn btn btn1">
                 <img class="share-icon" src='/image/project/team.png' />
                 팀 지원하기
@@ -134,12 +167,12 @@
       </div>
       <aside class="project-box-container">
         <swiper :navigation="{ nextEl: '.project-button-next', prevEl: '.project-button-prev' }" :loop="true"
-                :modules="modules" class="project-slider">
+          :modules="modules" class="project-slider">
           <swiper-slide>
-            <ProjectBox v-for="project in this.project_list.slice(0,2)" :project="project" />
+            <ProjectBox v-for="project in this.project_list.slice(0, 2)" :project="project" />
           </swiper-slide>
           <swiper-slide v-if="this.project_list.length > 2">
-            <ProjectBox v-for="project in this.project_list.slice(2,4)" :project="project" />
+            <ProjectBox v-for="project in this.project_list.slice(2, 4)" :project="project" />
           </swiper-slide>
         </swiper>
         <!--  navigation -->
@@ -164,7 +197,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper';
-import {useCommonStore,useProjectStore} from '@/_stores';
+import { useCommonStore, useProjectStore } from '@/_stores';
 
 export default {
   components: {
@@ -183,7 +216,7 @@ export default {
   },
   data() {
     return {
-      project:{
+      project: {
         project: 0,
         name: '',
         area: 0,
@@ -210,18 +243,20 @@ export default {
         detail: '',
         files: '',
         state: 0,
-        other_info:{
-          member_info:{company_name:''},
-          click_cnt:0,
-          lick_cnt:0,
+        other_info: {
+          member_info: { company_name: '' },
+          click_cnt: 0,
+          lick_cnt: 0,
         }
       },
-      like_yn:false,
-      apply_yn:false,
-      project_list:[],
+      like_yn: false,
+      apply_yn: false,
+      project_list: [],
+      isCompany: false, // 기업 확인
+      isComplete: false, // 완료된 프로젝트
     }
   },
-  watch:{
+  watch: {
 
   },
   methods: {
@@ -239,14 +274,14 @@ export default {
     getLike() {
       this.projectStore.getLike(this.$route.query.key, this.commonStore.member.member).then((resp) => {
         if (resp.data.code == 200) {
-          this.like_yn = resp.data.body == 0 ? false:true;
+          this.like_yn = resp.data.body == 0 ? false : true;
         }
       }).catch(err => {
         console.log("err", err);
       });
     },
-    saveLike(){
-      this.projectStore.saveLike(this.project.project, { member:this.commonStore.member.member,} ).then((resp) => {
+    saveLike() {
+      this.projectStore.saveLike(this.project.project, { member: this.commonStore.member.member, }).then((resp) => {
         if (resp.data.code == 200) {
           this.get();
         }
@@ -257,20 +292,20 @@ export default {
     getApply() {
       this.projectStore.getApply(this.$route.query.key, this.commonStore.member.member).then((resp) => {
         if (resp.data.code == 200) {
-          this.apply_yn = resp.data.body == 0 ? false:true;
+          this.apply_yn = resp.data.body == 0 ? false : true;
         }
       }).catch(err => {
         console.log("err", err);
       });
     },
-    saveApply(){
-      if(confirm('지원하시겠습니까?')){
+    saveApply() {
+      if (confirm('지원하시겠습니까?')) {
         let params = {
           member: this.commonStore.member.member,
-          type: this.getField('project_apply','개인'),
-          team_name:'',
-          team_info:'',
-          leader:true,
+          type: this.getField('project_apply', '개인'),
+          team_name: '',
+          team_info: '',
+          leader: true,
         }
         this.projectStore.saveApply(this.project.project, params).then((resp) => {
           if (resp.data.code == 200) {
@@ -286,10 +321,10 @@ export default {
       this.project_list = [];
       let params = {
         login_member: this.commonStore.member.member,
-        searchType:'project_user_search' // 모집중인것만
+        searchType: 'project_user_search' // 모집중인것만
       }
 
-      this.projectStore.list(params, {page:1, page_block:4}).then((resp) => {
+      this.projectStore.list(params, { page: 1, page_block: 4 }).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
         }
@@ -299,13 +334,16 @@ export default {
     },
   },
   mounted() {
-    if(this.$route.query.key == null){
+    if (this.$route.query.key == null) {
       alert('잘못된 접근입니다.');
-      this.$router.push({name:'ProjectList'});
+      this.$router.push({ name: 'ProjectList' });
     } else {
       this.get();
       this.getProjectList();
-      this.projectStore.saveClick(this.$route.query.key,{member:this.commonStore.member.member}); // 조회수 증가
+      if (this.commonStore.member.type === this.getField('member_type', '기업')) {
+        this.isCompany = true;
+      }
+      this.projectStore.saveClick(this.$route.query.key, { member: this.commonStore.member.member }); // 조회수 증가
     }
   }
 }
