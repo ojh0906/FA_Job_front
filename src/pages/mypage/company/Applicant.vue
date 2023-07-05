@@ -22,7 +22,7 @@
             <!-- 개인 지원자일 경우 -->
             <tr v-for="(item, idx) in 5" :key="idx">
               <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-              <td @click="this.applicantPopup = true">둘리</td>
+              <td class="name-click" @click="this.applicantPopup = true">둘리</td>
               <td>010-1234-1244</td>
               <td>2023</td>
               <td :class="true ? 'pass' : false ? 'non-pass' : ''">

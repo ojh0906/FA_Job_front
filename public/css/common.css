@@ -328,6 +328,7 @@ input[type="checkbox"] {
   color: #ffffff;
   border-radius: 5px;
   text-align: center;
+  cursor: pointer;
 }
 .btn1 {
   background: #3e778a;
