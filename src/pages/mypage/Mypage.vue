@@ -1,6 +1,6 @@
 <template>
   <div id="mypage">
-    <LeftGnb/>
+    <LeftGnb />
     <div class="content-container">
       <div class="mypage-info-container">
         <p class="area-title">나의 프로젝트</p>
@@ -18,55 +18,65 @@
             종료 프로젝트 <strong>{{ this.project_end_cnt }}건</strong>
           </div>
         </div>
+
+        <!-- 일반 - 나의 프로젝트 -->
         <div class="table-wrap">
           <table class="t_table">
             <thead>
-            <tr>
-              <th class="t_title" width="10%">번호</th>
-              <th class="t_title" width="10%">분류</th>
-              <th class="t_title" width="12%">기업명</th>
-              <th class="t_title">제목</th>
-              <th class="t_title" width="10%">상태</th>
-              <th class="t_title" width="15%">업무일지</th>
-            </tr>
+              <tr>
+                <th class="t_title" width="10%">번호</th>
+                <th class="t_title" width="10%">분류</th>
+                <th class="t_title" width="12%">기업명</th>
+                <th class="t_title">제목</th>
+                <th class="t_title" width="10%">상태</th>
+                <th class="t_title" width="15%">업무일지</th>
+              </tr>
             </thead>
             <tbody>
-            <tr class="t_tr" v-for="(item,idx) in this.project_list">
-              <td class="t_td">{{ idx+1 }}</td>
-              <td class="t_td">{{ item.other_info.like_yn ? '관심':'지원' }}</td>
-              <td class="t_td">{{ item.other_info.member_info.company_name }}</td>
-              <td class="t_td left">{{ item.name }}</td>
-              <td class="t_td">{{ this.getFieldName(item.state) }}</td>
-              <td class="t_td"><span class="small-btn-type-b" @click="showAlert">작성하기</span></td>
-            </tr>
+              <tr class="t_tr" v-for="(item, idx) in this.project_list">
+                <td class="t_td">{{ idx + 1 }}</td>
+                <td class="t_td">{{ item.other_info.like_yn ? '관심' : '지원' }}</td>
+                <td class="t_td">{{ item.other_info.member_info.company_name }}</td>
+                <td class="t_td left">{{ item.name }}</td>
+                <td class="t_td">{{ this.getFieldName(item.state) }}</td>
+                <td class="t_td"><span class="small-btn-type-b" @click="showAlert">작성하기</span></td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+        <!-- 기업 - 나의 프로젝트 -->
+        <CompanyProjectBox v-if="false" class="mypage-company" />
+
         <p class="area-title">내가 쓴 글</p>
         <div class="filter-wrap">
-          <span :class="this.board_type === 0 ? 'active':''" @click="this.board_type = 0; this.getBoardList();">Know-how</span>
-          <span :class="this.board_type === 1 ? 'active':''" @click="this.board_type = 1; this.getBoardList();">자유홍보</span>
-          <span :class="this.board_type === 2 ? 'active':''" @click="this.board_type = 2; this.getBoardList();">블랙리스트</span>
+          <span :class="this.board_type === 0 ? 'active' : ''"
+            @click="this.board_type = 0; this.getBoardList();">Know-how</span>
+          <span :class="this.board_type === 1 ? 'active' : ''"
+            @click="this.board_type = 1; this.getBoardList();">자유홍보</span>
+          <span :class="this.board_type === 2 ? 'active' : ''"
+            @click="this.board_type = 2; this.getBoardList();">블랙리스트</span>
         </div>
         <div class="table-wrap">
           <table class="t_table">
             <thead>
-            <tr>
-              <th class="t_title" width="10%">번호</th>
-              <th class="t_title">제목</th>
-              <th class="t_title" width="14%" v-if="this.board_type === 0">추천/비추천</th>
-              <th class="t_title" width="12%">등록일</th>
-              <th class="t_title" width="12%">조회수</th>
-            </tr>
+              <tr>
+                <th class="t_title" width="10%">번호</th>
+                <th class="t_title">제목</th>
+                <th class="t_title" width="14%" v-if="this.board_type === 0">추천/비추천</th>
+                <th class="t_title" width="12%">등록일</th>
+                <th class="t_title" width="12%">조회수</th>
+              </tr>
             </thead>
             <tbody>
-            <tr class="t_tr" v-for="(item, idx) in this.board_list">
-              <td class="t_td">{{ idx + 1 }}</td>
-              <td class="t_td">{{ item.title }}</td>
-              <td class="t_td" v-if="this.board_type === 0">{{ item.other_info.recommend_cnt }}/{{ item.other_info.recommend_not_cnt }}</td>
-              <td class="t_td">{{ formattedDate(item.reg_date) }}</td>
-              <td class="t_td">{{ item.other_info.click_cnt }}</td>
-            </tr>
+              <tr class="t_tr" v-for="(item, idx) in this.board_list">
+                <td class="t_td">{{ idx + 1 }}</td>
+                <td class="t_td">{{ item.title }}</td>
+                <td class="t_td" v-if="this.board_type === 0">{{ item.other_info.recommend_cnt }}/{{
+                  item.other_info.recommend_not_cnt }}</td>
+                <td class="t_td">{{ formattedDate(item.reg_date) }}</td>
+                <td class="t_td">{{ item.other_info.click_cnt }}</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -77,11 +87,13 @@
 
 <script>
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
-import { useCommonStore,useMainStore,useProjectStore } from '@/_stores';
+import { useCommonStore, useMainStore, useProjectStore } from '@/_stores';
+import CompanyProjectBox from "/src/components/mypage/company/ProjectBox.vue";
 
 export default {
   components: {
-    LeftGnb
+    LeftGnb,
+    CompanyProjectBox
   },
   setup() {
     const commonStore = useCommonStore()
@@ -96,8 +108,8 @@ export default {
   data() {
     return {
       board_type: 0,
-      project_list:[],
-      board_list:[],
+      project_list: [],
+      board_list: [],
       project_like_cnt: 0,
       project_apply_cnt: 0,
       project_match_cnt: 0,
@@ -105,17 +117,17 @@ export default {
     }
   },
   methods: {
-    getInitList(){
+    getInitList() {
       this.getProjectList();
       this.getBoardList();
     },
     getProjectList() {
       this.project_list = [];
       let params = {
-        user_member:this.commonStore.member.member,
-        login_member:this.commonStore.member.member,
+        user_member: this.commonStore.member.member,
+        login_member: this.commonStore.member.member,
       }
-      this.mainStore.listProject(params,{page:1, page_block:5}).then((resp) => {
+      this.mainStore.listProject(params, { page: 1, page_block: 5 }).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
           this.getProjectListCntInfo();
@@ -125,18 +137,18 @@ export default {
         console.log("err", err);
       });
     },
-    getBoardList(){
+    getBoardList() {
       this.board_list = [];
-      if(this.board_type === 0){
+      if (this.board_type === 0) {
         this.getKnowhowList();
-      } else if(this.board_type === 1){
+      } else if (this.board_type === 1) {
         this.getMarketingList();
-      } else if(this.board_type === 2){
+      } else if (this.board_type === 2) {
         this.getBlacklistList();
       }
     },
     getBlacklistList() {
-      this.mainStore.listBlacklist({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
+      this.mainStore.listBlacklist({ member: this.commonStore.member.member }, { page: 1, page_block: 5 }).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
@@ -145,7 +157,7 @@ export default {
       });
     },
     getKnowhowList() {
-      this.mainStore.listKnowhow({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
+      this.mainStore.listKnowhow({ member: this.commonStore.member.member }, { page: 1, page_block: 5 }).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
@@ -154,7 +166,7 @@ export default {
       });
     },
     getMarketingList() {
-      this.mainStore.listMarketing({member:this.commonStore.member.member},{page:1, page_block:5}).then((resp) => {
+      this.mainStore.listMarketing({ member: this.commonStore.member.member }, { page: 1, page_block: 5 }).then((resp) => {
         if (resp.data.code == 200) {
           this.board_list = resp.data.body;
         }
@@ -166,7 +178,7 @@ export default {
       alert('해당 기능은 아직 개발중입니다.');
     },
     getProjectListCntInfo() {
-      this.projectStore.listCntInfo({user_member:this.commonStore.member.member}).then((resp) => {
+      this.projectStore.listCntInfo({ user_member: this.commonStore.member.member }).then((resp) => {
         if (resp.data.code == 200) {
           this.project_like_cnt = resp.data.body.project_like_cnt;
           this.project_apply_cnt = resp.data.body.project_apply_cnt;
