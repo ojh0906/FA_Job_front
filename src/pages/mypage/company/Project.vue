@@ -12,7 +12,7 @@
           <div @click="onTab('interest')" :class="this.tabInterest ? 'click' : ''">
             <span>관심</span> 프로젝트
             <strong>0건</strong>
-          </div>ㅌ
+          </div>
           <div @click="onTab('apply')" :class="this.tabApply ? 'click' : ''">
             <span>지원한</span> 프로젝트
             <strong>0건</strong>
@@ -69,13 +69,13 @@
               </p>
 
               <!-- TODO : 지원자가 1명 이상일 때 - 지원자 목록 -->
-              <router-link v-if="this.applicant > 0" :to="{ name: '', query: {} }">
+              <router-link v-if="this.applicant == 0" :to="{ name: 'MypageCompanyApplicant', query: {} }">
                 <div class="btn3 btn">
                   지원자 목록
                 </div>
               </router-link>
               <!-- TODO : 지원자가 0명일 경우만 프로젝트 수정 가능 -->
-              <router-link v-else-if="this.applicant == 0" :to="{ name: '', query: {} }">
+              <router-link v-else-if="this.applicant > 0" :to="{ name: '', query: {} }">
                 <div class="btn5 btn">
                   프로젝트 수정
                 </div>
