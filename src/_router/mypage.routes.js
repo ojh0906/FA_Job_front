@@ -5,6 +5,7 @@ import Withdraw3 from "/src/pages/mypage/Withdraw3.vue";
 
 import MypageProject from "/src/pages/mypage/Project.vue";
 import MypageCompanyProject from "/src/pages/mypage/company/Project.vue";
+import MypageCompanyApplicant from "/src/pages/mypage/company/Applicant.vue";
 
 import ProfileInfo from "/src/pages/mypage/profile/Info.vue";
 import ProfileEdit from "/src/pages/mypage/profile/Edit.vue";
@@ -50,6 +51,7 @@ export default [
             { path: "resume-none", name: 'ResumeNone', component: ResumeNone, meta: { title: "이력서 없음" } },
             { path: "resume-management", name: 'ResumeManage', component: ResumeManage, meta: { title: "이력서 관리" } },
             { path: "resume-write", name: 'ResumeWrite', component: ResumeWrite, meta: { title: "이력서 작성 및 수정" } },
+            { path: "company-project/applicant-list", name: 'MypageCompanyApplicant', component: MypageCompanyApplicant, meta: { title: "마이페이지 - 기업 프로젝트 관리 - 지원자 목록" } },
         ],
     },
 ];
