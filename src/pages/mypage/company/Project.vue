@@ -12,7 +12,7 @@
           <div @click="onTab('interest')" :class="this.tabInterest ? 'click' : ''">
             <span>관심</span> 프로젝트
             <strong>0건</strong>
-          </div>ㅌ
+          </div>
           <div @click="onTab('apply')" :class="this.tabApply ? 'click' : ''">
             <span>지원한</span> 프로젝트
             <strong>0건</strong>

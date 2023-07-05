@@ -34,7 +34,7 @@
         <a class="menu" @click="checkResume">이력서 관리</a>
       </div>
       <!-- TODO : 일반과 기업 프로젝트 관리 페이지 다름  -->
-      <router-link :to="{ name: false ? 'MypageProject' : 'MypageCompanyProject', query: {} }">
+      <router-link :to="{ name: this.commonStore.member.type === this.getField('member_type','기업') ? 'MypageCompanyProject' : 'MypageProject', query: {} }">
         <div class="menu-wrap">
           <a class="menu">프로젝트 관리</a>
         </div>

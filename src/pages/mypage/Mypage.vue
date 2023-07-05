@@ -6,16 +6,16 @@
         <p class="area-title">나의 프로젝트</p>
         <div class="info-tab">
           <div>
-            관심 프로젝트 <strong>{{ this.commonStore.member.other_info.project_like_cnt }}건</strong>
+            관심 프로젝트 <strong>{{ this.project_like_cnt }}건</strong>
           </div>
           <div>
-            지원 프로젝트 <strong>{{ this.commonStore.member.other_info.project_apply_cnt }}건</strong>
+            지원 프로젝트 <strong>{{ this.project_apply_cnt }}건</strong>
           </div>
           <div>
-            매칭 프로젝트 <strong>{{ this.commonStore.member.other_info.project_match_cnt }}건</strong>
+            매칭 프로젝트 <strong>{{ this.project_match_cnt }}건</strong>
           </div>
           <div>
-            종료 프로젝트 <strong>{{ this.commonStore.member.other_info.project_end_cnt }}건</strong>
+            종료 프로젝트 <strong>{{ this.project_end_cnt }}건</strong>
           </div>
         </div>
         <div class="table-wrap">
@@ -77,7 +77,7 @@
 
 <script>
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
-import { useCommonStore,useMainStore } from '@/_stores';
+import { useCommonStore,useMainStore,useProjectStore } from '@/_stores';
 
 export default {
   components: {
@@ -86,9 +86,11 @@ export default {
   setup() {
     const commonStore = useCommonStore()
     const mainStore = useMainStore()
+    const projectStore = useProjectStore()
     return {
       commonStore,
       mainStore,
+      projectStore,
     }
   },
   data() {
@@ -96,6 +98,10 @@ export default {
       board_type: 0,
       project_list:[],
       board_list:[],
+      project_like_cnt: 0,
+      project_apply_cnt: 0,
+      project_match_cnt: 0,
+      project_end_cnt: 0,
     }
   },
   methods: {
@@ -106,12 +112,13 @@ export default {
     getProjectList() {
       this.project_list = [];
       let params = {
-        my_member:this.commonStore.member.member,
+        user_member:this.commonStore.member.member,
         login_member:this.commonStore.member.member,
       }
       this.mainStore.listProject(params,{page:1, page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
           this.project_list = resp.data.body;
+          this.getProjectListCntInfo();
           //console.log(resp.data.body)
         }
       }).catch(err => {
@@ -157,7 +164,19 @@ export default {
     },
     showAlert() { // TODO 개발시 없앨것
       alert('해당 기능은 아직 개발중입니다.');
-    }
+    },
+    getProjectListCntInfo() {
+      this.projectStore.listCntInfo({user_member:this.commonStore.member.member}).then((resp) => {
+        if (resp.data.code == 200) {
+          this.project_like_cnt = resp.data.body.project_like_cnt;
+          this.project_apply_cnt = resp.data.body.project_apply_cnt;
+          this.project_match_cnt = resp.data.body.project_match_cnt;
+          this.project_end_cnt = resp.data.body.project_end_cnt;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
   },
   mounted() {
     this.commonStore.refresh();

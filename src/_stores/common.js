@@ -113,6 +113,17 @@ export const useCommonStore = defineStore({
         this.member.nick_name = this.member.company_name;
       }
     },
+    getLevel(point){
+      let idx = -1;
+      for(let i=0; i<level_list.length; i++){
+        if(point <= (level_list[i].maxLevel * level_list[i].requiredExp)){
+          idx = level_list[i].idx;
+          break;
+        }
+      }
+
+      return Math.floor( point / level_list[idx].requiredExp)
+    },
     async matchPassword(id, params) {
       return await http.post(`${baseUrl}/${id}/match/password`, params);
     },

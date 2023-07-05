@@ -45,6 +45,9 @@ export const useProjectStore = defineStore({
     async saveApplyTeam(id, params) {
       return await http.post(`${baseUrl}/${id}/apply/save/team`, params);
     },
+    async listCntInfo(params) {
+      return await http.post(`${baseUrl}/list/cnt`, params);
+    },
   },
   persist: true,
 });

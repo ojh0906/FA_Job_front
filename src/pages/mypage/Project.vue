@@ -5,25 +5,25 @@
       <div class="mypage-info-container">
         <p class="area-title">프로젝트 관리</p>
         <div class="project-tab">
-          <div @click="onTab('all')" :class="this.tabAll ? 'click' : ''">
+          <div @click="this.tab = 0; this.onChangePage(1);" :class="this.tab === 0 ? 'click' : ''">
             <span>전체</span> 프로젝트
-            <strong>24건</strong>
+            <strong>{{ this.project_all_cnt }}건</strong>
           </div>
-          <div @click="onTab('interest')" :class="this.tabInterest ? 'click' : ''">
+          <div @click="this.tab = 1; this.onChangePage(1);" :class="this.tab === 1 ? 'click' : ''">
             <span>관심</span> 프로젝트
-            <strong>24건</strong>
+            <strong>{{ this.project_like_cnt }}건</strong>
           </div>
-          <div @click="onTab('apply')" :class="this.tabApply ? 'click' : ''">
+          <div @click="this.tab = 2; this.onChangePage(1);" :class="this.tab === 2 ? 'click' : ''">
             <span>지원한</span> 프로젝트
-            <strong>24건</strong>
+            <strong>{{ this.project_apply_cnt }}건</strong>
           </div>
-          <div @click="onTab('match')" :class="this.tabMatch ? 'click' : ''">
+          <div @click="this.tab = 3; this.onChangePage(1);" :class="this.tab === 3 ? 'click' : ''">
             <span>매칭된</span> 프로젝트
-            <strong>24건</strong>
+            <strong>{{ this.project_match_cnt }}건</strong>
           </div>
-          <div @click="onTab('completion')" :class="this.tabCompletion ? 'click' : ''">
+          <div @click="this.tab = 4; this.onChangePage(1);" :class="this.tab === 4 ? 'click' : ''">
             <span>완료된</span> 프로젝트
-            <strong>24건</strong>
+            <strong>{{ this.project_end_cnt }}건</strong>
           </div>
         </div>
         <div class="table-wrap">
@@ -39,25 +39,29 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="t_tr" v-for="v in 5">
-                <td class="t_td">5</td>
-                <td class="t_td">관심</td>
-                <td class="t_td td_company_info" @click="this.popupCompany = true">홍신</td>
-                <td class="t_td left">프로젝트 제목</td>
-                <td class="t_td">대기 중</td>
-                <td class="t_td"><span class="small-btn-type-b">작성하기</span></td>
+              <tr class="t_tr" v-for="(item,idx) in this.project_list">
+                <td class="t_td">{{ idx+1 }}</td>
+                <td class="t_td">{{ item.other_info.like_yn ? '관심':'지원' }}</td>
+                <td class="t_td td_company_info" @click="showCompany(item.other_info);">홍신</td>
+                <td class="t_td left" @click="showDetail(item)">{{ item.name }}</td>
+                <td class="t_td">{{ this.getFieldName(item.state) }}</td>
+                <td class="t_td"><span class="small-btn-type-b" @click="showAlert">작성하기</span></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="pagination">
-          <a href="#"><img src="/image/community/back.png" alt="뒤로가기버튼입니다."></a>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#"><img src="/image/community/foward.png" alt="앞으로가기버튼입니다."></a>
+          <a v-if="this.project_pages.start !== 1" @click="onChangePage(this.project_pages.start - 1)">
+            <img src="/image/community/back.png" alt="뒤로가기버튼입니다.">
+          </a>
+          <a :class="this.project_pages.page == page ? 'active' : 'pointer'"
+             v-for="page in this.project_pages.pagesList" @click="onChangePage(page)">
+            {{ page }}
+          </a>
+          <a v-if="this.project_pages.end !== this.project_pages.end_page + 1"
+             @click="onChangePage(this.project_pages.start + this.project_pages.num_block)">
+            <img src="/image/community/foward.png" alt="앞으로가기버튼입니다.">
+          </a>
         </div>
       </div>
     </div>
@@ -77,28 +81,28 @@
         <table class="table-color-row">
           <tr>
             <td>기업명</td>
-            <td>홍길동<div class="lv">15Lv</div>
+            <td>{{ this.company_name }}<div class="lv">{{ this.member_point }}Lv</div>
             </td>
           </tr>
           <tr>
             <td>대표자</td>
-            <td>요리보고</td>
+            <td>{{ this.company_owner_name }}</td>
           </tr>
           <tr>
             <td>담당자</td>
-            <td>고길동</td>
+            <td>{{ this.name }}</td>
           </tr>
           <tr>
             <td>담당 연락처</td>
-            <td>010-1111-1111</td>
+            <td>{{ this.company_phone_number }}</td>
           </tr>
           <tr>
             <td>기업 소재지</td>
-            <td>둘리동</td>
+            <td>{{ this.address }} / {{ this.address_detail }}</td>
           </tr>
           <tr>
             <td>프로젝트 완료</td>
-            <td>1회</td>
+            <td>{{ this.member_project_end }}회</td>
           </tr>
         </table>
       </div>
@@ -109,63 +113,135 @@
 
 <script>
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
+import { useCommonStore, useProjectStore } from '@/_stores';
 
 export default {
   components: {
     LeftGnb
   },
+  setup() {
+    const commonStore = useCommonStore();
+    const projectStore = useProjectStore();
+    return {
+      commonStore,
+      projectStore,
+    }
+  },
   data() {
     return {
-      tabAll: true,
-      tabInterest: false,
-      tabApply: false,
-      tabMatch: false,
-      tabCompletion: false,
+      tab: 0,
+      project_list: [],
+      project_list_total: 0,
+      project_pages: {
+        page: 1,
+        page_block: 5,
+        start: 9999,
+        end: 1,
+        end_page: 1,
+        pagesList: [],
+        num_block: 5,
+      },
       popupCompany: false,
+      project_all_cnt: 0,
+      project_like_cnt: 0,
+      project_apply_cnt: 0,
+      project_match_cnt: 0,
+      project_end_cnt: 0,
+      company_name: '',
+      company_owner_name: '',
+      name: '',
+      company_phone_number: '',
+      address: '',
+      address_detail: '',
+      member_point: 0,
+      member_project_end: 0,
     }
   },
   methods: {
-    onTab(selectTab) {
-      if (selectTab == 'all') {
-        this.tabAll = true;
-        this.tabInterest = false;
-        this.tabApply = false;
-        this.tabMatch = false;
-        this.tabCompletion = false;
-      } else if (selectTab == 'interest') {
-        this.tabAll = false;
-        this.tabInterest = true;
-        this.tabApply = false;
-        this.tabMatch = false;
-        this.tabCompletion = false;
-      }
-      else if (selectTab == 'apply') {
-        this.tabAll = false;
-        this.tabInterest = false;
-        this.tabApply = true;
-        this.tabMatch = false;
-        this.tabCompletion = false;
-      }
-      else if (selectTab == 'match') {
-        this.tabAll = false;
-        this.tabInterest = false;
-        this.tabApply = false;
-        this.tabMatch = true;
-        this.tabCompletion = false;
-      }
-      else if (selectTab == 'completion') {
-        this.tabAll = false;
-        this.tabInterest = false;
-        this.tabApply = false;
-        this.tabMatch = false;
-        this.tabCompletion = true;
-      }
-    },
     clickSelect(event) {
       if (event.target.classList.contains('company-popup')) {
         this.popupCompany = false;
       }
     },
+    getProjectList() {
+      this.project_list = [];
+      let params = {
+        user_member:this.commonStore.member.member,
+        login_member:this.commonStore.member.member,
+      }
+
+      if(this.tab === 0){
+        params.user_member = this.commonStore.member.member;
+      } else if(this.tab === 1){
+        params.searchType = 'project_like_cnt';
+      } else if(this.tab === 2){
+        params.searchType = 'project_apply_cnt';
+      } else if(this.tab === 3){
+        params.searchType = 'project_match_cnt';
+      } else if(this.tab === 4){
+        params.searchType = 'project_end_cnt';
+      }
+      this.projectStore.list(params,this.project_pages).then((resp) => {
+        if (resp.data.code == 200) {
+          this.project_list = resp.data.body;
+          this.project_list_total = resp.data.total;
+          this.getPageNums(this.project_list_total, this.project_pages);
+          //console.log(resp.data.body)
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    getProjectListCntInfo() {
+      this.projectStore.listCntInfo({user_member:this.commonStore.member.member}).then((resp) => {
+        if (resp.data.code == 200) {
+          this.project_all_cnt = resp.data.body.project_all_cnt;
+          this.project_like_cnt = resp.data.body.project_like_cnt;
+          this.project_apply_cnt = resp.data.body.project_apply_cnt;
+          this.project_match_cnt = resp.data.body.project_match_cnt;
+          this.project_end_cnt = resp.data.body.project_end_cnt;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    onChangePage(page) {
+      this.project_pages.page = page;
+      this.getProjectList();
+    },
+    showAlert() { // TODO 개발시 없앨것
+      alert('해당 기능은 아직 개발중입니다.');
+    },
+    showCompany(other_info){
+      this.company_name = other_info.member_info.company_name;
+      this.company_owner_name = other_info.member_info.company_owner_name;
+      this.name = other_info.member_info.name;
+      this.company_phone_number = other_info.member_info.company_phone_number;
+      this.address = other_info.member_info.address;
+      this.address_detail = other_info.member_info.address_detail;
+      this.member_point = this.commonStore.getLevel(other_info.member_point);
+
+      let params = {
+        member: other_info.member_info.member,
+        state: this.getField('project_state','종료')
+      }
+      this.projectStore.list(params).then((resp) => {
+        console.log(resp)
+        if (resp.data.code == 200) {
+          this.member_project_end = resp.data.total;
+          this.popupCompany = true;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    showDetail(item){
+      window.open(`/project/project-detail?key=${item.project}`);
+    }
+  },
+  mounted() {
+    this.onChangePage(1);
+    this.getProjectListCntInfo();
   }
 }
 
