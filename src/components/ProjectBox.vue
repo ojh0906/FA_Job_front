@@ -2,7 +2,7 @@
   <router-link :to="{ name: 'ProjectDetail', query: {key:this.project.project} }">
     <section id="project-box">
       <aside class="project-title-wrap">
-        <p class="company">수원엔지니어링</p>
+        <p class="company">{{ this.project.other_info.member_info.company_name }}</p>
         <p class="title">{{ this.project.name }}</p>
       </aside>
 

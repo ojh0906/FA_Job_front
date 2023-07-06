@@ -16,9 +16,7 @@
           <div class="info-box">
             <div class="info">
               <p class="title">모집기간</p>
-              <p class="text">
-                {{ formattedDate(this.project.apply_start) }}~{{ formattedDate(this.project.apply_end) }}
-              </p>
+              <p class="text">{{ formattedDate(this.project.apply_start) }}~{{ formattedDate(this.project.apply_end) }}</p>
             </div>
             <div class="info">
               <p class="title">지역</p>
@@ -69,9 +67,8 @@
             </tr>
             <tr>
               <td class="td-title">공사기간</td>
-              <td v-if="this.project.period_type !== getField('project_period_type', '일정선택')">{{
-                getFieldName(this.project.period_type) }}</td>
-              <td v-else>{{ this.project.period_start }} ~ {{ this.project.period_end }}</td>
+              <td v-if="this.project.period_type !== getField('project_period_type','일정선택')">{{ getFieldName(this.project.period_type) }}</td>
+              <td v-else>{{ formattedDate(this.project.period_start) }} ~ {{ formattedDate(this.project.period_end) }}</td>
               <td class="td-title">숙소제공여부</td>
               <td>{{ this.project.lodge_yn ? '제공 O' : '제공 X' }}</td>
             </tr>
