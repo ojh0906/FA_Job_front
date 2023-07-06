@@ -15,14 +15,14 @@
 
                 <table class="free_table02">
                     <th class="t_title02 th_01" style="width: 78px;">전기</th>
-                    <th class="t_title02 th_02" style="width: 460px;">{{ this.marketing.title }}</th>
+                    <th class="t_title02 th_02 t_title" style="width: 460px;">{{ this.marketing.title }}</th>
                     <th class="t_title02 th_03" style="width: 120px;">{{ this.marketing.name }}</th>
                     <th class="t_title02 th_04" style="width: 120px;"> {{ formattedDate(marketing.reg_date) }}</th>
                     <th class="t_title02 th_05" style="width: 80px;">{{ this.marketing.other_info.click_cnt }}</th>
                     <th class="t_title02 th_06" style="width: 32px;"><i class="i_icon"></i></th>
                 </table>
-                
-                <div class="btn_area"  v-if="this.commonStore.member.member === this.marketing.member">
+
+                <div class="btn_area" v-if="this.commonStore.member.member === this.marketing.member">
                     <router-link class="modify-btn"
                         :to="{ name: 'FreePromoWrite', query: { key: this.marketing.marketing } }">
                         수정

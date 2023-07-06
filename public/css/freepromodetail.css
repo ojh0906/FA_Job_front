@@ -235,3 +235,8 @@
   width: 300px;
   height: auto;
 }
+
+#free_section02 .t_title {
+  text-align: left;
+  justify-content: start;
+}

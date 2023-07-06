@@ -9,14 +9,14 @@
       <table class="bl02_table02">
         <th class="t_title02 bl_01" style="width: 110px;">{{ this.getFieldName(this.blacklist.target) }}</th>
         <th class="t_title02 bl_02" style="width: 120px;">{{ this.getFieldName(this.blacklist.type) }}</th>
-        <th class="t_title02 bl_03" style="width: 664px;">{{ this.blacklist.title }}</th>
+        <th class="t_title02 bl_03 t_title" style="width: 664px;">{{ this.blacklist.title }}</th>
         <th class="t_title02 bl_04" style="width: 120px;">{{ formattedDate(this.blacklist.reg_date) }}</th>
         <th class="t_title02 bl_05" style="width: 80px;">{{ this.blacklist.other_info.click_cnt }}</th>
         <th class="t_title02 bl_06" style="width: 56px;"><i class="i_icon"></i></th>
       </table>
 
       <div class="blbtn_area" v-if="this.blacklist.member === this.commonStore.member.member">
-        <router-link class="modify-btn" :to="{ name: 'BlackRequest', query: {key:this.blacklist.blacklist} }">
+        <router-link class="modify-btn" :to="{ name: 'BlackRequest', query: { key: this.blacklist.blacklist } }">
           수정
         </router-link>
         <a class="delete-btn" @click="remove">삭제</a>
@@ -25,8 +25,8 @@
       <div class="blcont_area" v-html="this.blacklist.content"></div>
 
       <table class="comment02">
-        <tr class="tr_com" v-for="(item,idx) in this.blacklist.other_info.reply_list">
-          <td class="bltd_com01 td_01">익명 {{idx+1}}</td>
+        <tr class="tr_com" v-for="(item, idx) in this.blacklist.other_info.reply_list">
+          <td class="bltd_com01 td_01">익명 {{ idx + 1 }}</td>
           <td class="bltd_com02 td_02">{{ item.content }}</td>
           <td class="bltd_com03 td_03">{{ formattedDate(item.reg_date) }}</td>
         </tr>
@@ -68,20 +68,20 @@ export default {
   },
   data() {
     return {
-      blacklist:{
-        blacklist:0,
-        member:0,
-        target:0,
-        type:0,
-        title:'',
-        content:'',
-        reg_date:'',
-        other_info:{
-          reply_list:[],
-          click_cnt:0
+      blacklist: {
+        blacklist: 0,
+        member: 0,
+        target: 0,
+        type: 0,
+        title: '',
+        content: '',
+        reg_date: '',
+        other_info: {
+          reply_list: [],
+          click_cnt: 0
         },
       },
-      content:'',
+      content: '',
     }
   },
   methods: {
@@ -89,7 +89,7 @@ export default {
       this.blacklistStore.getById(this.$route.query.key).then((resp) => {
         if (resp.data.code == 200) {
           this.blacklist = resp.data.body;
-          if(this.blacklist.other_info.reply_list == null){
+          if (this.blacklist.other_info.reply_list == null) {
             this.blacklist.other_info.reply_list = [];
           }
         }
@@ -98,14 +98,14 @@ export default {
       });
     },
     reply() {
-      if(this.content === ''){
+      if (this.content === '') {
         alert('댓글 내용을 입력해주세요.');
       }
       let params = {
         member: this.commonStore.member.member,
         content: this.content,
       }
-      this.blacklistStore.saveReply(this.$route.query.key,params).then((resp) => {
+      this.blacklistStore.saveReply(this.$route.query.key, params).then((resp) => {
         if (resp.data.code == 200) {
           this.content = '';
           this.get();
@@ -114,12 +114,12 @@ export default {
         console.log("err", err);
       });
     },
-    remove(){
-      if(confirm('정말 삭제하시겠습니까?')){
+    remove() {
+      if (confirm('정말 삭제하시겠습니까?')) {
         this.blacklistStore.remove(this.$route.query.key).then((resp) => {
           if (resp.data.code == 200) {
             alert('삭제되었습니다.');
-            this.$router.push({name:'BlacklistList'});
+            this.$router.push({ name: 'BlacklistList' });
           }
         }).catch(err => {
           console.log("err", err);
@@ -128,12 +128,12 @@ export default {
     }
   },
   mounted() {
-    if(this.$route.query.key == null){
+    if (this.$route.query.key == null) {
       alert('잘못된 접근입니다.');
-      this.$router.push({name:'BlacklistList'});
+      this.$router.push({ name: 'BlacklistList' });
     } else {
       this.get();
-      this.blacklistStore.saveClick(this.$route.query.key,{member:this.commonStore.member.member}); // 조회수 증가
+      this.blacklistStore.saveClick(this.$route.query.key, { member: this.commonStore.member.member }); // 조회수 증가
     }
   }
 }

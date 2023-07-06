@@ -576,9 +576,15 @@ input[type="checkbox"] {
   margin-left: 10px;
   color: #70bab5;
 }
+
 .t_td.center {
   text-align: center;
 }
+
+.table-left {
+  text-align: left;
+}
+
 .t_td.left {
   text-align: left;
 }
