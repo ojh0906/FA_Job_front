@@ -91,7 +91,7 @@ export default {
     methods: {
         getList() {
             this.contact_list = [];
-            this.contactStore.list().then((resp) => {
+            this.contactStore.list({member:this.commonStore.member.member}).then((resp) => {
                 if (resp.data.code == 200) {
                     this.contact_list = resp.data.body;
                     console.log('contact_list', this.contact_list)
