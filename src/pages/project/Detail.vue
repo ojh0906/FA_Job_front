@@ -101,8 +101,7 @@
 
           <!-- 기업 화면 -->
           <div v-if="this.isCompany">
-            <p class="like-text"><img class="text-like-icon" src='/image/project/like.png' /> {{
-              this.project.other_info.like_cnt }}명이 관심을 갖고 있습니다.
+            <p class="like-text"><img class="text-like-icon" src='/image/project/like.png' /> {{this.project.other_info.like_cnt }}명이 관심을 갖고 있습니다.
             </p>
 
             <p class="company-text">모집중인 프로젝트</p>
@@ -115,7 +114,7 @@
               개인 지원자 11명
             </p>
 
-            <router-link :to="{ name: '', query: { key: 0 } }">
+            <router-link :to="{ name: 'MypageCompanyApplicant', query: { key: this.project.project } }">
               <div class="team-apply-btn apply-list-btn btn btn1">
                 지원자 목록 보기
               </div>

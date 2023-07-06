@@ -168,6 +168,13 @@
   color: #333333;
   margin-bottom: 20px;
 }
+#mypage .content-container .company-project-box-wrap {
+  width: 100%;
+  margin-bottom: 40px;
+}
+#mypage .content-container .company-project-box-wrap table {
+  width: 100%;
+}
 #mypage .content-container .table-wrap {
   width: 100%;
   margin-bottom: 40px;

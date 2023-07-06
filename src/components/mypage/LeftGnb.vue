@@ -30,7 +30,7 @@
           </router-link>
         </div>
       </div>
-      <div class="menu-wrap">
+      <div class="menu-wrap" v-if="this.commonStore.member.type !== this.getField('member_type', '기업')">
         <a class="menu" @click="checkResume">이력서 관리</a>
       </div>
       <router-link :to="{ name: this.commonStore.member.type === this.getField('member_type','기업') ? 'MypageCompanyProject' : 'MypageProject', query: {} }">
