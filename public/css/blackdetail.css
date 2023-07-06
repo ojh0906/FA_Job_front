@@ -1,173 +1,176 @@
 /* 블랙리스트 상세 시작*/
 #blacklist-page02 {
-    position: relative;
-    margin: 0 auto;
-    width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
 }
 
-#blacklist-page02 .bl02_header{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
+#blacklist-page02 .bl02_header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
 }
-  
+
 #blacklist-page02 .bl02_header .bl02_title {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 38px;
-    color: #333333;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #333333;
 }
 
 #blacklist-page02 .bl_container02 {
-    width: 1200px;
+  width: 1200px;
 }
-  
+
 #blacklist-page02 .bl_container02 .box_r_header02 {
-    display: flex;
-    width: 1200px;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02{
-    display: flex;
-    margin-top: 40px;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_01{
-    padding: 17px 0;
-    text-align: center;
-    border-right: 1px solid #DDDDDD;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_02{
-    padding: 17px 0;
-    text-align: center;
-    border-right: 1px solid #DDDDDD;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_03{
-    display: flex;
-    padding: 17px 25px;
-    border-right: 1px solid #DDDDDD;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_04{
-    text-align: center;
-    border-right: 1px solid #DDDDDD;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_05{
-    text-align: center;
-    border-right: 1px solid #DDDDDD;
-}
-  
-#blacklist-page02 .bl_container02 .bl02_table02 .bl_06 .i_icon{
-    display: inline-block;
-    justify-content: center;
-    vertical-align: middle;
-    width: 24px;
-    height: 24px;
-    background: url("../image/community/sharebtn.png") no-repeat;
-}
-  
-.bl_container02 .blbtn_area{
-    display: flex;
-    margin-top: 20px;
-    width: 1200px;
-}
-  
-.bl_container02 .blbtn_area .modify-btn{
-    margin: 0 10px 0 1074px;
-}
-  
-.bl_container02 .blbtn_area a{
-    padding: 10px 15px;
-}
-  
-.bl_container02 .blcont_area{
-    padding: 30px 20px;
-    color: #555;
-    line-height: 24px;
-}
-.bl_container02 .comment02 .tr_com{
-    padding: 15px 10px;
-    border-bottom: 1px solid #DDDDDD;
-}
-  
-.bl_container02 .comment02 .tr_com02{
-    padding: 15px 10px;
-    border-bottom: 1px solid #DDDDDD;
-}
-  
-.bl_container02 .comment02 .tr_com02 .i_icon{
-    display: flex;
-    width: 30px;
-    height: 68px;
-    background: url("../image/community/td.png") no-repeat;
-}
-  
-tr_com03 .tr_com02 .td_03{
-    display: flex;
-}
-  
-.bl_container02 .comment02 .tr_com02 .td_04{
-    vertical-align: middle;
+  display: flex;
+  width: 1200px;
 }
 
-.bl_container02 .comment02 .tr_com03 .td_01{
-    font-weight: 400;
-    color: #555;
+#blacklist-page02 .bl_container02 .bl02_table02 {
+  display: flex;
+  margin-top: 40px;
 }
 
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_01 {
+  padding: 17px 0;
+  text-align: center;
+  border-right: 1px solid #dddddd;
+}
+
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_02 {
+  padding: 17px 0;
+  text-align: center;
+  border-right: 1px solid #dddddd;
+}
+
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_03 {
+  display: flex;
+  padding: 17px 25px;
+  border-right: 1px solid #dddddd;
+}
+
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_04 {
+  text-align: center;
+  border-right: 1px solid #dddddd;
+}
+
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_05 {
+  text-align: center;
+  border-right: 1px solid #dddddd;
+}
+
+#blacklist-page02 .bl_container02 .bl02_table02 .bl_06 .i_icon {
+  display: inline-block;
+  justify-content: center;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  background: url("../image/community/sharebtn.png") no-repeat;
+}
+
+.bl_container02 .blbtn_area {
+  display: flex;
+  margin-top: 20px;
+  width: 1200px;
+}
+
+.bl_container02 .blbtn_area .modify-btn {
+  margin: 0 10px 0 1074px;
+}
+
+.bl_container02 .blbtn_area a {
+  padding: 10px 15px;
+}
+
+.bl_container02 .blcont_area {
+  padding: 30px 20px;
+  color: #555;
+  line-height: 24px;
+}
+.bl_container02 .comment02 .tr_com {
+  padding: 15px 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.bl_container02 .comment02 .tr_com02 {
+  padding: 15px 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.bl_container02 .comment02 .tr_com02 .i_icon {
+  display: flex;
+  width: 30px;
+  height: 68px;
+  background: url("../image/community/td.png") no-repeat;
+}
+
+tr_com03 .tr_com02 .td_03 {
+  display: flex;
+}
+
+.bl_container02 .comment02 .tr_com02 .td_04 {
+  vertical-align: middle;
+}
+
+.bl_container02 .comment02 .tr_com03 .td_01 {
+  font-weight: 400;
+  color: #555;
+}
 
 .bl_container02 .comment02 .tr_com03 .td_02 .field_input {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
 }
 
 .bl_container02 .comment02 .tr_com03 .td_02 .field_input input:focus {
-    /* border: #3e778a 2px solid;
+  /* border: #3e778a 2px solid;
     outline: #3e778a; */
-    border: 1px solid #dddddd;
-    outline: none;
+  border: 1px solid #dddddd;
+  outline: none;
 }
-  
+
 .bl_container02 .comment02 .tr_com03 .td_02 .field_input input {
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    padding: 10px 10px 53px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #999999;
-    width: 100%;
-    opacity: 0.5;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px 10px 53px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+  width: 100%;
+  opacity: 0.5;
 }
 
-.bl_container02 .comment02 .tr_com03 a{
-    display: flex;
-    margin: 15px 15px 15px 0;
-    padding: 31px 42px;
-    background-color: #3E778A;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-weight: 700;
-    color: #fff;
+.bl_container02 .comment02 .tr_com03 a {
+  display: flex;
+  margin: 15px 15px 15px 0;
+  padding: 31px 42px;
+  background-color: #3e778a;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: #fff;
 }
 
-.bl_container02 .bl02_row{
-    display: flex;
-    margin-top: 30px;
-    justify-content: center;
+.bl_container02 .bl02_row {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
 }
 
 .bl_container02 .bl02_row a {
-    box-sizing: border-box;
-    padding: 20px 72px;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 16px;
+  box-sizing: border-box;
+  padding: 20px 72px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
 }
-  
+
+#blacklist-page02 .bl_container02 .bl02_table02 .t_title {
+  text-align: left;
+  justify-content: start;
+}
