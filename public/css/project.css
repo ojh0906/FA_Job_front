@@ -1367,3 +1367,50 @@
   margin-right: 8px;
   background: url("../image/black/del.png") no-repeat;
 }
+
+#project-page .company-text {
+  color: #333;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 30px 0 15px 0;
+}
+
+#project-page .company-text2 {
+  color: #333;
+  font-size: 20px;
+  text-align: center;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 30px 0;
+}
+
+#project-page .company-apply {
+  color: #333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#project-page .company-apply img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+#project-page .apply-list-btn {
+  margin-top: 30px;
+}
+
+#project-page .opacity {
+  opacity: 0.5;
+}

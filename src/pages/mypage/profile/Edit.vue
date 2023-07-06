@@ -7,11 +7,14 @@
 
         <div class="profile-edit">
           <div class="profile-info">
-            <img src="/image/mypage/temp/image.png" class="profile-img" v-if="this.profile_file.length === 0 && this.profile_file_new.length === 0"/>
-            <img :src="this.getImagePath(this.profile_file[0].path)" class="profile-img" v-else-if="this.profile_file_new.length === 0" />
+            <img src="/image/mypage/temp/image.png" class="profile-img"
+              v-if="this.profile_file.length === 0 && this.profile_file_new.length === 0" />
+            <img :src="this.getImagePath(this.profile_file[0].path)" class="profile-img"
+              v-else-if="this.profile_file_new.length === 0" />
             <img :src="this.profile_file_new[0].preview" class="profile-img" v-else />
-            <img src="/image/mypage/camerabtn.png" class="camera-icon" @click.prevent="addFiles('profile_file_new')"/>
-            <input id="profile_file_new" name="profile_file_new" ref="profile_file_new" class="hidden" type="file" @change="handleChange($event)" accept="image/*" />
+            <img src="/image/mypage/camerabtn.png" class="camera-icon" @click.prevent="addFiles('profile_file_new')" />
+            <input id="profile_file_new" name="profile_file_new" ref="profile_file_new" class="hidden" type="file"
+              @change="handleChange($event)" accept="image/*" />
           </div>
 
           <div class="field-wrap">
@@ -29,9 +32,19 @@
               </p>
             </div>
 
+            <!-- 기업 정보 : 인사담당자명 -->
+            <div class="field" v-if="this.isCompany">
+              <p class="input-title">인사담당자명</p>
+              <div class="input-wrap">
+                <div class="field_input">
+                  <input type="text" placeholder="인사담당자 이름 입력" v-model="this.name">
+                </div>
+              </div>
+            </div>
+
             <!-- 휴대폰 번호 -->
             <div class="field">
-              <p class="input-title">휴대폰번호</p>
+              <p class="input-title">{{ this.isCompany ? '인사담당자 휴대폰번호' : '휴대폰번호' }}</p>
               <div class="input-wrap">
                 <div class="field_input">
                   <input type="phone" placeholder="휴대폰 번호" v-model="this.phone_number">
@@ -46,6 +59,17 @@
                   <input type="number" placeholder="인증번호">
                 </div>
                 <div class="check-btn btn" :class="true ? 'btn2' : 'btn3'">{{ true ? '인증됨' : '인증번호 확인' }}</div>
+              </div>
+            </div>
+
+
+            <!-- 기업 정보 : 회사 연락처 -->
+            <div class="field" v-if="this.isCompany">
+              <p class="input-title">회사 연락처</p>
+              <div class="input-wrap">
+                <div class="field_input">
+                  <input type="text" placeholder="회사 연락처 입력" v-model="this.company_phone_number">
+                </div>
               </div>
             </div>
 
@@ -81,7 +105,7 @@
 
 <script>
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
-import { useCommonStore,useMemberStore } from '@/_stores';
+import { useCommonStore, useMemberStore } from '@/_stores';
 
 export default {
   components: {
@@ -97,25 +121,25 @@ export default {
   },
   data() {
     return {
-      isForeigner:false,
-      isCompany:false,
-      nick_name_request:false,
-      nick_name_check:false,
-      profile_file:[],
-      profile_file_new:[],
-      nick_name:'',
-      phone_number:'',
-      address:'',
-      address_detail:'',
-      foreigner_number:'',
-      foreigner_file:[],
-      foreigner_file_new:[],
-      company_name:'',
-      company_owner_name:'',
-      company_phone_number:'',
-      company_number:'',
-      company_file:[],
-      company_file_new:[],
+      isForeigner: false,
+      isCompany: false,
+      nick_name_request: false,
+      nick_name_check: false,
+      profile_file: [],
+      profile_file_new: [],
+      nick_name: '',
+      phone_number: '',
+      address: '',
+      address_detail: '',
+      foreigner_number: '',
+      foreigner_file: [],
+      foreigner_file_new: [],
+      company_name: '',
+      company_owner_name: '',
+      company_phone_number: '',
+      company_number: '',
+      company_file: [],
+      company_file_new: [],
     }
   },
   methods: {
@@ -129,7 +153,7 @@ export default {
       /*
         Adds the uploaded file to the files array
       */
-      if(event.target.id === 'profile_file_new'){
+      if (event.target.id === 'profile_file_new') {
         this.profile_file = [];
       }
       this[event.target.id] = [];
@@ -142,8 +166,8 @@ export default {
     removeFile(target_files) {
       this[target_files] = [];
     },
-    checkDupleNickName(){
-      if(this.nick_name === ''){
+    checkDupleNickName() {
+      if (this.nick_name === '') {
         alert('닉네임을 입력해주세요.');
         return;
       }
@@ -163,14 +187,14 @@ export default {
         console.log("err", err);
       });
     },
-    modify(){
+    modify() {
       let paramData = new FormData();
 
-      if(!this.isCompany && !this.nick_name_request){
+      if (!this.isCompany && !this.nick_name_request) {
         alert('닉네임 중복체크를 해주세요.');
         return;
       } else {
-        if(this.nick_name_request && !this.nick_name_check){
+        if (this.nick_name_request && !this.nick_name_check) {
           alert('중복된 닉네임입니다. 다시 입력해주세요.');
           return;
         } else {
@@ -178,7 +202,7 @@ export default {
         }
       }
 
-      if(this.phone_number === '' || this.address === '' || this.address_detail === ''){
+      if (this.phone_number === '' || this.address === '' || this.address_detail === '') {
         alert('필수값을 입력해주세요.');
         return;
       } else {
@@ -190,8 +214,8 @@ export default {
         });
       }
 
-      if(this.isForeigner){ // 외국인일 경우
-        if(this.foreigner_number === ''){
+      if (this.isForeigner) { // 외국인일 경우
+        if (this.foreigner_number === '') {
           alert('필수값을 입력해주세요.');
           return;
         } else {
@@ -202,8 +226,8 @@ export default {
         }
       }
 
-      if(this.isCompany){ // 기업인 경우
-        if(this.company_name === '' || this.company_owner_name === '' || this.company_number === '' || this.company_phone_number === ''){
+      if (this.isCompany) { // 기업인 경우
+        if (this.company_name === '' || this.company_owner_name === '' || this.company_number === '' || this.company_phone_number === '') {
           alert('필수값을 입력해주세요.');
           return;
         } else {
@@ -220,7 +244,7 @@ export default {
       this.memberStore.modify(this.commonStore.member.member, paramData).then((resp) => {
         if (resp.data.code == 200) {
           alert('수정되었습니다.');
-          this.$router.push({name:'Mypage'});
+          this.$router.push({ name: 'Mypage' });
         }
       }).catch(err => {
         console.log("err", err);

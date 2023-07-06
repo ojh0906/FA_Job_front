@@ -1293,3 +1293,10 @@
 .complete-wrap .ask_box {
   width: auto;
 }
+
+.mypage-company {
+  margin-bottom: 30px;
+}
+.mypage-company #company-project-box:nth-child(1) {
+  border-top: 0;
+}

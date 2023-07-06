@@ -3,7 +3,7 @@
     <LeftGnb />
     <div class="content-container">
       <div class="mypage-info-container">
-        <p class="area-title">프로젝트 관리</p>
+        <p class="area-title">회원정보 관리</p>
         <table class="table-color-row">
           <tr>
             <td>국적</td>
