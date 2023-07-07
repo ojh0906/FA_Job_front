@@ -374,16 +374,13 @@
           <tr class="tr_com">
             <td class="fa_com01">이미지</td>
             <td class="fw_com02 fw_02">
-              <input id="files_new" name="files_new" ref="files_new" class="hidden" type="file"
-                     @change="handleChange($event)" />
-              <a href="#" class="btn2 fw_01" @click.prevent="addFiles('files_new')">
-                <i class="i_icon"></i>파일올리기
-              </a>
+              <input id="files_new" name="files_new" ref="files_new" class="hidden" type="file" @change="handleChange($event)" />
+              <a href="#" class="btn2 fw_01" @click.prevent="addFiles('files_new')"><i class="i_icon"></i>파일올리기</a>
+              <p class="file01" v-for="(item, idx) in this.files" :key="idx">
+                {{ item.name }}<a @click="removeFile(idx, 'files')"><i class="i_icon"></i></a>
+              </p>
               <p class="file01" v-for="(item, idx) in this.files_new" :key="idx">
-                {{ item.name }}
-                <a @click="removeFile(idx, 'files_new')">
-                  <i class="i_icon"></i>
-                </a>
+                {{ item.name }}<a @click="removeFile(idx, 'files_new')"><i class="i_icon"></i></a>
               </p>
             </td>
           </tr>
@@ -391,7 +388,7 @@
       </div>
       <div class="next">
         <div class="btn btn4" @click="this.step -= 1" v-if="this.step > 1">이전</div>
-        <div class="btn btn1" @click="this.nextStep">다음</div>
+        <div class="btn btn1" @click="this.nextStep">{{ this.step >= 3 ? '저장':'다음' }}</div>
       </div>
     </div>
   </section>
@@ -467,7 +464,9 @@ export default {
       extra_work_price: 0, // 잔업 수당
       payment_day: 1, // 결제일
       detail: '', // 업무 상세
+      files: [], // 파일
       files_new: [], // 파일
+      files_del: [], // 파일
       skill_checked1: false, // 초보 단가
       skill_checked2: false, // 준공 단가
       skill_checked3: false, // 준기공 단가
@@ -580,7 +579,11 @@ export default {
       }
     },
     removeFile(key, target_files) {
-      this[target_files].splice(key, 1);
+      if(target_files === 'files'){
+        this.files_del.push(this[target_files].splice(key, 1)[0]);
+      } else {
+        this[target_files].splice(key, 1);
+      }
     },
     setPeriod(){
       this.period_start = '';
@@ -610,12 +613,12 @@ export default {
       paramData.append("country", this.country);
       paramData.append("period_type", this.period_type);
       if(this.period_type === this.getField('project_period_type','일정선택')){
-        paramData.append("period_start", this.period_start + ' 00:00:00');
-        paramData.append("period_end", this.period_end + ' 23:59:59');
+        paramData.append("period_start", this.period_start.substring(0,10) + ' 00:00:00');
+        paramData.append("period_end", this.period_end.substring(0,10) + ' 23:59:59');
       }
       paramData.append("apply_type", this.apply_type);
-      paramData.append("apply_start", this.apply_start + ' 00:00:00');
-      paramData.append("apply_end", this.apply_end + ' 23:59:59');
+      paramData.append("apply_start", this.apply_start.substring(0,10) + ' 00:00:00');
+      paramData.append("apply_end", this.apply_end.substring(0,10) + ' 23:59:59');
       paramData.append("location1", this.location1);
       paramData.append("location2", this.location2);
       paramData.append("work_location", this.work_location);
@@ -641,14 +644,70 @@ export default {
         });
       }
 
+/*
       for (const pair of paramData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
       }
-
-      this.projectStore.save(paramData).then((resp) => {
+*/
+      if(this.project !== 0){
+        paramData.append("files_del", JSON.stringify(this.files_del));
+        this.projectStore.modify(this.project, paramData).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('저장되었습니다.');
+            this.$router.push({name:'ProjectList'});
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      } else {
+        this.projectStore.save(paramData).then((resp) => {
+          if (resp.data.code == 200) {
+            alert('저장되었습니다.');
+            this.$router.push({name:'ProjectList'});
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      }
+    },
+    get(){
+      this.projectStore.getById(this.$route.query.key).then((resp) => {
         if (resp.data.code == 200) {
-          alert('저장되었습니다.');
-          this.$router.push({name:'ProjectList'});
+          const project = resp.data.body;
+          this.project = project.project;
+          this.name = project.name;
+          this.area = project.area;
+          this.industry = project.industry;
+          this.country = project.country;
+          this.period_type = project.period_type;
+          if(this.period_type === this.getField('project_period_type','일정선택')){
+            this.period_start = project.period_start;
+            this.period_end = project.period_end;
+          }
+          this.apply_type = project.apply_type;
+          this.apply_start = project.apply_start;
+          this.apply_end = project.apply_end;
+          this.location1 = project.location1;
+          this.location2 = project.location2;
+          this.work_location = project.work_location;
+          this.work_time_start = project.work_time_start;
+          this.work_time_end = project.work_time_end;
+          this.equipment = project.equipment;
+          this.team_yn = project.team_yn;
+          this.people_cnt = project.people_cnt;
+          this.meal_yn = project.meal_yn;
+          this.extra_work_price = project.extra_work_price;
+          this.payment_day = project.payment_day;
+          this.detail = project.detail;
+          this.files = JSON.parse(project.files);
+          this.skill1 = project.skill1;
+          this.skill2 = project.skill2;
+          this.skill3 = project.skill3;
+          this.skill4 = project.skill4;
+          this.skill1 === 0 ? this.skill_checked1 = false : this.skill_checked1 = true;
+          this.skill2 === 0 ? this.skill_checked2 = false : this.skill_checked2 = true;
+          this.skill3 === 0 ? this.skill_checked3 = false : this.skill_checked3 = true;
+          this.skill4 === 0 ? this.skill_checked4 = false : this.skill_checked4 = true;
         }
       }).catch(err => {
         console.log("err", err);
@@ -656,18 +715,9 @@ export default {
     }
   },
   mounted() {
-    // if (this.$route.query.type == null || this.$route.query.event_info_yn == null) {
-    //     alert('잘못된 접근입니다.');
-    //     this.$router.push({ name: 'RegisterType' })
-    // } else {
-    //     this.type = this.$route.query.type;
-    //     if (this.type == this.getField('member_type', '기업')) {
-    //         this.isCompany = true;
-    //     } else if (this.type == this.getField('member_type', '외국인')) {
-    //         this.isForeigner = true;
-    //     }
-    //     this.event_info_yn = this.$route.query.event_info_yn;
-    // }
+    if (this.$route.query.key != null) {
+      this.get();
+    }
   }
 }
 </script>

@@ -51,7 +51,7 @@
                   현장 <span>{{ this.getFieldName(item.location1) }} {{ this.getFieldName(item.location2) }}</span>
                 </p>
               </div>
-              <p :class="[item.state === this.getField('project_state','종료') ? 'title title-end' : '', 'title']">제목</p>
+              <p :class="[item.state === this.getField('project_state','종료') ? 'title title-end' : '', 'title']">{{ item.name }}</p>
               <div class="btn-wrap">
                 <!-- 모집 중에만 보임 -->
                 <div class="btn btn3" v-if="item.state === this.getField('project_state','모집중') && !item.ad_yn" @click="showAlert">
@@ -73,23 +73,28 @@
               </p>
 
               <!-- TODO 지원자가 1명 이상일 때 - 지원자 목록 -->
-              <router-link v-if="item.other_info.applicant > 0" :to="{ name: 'MypageCompanyApplicant', query: {} }">
+              <router-link v-if="item.other_info.applicant > 0" :to="{ name: 'MypageCompanyApplicant', query: {key:item.project} }">
                 <div class="btn3 btn">
                   지원자 목록
                 </div>
               </router-link>
               <!-- TODO 지원자가 0명일 경우만 프로젝트 수정 가능 -->
-              <router-link v-else-if="item.other_info.applicant === 0" :to="{ name: '', query: {} }">
+              <router-link v-else-if="item.other_info.applicant === 0" :to="{ name: 'RegisterProject', query: {key:item.project} }">
                 <div class="btn5 btn">
                   프로젝트 수정
                 </div>
               </router-link>
               <!-- TODO 프로젝트가 마감되었을 때 -->
+              <div class="btn5 btn" v-else-if="item.state === this.getField('project_state','진행중')" @click="showAlert">
+                공수 설정
+              </div>
+<!--
               <router-link v-else-if="item.state === this.getField('project_state','진행중')" :to="{ name: '', query: {} }">
                 <div class="btn5 btn">
                   공수 설정
                 </div>
               </router-link>
+-->
               <!-- TODO : 지원자 목록에서 공수설정이 완료되면 업무일지 결재로 바뀜. -->
               <router-link v-else-if="false" :to="{ name: '', query: {} }">
                 <div class="btn5 btn">
