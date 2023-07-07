@@ -336,7 +336,6 @@ export default {
     getApplyList() {
       this.project_apply_list = [];
       this.projectStore.getApplyList(this.$route.query.key).then((resp) => {
-        console.log(resp);
         if (resp.data.code == 200) {
           this.project_apply_list = resp.data.body;
         }
