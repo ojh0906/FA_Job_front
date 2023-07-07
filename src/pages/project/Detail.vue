@@ -107,11 +107,11 @@
             <p class="company-text">모집중인 프로젝트</p>
             <p class="company-apply">
               <img class="" src='/image/project/User.png' />
-              개인 지원자 11명
+              개인 지원자 {{ this.project_apply_list.filter(i => i.type === this.getField('project_apply','개인')).length }}명
             </p>
             <p class="company-apply">
               <img class="" src='/image/project/People.png' />
-              개인 지원자 11명
+              팀 지원자 {{ this.project_apply_list.filter(i => i.type === this.getField('project_apply','팀')).length }}명
             </p>
 
             <router-link :to="{ name: 'MypageCompanyApplicant', query: { key: this.project.project } }">
@@ -250,6 +250,7 @@ export default {
       project_list: [],
       isCompany: false, // 기업 확인
       isComplete: false, // 완료된 프로젝트
+      project_apply_list:[],
     }
   },
   watch: {
@@ -296,6 +297,10 @@ export default {
     },
     saveApply() {
       if (confirm('지원하시겠습니까?')) {
+        if (this.commonStore.member.other_info.member_resume == null) {
+          alert('이력서 먼저 작성해주세요.');
+          return;
+        }
         let params = {
           member: this.commonStore.member.member,
           type: this.getField('project_apply', '개인'),
@@ -328,6 +333,17 @@ export default {
         console.log("err", err);
       });
     },
+    getApplyList() {
+      this.project_apply_list = [];
+      this.projectStore.getApplyList(this.$route.query.key).then((resp) => {
+        console.log(resp);
+        if (resp.data.code == 200) {
+          this.project_apply_list = resp.data.body;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
   },
   mounted() {
     if (this.$route.query.key == null) {
@@ -336,6 +352,7 @@ export default {
     } else {
       this.get();
       this.getProjectList();
+      this.getApplyList();
       if (this.commonStore.member.type === this.getField('member_type', '기업')) {
         this.isCompany = true;
       }
