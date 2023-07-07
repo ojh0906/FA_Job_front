@@ -3,9 +3,9 @@
     <LeftGnb />
     <div class="content-container" v-if="!isComplete">
       <div class="mypage-info-container mypage-apply-container">
-        <p class="area-title">제목</p>
+        <p class="area-title">{{ this.project.name }}</p>
         <p class="area-side">
-          지원자 <span class="num">4</span> 명 <span class="line">|</span> 이름 및 팀명을 클릭하면 지원자/지원팀의 이력서를 볼 수 있습니다.
+          지원자 <span class="num">{{ this.apply_list_total }}</span> 명 <span class="line">|</span> 이름 및 팀명을 클릭하면 지원자/지원팀의 이력서를 볼 수 있습니다.
         </p>
 
         <table class="list-table">
@@ -180,6 +180,7 @@
 import LeftGnb from "/src/components/mypage/LeftGnb.vue";
 import ApplicantPopup from "/src/components/mypage/company/ApplicantPopup.vue";
 import TeamPopup from "/src/components/mypage/company/TeamPopup.vue";
+import { useCommonStore, useProjectStore } from '@/_stores';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -187,7 +188,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper';
-
 
 export default {
   components: {
@@ -198,7 +198,11 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const commonStore = useCommonStore();
+    const projectStore = useProjectStore();
     return {
+      commonStore,
+      projectStore,
       modules: [Pagination, Navigation],
     };
   },
@@ -208,6 +212,19 @@ export default {
       completePopup: false, // 모집 완료 팝업
       errorPopup: false, // 미선정 경고 팝업
       isComplete: false, // 모집 완료 화면
+      apply_list: [],
+      apply_page_list: [],
+      apply_list_total: 0,
+      apply_pages: {
+        page: 1,
+        page_block: 2,
+        start: 9999,
+        end: 1,
+        end_page: 1,
+        pagesList: [],
+        num_block: 5,
+      },
+      project:{name:''},
     }
   },
   methods: {
@@ -233,8 +250,54 @@ export default {
         this.completePopup = false;
         this.isComplete = true;
       }
-    }
+    },
+    showAlert() { // TODO 개발시 없앨것
+      alert('해당 기능은 아직 개발중입니다.');
+    },
+    get() {
+      this.projectStore.getById(this.$route.query.key).then((resp) => {
+        if (resp.data.code == 200) {
+          this.project = resp.data.body;
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    getApplyList() {
+      this.apply_list = [];
+      this.projectStore.getApplyList(this.$route.query.key).then((resp) => {
+        if (resp.data.code == 200) {
+          console.log(resp)
+          this.apply_list = resp.data.body;
+          let idx = 0;
+          let team_name = '';
+          this.apply_list.forEach(a => {
+            if(a.type === this.getField('project_apply','팀')){
+              if(team_name !== a.team_name){
+                team_name = a.team_name;
+                idx ++;
+              }
+              a.team_idx = idx;
+            }
+          })
+          console.log(this.apply_list)
+          this.apply_list_total = this.apply_list.length;
+          this.getPageNums(this.apply_list_total, this.apply_pages);
+          this.setApplyListPage();
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
+    },
+    setApplyListPage(){
+      this.apply_page_list = this.apply_list.splice(((this.apply_pages.page-1) * this.apply_pages.page_block), this.apply_pages.page_block);
+    },
+    onChangePage(page) {
+      this.apply_pages.page = page;
+    },
+  },
+  mounted() {
+    this.getApplyList();
   }
 }
-
 </script>

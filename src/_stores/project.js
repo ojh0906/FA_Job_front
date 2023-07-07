@@ -36,6 +36,9 @@ export const useProjectStore = defineStore({
     async saveLike(id, params) {
       return await http.post(`${baseUrl}/${id}/like/save`, params);
     },
+    async getApplyList(id) {
+      return await http.post(`${baseUrl}/${id}/apply/list`, {});
+    },
     async getApply(id, member) {
       return await http.post(`${baseUrl}/${id}/apply/member`, {member:member});
     },
