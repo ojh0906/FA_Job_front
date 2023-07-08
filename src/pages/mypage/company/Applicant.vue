@@ -19,67 +19,70 @@
             </tr>
           </thead>
           <tbody>
-            <!-- 개인 지원자일 경우 -->
-            <tr v-for="(item, idx) in 5" :key="idx">
-              <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-              <td class="name-click" @click="this.applicantPopup = true">둘리</td>
-              <td>010-1234-1244</td>
-              <td>2023</td>
-              <td :class="true ? 'pass' : false ? 'non-pass' : ''">
-                {{ true ? '합격' : false ? '불합격' : '선택대기' }}
-              </td>
-              <td class="btn-wrap">
-                <div class="btn btn3">
-                  <!-- 2차 개발 -->
-                  공수설정
-                </div>
-              </td>
-            </tr>
+            <div v-for="(item, idx) in this.apply_page_list">
+              <!-- 개인 지원자일 경우 -->
+              <tr v-if="item.type === this.getField('project_apply','개인')">
+                <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
+                <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
+                <td>{{ item.other_info.member_info.phone_number }}</td>
+                <td>{{ formattedDate(item.reg_date) }}</td>
+                <td :class="item.pass ? 'pass' : 'non-pass'">
+                  {{ item.pass == null ? '선택대기': item.pass ? '합격' : '불합격' }}
+                </td>
+                <td class="btn-wrap">
+                  <div class="btn btn3" @click="showAlert">
+                    <!-- 2차 개발 -->
+                    공수설정
+                  </div>
+                </td>
+              </tr>
 
-            <!-- 팀일 경우 -->
-            <div class="team-color-wrap">
-              <div class="team-wrap" v-for="(v, idx) in 2" :key="idx">
-                <tr>
-                  <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                  <td class="team-name" @click="this.applicantPopup = true">팀 이름 : 둘리팀(3)</td>
-                  <td></td>
-                  <td></td>
-                  <td :class="true ? 'pass' : false ? 'non-pass' : ''">
-                    {{ true ? '합격' : false ? '불합격' : '선택대기' }}
-                  </td>
-                  <td>
-                  </td>
-                </tr>
-                <tr v-for="(item, idx) in 3" :key="idx" :class="true ? 'pass' : 'non-pass'">
-                  <td>고길동</td>
-                  <td>010-1234-1244</td>
-                  <td>2023</td>
-                  <td></td>
-                  <td class="btn-wrap">
-                    <div class="btn btn3">
-                      <!-- 2차 개발 -->
-                      공수설정
-                    </div>
-                  </td>
-                </tr>
-              </div>
+              <!-- 팀일 경우 -->
+              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀') && item.leader">
+                <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
+                <td class="team-name" @click="showResume(2, item.team_idx)">팀 이름 : {{ item.team_name }}(3)</td>
+                <td></td>
+                <td></td>
+                <td :class="item.pass ? 'pass' : 'non-pass'">
+                  {{ item.pass == null ? '선택대기': item.pass ? '합격' : '불합격' }}
+                </td>
+                <td>
+                </td>
+              </tr>
+              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀')">
+                <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
+                <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
+                <td>{{ item.other_info.member_info.phone_number }}</td>
+                <td>{{ formattedDate(item.reg_date) }}</td>
+                <td></td>
+                <td class="btn-wrap">
+                  <div class="btn btn3" @click="showAlert">
+                    <!-- 2차 개발 -->
+                    공수설정
+                  </div>
+                </td>
+              </tr>
             </div>
           </tbody>
         </table>
 
         <div class="pagination">
-          <a href="#"><img src="/image/community/back.png" alt="뒤로가기버튼입니다."></a>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#"><img src="/image/community/foward.png" alt="앞으로가기버튼입니다."></a>
+          <a v-if="this.apply_pages.start !== 1" @click="onChangePage(this.apply_pages.start - 1)">
+            <img src="/image/community/back.png" alt="뒤로가기버튼입니다.">
+          </a>
+          <a :class="this.apply_pages.page == page ? 'active' : 'pointer'"
+             v-for="page in this.apply_pages.pagesList" @click="onChangePage(page)">
+            {{ page }}
+          </a>
+          <a v-if="this.apply_pages.end !== this.apply_pages.end_page + 1"
+             @click="onChangePage(this.apply_pages.start + this.apply_pages.num_block)">
+            <img src="/image/community/foward.png" alt="앞으로가기버튼입니다.">
+          </a>
         </div>
 
         <div class="next-btn-wrap">
           <p class="people-cnt">
-            합격자/모집인원 <span class="num1">8</span><span class="num2"> / 10명</span>
+            합격자/모집인원 <span class="num1">{{ this.apply_list.filter(i => i.pass).length }}</span><span class="num2"> / {{ this.project.people_cnt }}명</span>
           </p>
           <div class="btn btn2" @click="">
             다운로드<img src="/image/mypage/download.png" />
@@ -120,11 +123,31 @@
     <div class="company-popup">
       <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
         :loop="true" :modules="modules">
-        <swiper-slide v-for="(v, idx) in 2" :key="idx">
+        <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
           <!-- 개인 지원자 -->
-          <ApplicantPopup :applicantPopup="this.applicantPopup" @popup="onPopup" v-if="true" />
+          <ApplicantPopup :idx="idx" @popup="onPopup"/>
+        </swiper-slide>
+      </swiper>
+      <!--  navigation -->
+      <aside class="popup-slide-btn-wrap">
+        <div class="popup-button-prev">
+          <img class="more-icon" src="/image/mypage/pre.png" />
+        </div>
+        <div class="popup-button-next">
+          <img class="more-icon" src="/image/mypage/next.png" />
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 팀정보 팝업 -->
+  <section id="popup" class="applicant-popup company-popup" v-if="this.applicantTeamPopup" @click="this.clickSelect">
+    <div class="company-popup">
+      <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
+              :loop="true" :modules="modules" :initialSlide="3">
+        <swiper-slide v-for="(v, idx) in 3" :key="idx">
           <!-- 팀 지원자 -->
-          <TeamPopup :applicantPopup="this.applicantPopup" @popup="onPopup" v-else />
+          <TeamPopup :applicantPopup="this.applicantPopup" @popup="onPopup" />
         </swiper-slide>
       </swiper>
       <!--  navigation -->
@@ -209,28 +232,32 @@ export default {
   data() {
     return {
       applicantPopup: false, // 지원자 이력서 팝업
+      applicantTeamPopup: false, // 팀정보 팝업
       completePopup: false, // 모집 완료 팝업
       errorPopup: false, // 미선정 경고 팝업
       isComplete: false, // 모집 완료 화면
+      applicant_list: [],
+      team_list: [],
       apply_list: [],
       apply_page_list: [],
       apply_list_total: 0,
       apply_pages: {
         page: 1,
-        page_block: 2,
+        page_block: 5,
         start: 9999,
         end: 1,
         end_page: 1,
         pagesList: [],
         num_block: 5,
       },
-      project:{name:''},
+      project:{name:'', people_cnt:0},
     }
   },
   methods: {
     clickSelect(event) {
       if (event.target.classList.contains('company-popup')) {
         this.applicantPopup = false;
+        this.applicantTeamPopup = false;
       }
       if (event.target.classList.contains('complete-popup')) {
         this.completePopup = false;
@@ -254,7 +281,7 @@ export default {
     showAlert() { // TODO 개발시 없앨것
       alert('해당 기능은 아직 개발중입니다.');
     },
-    get() {
+    getProject() {
       this.projectStore.getById(this.$route.query.key).then((resp) => {
         if (resp.data.code == 200) {
           this.project = resp.data.body;
@@ -267,20 +294,34 @@ export default {
       this.apply_list = [];
       this.projectStore.getApplyList(this.$route.query.key).then((resp) => {
         if (resp.data.code == 200) {
-          console.log(resp)
-          this.apply_list = resp.data.body;
           let idx = 0;
           let team_name = '';
-          this.apply_list.forEach(a => {
-            if(a.type === this.getField('project_apply','팀')){
-              if(team_name !== a.team_name){
-                team_name = a.team_name;
+          // 팀 index 부여, 개인은 0
+          let leaderList = resp.data.body.filter(a => a.leader);
+          let teamList = [];
+          leaderList.forEach((item,index) => {
+            if(item.type === this.getField('project_apply','팀')){
+              if(team_name !== item.team_name){
+                team_name = item.team_name;
                 idx ++;
               }
-              a.team_idx = idx;
+              item.team_idx = idx;
+              const teamItem = resp.data.body.filter(a => a.team_name === item.team_name && !a.leader);
+              teamList.push({idx:idx, list:teamItem});
+            } else {
+              item.team_idx = 0;
             }
-          })
-          console.log(this.apply_list)
+          });
+          // 팀원 끼워넣기
+          teamList.forEach(team => {
+            // leaderList splice index
+            const idx = leaderList.findIndex(item => item.team_idx === team.idx) + 1;
+            team.list.forEach((teamItem,index) => {
+              leaderList.splice(idx+index,0, teamItem)
+            });
+          });
+          this.apply_list = leaderList;
+          console.log(this.apply_list);
           this.apply_list_total = this.apply_list.length;
           this.getPageNums(this.apply_list_total, this.apply_pages);
           this.setApplyListPage();
@@ -290,13 +331,25 @@ export default {
       });
     },
     setApplyListPage(){
-      this.apply_page_list = this.apply_list.splice(((this.apply_pages.page-1) * this.apply_pages.page_block), this.apply_pages.page_block);
+      const start = (this.apply_pages.page-1) * this.apply_pages.page_block;
+      this.apply_page_list = this.apply_list.slice(start, start+this.apply_pages.page_block);
     },
     onChangePage(page) {
       this.apply_pages.page = page;
+      this.setApplyListPage();
     },
+    showResume(type, key){
+      if(type === 1){ // 개인
+        console.log(this.apply_list.findIndex(i => i.member === key))
+        console.log(this.apply_list.slice(this.apply_list.findIndex(i => i.member === key)))
+        this.applicantPopup = true;
+      } else {
+
+      }
+    }
   },
   mounted() {
+    this.getProject();
     this.getApplyList();
   }
 }
