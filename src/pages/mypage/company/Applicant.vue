@@ -1,7 +1,7 @@
 <template>
   <div id="mypage">
     <LeftGnb />
-    <div class="content-container" v-if="!isComplete">
+    <div class="content-container" v-if="!this.isComplete">
       <div class="mypage-info-container mypage-apply-container">
         <p class="area-title">{{ this.project.name }}</p>
         <p class="area-side">
@@ -85,10 +85,10 @@
           <p class="people-cnt">
             합격자/모집인원 <span class="num1">{{ this.apply_list_pass }}</span><span class="num2"> / {{ this.project.people_cnt }}명</span>
           </p>
-          <div class="btn btn2" @click="">
+          <div class="btn btn2" @click="downloadApplicantListExcel">
             다운로드<img src="/image/mypage/download.png" />
           </div>
-          <div class="btn btn1" @click="this.completePopup = true">
+          <div class="btn btn1" @click="this.completePopup = true" v-if="this.project.state === this.getField('project_state','모집중')">
             모집완료
           </div>
         </div>
@@ -128,6 +128,7 @@
         <ApplicantPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
                         @popup="onPopup"
                         @passApplicant="passApplicant"
+                        @downloadApplicantExcel="downloadApplicantExcel"
                         v-if="apply.type === this.getField('project_apply', '개인')"/>
         <!-- 팀 지원자 -->
         <TeamPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
@@ -156,7 +157,7 @@
         </p>
         <p class="sub-title">
           해당 프로젝트의 모집 공고 완료되어<br />
-          모집중에서 마감으로 상태 변경 됩니다.
+          모집중에서 진행중으로 상태 변경 됩니다.
         </p>
         <div class="btn btn4" @click="this.completePopup = false">
           취소
@@ -277,12 +278,18 @@ export default {
       this.applicantPopup = param;
     },
     check() {
-      if (true) {
+      if (this.apply_list.filter(i=>i.pass == null).length === 0) {
+        this.projectStore.modify(this.$route.query.key, {state:this.getField('project_state','진행중')}).then((resp) => {
+          if (resp.data.code == 200) {
+            this.completePopup = false;
+            this.isComplete = true;
+          }
+        }).catch(err => {
+          console.log("err", err);
+        });
+      } else { // 프로젝트 모집중 -> 진행중
         this.completePopup = false;
         this.errorPopup = true;
-      } else {
-        this.completePopup = false;
-        this.isComplete = true;
       }
     },
     showAlert() { // TODO 개발시 없앨것
@@ -368,6 +375,12 @@ export default {
       }).catch(err => {
         console.log("err", err);
       });
+    },
+    downloadApplicantListExcel(){
+      location.href = `${import.meta.env.VITE_API_URL}/project/${this.project.project}/apply/excel`
+    },
+    downloadApplicantExcel(member){
+      location.href = `${import.meta.env.VITE_API_URL}/member/${member}/resume/excel`
     }
   },
   mounted() {

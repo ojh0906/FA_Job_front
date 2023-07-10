@@ -10,7 +10,7 @@
     <div class="popup-box popup-people-box">
       <div class="btn-wrap">
         <!-- TODO : 다운로드는 PDF만 가능 -->
-        <div class="btn btn2" @click="">
+        <div class="btn btn2" @click="this.$emit('downloadApplicantExcel', this.apply.member)">
           다운로드<img src="/image/mypage/download.png" />
         </div>
       </div>
