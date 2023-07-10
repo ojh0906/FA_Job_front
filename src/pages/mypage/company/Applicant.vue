@@ -23,7 +23,7 @@
               <!-- 개인 지원자일 경우 -->
               <tr v-if="item.type === this.getField('project_apply','개인')">
                 <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
+                <td class="name-click" @click="this.applicantPopup = true;">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -40,7 +40,7 @@
               <!-- 팀일 경우 -->
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀') && item.leader">
                 <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="team-name" @click="showResume(2, item.team_idx)">팀 이름 : {{ item.team_name }}(3)</td>
+                <td class="team-name" @click="this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -50,8 +50,7 @@
                 </td>
               </tr>
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀')">
-                <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
+                <td class="name-click">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td></td>
@@ -123,31 +122,11 @@
     <div class="company-popup">
       <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
         :loop="true" :modules="modules">
-        <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
+        <swiper-slide v-for="idx in 10">
           <!-- 개인 지원자 -->
           <ApplicantPopup :idx="idx" @popup="onPopup"/>
-        </swiper-slide>
-      </swiper>
-      <!--  navigation -->
-      <aside class="popup-slide-btn-wrap">
-        <div class="popup-button-prev">
-          <img class="more-icon" src="/image/mypage/pre.png" />
-        </div>
-        <div class="popup-button-next">
-          <img class="more-icon" src="/image/mypage/next.png" />
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- 팀정보 팝업 -->
-  <section id="popup" class="applicant-popup company-popup" v-if="this.applicantTeamPopup" @click="this.clickSelect">
-    <div class="company-popup">
-      <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
-              :loop="true" :modules="modules" :initialSlide="3">
-        <swiper-slide v-for="(v, idx) in 3" :key="idx">
           <!-- 팀 지원자 -->
-          <TeamPopup :applicantPopup="this.applicantPopup" @popup="onPopup" />
+          <TeamPopup @popup="onPopup" v-if="false"/>
         </swiper-slide>
       </swiper>
       <!--  navigation -->
@@ -232,7 +211,6 @@ export default {
   data() {
     return {
       applicantPopup: false, // 지원자 이력서 팝업
-      applicantTeamPopup: false, // 팀정보 팝업
       completePopup: false, // 모집 완료 팝업
       errorPopup: false, // 미선정 경고 팝업
       isComplete: false, // 모집 완료 화면
@@ -257,7 +235,6 @@ export default {
     clickSelect(event) {
       if (event.target.classList.contains('company-popup')) {
         this.applicantPopup = false;
-        this.applicantTeamPopup = false;
       }
       if (event.target.classList.contains('complete-popup')) {
         this.completePopup = false;
@@ -317,6 +294,7 @@ export default {
             // leaderList splice index
             const idx = leaderList.findIndex(item => item.team_idx === team.idx) + 1;
             team.list.forEach((teamItem,index) => {
+              teamItem.team_idx = team.idx;
               leaderList.splice(idx+index,0, teamItem)
             });
           });
@@ -338,15 +316,6 @@ export default {
       this.apply_pages.page = page;
       this.setApplyListPage();
     },
-    showResume(type, key){
-      if(type === 1){ // 개인
-        console.log(this.apply_list.findIndex(i => i.member === key))
-        console.log(this.apply_list.slice(this.apply_list.findIndex(i => i.member === key)))
-        this.applicantPopup = true;
-      } else {
-
-      }
-    }
   },
   mounted() {
     this.getProject();
