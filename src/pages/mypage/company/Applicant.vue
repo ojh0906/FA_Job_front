@@ -50,7 +50,7 @@
                 <td>
                 </td>
               </tr>
-              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀')"
+              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀')"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.05)' }">
                 <td class="">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
@@ -71,8 +71,8 @@
           <a v-if="this.apply_pages.start !== 1" @click="onChangePage(this.apply_pages.start - 1)">
             <img src="/image/community/back.png" alt="뒤로가기버튼입니다.">
           </a>
-          <a :class="this.apply_pages.page == page ? 'active' : 'pointer'"
-          v-for="page in this.apply_pages.pagesList" @click="onChangePage(page)">
+          <a :class="this.apply_pages.page == page ? 'active' : 'pointer'" v-for="page in this.apply_pages.pagesList"
+            @click="onChangePage(page)">
             {{ page }}
           </a>
           <a v-if="this.apply_pages.end !== this.apply_pages.end_page + 1"
@@ -121,26 +121,24 @@
 
   <!-- 지원자 이력서 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantPopup" @click="this.clickSelect">
-    <div class="company-popup">
-      <swiper class="project-slider" :observer="true" :observe-parents="true"
-        :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }" :loop="true" :modules="modules">
-        <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
-          <!-- 개인 지원자 -->
-          <ApplicantPopup :idx="idx" @popup="onPopup"/>
-          <!-- 팀 지원자 -->
-          <TeamPopup @popup="onPopup" v-if="false"/>
-        </swiper-slide>
-      </swiper>
-      <!--  navigation -->
-      <aside class="popup-slide-btn-wrap">
-        <div class="popup-button-prev">
-          <img class="more-icon" src="/image/mypage/pre.png" />
-        </div>
-        <div class="popup-button-next">
-          <img class="more-icon" src="/image/mypage/next.png" />
-        </div>
-      </aside>
-    </div>
+    <swiper :modules="modules" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
+      :observer="true" :observe-parents="true" :loop="true" class="company-popup">
+      <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
+        <!-- 개인 지원자 -->
+        <ApplicantPopup :idx="idx" @popup="onPopup" />
+        <!-- 팀 지원자 -->
+        <TeamPopup @popup="onPopup" v-if="false" />
+      </swiper-slide>
+    </swiper>
+    <!--  navigation -->
+    <aside class="popup-slide-btn-wrap">
+      <div class="popup-button-prev">
+        <img class="more-icon" src="/image/mypage/pre.png" />
+      </div>
+      <div class="popup-button-next">
+        <img class="more-icon" src="/image/mypage/next.png" />
+      </div>
+    </aside>
   </section>
 
   <!-- 모집 완료 팝업 -->
@@ -242,6 +240,20 @@ export default {
         num_block: 5,
       },
       project: { name: '', people_cnt: 0 },
+
+      swiperOptions: {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.popup-button-prev',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      },
     }
   },
   methods: {
@@ -309,12 +321,13 @@ export default {
           teamList.forEach(team => {
             // leaderList splice index
             const idx = leaderList.findIndex(item => item.team_idx === team.idx) + 1;
-            team.list.forEach((teamItem,index) => {
+            team.list.forEach((teamItem, index) => {
               teamItem.team_idx = team.idx;
-              leaderList.splice(idx+index,0, teamItem)
+              leaderList.splice(idx + index, 0, teamItem)
             });
           });
           this.apply_list = leaderList;
+          console.log(this.apply_list);
           this.apply_list_total = this.apply_list.length;
           this.getPageNums(this.apply_list_total, this.apply_pages);
           this.setApplyListPage();
@@ -344,6 +357,6 @@ export default {
   mounted() {
     this.getProject();
     this.getApplyList();
-  }
+  },
 }
 </script>
