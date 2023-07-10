@@ -305,6 +305,7 @@ export default {
       });
     },
     getApplyList() {
+      this.apply_page_list = [];
       this.apply_list = [];
       this.projectStore.getApplyList(this.$route.query.key).then((resp) => {
         if (resp.data.code == 200) {
@@ -362,7 +363,7 @@ export default {
         apply.team.forEach(i=> keyList.push(i.project_apply));
       }
 
-      if(this.apply_list_pass + keyList.length > this.project.people_cnt){
+      if(pass && this.apply_list_pass + keyList.length > this.project.people_cnt){
         alert('모집인원 초과입니다.');
         return;
       }

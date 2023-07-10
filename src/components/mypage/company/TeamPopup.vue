@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO : 팀 팝업 -->
+  <!-- 팀 팝업 -->
   <article class="popup-box-wrap popup-applicant-wrap">
     <div class="popup-title">
       <p>

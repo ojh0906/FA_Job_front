@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO : 개별 지원자 팝업 -->
+  <!-- 개별 지원자 팝업 -->
   <article class="popup-box-wrap popup-applicant-wrap">
     <div class="popup-title">
       <p>
@@ -9,7 +9,6 @@
     </div>
     <div class="popup-box popup-people-box">
       <div class="btn-wrap">
-        <!-- TODO : 다운로드는 PDF만 가능 -->
         <div class="btn btn2" @click="this.$emit('downloadApplicantExcel', this.apply.member)">
           다운로드<img src="/image/mypage/download.png" />
         </div>
