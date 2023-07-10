@@ -41,7 +41,7 @@
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀') && item.leader"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.1)' }">
                 <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="team-name" @click="this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
+                <td class="team-name name-click" @click="this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -52,8 +52,7 @@
               </tr>
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀')"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.05)' }">
-                <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
+                <td class="">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td></td>
