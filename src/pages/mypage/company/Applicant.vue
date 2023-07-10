@@ -23,7 +23,7 @@
               <!-- 개인 지원자일 경우 -->
               <tr v-if="item.type === this.getField('project_apply', '개인')">
                 <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="name-click" @click="this.applicantPopup = true;">{{ item.other_info.member_info.name }}</td>
+                <td class="name-click" @click="this.resume = item; this.applicantPopup = true;">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -41,7 +41,7 @@
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀') && item.leader"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.1)' }">
                 <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="team-name name-click" @click="this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
+                <td class="team-name name-click" @click="this.resume = item; this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -83,7 +83,7 @@
 
         <div class="next-btn-wrap">
           <p class="people-cnt">
-            합격자/모집인원 <span class="num1">{{ this.apply_list.filter(i => i.pass).length }}</span><span class="num2"> / {{ this.project.people_cnt }}명</span>
+            합격자/모집인원 <span class="num1">{{ this.apply_list_pass }}</span><span class="num2"> / {{ this.project.people_cnt }}명</span>
           </p>
           <div class="btn btn2" @click="">
             다운로드<img src="/image/mypage/download.png" />
@@ -226,11 +226,12 @@ export default {
       completePopup: false, // 모집 완료 팝업
       errorPopup: false, // 미선정 경고 팝업
       isComplete: false, // 모집 완료 화면
-      applicant_list: [],
-      team_list: [],
+      resume:{},
+      resume_list: [],
       apply_list: [],
       apply_page_list: [],
       apply_list_total: 0,
+      apply_list_pass: 0,
       apply_pages: {
         page: 1,
         page_block: 5,
@@ -285,8 +286,10 @@ export default {
         if (resp.data.code == 200) {
           let idx = 0;
           let team_name = '';
+          this.apply_list_pass = resp.data.body.filter(i => i.pass).length;
           // 팀 index 부여, 개인은 0
           let leaderList = resp.data.body.filter(a => a.leader);
+          // team_idx 설정 및 지원자 목록 정렬
           let teamList = [];
           leaderList.forEach((item, index) => {
             if (item.type === this.getField('project_apply', '팀')) {
@@ -297,6 +300,7 @@ export default {
               item.team_idx = idx;
               const teamItem = resp.data.body.filter(a => a.team_name === item.team_name && !a.leader);
               teamList.push({ idx: idx, list: teamItem });
+              item.team = teamItem;
             } else {
               item.team_idx = 0;
             }
@@ -311,7 +315,6 @@ export default {
             });
           });
           this.apply_list = leaderList;
-          console.log(this.apply_list);
           this.apply_list_total = this.apply_list.length;
           this.getPageNums(this.apply_list_total, this.apply_pages);
           this.setApplyListPage();
@@ -323,11 +326,20 @@ export default {
     setApplyListPage() {
       const start = (this.apply_pages.page - 1) * this.apply_pages.page_block;
       this.apply_page_list = this.apply_list.slice(start, start + this.apply_pages.page_block);
+      console.log(this.apply_page_list);
     },
     onChangePage(page) {
       this.apply_pages.page = page;
       this.setApplyListPage();
     },
+    passApplicant(pass){
+      console.log(pass)
+      console.log(this.resume);
+    },
+    passApplicantTeam(pass){
+      console.log(pass)
+      console.log(this.resume);
+    }
   },
   mounted() {
     this.getProject();
