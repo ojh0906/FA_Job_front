@@ -1,104 +1,111 @@
 <template>
-    <!-- TODO : 개별 지원자 팝업 -->
-    <article class="popup-box-wrap popup-applicant-wrap">
-        <div class="popup-title">
-            <p>
-                지원자이름 {{this.idx}}
-            </p>
-            <img class="close-icon" @click="this.$emit('popup', false)" src="/image/project/close2.png" />
+  <!-- 개별 지원자 팝업 -->
+  <article class="popup-box-wrap popup-applicant-wrap">
+    <div class="popup-title">
+      <p>
+        {{ this.apply.other_info.member_info.name }}
+      </p>
+      <img class="close-icon" @click="this.$emit('popup', false)" src="/image/project/close2.png" />
+    </div>
+    <div class="popup-box popup-people-box">
+      <div class="btn-wrap">
+        <div class="btn btn2" @click="this.$emit('downloadApplicantExcel', this.apply.member)">
+          다운로드<img src="/image/mypage/download.png" />
         </div>
-        <div class="popup-box popup-people-box">
-            <div class="btn-wrap">
-                <!-- TODO : 다운로드는 PDF만 가능 -->
-                <div class="btn btn2" @click="">
-                    다운로드<img src="/image/mypage/download.png" />
-                </div>
-            </div>
-            <div id="mypage">
-                <div class="content-container">
-                    <div class="resume-container">
-                        <table class="table-manage-row">
-                            <tr>
-                                <td>이름</td>
-                                <td>고길동</td>
-                                <td>나이 (만)</td>
-                                <td>49세</td>
-                                <td>생년월일</td>
-                                <td>1972년 12월 13일</td>
-                            </tr>
-                            <tr>
-                                <td>국적/성별</td>
-                                <td>내국인/남</td>
-                                <td>휴대폰번호</td>
-                                <td>010-1234-5678</td>
-                                <td>이메일</td>
-                                <td>gildong@javer.com</td>
-                            </tr>
-                            <tr>
-                                <td>주소</td>
-                                <td colspan="5">서울시 강남구 일원1동 이이동 삼아파트 101호</td>
-                            </tr>
-                        </table>
+      </div>
+      <div id="mypage">
+        <div class="content-container">
+          <div class="resume-container">
+            <table class="table-manage-row">
+              <tr>
+                <td>이름</td>
+                <td>{{ this.apply.other_info.member_info.name }}</td>
+                <td>나이 (만)</td>
+                <td>{{ calAge(this.apply.other_info.member_info.birth) }}세</td>
+                <td>생년월일</td>
+                <td>{{ formattedDate(this.apply.other_info.member_info.birth,'YYYY년 MM월 DD일') }}</td>
+              </tr>
+              <tr>
+                <td>국적/성별</td>
+                <td>{{ this.apply.other_info.member_info.type === this.getField('member_type','외국인') ? '외국인':'내국인' }}</td>
+                <td>휴대폰번호</td>
+                <td>{{ this.apply.other_info.member_info.phone_number }}</td>
+                <td>이메일</td>
+                <td>{{ this.apply.other_info.member_info.email }}</td>
+              </tr>
+              <tr>
+                <td>주소</td>
+                <td colspan="5">{{ this.apply.other_info.member_info.address }} / {{ this.apply.other_info.member_info.address_detail }}</td>
+              </tr>
+            </table>
 
             <table class="table-manage-row row02">
               <tr>
                 <td>혈액형</td>
-                <td>O+</td>
+                <td>{{ this.apply.other_info.member_resume.blood_type }}</td>
                 <td>자차여부</td>
-                <td>있음</td>
+                <td>{{ this.apply.other_info.member_resume.car_yn ? '있음':'없음' }}</td>
                 <td>여권발급여부</td>
-                <td>있음</td>
+                <td>{{ this.apply.other_info.member_resume.passport_yn ? '있음':'없음' }}</td>
               </tr>
               <tr>
                 <td>방진복</td>
-                <td>없음</td>
+                <td>
+                  {{ this.apply.other_info.member_resume.dustproof_clothes_yn ? '있음':'없음' }} / {{ this.apply.other_info.member_resume.dustproof_clothes }}
+                </td>
                 <td>방진두건</td>
-                <td>없음</td>
+                <td>
+                  {{ this.apply.other_info.member_resume.dustproof_hat_yn ? '있음':'없음' }} / {{ this.apply.other_info.member_resume.dustproof_hat }}
+                </td>
                 <td>방진화</td>
-                <td>있음/280</td>
+                <td>
+                  {{ this.apply.other_info.member_resume.dustproof_shoes_yn ? '있음':'없음' }} / {{ this.apply.other_info.member_resume.dustproof_shoes }}
+                </td>
               </tr>
               <tr>
                 <td>안전화</td>
-                <td>있음/280</td>
+                <td>
+                  {{ this.apply.other_info.member_resume.safe_shoes_yn ? '있음':'없음' }} / {{ this.apply.other_info.member_resume.safe_shoes }}
+                </td>
                 <td>개인공구</td>
-                <td>있음</td>
+                <td>{{ this.apply.other_info.member_resume.personal_equipment ? '있음':'없음' }}</td>
                 <td class="line02">건설업 기초안전보건교육</td>
-                <td>있음</td>
+                <td>{{ this.apply.other_info.member_resume.safe_education_yn ? '있음':'없음' }}</td>
               </tr>
             </table>
 
             <table class="table-manage-row row03">
               <tr>
                 <td>분야</td>
-                <td colspan="5">1972년 12월 13일</td>
+                <td colspan="5">{{ this.getFieldName(this.apply.other_info.member_resume.area) }}</td>
               </tr>
               <tr>
                 <td>경력</td>
-                <td>18년</td>
+                <td>{{ this.apply.other_info.member_resume.career }}년</td>
                 <td>희망단가</td>
-                <td></td>
+                <td>{{ this.apply.other_info.member_resume.hope_price }}</td>
                 <td>설계</td>
-                <td></td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.design) }}</td>
               </tr>
               <tr>
                 <td>전기</td>
-                <td></td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.electricity) }}</td>
                 <td>제어</td>
-                <td></td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.control) }}</td>
                 <td>비전</td>
-                <td></td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.vision) }}</td>
               </tr>
               <tr>
                 <td>기구</td>
-                <td>해당없음</td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.instrument) }}</td>
                 <td>도면해석(2D)</td>
-                <td>해당없음</td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.plan_analysis_2d) }}</td>
                 <td>도면해석(3D)</td>
-                <td>해당없음</td>
+                <td>{{ this.getFieldName(this.apply.other_info.member_resume.plan_analysis_3d) }}</td>
               </tr>
               <tr>
                 <td>경력사항</td>
-                <td colspan="5"></td>
+                <td colspan="5">{{ this.apply.other_info.member_resume.career_detail }}</td>
               </tr>
             </table>
 
@@ -133,23 +140,23 @@
     </div>
     <div class="next-btn-wrap">
       <p class="people-cnt">
-        합격자/모집인원 <span class="num1">8</span><span class="num2"> / 10명</span>
+        합격자/모집인원 <span class="num1">{{ this.pass }}</span><span class="num2"> / {{ this.cnt }}명</span>
       </p>
-      <div v-if="this.isPass == -1" class="pass-text-wrap">
-        <div class="btn btn6" @click="this.isPass = 0">
+      <div v-if="this.apply.pass == null || this.isPass" class="pass-text-wrap">
+        <div class="btn btn6" @click="this.$emit('passApplicant', this.apply, false)">
           불합격
         </div>
-        <div class="btn btn7" @click="this.isPass = 1">
+        <div class="btn btn7" @click="this.$emit('passApplicant', this.apply, true)">
           합격
         </div>
       </div>
-      <div v-else-if="this.isPass == 1" class="pass-text-wrap">
+      <div v-else-if="this.apply.pass" class="pass-text-wrap">
         <p class="pass-text">합격</p>
-        <div class="choose-again" @click="this.isPass = -1">다시 선택</div>
+        <div class="choose-again" @click="this.isPass = true;">다시 선택</div>
       </div>
-      <div v-else-if="this.isPass == 0" class="pass-text-wrap">
+      <div v-else class="pass-text-wrap">
         <p class="nonpass-text">불합격</p>
-        <div class="choose-again" @click="this.isPass = -1">다시 선택</div>
+        <div class="choose-again" @click="this.isPass = true;">다시 선택</div>
       </div>
     </div>
   </article>
@@ -157,12 +164,12 @@
 
 <script>
 export default {
-  props: ['idx'],
+  props: ['pass','cnt','apply'],
   components: {
   },
   data() {
     return {
-      isPass: -1, // -1(초기화), 1(합격), 0(불합격)
+      isPass: false, // true:초기화
     }
   },
   methods: {
@@ -170,8 +177,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.other_info)
+    console.log(this.apply)
   }
 }
-
 </script>

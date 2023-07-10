@@ -51,6 +51,9 @@ export const useProjectStore = defineStore({
     async listCntInfo(params) {
       return await http.post(`${baseUrl}/list/cnt`, params);
     },
+    async modifyApplyPass(params) {
+      return await http.put(`${baseUrl}/apply/all/pass`, params);
+    },
   },
   persist: true,
 });

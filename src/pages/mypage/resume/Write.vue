@@ -508,12 +508,12 @@ export default {
       { idx:2, name:'250', value:'250',},
       { idx:3, name:'255', value:'255',},
       { idx:4, name:'260', value:'260',},
-      { idx:4, name:'265', value:'265',},
-      { idx:4, name:'270', value:'270',},
-      { idx:4, name:'275', value:'275',},
-      { idx:4, name:'280', value:'280',},
-      { idx:4, name:'285', value:'285',},
-      { idx:4, name:'290', value:'290',},
+      { idx:5, name:'265', value:'265',},
+      { idx:6, name:'270', value:'270',},
+      { idx:7, name:'275', value:'275',},
+      { idx:8, name:'280', value:'280',},
+      { idx:9, name:'285', value:'285',},
+      { idx:10, name:'290', value:'290',},
     ]
     const commonStore = useCommonStore()
     const memberStore = useMemberStore()

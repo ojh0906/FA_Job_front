@@ -72,19 +72,19 @@
                 </span>
               </p>
 
-              <!-- TODO 지원자가 1명 이상일 때 - 지원자 목록 -->
+              <!-- 지원자가 1명 이상일 때 - 지원자 목록 -->
               <router-link v-if="item.other_info.applicant > 0" :to="{ name: 'MypageCompanyApplicant', query: {key:item.project} }">
                 <div class="btn3 btn">
                   지원자 목록
                 </div>
               </router-link>
-              <!-- TODO 지원자가 0명일 경우만 프로젝트 수정 가능 -->
+              <!-- 지원자가 0명일 경우만 프로젝트 수정 가능 -->
               <router-link v-else-if="item.other_info.applicant === 0" :to="{ name: 'RegisterProject', query: {key:item.project} }">
                 <div class="btn5 btn">
                   프로젝트 수정
                 </div>
               </router-link>
-              <!-- TODO 프로젝트가 마감되었을 때 -->
+              <!-- TODO 프로젝트가 마감되었을 때 2차개발 -->
               <div class="btn5 btn" v-else-if="item.state === this.getField('project_state','진행중')" @click="showAlert">
                 공수 설정
               </div>
@@ -95,7 +95,7 @@
                 </div>
               </router-link>
 -->
-              <!-- TODO : 지원자 목록에서 공수설정이 완료되면 업무일지 결재로 바뀜. -->
+              <!-- TODO : 지원자 목록에서 공수설정이 완료되면 업무일지 결재로 바뀜. 2차개발  -->
               <router-link v-else-if="false" :to="{ name: '', query: {} }">
                 <div class="btn5 btn">
                   업무일지 결재
