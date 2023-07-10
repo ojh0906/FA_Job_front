@@ -121,7 +121,7 @@
   <!-- 지원자 이력서 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantPopup" @click="this.clickSelect">
     <div class="company-popup">
-      <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
+      <swiper class="project-slider" :observer="true" :observe-parents="true" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
         :loop="true" :modules="modules">
         <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
           <!-- 개인 지원자 -->
@@ -143,7 +143,7 @@
   <!-- 팀정보 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantTeamPopup" @click="this.clickSelect">
     <div class="company-popup">
-      <swiper class="project-slider" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
+      <swiper class="project-slider" :observer="true" :observe-parents="true" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
               :loop="true" :modules="modules" :initialSlide="3">
         <swiper-slide v-for="(v, idx) in 3" :key="idx">
           <!-- 팀 지원자 -->
