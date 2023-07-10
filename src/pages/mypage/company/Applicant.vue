@@ -19,15 +19,15 @@
             </tr>
           </thead>
           <tbody>
-            <div v-for="(item, idx) in this.apply_page_list">
+            <div v-for="(item, idx) in this.apply_page_list" class="apply-list-wrap">
               <!-- 개인 지원자일 경우 -->
-              <tr v-if="item.type === this.getField('project_apply','개인')">
+              <tr v-if="item.type === this.getField('project_apply', '개인')">
                 <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
                 <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
-                  {{ item.pass == null ? '선택대기': item.pass ? '합격' : '불합격' }}
+                  {{ item.pass == null ? '선택대기' : item.pass ? '합격' : '불합격' }}
                 </td>
                 <td class="btn-wrap">
                   <div class="btn btn3" @click="showAlert">
@@ -38,18 +38,20 @@
               </tr>
 
               <!-- 팀일 경우 -->
-              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀') && item.leader">
+              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀') && item.leader"
+                :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.1)' }">
                 <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
                 <td class="team-name" @click="showResume(2, item.team_idx)">팀 이름 : {{ item.team_name }}(3)</td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
-                  {{ item.pass == null ? '선택대기': item.pass ? '합격' : '불합격' }}
+                  {{ item.pass == null ? '선택대기' : item.pass ? '합격' : '불합격' }}
                 </td>
                 <td>
                 </td>
               </tr>
-              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply','팀')">
+              <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀')"
+                :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.05)' }">
                 <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
                 <td class="name-click" @click="showResume(1, item.member)">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
@@ -71,11 +73,11 @@
             <img src="/image/community/back.png" alt="뒤로가기버튼입니다.">
           </a>
           <a :class="this.apply_pages.page == page ? 'active' : 'pointer'"
-             v-for="page in this.apply_pages.pagesList" @click="onChangePage(page)">
+          v-for="page in this.apply_pages.pagesList" @click="onChangePage(page)">
             {{ page }}
           </a>
           <a v-if="this.apply_pages.end !== this.apply_pages.end_page + 1"
-             @click="onChangePage(this.apply_pages.start + this.apply_pages.num_block)">
+            @click="onChangePage(this.apply_pages.start + this.apply_pages.num_block)">
             <img src="/image/community/foward.png" alt="앞으로가기버튼입니다.">
           </a>
         </div>
@@ -121,11 +123,11 @@
   <!-- 지원자 이력서 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantPopup" @click="this.clickSelect">
     <div class="company-popup">
-      <swiper class="project-slider" :observer="true" :observe-parents="true" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
-        :loop="true" :modules="modules">
+      <swiper class="project-slider" :observer="true" :observe-parents="true"
+        :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }" :loop="true" :modules="modules">
         <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
           <!-- 개인 지원자 -->
-          <ApplicantPopup :idx="idx" @popup="onPopup"/>
+          <ApplicantPopup :idx="idx" @popup="onPopup" />
         </swiper-slide>
       </swiper>
       <!--  navigation -->
@@ -143,8 +145,9 @@
   <!-- 팀정보 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantTeamPopup" @click="this.clickSelect">
     <div class="company-popup">
-      <swiper class="project-slider" :observer="true" :observe-parents="true" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
-              :loop="true" :modules="modules" :initialSlide="3">
+      <swiper class="project-slider" :observer="true" :observe-parents="true"
+        :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }" :loop="true" :modules="modules"
+        :initialSlide="3">
         <swiper-slide v-for="(v, idx) in 3" :key="idx">
           <!-- 팀 지원자 -->
           <TeamPopup :applicantPopup="this.applicantPopup" @popup="onPopup" />
@@ -223,10 +226,20 @@ export default {
   setup() {
     const commonStore = useCommonStore();
     const projectStore = useProjectStore();
+    const team_color_list = [
+      '255, 101, 101', // 빨
+      '255, 174, 18', // 주
+      '255, 219, 94', // 노
+      '131, 191, 148', // 초
+      '88, 123, 215', // 파
+      '128, 108, 187', // 남
+      '222, 142, 214', // 보
+    ]
     return {
       commonStore,
       projectStore,
       modules: [Pagination, Navigation],
+      team_color_list
     };
   },
   data() {
@@ -250,7 +263,7 @@ export default {
         pagesList: [],
         num_block: 5,
       },
-      project:{name:'', people_cnt:0},
+      project: { name: '', people_cnt: 0 },
     }
   },
   methods: {
@@ -299,15 +312,15 @@ export default {
           // 팀 index 부여, 개인은 0
           let leaderList = resp.data.body.filter(a => a.leader);
           let teamList = [];
-          leaderList.forEach((item,index) => {
-            if(item.type === this.getField('project_apply','팀')){
-              if(team_name !== item.team_name){
+          leaderList.forEach((item, index) => {
+            if (item.type === this.getField('project_apply', '팀')) {
+              if (team_name !== item.team_name) {
                 team_name = item.team_name;
-                idx ++;
+                idx++;
               }
               item.team_idx = idx;
               const teamItem = resp.data.body.filter(a => a.team_name === item.team_name && !a.leader);
-              teamList.push({idx:idx, list:teamItem});
+              teamList.push({ idx: idx, list: teamItem });
             } else {
               item.team_idx = 0;
             }
@@ -316,8 +329,8 @@ export default {
           teamList.forEach(team => {
             // leaderList splice index
             const idx = leaderList.findIndex(item => item.team_idx === team.idx) + 1;
-            team.list.forEach((teamItem,index) => {
-              leaderList.splice(idx+index,0, teamItem)
+            team.list.forEach((teamItem, index) => {
+              leaderList.splice(idx + index, 0, teamItem)
             });
           });
           this.apply_list = leaderList;
@@ -330,16 +343,16 @@ export default {
         console.log("err", err);
       });
     },
-    setApplyListPage(){
-      const start = (this.apply_pages.page-1) * this.apply_pages.page_block;
-      this.apply_page_list = this.apply_list.slice(start, start+this.apply_pages.page_block);
+    setApplyListPage() {
+      const start = (this.apply_pages.page - 1) * this.apply_pages.page_block;
+      this.apply_page_list = this.apply_list.slice(start, start + this.apply_pages.page_block);
     },
     onChangePage(page) {
       this.apply_pages.page = page;
       this.setApplyListPage();
     },
-    showResume(type, key){
-      if(type === 1){ // 개인
+    showResume(type, key) {
+      if (type === 1) { // 개인
         console.log(this.apply_list.findIndex(i => i.member === key))
         console.log(this.apply_list.slice(this.apply_list.findIndex(i => i.member === key)))
         this.applicantPopup = true;

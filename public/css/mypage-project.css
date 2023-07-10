@@ -1193,7 +1193,59 @@
   display: contents;
 }
 
+.recruit-complete-popup {
+  background-color: #fff;
+  width: 600px;
+  height: 190px;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recruit-complete-popup > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 0;
+}
+
+.recruit-complete-popup .title {
+  width: 100%;
+  color: #333;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.recruit-complete-popup .sub-title {
+  width: 100%;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.complete-wrap .ask_box {
+  width: auto;
+}
+
+.mypage-company {
+  margin-bottom: 30px;
+}
+.mypage-company #company-project-box:nth-child(1) {
+  border-top: 0;
+}
+
 /* 팀별 색깔 지정 */
+/* 
 .team-color-wrap .team-wrap:nth-child(1) tr {
   background: rgba(255, 101, 101, 0.05);
   border-left: 3px #ff6565 solid;
@@ -1248,55 +1300,9 @@
 }
 .team-color-wrap .team-wrap:nth-child(7) tr:nth-child(1) {
   background: rgba(222, 142, 214, 0.1);
-}
+} */
 
-.recruit-complete-popup {
-  background-color: #fff;
-  width: 600px;
-  height: 190px;
-  padding: 30px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.recruit-complete-popup > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 0;
-}
-
-.recruit-complete-popup .title {
+#mypage .mypage-apply-container .apply-list-wrap {
+  display: contents;
   width: 100%;
-  color: #333;
-  font-size: 20px;
-  font-family: Pretendard;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
-}
-
-.recruit-complete-popup .sub-title {
-  width: 100%;
-  color: #555;
-  text-align: center;
-  font-size: 16px;
-  font-family: Pretendard;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.complete-wrap .ask_box {
-  width: auto;
-}
-
-.mypage-company {
-  margin-bottom: 30px;
-}
-.mypage-company #company-project-box:nth-child(1) {
-  border-top: 0;
 }
