@@ -1,5 +1,5 @@
 <template>
-  <div id="mypage">
+  <div id="mypage" :class="this.applicantPopup ? 'page-fixed' : ''">
     <LeftGnb />
     <div class="content-container" v-if="!this.isComplete">
       <div class="mypage-info-container mypage-apply-container">
@@ -41,7 +41,8 @@
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀') && item.leader"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.1)' }">
                 <!-- 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="team-name name-click" @click="showSlide(item.project_apply)">팀 이름 : {{ item.team_name }}(3)</td>
+                <td class="team-name name-click" @click="showSlide(item.project_apply)">팀 이름 : {{ item.team_name }}(3)
+                </td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -88,7 +89,7 @@
           <div class="btn btn2" @click="downloadApplicantListExcel">
             다운로드<img src="/image/mypage/download.png" />
           </div>
-          <div class="btn btn1" @click="this.completePopup = true" v-if="this.project.state === this.getField('project_state','모집중')">
+          <div class="btn btn1" @click="this.completePopup = true" v-if="this.project.state === this.getField('project_state', '모집중')">
             모집완료
           </div>
         </div>
@@ -121,20 +122,17 @@
 
   <!-- 지원자 이력서 팝업 -->
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantPopup" @click="this.clickSelect">
-    <swiper :modules="modules" :initialSlide="this.slide_idx" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
-      :observer="true" :observe-parents="true" :loop="true" class="company-popup">
-      <swiper-slide v-for="(apply, idx) in this.apply_list.filter(i=>i.leader)" :key="idx">
+    <swiper :modules="modules" :initialSlide="this.slide_idx"
+      :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }" :observer="true"
+      :observe-parents="true" :loop="true" class="company-popup">
+      <swiper-slide v-for="(apply, idx) in this.apply_list.filter(i => i.leader)" :key="idx">
         <!-- 개인 지원자 -->
-        <ApplicantPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
-                        @popup="onPopup"
-                        @passApplicant="passApplicant"
-                        @downloadApplicantExcel="downloadApplicantExcel"
-                        v-if="apply.type === this.getField('project_apply', '개인')"/>
+        <ApplicantPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply" @popup="onPopup"
+          @passApplicant="passApplicant" @downloadApplicantExcel="downloadApplicantExcel"
+          v-if="apply.type === this.getField('project_apply', '개인')" />
         <!-- 팀 지원자 -->
-        <TeamPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
-                   @popup="onPopup"
-                   @passApplicant="passApplicant"
-                   v-else/>
+        <TeamPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply" @popup="onPopup"
+          @passApplicant="passApplicant" v-else />
       </swiper-slide>
     </swiper>
     <!--  navigation -->
@@ -278,8 +276,8 @@ export default {
       this.applicantPopup = param;
     },
     check() {
-      if (this.apply_list.filter(i=>i.pass == null).length === 0) {
-        this.projectStore.modify(this.$route.query.key, {state:this.getField('project_state','진행중')}).then((resp) => {
+      if (this.apply_list.filter(i => i.pass == null).length === 0) {
+        this.projectStore.modify(this.$route.query.key, { state: this.getField('project_state', '진행중') }).then((resp) => {
           if (resp.data.code == 200) {
             this.completePopup = false;
             this.isComplete = true;
@@ -359,15 +357,15 @@ export default {
     passApplicant(apply, pass) {
       let keyList = [];
       keyList.push(apply.project_apply);
-      if(apply.type === this.getField('project_apply', '팀')){
-        apply.team.forEach(i=> keyList.push(i.project_apply));
+      if (apply.type === this.getField('project_apply', '팀')) {
+        apply.team.forEach(i => keyList.push(i.project_apply));
       }
 
-      if(pass && this.apply_list_pass + keyList.length > this.project.people_cnt){
+      if (pass && this.apply_list_pass + keyList.length > this.project.people_cnt) {
         alert('모집인원 초과입니다.');
         return;
       }
-      this.projectStore.modifyApplyPass({pass:pass, keyList:keyList}).then((resp) => {
+      this.projectStore.modifyApplyPass({ pass: pass, keyList: keyList }).then((resp) => {
         if (resp.data.code == 200) {
           alert("처리되었습니다.");
           this.applicantPopup = false;
@@ -377,14 +375,14 @@ export default {
         console.log("err", err);
       });
     },
-    downloadApplicantListExcel(){
+    downloadApplicantListExcel() {
       location.href = `${import.meta.env.VITE_API_URL}/project/${this.project.project}/apply/excel`
     },
-    downloadApplicantExcel(member){
+    downloadApplicantExcel(member) {
       location.href = `${import.meta.env.VITE_API_URL}/member/${member}/resume/excel`
     },
-    showSlide(target_project_apply){
-      this.slide_idx = this.apply_list.filter(i=>i.leader).findIndex(i=> i.project_apply === target_project_apply);
+    showSlide(target_project_apply) {
+      this.slide_idx = this.apply_list.filter(i => i.leader).findIndex(i => i.project_apply === target_project_apply);
       this.applicantPopup = true;
     }
   },
