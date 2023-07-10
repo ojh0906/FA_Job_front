@@ -23,7 +23,7 @@
               <!-- 개인 지원자일 경우 -->
               <tr v-if="item.type === this.getField('project_apply', '개인')">
                 <!-- TODO : 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="name-click" @click="this.resume = item; this.applicantPopup = true;">{{ item.other_info.member_info.name }}</td>
+                <td class="name-click" @click="this.applicantPopup = true;">{{ item.other_info.member_info.name }}</td>
                 <td>{{ item.other_info.member_info.phone_number }}</td>
                 <td>{{ formattedDate(item.reg_date) }}</td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -41,7 +41,7 @@
               <tr :class="item.team_idx" v-if="item.type === this.getField('project_apply', '팀') && item.leader"
                 :style="{ background: 'rgba(' + this.team_color_list[(item.team_idx - 1) % 7] + ', 0.1)' }">
                 <!-- TODO : 팀 이름을 클릭할 경우 이력서 팝업이 뜸 -->
-                <td class="team-name name-click" @click="this.resume = item; this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
+                <td class="team-name name-click" @click="this.applicantPopup = true;">팀 이름 : {{ item.team_name }}(3)</td>
                 <td></td>
                 <td></td>
                 <td :class="item.pass ? 'pass' : 'non-pass'">
@@ -123,11 +123,17 @@
   <section id="popup" class="applicant-popup company-popup" v-if="this.applicantPopup" @click="this.clickSelect">
     <swiper :modules="modules" :navigation="{ nextEl: '.popup-button-next', prevEl: '.popup-button-prev' }"
       :observer="true" :observe-parents="true" :loop="true" class="company-popup">
-      <swiper-slide v-for="(apply, idx) in this.apply_list" :key="idx">
+      <swiper-slide v-for="(apply, idx) in this.apply_list.filter(i=>i.leader)" :key="idx">
         <!-- 개인 지원자 -->
-        <ApplicantPopup :idx="idx" @popup="onPopup" />
+        <ApplicantPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
+                        @popup="onPopup"
+                        @passApplicant="passApplicant"
+                        v-if="apply.type === this.getField('project_apply', '개인')"/>
         <!-- 팀 지원자 -->
-        <TeamPopup @popup="onPopup" v-if="false" />
+        <TeamPopup :pass="this.apply_list_pass" :cnt="this.project.people_cnt" :apply="apply"
+                   @popup="onPopup"
+                   @passApplicant="passApplicant"
+                   v-else/>
       </swiper-slide>
     </swiper>
     <!--  navigation -->
@@ -224,7 +230,6 @@ export default {
       completePopup: false, // 모집 완료 팝업
       errorPopup: false, // 미선정 경고 팝업
       isComplete: false, // 모집 완료 화면
-      resume:{},
       resume_list: [],
       apply_list: [],
       apply_page_list: [],
@@ -327,7 +332,6 @@ export default {
             });
           });
           this.apply_list = leaderList;
-          console.log(this.apply_list);
           this.apply_list_total = this.apply_list.length;
           this.getPageNums(this.apply_list_total, this.apply_pages);
           this.setApplyListPage();
@@ -339,19 +343,31 @@ export default {
     setApplyListPage() {
       const start = (this.apply_pages.page - 1) * this.apply_pages.page_block;
       this.apply_page_list = this.apply_list.slice(start, start + this.apply_pages.page_block);
-      console.log(this.apply_page_list);
     },
     onChangePage(page) {
       this.apply_pages.page = page;
       this.setApplyListPage();
     },
-    passApplicant(pass){
-      console.log(pass)
-      console.log(this.resume);
-    },
-    passApplicantTeam(pass){
-      console.log(pass)
-      console.log(this.resume);
+    passApplicant(apply, pass) {
+      let keyList = [];
+      keyList.push(apply.project_apply);
+      if(apply.type === this.getField('project_apply', '팀')){
+        apply.team.forEach(i=> keyList.push(i.project_apply));
+      }
+
+      if(this.apply_list_pass + keyList.length > this.project.people_cnt){
+        alert('모집인원 초과입니다.');
+        return;
+      }
+      this.projectStore.modifyApplyPass({pass:pass, keyList:keyList}).then((resp) => {
+        if (resp.data.code == 200) {
+          alert("처리되었습니다.");
+          this.applicantPopup = false;
+          this.getApplyList();
+        }
+      }).catch(err => {
+        console.log("err", err);
+      });
     }
   },
   mounted() {
