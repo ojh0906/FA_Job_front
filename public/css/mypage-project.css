@@ -1029,6 +1029,7 @@
   height: 776px;
   position: relative;
   margin: 0 auto;
+  overflow: auto;
 }
 
 #popup .popup-applicant-wrap .btn6 {
@@ -1168,11 +1169,11 @@
 }
 
 #popup .popup-slide-btn-wrap {
-  display: flex;
+  /* display: flex; */
+  /* justify-content: space-between; */
   width: 1200px;
-  justify-content: space-between;
   position: absolute;
-  top: calc(57% - 28px);
+  top: calc(53% - 28px);
   z-index: 10;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
@@ -1182,6 +1183,16 @@
 #popup .popup-slide-btn-wrap .popup-button-prev img,
 #popup .popup-slide-btn-wrap .popup-button-next img {
   width: 80px;
+}
+
+#popup .popup-slide-btn-wrap .popup-button-prev {
+  position: absolute;
+  left: 0;
+}
+
+#popup .popup-slide-btn-wrap .popup-button-next {
+  position: absolute;
+  right: 0;
 }
 
 #popup .close-icon {
@@ -1305,4 +1316,10 @@
 #mypage .mypage-apply-container .apply-list-wrap {
   display: contents;
   width: 100%;
+}
+
+.page-fixed {
+  position: fixed;
+  overflow: auto;
+  max-width: 1200px;
 }
