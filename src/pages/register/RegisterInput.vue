@@ -11,10 +11,10 @@
           <p class="input-title">아이디</p>
           <div class="input-wrap">
             <div class="field_input field_input_email">
-              <input type="text" name="email1" placeholder="이메일주소" v-model="this.email1" @change="this.email_request = false;">
+              <input type="text" name="email1" placeholder="이메일주소" v-model="this.email1" @change="this.email_request = false; this.checkEmail();">
               <span>@</span>
               <label class="input-email" for="email2">
-                <input placeholder="직접 입력" name="email2" type="text" v-model="this.email2" @change="this.email_request = false;" />
+                <input placeholder="직접 입력" name="email2" type="text" v-model="this.email2" @change="this.email_request = false; this.checkEmail();" />
                 <img @click="this.selectEmail = !this.selectEmail" class="down-icon"
                      src="/image/input/down.png" />
               </label>
@@ -27,6 +27,9 @@
           </div>
           <p :class="this.email_check ? 'yes' : 'no'" v-if="this.email_request">
             {{ this.email_check ? '사용 가능한 아이디입니다.' : '사용 불가능한 아이디입니다.' }}
+          </p>
+          <p class="no">
+            {{ this.email_reg_check ? '정확한 이메일을 입력해주세요.' : '' }}
           </p>
         </div>
 
@@ -47,10 +50,12 @@
           <p class="input-title">비밀번호</p>
           <div class="input-wrap">
             <div class="field_input">
-              <input class="userpw" type="password" placeholder="비밀번호 입력해주세요." v-model="this.password">
+              <input class="userpw" type="password" placeholder="비밀번호 입력해주세요." v-model="this.password" @change="checkPw">
             </div>
           </div>
-
+          <p class="no">
+            {{ this.password_reg_check ? '영문 숫자 특수기호(!@#$%^*+=-) 조합 8자리 이상 입력' : '' }}
+          </p>
         </div>
 
         <div class="field">
@@ -245,8 +250,10 @@ export default {
       event_info_yn:false,
       email1:'',
       email2:'',
+      email_reg_check:false,
       password:'',
       password2:'',
+      password_reg_check:false,
       name:'',
       birth:'',
       phone_number:'',
@@ -301,6 +308,11 @@ export default {
     checkDupleEmail(){
       if(this.email1 === '' || this.email2 === ''){
         alert('이메일을 입력해주세요.');
+        return;
+      }
+
+      if(this.email_reg_check){
+        alert('정확한 이메일을 입력해주세요.');
         return;
       }
       let params = {
@@ -370,6 +382,11 @@ export default {
 
       if(this.password !== this.password2){
         alert('비밀번호가 일치하지 않습니다.');
+        return;
+      }
+
+      if(this.password_reg_check){
+        alert('비밀번호를 다시 입력해주세요.');
         return;
       }
 
@@ -450,6 +467,14 @@ export default {
     removeFile(target_files) {
       this[target_files] = [];
     },
+    checkPw(){
+      let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/
+      this.password_reg_check = !reg.test(this.password);
+    },
+    checkEmail(){
+      let reg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+      this.email_reg_check = !reg.test(this.email1 + '@' + this.email2);
+    }
   },
   mounted() {
     if(this.$route.query.type == null || this.$route.query.event_info_yn == null){
