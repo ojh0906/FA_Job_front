@@ -62,10 +62,10 @@
         </div>
         <div class="right-menu" v-else>
           <!-- 알림 -->
-          <div class="alarm-wrap a-item">
+          <div class="alarm-wrap a-item" v-if="this.commonStore.member.other_info.info_cnt !== 0">
             <div class="alarm a-item" @click="this.alarmPopup = !this.alarmPopup">
               <img class="alarm-icon a-item" src="/image/main/alarm.png" />
-              <span>{{ this.commonStore.member != null ? this.commonStore.member.other_info.info_cnt:0 }}</span>
+              <span>{{ this.commonStore.member.other_info.info_cnt }}</span>
             </div>
             <div class="alarm-popup a-item" v-if="this.alarmPopup">
               <!-- 새로운 알람 -->
@@ -139,7 +139,6 @@ export default {
   },
   mounted() {
     this.fixedMenu();
-    console.log(this.commonStore.member)
   }
 }
 </script>
