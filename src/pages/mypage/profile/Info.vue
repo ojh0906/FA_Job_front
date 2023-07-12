@@ -9,8 +9,8 @@
             <td>국적</td>
             <td>{{ this.commonStore.member.type === this.getField('member_type','외국인') ? '외국인':'내국인' }}</td>
           </tr>
-          <tr>
-            <td v-if="!this.isCompany">닉네임</td>
+          <tr v-if="!this.isCompany">
+            <td>닉네임</td>
             <td>{{ this.commonStore.member.nick_name }}</td>
           </tr>
           <tr>
@@ -39,7 +39,7 @@
           </tr>
           <tr v-if="this.isForeigner">
             <td>외국인등록증</td>
-            <td>{{ this.files[0].name }}</td>
+            <td>{{ this.files.length === 0 ? '':this.files[0].name }}</td>
           </tr>
           <tr v-if="this.isCompany">
             <td>회사명</td>
@@ -59,7 +59,7 @@
           </tr>
           <tr v-if="this.isCompany">
             <td>사업자등록증</td>
-            <td>{{ this.files[0].name }}</td>
+            <td>{{ this.files.length === 0 ? '':this.files[0].name }}</td>
           </tr>
         </table>
 
