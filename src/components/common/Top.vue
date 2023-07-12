@@ -65,22 +65,16 @@
           <div class="alarm-wrap a-item">
             <div class="alarm a-item" @click="this.alarmPopup = !this.alarmPopup">
               <img class="alarm-icon a-item" src="/image/main/alarm.png" />
-              <span>4</span>
+              <span>{{ this.commonStore.member != null ? this.commonStore.member.other_info.info_cnt:0 }}</span>
             </div>
             <div class="alarm-popup a-item" v-if="this.alarmPopup">
               <!-- 새로운 알람 -->
-              <div v-for="v in 3" class="new a-item">
+              <div v-for="v in this.commonStore.member_info_list" class="a-item" :class="v.check_yn ? '':'new'">
                 <p class="title a-item">
-                  <span class="a-item">(프로젝트명)</span>에서 알림이 도착하였습니다.
+<!--                  <span class="a-item">(프로젝트명)</span>에서 알림이 도착하였습니다.-->
+                  {{ v.title }}
                 </p>
-                <p class="text a-item">프로젝트에 매칭이 성사되었습니다.</p>
-              </div>
-              <!-- 기존 알람 -->
-              <div v-for="v in 1" class="a-item">
-                <p class="title a-item">
-                  <span class="a-item">(프로젝트명)</span>에서 알림이 도착하였습니다.
-                </p>
-                <p class="text a-item">프로젝트에 매칭이 성사되었습니다.</p>
+                <p class="text a-item">{{ v.content }}</p>
               </div>
             </div>
           </div>
@@ -98,6 +92,7 @@
 import { useCommonStore } from '@/_stores';
 
 export default {
+  props:['getInfoList'],
   setup() {
     const commonStore = useCommonStore()
     return {
@@ -144,6 +139,7 @@ export default {
   },
   mounted() {
     this.fixedMenu();
+    console.log(this.commonStore.member)
   }
 }
 </script>

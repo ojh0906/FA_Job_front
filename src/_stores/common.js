@@ -20,6 +20,7 @@ export const useCommonStore = defineStore({
     isAuthenticated: false,
     return_url: null,
     field: null,
+    member_info_list: [],
   }),
   actions: {
     async save(params) { // 회원가입
@@ -126,6 +127,9 @@ export const useCommonStore = defineStore({
     },
     async matchPassword(id, params) {
       return await http.post(`${baseUrl}/${id}/match/password`, params);
+    },
+    async listInfo(id, params) {
+      return await http.post(`${baseUrl}/${id}/info/list`, params);
     },
   },
   persist: true,
