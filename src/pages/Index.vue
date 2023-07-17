@@ -224,6 +224,7 @@ export default {
     },
   },
   mounted() {
+
     this.getInitList();
     if(this.commonStore.member != null){
       this.commonStore.listInfo(this.commonStore.member.member,{page:1,page_block:5}).then((resp) => {
