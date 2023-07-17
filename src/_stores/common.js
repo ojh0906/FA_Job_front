@@ -76,6 +76,7 @@ export const useCommonStore = defineStore({
     },
     logout() {
       this.member = null;
+      this.field = null;
       this.auth_token = "";
       this.isAuthenticated = false;
       this.expiryTime = "";
@@ -87,7 +88,18 @@ export const useCommonStore = defineStore({
       this.return_url = url;
     },
     async getField() {
-      return await http.post(`/main/field/list`, {});
+      if(this.field == null){
+        try {
+          await http.post(`/main/field/list`, {}).then((resp) => {
+            if (resp.data.code === 200) {
+              this.field = resp.data.body;
+            }else{
+              return resp;
+            }
+          });
+        } catch (error) {
+        }
+      }
     },
     async find(params) {
       return await http.post(`${baseUrl}/find`, params);

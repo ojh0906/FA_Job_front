@@ -147,7 +147,6 @@ export default {
         },
     },
     mounted() {
-        this.commonStore.getField();
         this.getList();
     }
 }

@@ -43,6 +43,7 @@ router.beforeEach(async (to) => {
     ];
     const authRequired = !publicPages.includes(to.path);
     const commonStore = useCommonStore();
+    commonStore.getField();
     // console.log("before router auth", authStore.member, authStore.isAuthenticated, authStore.auth_token);
     if (authRequired && !commonStore.isAuthenticated) {
         commonStore.setReturnUrl(to.fullPath);

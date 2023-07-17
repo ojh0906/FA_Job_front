@@ -108,13 +108,6 @@ export default {
     },
   },
   mounted() {
-    this.commonStore.getField().then((resp) => {
-      if (resp.data.code == 200) {
-        this.commonStore.field = resp.data.body;
-      }
-    }).catch(err => {
-      console.log("err", err);
-    });
   }
 };
 </script>

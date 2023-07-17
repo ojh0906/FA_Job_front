@@ -72,8 +72,13 @@
 
         <div class="field" v-if="!this.isCompany">
           <p class="input-title">이름</p>
-          <div class="field_input">
-            <input type="text" placeholder="이름" v-model="this.name">
+          <div class="input-wrap">
+            <div class="field_input">
+              <input type="text" placeholder="이름" v-model="this.name">
+            </div>
+            <div class="check-btn btn btn3">
+              본인인증
+            </div>
           </div>
         </div>
 
@@ -96,8 +101,13 @@
         <!-- 기업일 경우 -->
         <div class="field" v-if="this.isCompany">
           <p class="input-title">인사 담당자명</p>
-          <div class="field_input">
-            <input type="text" placeholder="인사 담당자 명을 입력해주세요." v-model="this.name">
+          <div class="input-wrap">
+            <div class="field_input">
+              <input type="text" placeholder="인사 담당자 명을 입력해주세요." v-model="this.name">
+            </div>
+            <div class="check-btn btn btn3">
+              본인인증
+            </div>
           </div>
         </div>
       </div>

@@ -224,14 +224,7 @@ export default {
     },
   },
   mounted() {
-    this.commonStore.getField().then((resp) => {
-      if (resp.data.code == 200) {
-        this.commonStore.field = resp.data.body;
-        this.getInitList();
-      }
-    }).catch(err => {
-      console.log("err", err);
-    });
+    this.getInitList();
     if(this.commonStore.member != null){
       this.commonStore.listInfo(this.commonStore.member.member,{page:1,page_block:5}).then((resp) => {
         if (resp.data.code == 200) {
