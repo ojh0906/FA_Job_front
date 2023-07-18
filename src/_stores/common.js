@@ -88,18 +88,30 @@ export const useCommonStore = defineStore({
       this.return_url = url;
     },
     async getField() {
-      if(this.field == null){
-        try {
-          await http.post(`/main/field/list`, {}).then((resp) => {
-            if (resp.data.code === 200) {
-              this.field = resp.data.body;
-            }else{
-              return resp;
-            }
-          });
-        } catch (error) {
-        }
+      try {
+        const member = await http.post(`/main/field/list`, {}).then((resp) => {
+          if (resp.data.code === 200) {
+            this.field = resp.data.body;
+          }else{
+            return resp;
+          }
+        });
+      } catch (error) {
       }
+      /*TODO 추후에는 null 값일때만 리프래시
+            if(this.field == null){
+              try {
+                const member = await http.post(`/main/field/list`, {}).then((resp) => {
+                  if (resp.data.code === 200) {
+                    this.field = resp.data.body;
+                  }else{
+                    return resp;
+                  }
+                });
+              } catch (error) {
+              }
+            }
+      */
     },
     async find(params) {
       return await http.post(`${baseUrl}/find`, params);
