@@ -20,12 +20,9 @@
                 </li>
               </div>
               <div class="select-box" :class="this.agree_select1 ? 'select-on ' : 'select-off'">
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
+                <TermsCompany v-if="this.type == getField('member_type', '기업')" />
+                <TermsMember v-if="this.type !== getField('member_type', '기업')" />
+                <Terms />
               </div>
             </ul>
           </div>
@@ -45,12 +42,7 @@
                 </li>
               </div>
               <div class="select-box" :class="this.agree_select2 ? 'select-on ' : 'select-off'">
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
+                <TermsPrivacy />
               </div>
             </ul>
           </div>
@@ -70,12 +62,6 @@
                 </li>
               </div>
               <div class="select-box" :class="this.agree_select3 ? 'select-on ' : 'select-off'">
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
-                이벤트 수집 동의 문구 내용이 들어가는 영역입니다.<br>
               </div>
             </ul>
           </div>
@@ -105,12 +91,17 @@
 </template>
 
 <script>
-import RegisterHeader from '/src/components/register/Header.vue';
+import Terms from '@/components/register/Terms.vue';
+import TermsCompany from '@/components/register/TermsCompany.vue';
+import TermsMember from '@/components/register/TermsMember.vue';
+import TermsPrivacy from '@//components/register/TermsPrivacy.vue';
+import RegisterHeader from '@/components/register/Header.vue';
+
 
 export default {
   data() {
     return {
-      type:0,
+      type: 0,
       agree_select1: false,
       agree_select2: false,
       agree_select3: false,
@@ -121,7 +112,11 @@ export default {
     }
   },
   components: {
-    RegisterHeader
+    RegisterHeader,
+    Terms,
+    TermsCompany,
+    TermsMember,
+    TermsPrivacy
   },
   methods: {
     onSelect(num) {
@@ -144,31 +139,31 @@ export default {
         this.agree_select1 = false;
       }
     },
-    initAgree(bool){
+    initAgree(bool) {
       this.agree1 = bool;
       this.agree2 = bool;
       this.agree3 = bool;
       this.all = bool;
     },
-    chkAll(){
-      if(this.agree1 && this.agree2 && this.agree3){
+    chkAll() {
+      if (this.agree1 && this.agree2 && this.agree3) {
         this.all = true;
       } else {
         this.all = false;
       }
     },
-    next(){
-      if(this.agree1 && this.agree2){
-        this.$router.push({name:'RegisterInput', query:{type:this.type, event_info_yn:this.agree3}})
+    next() {
+      if (this.agree1 && this.agree2) {
+        this.$router.push({ name: 'RegisterInput', query: { type: this.type, event_info_yn: this.agree3 } })
       } else {
         alert('필수항목에 체크해주세요.')
       }
     }
   },
   mounted() {
-    if(this.$route.query.type == null){ // 가입유형 없을 시
+    if (this.$route.query.type == null) { // 가입유형 없을 시
       alert('잘못된 접근입니다.');
-      this.$router.push({name:'RegisterType'})
+      this.$router.push({ name: 'RegisterType' })
     } else {
       this.type = this.$route.query.type;
       this.initAgree(false);

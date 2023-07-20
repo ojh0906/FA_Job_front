@@ -1,0 +1,45 @@
+.terms-container {
+  font-size: 12px;
+  line-height: 20px !important;
+}
+
+.terms-container table {
+  border-collapse: collapse;
+  border: 1px solid #333333;
+}
+
+.terms-container th {
+  background-color: #f0f4f5;
+}
+
+.terms-container td,
+.terms-container th {
+  padding: 10px;
+  border: 1px solid #333333;
+}
+
+.terms-container span {
+  /* color: red; */
+}
+
+.terms-container .num-list {
+  padding-left: 30px;
+}
+
+.terms-container ul {
+  list-style: disc;
+  display: block !important;
+  padding-left: 30px;
+}
+
+.terms-container ul li {
+}
+
+.terms-container ol {
+  list-style: auto;
+  display: block !important;
+  padding-left: 30px;
+}
+
+.terms-container ul li {
+}

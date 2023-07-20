@@ -232,14 +232,17 @@
 }
 
 .select-box {
+  width: 100%;
+  height: 200px;
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-
   color: #777777;
   padding: 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .select-off {
   display: none;

@@ -23,7 +23,8 @@
           <div class="input-wrap">
             <div class="field_input">
               <label class="input-password">
-                <input class="pw" type="password" placeholder="비밀번호를 입력해주세요." v-model="this.password" @keyup="this.commonStore.loginCheck = false;" @keypress.enter="onSubmit">
+                <input class="pw" type="password" placeholder="비밀번호를 입력해주세요." v-model="this.password"
+                  @keyup="this.commonStore.loginCheck = false;" @keypress.enter="onSubmit">
                 <img class="eye-img" src="/image/login/eye.png" />
               </label>
             </div>
@@ -37,11 +38,14 @@
           </label>
           <p>자동 로그인</p>
         </div>
-
       </div>
 
       <div class="btn btn1" @click="onSubmit">로그인</div>
-      <div class="btn btn2">회원가입</div>
+      <router-link :to="{ name: 'RegisterType', query: {} }">
+        <div class="btn btn2">
+          회원가입
+        </div>
+      </router-link>
 
       <div class="find-id-pw">
         <router-link :to="{ name: 'FindId' }">
