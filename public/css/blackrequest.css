@@ -1,115 +1,119 @@
 /*자유홍보 등록요청 시작*/
 #free_section04 {
-    position: relative;
-    margin: 0 auto;
-    width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
 }
-  
+
 #free_section04 .free04_header {
-    width: 600px;
-    height: 45px;
+  width: 600px;
+  height: 45px;
 }
-  
+
 #free_section04 .free04_header h3 {
-    font-size: 32px;
-    font-weight: 700;
+  font-size: 32px;
+  font-weight: 700;
 }
-  
+
 #free_section04 .free04_box {
-    margin-top: 40px;
+  margin-top: 40px;
 }
-  
+
 #free_section04 .free04_box .free04_r_header {
-    display: flex;
-    width: 1200px;
+  display: flex;
+  width: 1200px;
 }
-  
+
 #free_section04 .free04_box .free04_r_header h3 {
-    display: flex;
-    font-size: 20px;
-    font-weight: 700;
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-#free_section04 .free04_box .comment02{
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+#free_section04 .free04_box .comment02 {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
-#free_section04 .free04_box .comment02 .tr_com{
-    border-bottom: 1px solid #ddd;
+#free_section04 .free04_box .comment02 .tr_com {
+  border-bottom: 1px solid #ddd;
 }
 
 #free_section04 .free04_box .comment02 .tr_com .fw_com02 .field_input {
-    display: flex;
-    background-color: #fff;
-    gap: 8px;
-    align-items: center;
-    width: 100%;
-    color: #999999;
-    opacity: 0.5;
-  }
-  
-#free_section04 .free04_box .comment02 .tr_com .fw_com02 .field_input input:focus {
-    /* border: #3e778a 2px solid;
+  display: flex;
+  background-color: #fff;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  color: #999999;
+  opacity: 0.5;
+}
+
+#free_section04
+  .free04_box
+  .comment02
+  .tr_com
+  .fw_com02
+  .field_input
+  input:focus {
+  /* border: #3e778a 2px solid;
     outline: #3e778a; */
-    border: 1px solid #dddddd;
-    outline: none;
+  border: 1px solid #dddddd;
+  outline: none;
 }
-  
+
 #free_section04 .free04_box .comment02 .tr_com .fw_com02 .field_input input {
-    border: none;
-    padding: 12px 0px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    width: 100%;
+  border: none;
+  padding: 12px 0px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
 }
 
- 
 #free_section04 .free04_box .comment02 .tr_com .td_02 .field_input input {
-    border: none;
-    padding: 12px 0px 200px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    width: 100%;
+  border: none;
+  padding: 12px 0px 200px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  width: 100%;
 }
 
-#free_section04 .free04_box .comment02 .tr_com .fw_02 .fw_01 .i_icon{
-    display: inline-block;
-    vertical-align: middle;
-    width: 20px;
-    height: 22px;
-    margin-right: 8px;
-    background: url("../image/black/file02.png") no-repeat;
+#free_section04 .free04_box .comment02 .tr_com .fw_02 .fw_01 .i_icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 22px;
+  margin-right: 8px;
+  background: url("../image/black/file02.png") no-repeat;
 }
 
-#free_section04 .free04_box .comment02 .tr_com .fw_02 p{
-    color: #777;
-    padding: 10px 0;
-    font-weight: 300;
-    margin: 0 10px;
+#free_section04 .free04_box .comment02 .tr_com .fw_02 p {
+  color: #777;
+  padding: 10px 0;
+  font-weight: 300;
+  margin: 0 10px;
 }
 
-#free_section04 .free04_box .comment02 .tr_com .fw_02 .file01 .i_icon{
-    display: inline-block;
-    margin-left: 4px;
-    width: 12px;
-    height: 12px;
-    margin-right: 8px;
-    background: url("../image/black/del.png") no-repeat;
+#free_section04 .free04_box .comment02 .tr_com .fw_02 .file01 .i_icon {
+  display: inline-block;
+  margin-left: 4px;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  background: url("../image/black/del.png") no-repeat;
 }
 
-#free_section04 .free04_box .comment02 .tr_com .fw_02 .file02 .i_icon{
-    display: inline-block;
-    margin-left: 4px;
-    width: 12px;
-    height: 12px;
-    margin-right: 8px;
-    background: url("../image/black/del.png") no-repeat;
+#free_section04 .free04_box .comment02 .tr_com .fw_02 .file02 .i_icon {
+  display: inline-block;
+  margin-left: 4px;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  background: url("../image/black/del.png") no-repeat;
 }
-
 
 .free04_box .fw_next,
 .next2 {
@@ -124,4 +128,38 @@
 }
 .free04_box .next2 .btn {
   padding: 20px 45px;
+}
+
+.caution-box {
+  border-radius: 5px;
+  border: 1px solid #9fbec5;
+  background: #f1f7f7;
+  display: flex;
+  padding: 20px;
+  align-items: baseline;
+  gap: 40px;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+.caution-box span {
+  color: #333;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.caution-box ul {
+  list-style: disc;
+}
+
+.caution-box li {
+  color: #333;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

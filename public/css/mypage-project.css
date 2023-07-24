@@ -250,7 +250,7 @@
   justify-content: center;
   gap: 5px;
   padding: 15px 20px;
-  background: #dee6e9;
+  /* background: #dee6e9; */
   border-radius: 5px;
 }
 .file-btn p {
