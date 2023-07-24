@@ -21,7 +21,7 @@
         </div>
         <div class="line">
           <span><strong>EMAIL</strong>the-engineer@naver.com</span>
-          <span><strong>TEL</strong>010-7524-3560</span>
+          <span><strong>TEL</strong>0507-1393-3560</span>
         </div>
       </div>
     </div>
