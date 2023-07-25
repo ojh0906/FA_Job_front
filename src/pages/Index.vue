@@ -179,7 +179,7 @@ export default {
     getBlacklistList() {
       this.blacklist_list = [];
       let option = {
-        /*confirm:true TODO 나중에 추가할것 */
+        confirm:true,
       }
       if(this.blacklist_target !== 0){
         option.target = this.blacklist_target;

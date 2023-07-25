@@ -1,7 +1,5 @@
 <template>
-    <swiper :pagination="{
-        type: 'fraction',
-    }"   :loop="true" :navigation="false" :modules="modules" class="main-slider">
+    <swiper :pagination="{type: 'fraction',}" :loop="true" :navigation="false" :modules="modules" class="main-slider">
         <swiper-slide>
             <aside class="title-wrap">
                 <div>

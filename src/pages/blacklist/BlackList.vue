@@ -93,7 +93,7 @@ export default {
     getList() {
       this.blacklist_list = [];
       let option = {
-          /*confirm:true TODO 나중에 추가할것 */
+          confirm:true,
       }
       if(this.target !== 0){
         option.target = this.target;

@@ -400,7 +400,7 @@ export default {
         return;
       }
 
-      if(this.password === '' || this.password2 === '' || this.name === '' || this.birth === '' || this.phone_number === '' || this.address === '' || this.address_detail === ''){
+      if(this.password === '' || this.password2 === '' || this.name === '' || this.phone_number === '' || this.address === '' || this.address_detail === ''){
         alert('필수값을 입력해주세요.');
         return;
       } else {
