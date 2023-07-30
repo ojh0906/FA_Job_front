@@ -20,6 +20,9 @@ import MypageList from "/src/pages/mypage/List.vue";
 import MypagePay1 from "/src/pages/mypage/payment/Step1.vue";
 import MypagePay2 from "/src/pages/mypage/payment/Step2.vue";
 
+/*피그마 기준 화면 작업입니다. -남원-*/
+import Step01 from "/src/pages/mypage/payment/Step01.vue";
+
 
 import ResumeManage from "/src/pages/mypage/resume/Manage.vue";
 import ResumeNone from "/src/pages/mypage/resume/None.vue";
@@ -52,6 +55,8 @@ export default [
             { path: "resume-management", name: 'ResumeManage', component: ResumeManage, meta: { title: "이력서 관리" } },
             { path: "resume-write", name: 'ResumeWrite', component: ResumeWrite, meta: { title: "이력서 작성 및 수정" } },
             { path: "company-project/applicant-list", name: 'MypageCompanyApplicant', component: MypageCompanyApplicant, meta: { title: "마이페이지 - 기업 프로젝트 관리 - 지원자 목록" } },
+            /*남원*/
+            { path: "Step01", name: 'Step01', component: Step01, meta: { title: "서비스 결제 안내" } },
         ],
     },
 ];
