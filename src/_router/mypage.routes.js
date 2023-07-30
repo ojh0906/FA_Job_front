@@ -22,6 +22,10 @@ import MypagePay2 from "/src/pages/mypage/payment/Step2.vue";
 
 /*피그마 기준 화면 작업입니다. -남원-*/
 import Step01 from "/src/pages/mypage/payment/Step01.vue";
+import Step02 from "/src/pages/mypage/payment/Step02.vue";
+import PayDetail from "/src/pages/mypage/payment/PayDetail.vue";
+
+
 
 
 import ResumeManage from "/src/pages/mypage/resume/Manage.vue";
@@ -57,6 +61,9 @@ export default [
             { path: "company-project/applicant-list", name: 'MypageCompanyApplicant', component: MypageCompanyApplicant, meta: { title: "마이페이지 - 기업 프로젝트 관리 - 지원자 목록" } },
             /*남원*/
             { path: "Step01", name: 'Step01', component: Step01, meta: { title: "서비스 결제 안내" } },
+            { path: "Step02", name: 'Step02', component: Step02, meta: { title: "서비스 결제" } },
+            { path: "PayDetail", name: 'PayDetail', component: PayDetail, meta: { title: "결제 내역 목록" } },
+
         ],
     },
 ];

@@ -1,0 +1,124 @@
+#container01{
+    width: 100%;
+}
+
+#container01 .mypage-contact-container .sub-title{
+    padding: 20px 0;
+}
+
+#container01 .mypage-contact-container .sub-title .sub01{
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#container01 .mypage-contact-container .sub-title .sub02{
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#container01 .price01{
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #DEE6E9;
+}
+
+#container01 .price01 .p01{
+    display: flex;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+#container01 .price01 .p01 .pp01{
+    padding: 0 8px 0 16px;
+    color: #3E778A;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+#container01 .price01 .p01 .ppp01{
+    padding-left: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+#container01 .price01 .pppp01{
+    float: right;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+#container01 .price01 .pppp01 .p_01{
+    color: #555;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#container01 .price01 .p02{
+    float: left;
+    padding-top: 10px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#container01 .price02{
+    width: 100%;
+    display: flex;
+    margin-top: 16px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #DEE6E9;
+}
+
+#container01 .price02 .p01{
+    display: flex;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+#container01 .price02 .p01 .pp01{
+    padding: 0 8px 0 16px;
+    color: #3E778A;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+#container01 .price02 .p01 .ppp01{
+    padding-left: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+#container01 .price02 .pppp01{
+    float: right;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+#container01 .price02 .pppp01 .p_01{
+    color: #555;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#container01 .price02 .p02{
+    float: left;
+    padding-top: 10px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+}
